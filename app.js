@@ -4,11 +4,24 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var clicolour = require('cli-color');
+
+var passport = require('passport');
+var passportlocal = require('passport-local');
+var passporthttp = require('passport-http');
+
+var mongoose = require('mongoose');
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var ObjectId = require('mongodb').ObjectID;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.genSaltSync(10); 
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -31,7 +44,7 @@ var port = process.env.PORT || 8080;
 app.listen(port, function () {
 	console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + "Running on port " + port);
 	console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-    console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+    console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") /*+ connect.connect("Connect")*/);
 } );
 
 
