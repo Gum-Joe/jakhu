@@ -15,7 +15,8 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
-var connect = require("./private/connect.js")
+var connect = require("./private/connect.js");
+var passportconfig = require("./private/passport.js");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, 'views')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('passportconfig', passportconfig);
 
 var port = process.env.PORT || 8080;
 
@@ -57,6 +59,11 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
+});
+
+app.post('/login', function(req, res) {
+   // passportlocal.authenticate('local');
+  res.redirect('/');
 });
 
 // error handlers

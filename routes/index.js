@@ -1,9 +1,19 @@
 var express = require('express');
 var router = express.Router();
+var passportconfig = require("../private/passport.js");
+var passport = require("passport");
+var passportLocal = require("passport-local");
+
+router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.jade', { title: 'Sign in' });
+  res.render('index.html', { title: 'Sign in' });
+});
+
+router.post('/login', function(req, res, next) {
+    //passport.authenticate('local');
+  // res.render('index.html', { title: 'Done' });
 });
 
 module.exports = router;
