@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var clicolour = require('cli-color');
+var fs = require("fs");
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -26,6 +27,9 @@ var app = express();
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10); 
 
+var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -40,6 +44,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
+app.use(logger({stream: logFile}));
+
+var userSchema = new mongoose.Schema({
+  username: { type: String }
+, email: String
+, pwd: String
+});
+var exits = false;
+var suser = mongoose.model('usersc', userSchema);
 
 app.use('/', routes);
 app.use('/users', users);

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>DashBoard | Web-OS</title>
+		<title>Dashboard | Web-OS</title>
 		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css.map">
 		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
@@ -47,27 +47,17 @@
             <li><a href="#">Analytics</a></li>
             <li><a href="#">Export</a></li>
           </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main minus">
+          <h1 class="page-header">Welcome Back, <%=user%></h1>
 
           <div class="row placeholders">
             <div class="col-xs-6 col-sm-3 placeholder">
-              <img class="img-responsive" alt="Generic placeholder thumbnail" data-src="holder.js/200x200/auto/sky">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
+              <!--<img class="img-responsive" alt="Generic placeholder thumbnail" data-src="holder.js/200x200/auto/sky">-->
+                  <div class="alert alert-warning middle" role="alert"><h1 class="middle minus-alert"><%=users%></h1>Users</div>
+                    
+              <div class="alert alert-info middle" role="alert"><h1 class="middle minus-alert"><%=sessions%></h1>Active Users</div>
+               
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img class="img-responsive" alt="Generic placeholder thumbnail" data-src="holder.js/200x200/auto/vine">

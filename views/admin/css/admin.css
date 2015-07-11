@@ -37,3 +37,11 @@
 .side {
   width: 6cm
 }
+
+.minus {
+  margin-top: -5.5cm;
+}
+
+.minus-alert {
+  margin-top: -0.1cm;
+}
