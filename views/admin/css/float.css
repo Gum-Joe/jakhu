@@ -116,7 +116,7 @@ h3,h4,h5,h6,div,label {
 }
 
 .background,body {
-    background-image: url("img/internet-background.jpg");
+    /*background-image: url("img/internet-background.jpg");*/
 }
 
 .backjumb {
@@ -213,12 +213,12 @@ animation-duration: 1.5s;
 }
 
 body {
-  font-family: FiraSans-UltraLight;
+  /* font-family: FiraSans-UltraLight; */
 }
 
 html,body {
-  background-image: url("img/internet-background.jpg");
-  font-family: FiraSans-UltraLight;
+  /*background-image: url("img/internet-background.jpg");*/
+  /* font-family: FiraSans-UltraLight; */
 }
 
 .nav,.nav-pills {
@@ -252,7 +252,7 @@ html,body {
 }
 
 body {
-  font-family: FiraSans-UltraLight;
+  /*font-family: FiraSans-UltraLight;*/
 }
 
 .web-os {
@@ -261,4 +261,8 @@ body {
 
 #nav {
   font-family: Courier_Prime;
+}
+
+.black-back {
+  background-color: black;
 }

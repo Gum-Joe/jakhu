@@ -7,8 +7,8 @@
 
 
 .web-os-back,html {
-  background-image: url("img/nav-back-two.png");
-  color: light-blue;
+  /*background-image: url("img/nav-back-two.png");
+  color: light-blue;*/
 }
 
 #head {
@@ -21,4 +21,19 @@
 
 .pad-top-middle {
   padding-top: 3cm;
+}
+
+.black-back {
+  background-color: black;
+}
+
+.pad-small-top-side {
+  padding-top: 2cm;
+}
+
+.blue-back {
+}
+
+.side {
+  width: 6cm
 }
