@@ -11,6 +11,10 @@ router.get('/', function(req, res, next) {
   res.render('index.html', { title: 'Sign in' });
 });
 
+router.get('/admin', function(req, res, next) {
+  res.render('admin/index.ejs');
+});
+
 router.post('/login', function(req, res, next) {
     //passport.authenticate('local');
   // res.render('index.html', { title: 'Done' });
