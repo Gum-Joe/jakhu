@@ -12,7 +12,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/admin', function(req, res, next) {
-  res.render('admin/index.ejs');
+  res.render('admin/index.ejs', {
+    // url query (?x=y)
+    task: req.param("task")
+  });
 });
 
 router.post('/login', function(req, res, next) {
