@@ -44,9 +44,9 @@ app.use('/users', users);
 var port = process.env.PORT || 8080;
 
 app.listen(port, function () {
-	console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-	console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-  console.log(clicolour.cyanBright("connections ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
 } );
 
 
