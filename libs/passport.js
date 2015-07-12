@@ -89,5 +89,11 @@ passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
 
+passport.deserializeUser(function(id, done) {
+    suser.findById(id, function(err, user) {
+        done(err, user);
+    });
+});
+
 
 module.exports = app;

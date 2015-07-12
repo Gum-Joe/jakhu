@@ -18,9 +18,13 @@ var ObjectId = require('mongodb').ObjectID;
 
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
+// var debuge = require("./libs/debug.js");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var debug = require('debug')('Web-OS:server');
+var http = require('http');
 
 var app = express();
 
@@ -46,6 +50,7 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(logger({stream: logFile}));
 
+
 var userSchema = new mongoose.Schema({
   username: { type: String }
 , email: String
@@ -65,6 +70,65 @@ app.listen(port, function () {
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
 } );
+
+app.on('error', onError);
+app.on('listening', onListening);
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
+
+/**
+ * Event listener for HTTP server "error" event.
+ */
+
+function onError(error) {
+  if (error.syscall !== 'listen') {
+    throw error;
+  }
+
+  var bind = typeof port === 'string'
+    ? 'Pipe ' + port
+    : 'Port ' + port;
+
+  // handle specific listen errors with friendly messages
+  switch (error.code) {
+    case 'EACCES':
+      console.error(bind + ' requires elevated privileges');
+      process.exit(1);
+      break;
+    case 'EADDRINUSE':
+      console.error(bind + ' is already in use');
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+}
+
+/**
+ * Event listener for HTTP server "listening" event.
+ */
+
+function onListening() {
+  var addr = server.address();
+  var bind = typeof addr === 'string'
+    ? 'pipe ' + addr
+    : 'port ' + addr.port;
+  debug('Listening on ' + bind);
+}
 
 
 // catch 404 and forward to error handler
