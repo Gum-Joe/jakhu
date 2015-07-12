@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var passportconfig = require("../private/passport.js");
+var passportconfig = require("../libs/passport.js");
 var passport = require("passport");
 var passportLocal = require("passport-local");
 

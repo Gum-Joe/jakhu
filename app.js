@@ -16,8 +16,8 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
-var connect = require("./private/connect.js");
-var passportconfig = require("./private/passport.js");
+var connect = require("./libs/connect.js");
+var passportconfig = require("./libs/passport.js");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
