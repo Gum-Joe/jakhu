@@ -16,7 +16,7 @@ run:
 	echo Deploying....; \
 	node node_modules/mongodb/bin/mongod --dbpath ./api/data | node app.js;
 
-test:
+tests:
 	echo Runing tests; \
 	echo Installing modules; \
 	npm install; \
