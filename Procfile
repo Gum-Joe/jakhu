@@ -1,1 +1,1 @@
-web: node app.js
+web: sudo service mongodb start && node app.js
