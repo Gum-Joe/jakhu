@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var passport = require('passport');
 var passportlocal = require('passport-local');
 var passporthttp = require('passport-http');
+var passportlocalmongoose = require('passport-local-mongoose');
 
 // var routes = require('../routes/index');
 // var users = require('../routes/users');
@@ -26,16 +27,16 @@ var app = express();
 
 
 
-var userSchema = new mongoose.Schema({
+/*var userSchema = new mongoose.Schema({
   username: { type: String }
 , email: String
 , pwd: String
 });
 var exits = false;
 var suser = mongoose.model('user', userSchema);
-var Suser = mongoose.model('user', userSchema);
+var Suser = mongoose.model('user', userSchema);*/
 
-app.use(cookieParser());
+app.use(cookieParser('$%£lWeBOS66$%£22'));
 app.use(expressSession({ 
     secret: process.env.SESSION_SECRET || '$%£lWeBOS66$%£22',
     resave: true,
@@ -65,6 +66,7 @@ passport.use(new passportlocal.Strategy(function (username, password, done) {
         // In case of any error, return using the done method
         if (err){
             return done(err);
+            console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'User Not Found with username '+ username);
             }
         // Username does not exist, log error & redirect back
         if (!user){
@@ -83,7 +85,19 @@ passport.use(new passportlocal.Strategy(function (username, password, done) {
         return done(null, {id: user, name: username, email: username});
       }
     );
-}));
+})); 
+
+// passport.use(new passportlocal.Strategy(suser.authenticate()));
+
+
+var userSchema = new mongoose.Schema({
+  username: { type: String }
+, email: String
+, pwd: String
+});
+
+userSchema.plugin(passportlocalmongoose);
+var suser = mongoose.model('userspassport', userSchema);
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);
@@ -95,5 +109,10 @@ passport.deserializeUser(function(id, done) {
     });
 });
 
+// passport.serializeUser(suser.serializeUser());
+
+// passport.deserializeUser(suser.deserializeUser());
+
 
 module.exports = app;
+module.exports = mongoose.model('userspassportreal', userSchema);;

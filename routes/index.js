@@ -49,7 +49,8 @@ router.get('/admin', function(req, res, next) {
     //return count;
 ///})
     users: 1000,
-    sessions: 500
+    sessions: 500,
+    plugins: 5
   });
 
   });

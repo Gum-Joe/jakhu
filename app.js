@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var clicolour = require('cli-color');
 var fs = require("fs");
+var morgan = require("morgan");
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -18,6 +19,7 @@ var ObjectId = require('mongodb').ObjectID;
 
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
+var wlogger = require("./libs/wlogger.js");
 // var debuge = require("./libs/debug.js");
 
 var routes = require('./routes/index');
@@ -49,6 +51,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(logger({stream: logFile}));
+app.use(logger('stream', wlogger.logger));
+app.use(require('morgan')({ "stream": wlogger.stream }));
 
 
 var userSchema = new mongoose.Schema({
@@ -69,6 +73,7 @@ app.listen(port, function () {
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+  
 } );
 
 app.on('error', onError);
