@@ -2,4 +2,4 @@ language: csharp
 # solution: solution-name.sln
 
 script:
-  - make
+  - cd .. && make
