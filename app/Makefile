@@ -11,7 +11,7 @@ run:
 	cd tmp/tests/oobe; \
 	mono web-os-oobe.exe; \
 	cd ".."; \
-	echo Done testing OOBE!; \
+	echo "Done testing OOBE!"; \
 	echo Coppying result...; \
 	# make required dirs; \
 	mkdir -p tmp/results/oobe; \
@@ -23,7 +23,7 @@ run:
 	cd ./tmp/tests; \
 	mkdir -p ./console-app; \
 	cp -R ./oobe/* ./console-app; \
-	echo Done!; \
+	echo "Done!"; \
 	# compile; \
 	echo Compiling OOBE; \
 	cd ..; \
