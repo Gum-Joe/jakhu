@@ -2,7 +2,7 @@
 # for all the aps
 run:
 	echo Compilling apps; \
-	echo Using Gcs; \
+	echo Using gcs; \
 	echo Compiling OOBE; \
 	cd c && $(MAKE) rootOneTest; \
 	echo Testing...; \
@@ -12,20 +12,24 @@ run:
 	mono web-os-oobe.exe; \
 	cd ".."; \
 	echo "Done testing OOBE!"; \
+	; \
 	echo Coppying result...; \
 	# make required dirs; \
 	mkdir -p tmp/results/oobe; \
 	mkdir -p results/oobe; \
+	; \
 	# copy; \
 	cp -avr ./tmp/tests/oobe ./tmp/results ./results; \
+	; \
 	# next tests; \
 	echo "Preparing for next test"; \
 	cd ./tmp/tests; \
 	mkdir -p ./console-app; \
 	cp -R ./oobe/* ./console-app; \
 	echo "Done!"; \
+	; \
 	# compile; \
-	echo Compiling OOBE; \
+	echo Compiling Console app; \
 	cd ..; \
 	cd ..; \
 	cd c && $(MAKE) rootTwoTest; \

@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/Gum-Joe/Web-OS/issues"
   },
-  "homepage": "https://github.com/Gum-Joe/Web-OS#readme"
+  "homepage": "https://github.com/Gum-Joe/Web-OS#readme",
+  "dependencies": {
+    "mongoose": "^4.0.7"
+  }
 }
