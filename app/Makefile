@@ -31,7 +31,7 @@ run:
 	cd c && $(MAKE) rootTwoTest; \
 	# test; \
 	echo Testing...; \
-	cd ".."; /
+	cd ".."; \
 	cp -pv ./c/console-app/web-os-app.exe ./tmp/tests/console-app; \
 	echo Executing; \
 	cd ./tmp/tests/console-app; \
