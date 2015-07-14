@@ -4,7 +4,7 @@ run:
 	echo Compilling apps; \
 	echo Using gcs; \
 	echo Compiling OOBE; \
-	cd c && $(MAKE) rootOneTest; \
+	cd oobe && $(MAKE) rootOneTest; \
 	echo Testing...; \
 	cd .. && mkdir -p tmp/tests/oobe ; \
 	cp -pv ./c/oobe/web-os-oobe.exe ./tmp/tests/oobe; \
