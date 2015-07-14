@@ -4,7 +4,7 @@ run:
 	echo Compilling apps; \
 	echo Using Gcs; \
 	echo Compiling OOBE; \
-	cd c-app && $(MAKE) rootOneTest; \
+	cd c && $(MAKE) rootOneTest; \
 	echo Testing...; \
 	cd .. && mkdir -p tmp/tests #; /
 	# gmcs web-os-console @#scripts go here; \
