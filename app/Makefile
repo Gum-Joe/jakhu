@@ -6,7 +6,7 @@ run:
 	echo Compiling OOBE; \
 	cd c && $(MAKE) rootOneTest; \
 	echo Testing...; \
-	cd .. && mkdir -p tmp/tests/oobe ; /
+	cd .. && mkdir -p tmp/tests/oobe ; \
 	cp -pv ./c/oobe/web-os-oobe.exe ./tmp/tests/oobe; \
 	cd tmp/tests/oobe; \
 	mono web-os-oobe.exe; \
