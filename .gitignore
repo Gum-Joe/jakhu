@@ -29,7 +29,8 @@ bower_components
 
 # Visual Studio
 obj
-
+.vs
+app/*/bin
 # api
 api
 
