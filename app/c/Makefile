@@ -2,8 +2,8 @@
 run:
 	echo Compilling app; \
 	echo Using Gcs; \
-	gcs install bower; \
-	echo Installing components; \
+	gmcs web-os-console @#scripts go here; \
+	echo Running...; \
 	node node_modules/bower/bin/bower install; \
 	echo Creating dirs...; \
 	mkdir -v logs; \
