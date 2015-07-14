@@ -1,12 +1,17 @@
 # here is the console makefile
+# for all the aps
 run:
-	echo Compilling app; \
+	echo Compilling apps; \
 	echo Using Gcs; \
-	gmcs web-os-console @#scripts go here; \
-	echo Running...; \
-	@#here; \
-	echo Creating dirs...; \
-	echo Done!
+	echo Compiling OOBE; \
+	cd c-app && $(MAKE) rootOneTest; \
+	echo Testing...; \
+	cd .. && mkdir -p tmp/tests #; /
+	# gmcs web-os-console @#scripts go here; \
+	# echo Running...; \
+	#@#here; \
+	#echo Creating dirs...; \
+	#echo Done!
 
 tests:
 	echo Runing tests; \
