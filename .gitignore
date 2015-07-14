@@ -40,4 +40,6 @@ cert
 certificate
 certificates
 private
- 
+
+# analicts
+.ntvs*.dat
