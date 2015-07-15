@@ -1,6 +1,6 @@
 # here is the console makefile
 # for all the aps
-rootOneTest:
+rootTwoTestLin:
 	echo Compilling Console-App...; \
 	gmcs Program.cs; \
 	echo done; \

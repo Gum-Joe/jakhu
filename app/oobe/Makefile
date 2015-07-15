@@ -1,6 +1,6 @@
 # here is the console makefile
 # for all the aps
-rootOneTest:
+rootOneTestLin:
 	echo Compilling OOBE...; \
 	gmcs Program.cs; \
 	echo done; \

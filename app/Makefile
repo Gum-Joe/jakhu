@@ -1,13 +1,13 @@
 # here is the console makefile
 # for all the aps
-run:
+runlin:
 	echo Compilling apps; \
 	echo Using gcs; \
 	echo Compiling OOBE; \
-	cd oobe && $(MAKE) rootOneTest; \
+	cd oobe && $(MAKE) rootOneTestLin; \
 	echo Testing...; \
 	cd .. && mkdir -p tmp/tests/oobe ; \
-	cp -pv ./oobe/bin/Debug/*.exe ./tmp/tests/oobe; \
+	cp -pv ./oobe/*.exe ./tmp/tests/oobe; \
 	cd tmp/tests/oobe; \
 	mono *.exe ; \
 	cd ".."; \
@@ -28,11 +28,11 @@ run:
 	echo Compiling Console app; \
 	cd ..; \
 	cd ..; \
-	cd console-app && $(MAKE) rootTwoTest; \
+	cd console-app && $(MAKE) rootTwoTestLin; \
 	# test; \
 	echo Testing...; \
 	cd ".."; \
-	cp -pv ./console-app/bin/Debug/*.exe ./tmp/tests/console-app; \
+	cp -pv ./console-app/*.exe ./tmp/tests/console-app; \
 	echo Executing; \
 	cd ./tmp/tests/console-app; \
 	mono *; \
