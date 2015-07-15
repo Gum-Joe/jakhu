@@ -9,7 +9,7 @@ run:
 	cd .. && mkdir -p tmp/tests/oobe ; \
 	cp -pv ./oobe/bin/Debug/*.exe ./tmp/tests/oobe; \
 	cd tmp/tests/oobe; \
-	mono *.exe; \
+	mono *.exe ; \
 	cd ".."; \
 	echo "Done testing OOBE!"; \
 	; \
