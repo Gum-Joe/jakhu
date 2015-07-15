@@ -7,10 +7,15 @@ node_js:
   - "stable" 
   - "iojs"
 
+addons:
+  apt:
+    packages:
+    - mono-xsp2-base
+    - mono-xsp2
+
 env:
   - NODE_ENV=development
 
 script: "make tests"
   
   
-
