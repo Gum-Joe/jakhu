@@ -15,9 +15,9 @@ tests:
 	echo Testing...; \
 	mocha;
 
-install:
-	echo Installing Modules; \
-	npm install; \
-	npm install bower; \        
-	node node_modules/bower/bin/bower install; \
-	echo Done;
+# install:
+	# echo Installing Modules; \
+	#npm install; \
+	#npm install bower; \        
+	#node node_modules/bower/bin/bower install; \
+	#echo Done;
