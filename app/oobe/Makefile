@@ -2,7 +2,7 @@
 # for all the aps
 rootOneTest:
 	echo Compilling OOBE...; \
-	node-gyp build; \
+	node-gyp rebuild; \
 	echo done; \
 	
 
