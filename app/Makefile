@@ -7,9 +7,9 @@ run:
 	cd oobe && $(MAKE) rootOneTest; \
 	echo Testing...; \
 	cd .. && mkdir -p tmp/tests/oobe ; \
-	cp -pv ./c/oobe/web-os-oobe.exe ./tmp/tests/oobe; \
+	cp -pv ./oobe/bin/Debug/*.exe ./tmp/tests/oobe; \
 	cd tmp/tests/oobe; \
-	mono web-os-oobe.exe; \
+	mono *.exe; \
 	cd ".."; \
 	echo "Done testing OOBE!"; \
 	; \
@@ -32,14 +32,14 @@ run:
 	echo Compiling Console app; \
 	cd ..; \
 	cd ..; \
-	cd c && $(MAKE) rootTwoTest; \
+	cd console-app && $(MAKE) rootTwoTest; \
 	# test; \
 	echo Testing...; \
 	cd ".."; \
-	cp -pv ./c/console-app/web-os-app.exe ./tmp/tests/console-app; \
+	cp -pv ./console-app/bin/Debug/*.exe ./tmp/tests/console-app; \
 	echo Executing; \
 	cd ./tmp/tests/console-app; \
-	mono web-os-app.exe; \
+	mono *; \
 	echo "Done!"; \
 	echo Coppying result; \
 	# make required dirs; \
