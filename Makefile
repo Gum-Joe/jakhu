@@ -21,9 +21,14 @@ tests:
 	echo Installing modules; \
 	npm install; \
 	npm install bower; \
-	node node_modules/bower/bin/bower install
+	node node_modules/bower/bin/bower install; \
 	echo Testing...; \
-	mocha;
+	mocha; \
+	echo ; \
+	echo Done; \
+	echo Now testing C#; \
+	cd app && make run; \
+	echo Done; \
 
 install:
 	echo Installing Modules; \
