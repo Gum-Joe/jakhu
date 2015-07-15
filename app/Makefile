@@ -12,22 +12,18 @@ run:
 	mono *.exe ; \
 	cd ".."; \
 	echo "Done testing OOBE!"; \
-	; \
 	echo Coppying result...; \
 	# make required dirs; \
 	mkdir -p tmp/results/oobe; \
 	mkdir -p results/oobe; \
-	; \
 	# copy; \
 	cp -avr ./tmp/tests/oobe ./tmp/results ./results; \
-	; \
 	# next tests; \
 	echo "Preparing for next test"; \
 	cd ./tmp/tests; \
 	mkdir -p ./console-app; \
 	cp -R ./oobe/* ./console-app; \
 	echo "Done!"; \
-	; \
 	# compile; \
 	echo Compiling Console app; \
 	cd ..; \
@@ -51,9 +47,9 @@ run:
 	echo "Sucess (well, we hope)! C# Tests copleted"; \
 	# node stuff
 	echo; \
-	echo Now Executing node tests;
-	# node testes got here
-	echo
+	echo Now Executing node tests; \
+	# node testes got here; \
+	echo;
 	
 
 tests:
