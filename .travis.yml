@@ -16,6 +16,6 @@ addons:
 env:
   - NODE_ENV=development
 
-script: "make tests"
+script: "make tests && cd app && xbuild /p:Configuration=Release *.sln"
   
   
