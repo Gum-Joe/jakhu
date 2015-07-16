@@ -10,8 +10,7 @@ node_js:
 addons:
   apt:
     packages:
-    - mono-xsp2-base
-    - mono-xsp2
+    - xbuild
 
 env:
   - NODE_ENV=development
