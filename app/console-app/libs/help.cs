@@ -8,6 +8,14 @@ namespace console_app
 			if(help == null){
 				Console.WriteLine("Showing all help");
 			}
+			
+		}
+		public static void showallhelp(string help){
+			Console.WriteLine("help goes here");
+			if(help == null){
+				Console.WriteLine("Showing all help");
+			}
+			
 		}
 	}
 }

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks; 
 
+using console_app.helplib;
+
 //using CommandLineParser;
 
 namespace console_app
@@ -16,6 +18,9 @@ namespace console_app
             Console.WriteLine("To get started, please give us arguments");
             //Console.Write(args.);
             Console.WriteLine("Help");
+            Console.WriteLine("");
+            Console.WriteLine("Showing page 1 of 1");
+            help.showallhelp();
             /*CommandLineParser.CommandLineParser parser = 
             new CommandLineParser.CommandLineParser();
                 //switch argument is meant for true/false logic
