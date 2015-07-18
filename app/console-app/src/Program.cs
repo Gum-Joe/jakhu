@@ -14,8 +14,9 @@ namespace console_app
         {
             Console.WriteLine("Hello, and welcome to the web-os manager app");
             Console.WriteLine("To get started, please give us arguments");
+            //Console.Write(args.);
             Console.WriteLine("Help");
-            CommandLineParser.CommandLineParser parser = 
+            /*CommandLineParser.CommandLineParser parser = 
             new CommandLineParser.CommandLineParser();
                 //switch argument is meant for true/false logic
                 CommandLineParser.SwitchArgument showArgument = new SwitchArgument(
@@ -27,7 +28,7 @@ namespace console_app
                 
                 parser.Arguments.Add(showArgument);
                 parser.Arguments.Add(version);
-                parser.Arguments.Add(color);
+                parser.Arguments.Add(color);*/
 
             /*if(args.Length == 1){
                  if(args[1] == "help"){
