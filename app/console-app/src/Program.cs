@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks; 
 
-//using CommandLineParser;
-
 namespace console_app
 {
     class Program
@@ -14,41 +12,18 @@ namespace console_app
         {
             Console.WriteLine("Hello, and welcome to the web-os manager app");
             Console.WriteLine("To get started, please give us arguments");
-            //Console.Write(args.);
             Console.WriteLine("Help");
-            Console.WriteLine("");
-            Console.WriteLine("Showing page 1 of 1");
-            help.showallhelp();
-            /*CommandLineParser.CommandLineParser parser = 
-            new CommandLineParser.CommandLineParser();
-                //switch argument is meant for true/false logic
-                CommandLineParser.SwitchArgument showArgument = new SwitchArgument(
-                    's', "show", "Set whether show or not", true);
-                ValueArgument<decimal> version = new ValueArgument(
-                    'v', "version", "Set desired version");
-                EnumeratedValueArgument<string> color = new EnumeratedValueArgument(
-                    'c', "color", new string[] { "red", "green", "blue" });
-                
-                parser.Arguments.Add(showArgument);
-                parser.Arguments.Add(version);
-                parser.Arguments.Add(color);*/
-
-            /*if(args.Length == 1){
-                 if(args[1] == "help"){
-                help.showhelp(null);
-                }
-            } else if(args.Length == 2){
-                if(args[1] == "install"){
-                scripts.install(args[2]);
-                }
-            }
-            if(args.Length == 0){
+            /*if(args.Length == 0){
                 Console.WriteLine("Help");
             } else if(args[1] == "install"){
-                scripts.install(args[1]);
+                scripts.install(args[2]);
             } else if(args[1] == "--help"){
-                help.showhelp(null);
+                help.showhelp("unspecified");
             }*/
+            foreach (string s in args)
+        {
+            System.Console.WriteLine(s);
+        }
 
         }
     }

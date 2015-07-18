@@ -46,7 +46,3 @@ private
 
 # analicts
 .ntvs*.dat
-.tmp
-
-# packages
-app/packages
