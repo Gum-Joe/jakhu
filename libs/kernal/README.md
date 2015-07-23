@@ -1,1 +1,1 @@
-# This is the kernal that loaded web-os
+# This is the kernal that loads web-os
