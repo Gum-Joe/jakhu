@@ -19,14 +19,16 @@ var ObjectId = require('mongodb').ObjectID;
 
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
-var wlogger = require("./libs/wlogger.js");
+//var wlogger = require("./libs/wlogger.js");
 // var debuge = require("./libs/debug.js");
+var wlogger = require("./libs/logger");
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var debug = require('debug')('Web-OS:server');
 var http = require('http');
+var https = require('https');
 
 var app = express();
 
@@ -52,8 +54,9 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(logger({stream: logFile}));
 app.use(logger('stream', wlogger.logger));
-app.use(require('morgan')({ "stream": wlogger.stream }));
-
+//app.use(require('morgan')({ "stream": wlogger.stream }));
+wlogger.debug("Overriding 'Express' logger");
+app.use(require("morgan")("combined", { "stream": wlogger.stream }));
 
 var userSchema = new mongoose.Schema({
   username: { type: String }
@@ -67,6 +70,20 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('passportconfig', passportconfig);
 
+// Setup HTTPS
+options = {
+  key: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-PRIVATE.key'))
+  // This certificate should be a bundle containing your server certificate and any intermediates
+  // cat certs/cert.pem certs/chain.pem > certs/server-bundle.pem
+, cert: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-SIGNED.crt'))
+  // ca only needs to be specified for peer-certificates
+//, ca: [ fs.readFileSync(path.join(caCertsPath, 'my-root-ca.crt.pem')) ]
+, requestCert: false
+, rejectUnauthorized: true
+};
+
+
+
 var port = process.env.PORT || 8080;
 
 app.listen(port, function () {
@@ -75,6 +92,17 @@ app.listen(port, function () {
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
   
 } );
+// HTTPS
+httpsserver = https.createServer(options);
+// Turn on HTTPS
+httpsserver.on('request', app);
+    httpsserver.listen(6060, function () {
+       console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "HTTPS Server Started " + port);
+        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "The date and time is:", Date());
+	onListening()
+    });
+
+
 
 app.on('error', onError);
 app.on('listening', onListening);
@@ -128,11 +156,11 @@ function onError(error) {
  */
 
 function onListening() {
-  var addr = server.address();
+  var addr = httpsserver.address();
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  wlogger.debug('Listening on ' + bind);
 }
 
 
