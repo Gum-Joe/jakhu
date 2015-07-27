@@ -51,6 +51,6 @@
     </mounts>
   </drives>
   <boot>
-    <
+    <allowBMcustomise>true</allowBMcustomise>
   </boot>
 </kernal>
