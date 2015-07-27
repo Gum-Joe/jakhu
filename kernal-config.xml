@@ -1,0 +1,56 @@
+<!--A simple web-kernal config-->
+<kernal>
+  <properties>
+    <name>Web-OS</name>
+    <author>Gum-Joe</author>
+    <private>true</private>
+    <type>server</type>
+    <language>node_js</language>
+    <kernaldir>./</kernaldir>
+  </properties>
+  <build>
+    <use>npm</use>
+    <use>npmGloabal</use>
+    <install>
+      <globalDependencies>
+        <npm>mocha</npm>
+      </globalDependencies>
+      <local>
+        <npm>npm install</npm>
+      </local>
+    </install>
+    <tests>
+      <test>mocha</test>
+    </tests>
+    <directions>
+      <direction id=1>install</direction>
+      <direction id=2>test</direction>
+    </directions>
+  </build>
+  <drives>
+    <mounts>
+      <mountRoot>./mounts</mount>
+      <mount>
+        <type>USB</type>
+        <drive>F:</name>
+        <name>$MOUNT_CONFIG_XML:name</name>
+        <dir>mount01</dir>
+      </mount>
+      <mount>
+        <type>USB</type>
+        <drive>E:</name>
+        <name>$MOUNT_CONFIG_XML:name</name>
+        <dir>mount02</dir>
+      </mount>
+      <mount>
+        <type></type>
+        <drive>F:</name>
+        <name>$MOUNT_CONFIG_XML:name</name>
+        <dir>mount01</dir>
+      </mount>
+    </mounts>
+  </drives>
+  <boot>
+    <
+  </boot>
+</kernal>
