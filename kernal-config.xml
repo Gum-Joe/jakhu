@@ -43,10 +43,10 @@
         <dir>mount02</dir>
       </mount>
       <mount>
-        <type></type>
-        <drive>F:</name>
+        <type>WAID</type>
+        <drive>G:</name>
         <name>$MOUNT_CONFIG_XML:name</name>
-        <dir>mount01</dir>
+        <dir>WAinstallDrive</dir>
       </mount>
     </mounts>
   </drives>
