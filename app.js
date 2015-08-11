@@ -71,7 +71,8 @@ app.use('/users', users);
 app.use('passportconfig', passportconfig);
 
 // Setup HTTPS
-options = {
+// uncommitted after finding way to get certs
+/** options = {
   key: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-PRIVATE.key'))
   // This certificate should be a bundle containing your server certificate and any intermediates
   // cat certs/cert.pem certs/chain.pem > certs/server-bundle.pem
@@ -80,7 +81,7 @@ options = {
 //, ca: [ fs.readFileSync(path.join(caCertsPath, 'my-root-ca.crt.pem')) ]
 , requestCert: false
 , rejectUnauthorized: true
-};
+}; */
 
 
 
@@ -95,12 +96,12 @@ app.listen(port, function () {
 // HTTPS
 httpsserver = https.createServer(options);
 // Turn on HTTPS
-httpsserver.on('request', app);
+/** httpsserver.on('request', app);
     httpsserver.listen(6060, function () {
        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "HTTPS Server Started " + port);
         console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "The date and time is:", Date());
 	onListening()
-    });
+    }); */
 
 
 
