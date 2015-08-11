@@ -3,6 +3,7 @@ echo Copyright Gum-Joe
 echo This is for app veyor
 
 echo ""
+cd ..
 
 echo Installing bower and mocha
 npm install -g bower mocha
