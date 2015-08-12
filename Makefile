@@ -20,9 +20,12 @@ tests:
 	echo Runing tests; \
 	echo Installing modules; \
 	npm install; \
-	npm install bower; \
-	node node_modules/bower/bin/bower install; \
+	npm install -g bower; \
+	bower install; \
 	echo Testing...; \
+	echo Installing nyc...; \
+	npm install -g nyc; \
+	echo Testing....
 	npm test; \
 	echo ; \
 	echo Done; \
