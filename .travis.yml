@@ -12,6 +12,10 @@ addons:
     packages:
     - xbuild
 
+os:
+  - linux
+  - osx
+
 env:
   - NODE_ENV=development
 
