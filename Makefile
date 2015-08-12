@@ -23,7 +23,7 @@ tests:
 	npm install bower; \
 	node node_modules/bower/bin/bower install; \
 	echo Testing...; \
-	mocha; \
+	npm test; \
 	echo ; \
 	echo Done; \
 	echo Now testing C#; \
