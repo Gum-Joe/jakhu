@@ -4,8 +4,9 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "YOURPACKAGE_COVERAGE=1 mocha test -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
-    "start": "nodemon app.js"
+    "test": "mocha",
+    "start": "nodemon app.js",
+    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && nyc report | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -59,8 +60,8 @@
     "grunt": "^0.4.5",
     "grunt-exec": "^0.4.6",
     "grunt-shell": "^1.1.2",
+    "istanbul": "^0.3.17",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "0.0.2"
   }
-    
 }

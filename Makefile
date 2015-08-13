@@ -39,3 +39,13 @@ install:
 	npm install bower; \        
 	node node_modules/bower/bin/bower install; \
 	echo Done;
+
+test-coveralls:
+	@NODE_ENV=test ./node_modules/.bin/istanbul cover \
+	./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
+		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
+
+
+#.PHONY test
+
+#.PHONY test
