@@ -19,6 +19,6 @@ os:
 env:
   - NODE_ENV=development
 
-script: "make tests && make test-coverage"
+script: "make tests && make test-coveralls"
   
   
