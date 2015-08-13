@@ -20,6 +20,7 @@ tests:
 	echo Runing tests; \
 	echo Installing modules; \
 	npm install; \
+	npm install --dev; \
 	npm install -g bower; \
 	bower install; \
 	echo Testing...; \
