@@ -30,7 +30,8 @@ bower_components
 # Visual Studio
 obj
 .vs
-app/*/bin
+csharpapp/*/bin
+csharpapp/packages
 # api
 api
 
