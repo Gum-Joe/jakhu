@@ -2,7 +2,9 @@
   "files": {
     "included": [
       "*.js",
-      "libs/*"
+      "libs/*",
+.     "boot/*",
+.     "*.coffee"
     ]
   }
 }
