@@ -47,3 +47,6 @@ private
 
 # analicts
 .ntvs*.dat
+
+#vs
+libs/apps/*.opensdf
