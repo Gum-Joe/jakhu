@@ -1,5 +1,0 @@
-language: csharp
-# solution: solution-name.sln
-
-script:
-  - cd .. && make
