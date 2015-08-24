@@ -11,12 +11,12 @@
   color: light-blue;
 }
 
-#head {
+#head, body {
   font-family: FiraSans-UltraLight;
 }
 
 .blue {
-  
+
 }
 
 .pad-top-middle {

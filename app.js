@@ -96,7 +96,7 @@ app.listen(port, function () {
 
 } );
 // HTTPS
-httpsserver = https.createServer(options);
+//httpsserver = https.createServer(options);
 // Turn on HTTPS
 /** httpsserver.on('request', app);
     httpsserver.listen(6060, function () {

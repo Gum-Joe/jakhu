@@ -38,7 +38,7 @@ router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('oobe/index.ejs');
+  res.render('index.ejs');
 });
 
 router.get('/oobe', function(req, res, next) {

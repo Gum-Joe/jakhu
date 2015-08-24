@@ -7,8 +7,7 @@ function startboot(boottype) {
   console.log("Web-OS");
   console.log("v1.0.0");
   checks.checkFiles("ok");
-  var app = express();
   var app = require("../app.js");
-  process.next(app.start());
+  app.start();
 }
 startboot("ok");

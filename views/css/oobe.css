@@ -1,0 +1,17 @@
+@import "web-os.css";
+
+.pad-jum-down {
+  padding-top: 2cm;
+}
+
+.base-pad {
+  padding-left: 4.5cm;
+}
+
+body {
+    color: white;
+}
+
+.sub-title {
+   /* TODO: Create Subtitle class for subtitles  */
+}
