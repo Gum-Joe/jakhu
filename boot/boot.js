@@ -4,6 +4,11 @@ var express = require('express');
 //files
 var checks = require('./libs/checks/checkFile.js');
 function startboot(boottype) {
-  checks.checkInstances("ok");
+  console.log("Web-OS");
+  console.log("v1.0.0");
+  checks.checkFiles("ok");
+  var app = express();
+  var app = require("../app.js");
+  process.next(app.start());
 }
 startboot("ok");

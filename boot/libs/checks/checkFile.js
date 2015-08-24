@@ -3,22 +3,51 @@ var path = require('path')
 var clicolour = require('cli-color')
 var error = require('../../../libs/error/bsod.js')
 
-var files = ["../../../app.js", "../../../node_modules"]
+var files = ["../app.js", "../node_modules"];
 
 var i;
 
-exports.checkInstances = function(x){
-  for(i = 0; i > files.length; i++){
-  fs.stat('instances', function(err, stat){
-      if(err == null){
-        console.log('Checked out file '+i+"..."+clicolour.greenBright("OK"));
-        }
+exports.checkFiles = function(x){
+  /*for(i = 0; i < 2; i++){
+  fs.stat(files[0], function(err, stat){
+    console.log(err);
+    if(err === null){
+        console.log('Checked out file '+files[i]+"..."+clicolour.greenBright("OK"));
+      }
       else if( err.code == 'ENOENT'){
-        console.log('Checked out file '+i+"..."+clicolour.redBright("ERROR!"));
+        console.log('Checked out file '+files[i]+"..."+clicolour.redBright("ERROR!"));
+        error.throwError("BOOT_"+err.code+"_CHECKS_NOT_FOUND:"+files[i], err, err.code);
       }
       else{
-        error.throwError("BOOT_NOT_FOUND:"+i, err, err.code)
+        console.log('Checked out file '+files[i]+"..."+clicolour.redBright("ERROR!"));
+        error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+files[i], err, err.code);
           }
         });
-      };
+      };*/
+      fs.stat(files[0], function(err, stat){
+        if(err === null){
+            console.log('Checked out file '+files[0]+"..."+clicolour.greenBright("OK"));
+          }
+          else if( err.code == 'ENOENT'){
+            console.log('Checked out file '+files[0]+"..."+clicolour.redBright("ERROR!"));
+            error.throwError("BOOT_"+err.code+"_CHECKS_NOT_FOUND:"+files[0], err, err.code);
+          }
+          else{
+            console.log('Checked out file '+files[0]+"..."+clicolour.redBright("ERROR!"));
+            error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+files[0], err, err.code);
+              }
+            });
+            fs.stat(files[1], function(err, stat){
+              if(err === null){
+                  console.log('Checked out file '+files[1]+"..."+clicolour.greenBright("OK"));
+                }
+                else if( err.code == 'ENOENT'){
+                  console.log('Checked out file '+files[1]+"..."+clicolour.redBright("ERROR!"));
+                  error.throwError("BOOT_"+err.code+"_CHECKS_NOT_FOUND:"+files[1], err, err.code);
+                }
+                else{
+                  console.log('Checked out file '+files[1]+"..."+clicolour.redBright("ERROR!"));
+                  error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+files[1], err, err.code);
+                    }
+                  });
     };

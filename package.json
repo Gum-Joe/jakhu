@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha",
-    "start": "nodemon app.js",
+    "start": "nodemon boot/boot.js",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && nyc report | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
