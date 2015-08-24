@@ -3,7 +3,7 @@ var path = require('path')
 var clicolour = require('cli-color')
 var error = require('../../../libs/error/bsod.js')
 
-var files = ["../app.js", "../node_modules"];
+var files = ["app.js", "node_modules"];
 
 var i;
 

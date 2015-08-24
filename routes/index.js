@@ -38,7 +38,11 @@ router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.html', { title: 'Sign in' });
+  res.render('oobe/index.ejs');
+});
+
+router.get('/oobe', function(req, res, next) {
+  res.render('oobe/index.ejs');
 });
 
 router.get('/admin', function(req, res, next) {
