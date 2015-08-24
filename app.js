@@ -22,6 +22,7 @@ var passportconfig = require("./libs/passport.js");
 //var wlogger = require("./libs/wlogger.js");
 // var debuge = require("./libs/debug.js");
 var wlogger = require("./libs/logger");
+var kernal = require('./boot/boot.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -33,7 +34,7 @@ var https = require('https');
 var app = express();
 
 var bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10); 
+var salt = bcrypt.genSaltSync(10);
 
 var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
 
@@ -91,7 +92,7 @@ app.listen(port, function () {
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  
+
 } );
 // HTTPS
 httpsserver = https.createServer(options);
