@@ -14,6 +14,8 @@ var mongoose = require('mongoose');
 var dbName = "web-os";
 var port = "27017";
 var host = "localhost";
+var kernal = require('../boot/boot.js');
+var exec = require('child_process').exec;
 
 var userSchema = new mongoose.Schema({
   username: { type: String }
@@ -38,7 +40,11 @@ router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index.ejs');
+  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+    res.render('index.ejs', {
+      build: stdout
+    });
+  });
 });
 
 router.get('/oobe', function(req, res, next) {

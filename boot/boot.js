@@ -3,6 +3,8 @@ var express = require('express');
 var git = require('nodegit');
 var exec = require('child_process').exec;
 var boot = require('./index.js');
+exports.boot = require('./index.js');
+boot.properties.git.getCommits;
 
 var getCommits = function getCommits(x) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
