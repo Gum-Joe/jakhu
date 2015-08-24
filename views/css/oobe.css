@@ -14,4 +14,6 @@ body {
 
 .sub-title {
    /* TODO: Create Subtitle class for subtitles  */
+   padding-left: 4.5cm;
+   font-size: 25px;
 }

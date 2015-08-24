@@ -44,6 +44,7 @@
     "mongodb": "^2.0.36",
     "mongoose": "^4.0.6",
     "morgan": "^1.6.1",
+    "nodegit": "^0.4.1",
     "passport": "^0.2.2",
     "passport-google": "^0.3.0",
     "passport-http": "^0.2.2",
