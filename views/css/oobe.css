@@ -19,5 +19,8 @@ body {
 }
 
 .system-info-build {
-  
+  /*padding-left: 100%*/
+  text-align: right;
+  padding-top: 25%;
+  padding-right: 0.5cm;
 }
