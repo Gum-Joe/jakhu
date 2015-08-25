@@ -12,14 +12,9 @@ var getCommits = function getCommits(x) {
   });
 }
 //start boot
-function startboot(boottype) {
-  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-    console.log("");
-      console.log("Web-OS");
-      console.log("v1.0.0 build "+ stdout);
-      boot.checks.checkFiles("ok");
-      var app = require("../app.js");
-      app.start();
-  });
+// TODO: Create boot types (safemode, full, recovery)
+exports.startboot = function startboot(boottype) {
+  boot.checks.checkFiles("ok");
+  var app = require("../app.js");
+  app.start();
 }
-startboot("ok");
