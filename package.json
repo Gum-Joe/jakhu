@@ -53,7 +53,8 @@
     "serve-favicon": "^2.3.0",
     "stylus": "^0.51.1",
     "supertest": "^1.0.1",
-    "winston": "^1.0.1"
+    "winston": "^1.0.1",
+    "xml2js": "^0.4.10"
   },
   "devDependencies": {
     "blanket": "^1.1.7",
@@ -62,6 +63,7 @@
     "grunt-exec": "^0.4.6",
     "grunt-shell": "^1.1.2",
     "istanbul": "^0.3.17",
+    "js2coffee": "^2.1.0",
     "mocha": "^2.2.5",
     "mocha-lcov-reporter": "0.0.2"
   }
