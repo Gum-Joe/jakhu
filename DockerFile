@@ -22,4 +22,4 @@ RUN npm install -g bower mocha less coffee-script nodemon
 EXPOSE  8080
 # Run
 CMD cd /home/Projects/Web-OS; mocha
-CMD cd /home/Projects/Web-OS; [npm, start]
+CMD cd /home/Projects/Web-OS; npm run docker-start
