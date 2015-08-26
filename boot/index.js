@@ -9,10 +9,18 @@ exports.stop = function stop(x) {
   console.log(clicolour.redBright("Stopping the Web-OS server..."));
   fs.rmdir("./tmp", function (err) {
     if(err == null){
-      console.log(clicolour.blueBright("Deleting ./tmp..."));
+      console.log(clicolour.cyanBright("Deleting ./tmp...")+clicolour.greenBright("OK"));
     } else {
-      console.log(clicolour.blueBright("Deleting ./tmp...")+clicolour.redBright("ERROR!"));
+      console.log(clicolour.cyanBright("Deleting ./tmp...")+clicolour.redBright("ERROR!"));
     }
   });
-  process.exit(0);
+  // Check if the tmp dir exists, and if it doesnot, exit
+  var tmp = fs.lstatSync('./tmp', function(err){
+    //If there is an error, quit
+    if(err){
+      process.exit(0);
+    } else {
+      console.log("FAIL to exit");
+    }
+  });
 }
