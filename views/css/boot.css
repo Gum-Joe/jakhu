@@ -7,7 +7,7 @@ body,html {
 .system-info-build {
   /*padding-left: 100%*/
   text-align: right;
-  padding-top: 15%;
+  padding-top: 10%;
   padding-right: 0.5cm;
 }
 
@@ -27,4 +27,22 @@ body,html {
 .boot-sub-title {
   padding-top: 0.1cm;
   text-align: center;
+}
+
+.btn-default {
+  text-align: center;
+  height: 1cm;
+  background-image: red;
+}
+
+.b-o {
+  padding-left: 38%;
+}
+
+.b-o-t {
+  padding-left: 10%;
+}
+
+.setup-info-title {
+  padding-left: 0.5cm;
 }
