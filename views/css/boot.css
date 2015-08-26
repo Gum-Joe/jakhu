@@ -1,0 +1,30 @@
+@import "web-os.css";
+
+body,html {
+  background-image: url("./img/boot.jpg");
+}
+
+.system-info-build {
+  /*padding-left: 100%*/
+  text-align: right;
+  padding-top: 15%;
+  padding-right: 0.5cm;
+}
+
+.system-info-status {
+  /*padding-left: 100%*/
+  text-align: left;
+  padding-top: 0%;
+  padding-right: 0.5cm;
+}
+
+.boot-title {
+  padding-top: 13%;
+  font-size: 60px;
+  text-align: center;
+}
+
+.boot-sub-title {
+  padding-top: 0.1cm;
+  text-align: center;
+}

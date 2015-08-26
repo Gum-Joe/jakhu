@@ -47,6 +47,14 @@ router.get('/', function(req, res, next) {
   });
 });
 
+router.get('/boot', function(req, res, next) {
+  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+    res.render('boot.ejs', {
+      build: stdout
+    });
+  });
+});
+
 router.get('/step1', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('step-1.ejs', {

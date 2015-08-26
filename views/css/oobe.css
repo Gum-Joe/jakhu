@@ -1,11 +1,11 @@
 @import "web-os.css";
 
-.pad-jum-down {
-  padding-top: 2cm;
-}
-
 .base-pad {
   padding-left: 4.5cm;
+}
+
+.web-os-back{
+  background-image: url("img/nav-back-two.png");
 }
 
 body {
@@ -16,11 +16,4 @@ body {
    /* TODO: Create Subtitle class for subtitles  */
    padding-left: 4.5cm;
    font-size: 25px;
-}
-
-.system-info-build {
-  /*padding-left: 100%*/
-  text-align: right;
-  padding-top: 25%;
-  padding-right: 0.5cm;
 }

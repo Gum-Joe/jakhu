@@ -6,7 +6,7 @@
 }
 
 
-.web-os-back,html {
+.web-os-back{
   background-image: url("img/nav-back-two.png");
   color: light-blue;
 }
@@ -21,4 +21,15 @@
 
 .pad-top-middle {
   padding-top: 3cm;
+}
+
+.pad-jum-down {
+  padding-top: 2cm;
+}
+
+.system-info-build {
+  /*padding-left: 100%*/
+  text-align: right;
+  padding-top: 25%;
+  padding-right: 0.5cm;
 }

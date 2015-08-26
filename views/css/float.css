@@ -115,7 +115,7 @@ h3,h4,h5,h6,div,label {
     color: white;
 }
 
-.background,body {
+.background {
     background-image: url("img/internet-background.jpg");
 }
 
@@ -158,7 +158,7 @@ animation-duration: 1.5s;
 @keyframes slidein {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 300%;
     opacity: 0;
   }
 
@@ -167,13 +167,13 @@ animation-duration: 1.5s;
     width: 100%;
     opacity: 1;
   }
-  
+
 }
 
 @-moz-keyframes slidein {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 300%;
     opacity: 0;
   }
 
@@ -188,7 +188,7 @@ animation-duration: 1.5s;
   from {
     margin-left: 100%;
     width: 300%;
-    opacity: 0; 
+    opacity: 0;
   }
 
   to {
@@ -201,7 +201,7 @@ animation-duration: 1.5s;
 @-o-keyframes slidein {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 300%;
     opacity: 0;
   }
 
@@ -217,7 +217,6 @@ body {
 }
 
 html,body {
-  background-image: url("img/internet-background.jpg");
   font-family: FiraSans-UltraLight;
 }
 
