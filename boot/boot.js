@@ -4,9 +4,10 @@ var git = require('nodegit');
 var exec = require('child_process').exec;
 var boot = require('./index.js');
 exports.boot = require('./index.js');
-boot.properties.git.getCommits;
+//boot.properties.git.getCommits;
 
 var getCommits = function getCommits(x) {
+  //This runs on startup - see bin/start
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       console.log(stdout);
   });
