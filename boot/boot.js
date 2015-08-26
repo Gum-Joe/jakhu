@@ -16,6 +16,7 @@ var getCommits = function getCommits(x) {
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
+  boot.recovery.rollback.createBackup("ok");
   var app = require("../app.js");
   app.start();
 }

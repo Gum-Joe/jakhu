@@ -1,8 +1,11 @@
 FROM ubuntu:latest
+# Install curl
+RUN apt-get install -y curl
 # Install Node.js and npm
-RUN apt-get install -y npm
-# Bundle app source
-COPY ./*
+RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+RUN apt-get install -y nodejs
+# Get source
+
 # Install app dependencies
 RUN npm install
 # Install mocha and bower and coffee and less and nodemon
