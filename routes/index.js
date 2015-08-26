@@ -3,11 +3,13 @@ var router = express.Router();
 var passportconfig = require("../libs/passport.js");
 var passport = require("passport");
 var passportLocal = require("passport-local");
+var fs = require('fs');
 
 var MongoClient = require('mongodb').MongoClient;
 var cursor = require('mongodb');
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
+var kernal = require('../boot/boot.js');
 
 var mongoose = require('mongoose');
 
@@ -40,20 +42,30 @@ router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  // Check to see if need to load ./boot
+  //fs.stat('./tmp', function(err){
+    //if(err == null){
+      // Do the normal job
+      exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+        res.render('boot.ejs', {
+          build: stdout
+        });
+      });
+    //} else {
+      // redirct to ./boot
+      //res.redirct("/boot");
+    //}
+  //});
+  });
+  // boot
+router.get('/start', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-    res.render('index.ejs', {
+    res.render('booting.ejs', {
       build: stdout
     });
   });
-});
-
-router.get('/boot', function(req, res, next) {
-  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-    res.render('boot.ejs', {
-      build: stdout
-    });
+  kernal.boot();
   });
-});
 
 router.get('/step1', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -85,5 +97,15 @@ router.post('/login', function(req, res, next) {
     //passport.authenticate('local');
   // res.render('index.html', { title: 'Done' });
 });
+
+function checkBoot(argument) {
+  fs.stat('./tmp', function(err){
+    if(err == null){
+      var boot = false;
+    } else {
+      var boot = true;
+    }
+  });
+}
 
 module.exports = router;

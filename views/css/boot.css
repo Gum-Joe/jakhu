@@ -29,6 +29,12 @@ body,html {
   text-align: center;
 }
 
+.boot-sub-title-two {
+  padding-top: 0.1cm;
+  padding-left: 0.5cm;
+  text-align: center;
+}
+
 .btn-default {
   text-align: center;
   height: 1cm;
