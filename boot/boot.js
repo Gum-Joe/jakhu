@@ -19,9 +19,22 @@ var getCommits = function getCommits(x) {
 exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
   boot.recovery.rollback.createBackup("ok");
+  boot.kernal.createTmp();
 }
 
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   app.start();
+}
+
+exports.startinput = function startinput(x){
+  process.stdin.resume();
+process.stdin.setEncoding('utf8');
+var util = require('util');
+process.stdin.on('data', function (text) {
+  console.log('received data:', util.inspect(text));
+  if (text === 'stop\n') {
+    boot.stop();
+  }
+});
 }
