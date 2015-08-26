@@ -1,7 +1,7 @@
 var mkdirp = require('mkdirp');
 var error = require('../../libs/error/bsod.js');
 var clicolour = require("cli-color");
-var datea = "./recovery/rollback/backup"+Date();
+var datea = "./recovery/rollback/backup";
 exports.createBackup = function createBackup(x){
   mkdirp("./recovery", function (err) {
     if(err){
