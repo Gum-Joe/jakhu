@@ -3,12 +3,26 @@ var error = require('../../libs/error/bsod.js')
 exports.createBackup = function createBackup(x){
   mkdirp("../recovery", function (err) {
     if(err){
-      error.throwError("BOOT_"+err.code+"_CHECKS_NOT_FOUND:"+files[0], err, err.code);
+      error.throwError("RECOVERY_ROLLBACK_CREATE_BACKUP_DIR:"+err.code, err, err.code);
     }
     else {
-      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("setup ")  + "Create Instances Dir");
-    }
+      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR");
+    };
   });
-  mkdirp("../recovery/rollback");
-  mkdirp("../recovery/rollback/backup"+Date());
+  mkdirp("../recovery/rollback", function (err) {
+    if(err){
+      error.throwError("RECOVERY_ROLLBACK_CREATE_BACKUP_DIR:"+err.code, err, err.code);
+    }
+    else {
+      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR");
+    };
+  });
+  mkdirp("../recovery/rollback/backup"+Date(), function (err) {
+    if(err){
+      error.throwError("RECOVERY_ROLLBACK_CREATE_BACKUP_DIR:"+err.code, err, err.code);
+    }
+    else {
+      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR");
+    };
+  });
 }
