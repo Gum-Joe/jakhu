@@ -13,6 +13,22 @@ Web-OS is a nodejs based system for managing your web-app(s). Features include:
 
 * Free online portal (coming soon). No need to log into your web-app via the web-app its self, use the secure Web-OS online portal for management.
 
+# Start developing
+Simply clone or fork this branch (the a1 branch) and start developing.
+## Setup:
+ Make sure you have nodejs and npm installed.
+  `npm install -g bower mocha less coffee-script nodemon`
+  then
+  `npm install`
+  then
+  `bower install`
+  then
+  `coffee libs/*/*.coffee libs/*/*/*.coffee libs/*.coffee`
+  make sure the environment is dev...
+  `export NODE_ENV="dev"` (or `set NODE_ENV="deve"` in windows)
+  and finally...
+  `npm start`
+
 # How does our branching system work?
 First, a new branch, called a1 (alpha 1), is created off the master. This is the the first stage of development, which has the most bugs and is not ready for release. Secondly, we make a new branch called b1 (beta 1) . This is where all of the fixing and adding of extra features goes on in addition to community testing and contributing (you can also test and contribute to the alpha branch). To add to this, two new branches, alpha-master (for previous alpha branches merged into the beta branches) and beta-master (for previous beta branches merged into the master branch), are created.  When ready, the a1 branch is merged into alpha-master and b1.  Finally, when b1 is ready, it is merged into beta-master and master. So it is basically ax is merged into alpha-master, then bx is merged into beta-master and master when ready.
 
