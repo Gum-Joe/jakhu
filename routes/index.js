@@ -74,6 +74,7 @@ router.get('/start', function(req, res, next) {
       build: stdout
     });
   });
+  });
 
   router.get('/recovery', function(req, res, next) {
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
