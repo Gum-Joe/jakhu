@@ -5,6 +5,6 @@ A brand new way to manage your web-apps: recovery, backup, managment and more.
 Web-OS is a nodejs based system for managing your web-app(s). Features include:
 * Easy management for ports, app.js script, web-app config, apps, login, databases, mobile apps and servers and more. You can do this all from the Web-OS in-app dashboard or the Web-OS online access portal (to be developed).
 
-* Easy recovery tools. These include rollback (for those little error you Web-app has), reset (In case you need to wipe your Web-app), web-terminal (For running commands) and refresh (In case you acidentaly remove a important file, replace without using rollback.)
+* Easy recovery tools. These include rollback (for those little errors you Web-app has), reset (In case you need to wipe your Web-app's data (databases, file .etc), or remove the current config), web-terminal (For running commands) and refresh (In case you accidentally remove a important file, replace it without using rollback.)
 
 * Easy server managment
