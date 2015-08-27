@@ -11,10 +11,14 @@ body,html {
   padding-right: 0.5cm;
 }
 
+.no-a-blue {
+  color: black;
+}
+
 .system-info-status {
   /*padding-left: 100%*/
   text-align: left;
-  padding-top: 0%;
+  padding-bottom: 0.5cm;
   padding-right: 0.5cm;
 }
 

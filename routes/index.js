@@ -64,8 +64,15 @@ router.get('/start', function(req, res, next) {
       build: stdout
     });
   });
-  kernal.boot();
   });
+
+  router.get('/recovery', function(req, res, next) {
+    exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+      res.render('recovery.ejs', {
+        build: stdout
+      });
+    });
+    });
 
 router.get('/step1', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
