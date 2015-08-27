@@ -39,7 +39,7 @@ body {
 
 .oobe-next {
   text-align: center;
-  padding-left: 95%;
+  padding-left: 71.3%;
 }
 
 form {
@@ -54,4 +54,9 @@ form {
   width: 20cm;
   text-align: center;
   margin-left: 26%;
+}
+
+.tick-pad {
+  text-align: center;
+  margin-left: 0%;
 }

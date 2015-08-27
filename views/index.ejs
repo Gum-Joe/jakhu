@@ -25,10 +25,22 @@
    <option value="fork" disabled>Create more languages by forking the repo, createing a new branch ({language}-a1) and createing your new language there</option>
  </select>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <div class="form-group option">
+    <label for="lang">Region</label>
+    <select id="lang" name="lang" class="form-control">
+   <option class="correct-height"value="uk">uk</option>
+   <option class="correct-height"value="us" >us</option>
+   <option class="correct-height"value="india">india</option>
+   <option class="correct-height"value="other">other</option>
+   <option value="fork" disabled>Create more regions by forking the repo, createing a new branch ({region}-a1) and createing your new language there</option>
+ </select>
   </div>
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox">Allow the sending of data to Web-OS (doesn't work)
+    </label>
+  </div>
+
   <div class="oobe-next btn-group btn-group-lg b-o" role="group" aria-label="...">
     <button type="submit" class="btn btn-default web-os-main-font">Next</button>
   </div>
