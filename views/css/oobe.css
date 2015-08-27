@@ -49,3 +49,9 @@ form {
 .fork {
   color: blue;
 }
+
+.option {
+  width: 10cm;
+  text-align: center;
+  margin-left: 35%;
+}
