@@ -58,12 +58,21 @@ router.get('/', function(req, res, next) {
   //});
   });
   // boot
+  /*
+  For later
 router.get('/start', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('booting.ejs', {
       build: stdout
     });
   });
+});*/
+
+router.get('/start', function(req, res, next) {
+  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+    res.render('index.ejs', {
+      build: stdout
+    });
   });
 
   router.get('/recovery', function(req, res, next) {
