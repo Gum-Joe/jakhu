@@ -19,3 +19,7 @@
      font-family: Courier_Prime;
      src: url(fonts/courier-prime/Courier_Prime.ttf);
 }
+
+.web-os-main-font {
+  font-family: FiraSans-UltraLight;
+}
