@@ -55,6 +55,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(logger({stream: logFile}));
+if(process.env.NODE_ENV === "dev"){
+  app.set('env', 'development');
+}
 //app.use(logger('stream', wlogger.logger));
 //app.use(require('morgan')({ "stream": wlogger.stream }));
 //wlogger.debug("Overriding 'Express' logger");
@@ -93,7 +96,7 @@ app.listen(port, function () {
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  //kernal.boot("ok");
+  kernal.boot("ok");
   kernal.startinput("ok");
 } );
 // HTTPS

@@ -78,7 +78,14 @@ router.get('/start', function(req, res, next) {
   });
   router.post('/set-lang', function(req, res, next) {
     // Here would be installing language packs but none are avalible
-    console.log("")
+    console.log("Language: "+req.body.lang);
+    console.log("Region: "+req.body.region);
+    console.log("Allow sending: "+req.body.allow);
+    exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+      res.render('index.ejs', {
+        build: stdout
+      });
+    });
   })
 
   router.get('/recovery', function(req, res, next) {
