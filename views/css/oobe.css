@@ -1,10 +1,18 @@
 @import "web-os.css";
+@import "boot.css";
 
 .base-pad {
   padding-left: 4.5cm;
 }
 
-.web-os-back{
+.web-os-back, html, body{
+  /*For after-install:
+  background-image: url("img/nav-back-two.png");
+  */
+  background-image: url("img/boot.jpg");
+}
+
+.web-os-oobe-back{
   background-image: url("img/nav-back-two.png");
 }
 
@@ -16,4 +24,15 @@ body {
    /* TODO: Create Subtitle class for subtitles  */
    padding-left: 4.5cm;
    font-size: 25px;
+}
+
+.boot-title-oobe {
+  padding-top: 1cm;
+  font-size: 60px;
+  text-align: center;
+}
+
+.oobe-next {
+  text-align: center;
+  padding-left: 95%;
 }
