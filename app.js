@@ -55,10 +55,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(logger({stream: logFile}));
-app.use(logger('stream', wlogger.logger));
+//app.use(logger('stream', wlogger.logger));
 //app.use(require('morgan')({ "stream": wlogger.stream }));
-wlogger.debug("Overriding 'Express' logger");
-app.use(require("morgan")("combined", { "stream": wlogger.stream }));
+//wlogger.debug("Overriding 'Express' logger");
+//app.use(require("morgan")("combined", { "stream": wlogger.stream }));
 
 var userSchema = new mongoose.Schema({
   username: { type: String }

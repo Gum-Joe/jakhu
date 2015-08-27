@@ -1,6 +1,11 @@
 @import "web-os.css";
 @import "boot.css";
 
+@font-face {
+     font-family: Source-Sans-Pro-Light;
+     src: url(fonts/source-sans-pro/SourceSansPro-Light.otf);
+}
+
 .base-pad {
   padding-left: 4.5cm;
 }
@@ -35,4 +40,12 @@ body {
 .oobe-next {
   text-align: center;
   padding-left: 95%;
+}
+
+form {
+  font-family: Source-Sans-Pro-Light;
+}
+
+.fork {
+  color: blue;
 }

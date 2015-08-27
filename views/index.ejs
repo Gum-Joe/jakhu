@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css.map">
 		<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
@@ -16,11 +17,23 @@
       <h1 class="boot-title-oobe">Web-OS</h1>
     </div>
 
-    <a href="/start" class="no-a-blue">
-    <div class="oobe-next btn-group btn-group-lg b-o" role="group" aria-label="...">
-      <button type="button" class="btn btn-default">Next</button>
-    </div>
-    </a>
+    <form method="post" action="/set-lang">
+  <div class="form-group">
+    <label for="lang">Select your language</label>
+    <select id="lang" name="lang" class="form-control">
+   <option class="correct-height"value="english">English</option>
+   <option value="fork" disabled>Create more languages by forking the repo, createing a new branch ({language}-a1) and createing your new language there</option>
+ </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="oobe-next btn-group btn-group-lg b-o" role="group" aria-label="...">
+    <button type="submit" class="btn btn-default">Next</button>
+  </div>
+</form>
+
     <div class="system-info-build">
       <h5>ALPHA Copy,</h5>
       <h5>Not all features may be avalible.</h5>
