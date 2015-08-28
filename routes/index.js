@@ -18,7 +18,7 @@ var port = "27017";
 var host = "localhost";
 var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
-var xml = require('xml2js');
+var xml2js = require('xml2js');
 
 var userSchema = new mongoose.Schema({
   username: { type: String }
@@ -76,26 +76,18 @@ router.get('/start', function(req, res, next) {
     });
   });
   });
+
   router.post('/set-lang', function(req, res, next) {
     // Here would be installing language packs but none are avalible
     console.log("Language: "+req.body.lang);
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
-    // Parse sample-xml : temp
-    var parser = new xml2js.Parser();
-fs.readFile(__dirname + '/config/smaple.xml', function(err, data) {
-    parser.parseString(data, function (err, result) {
-        console.dir(result);
-        console.log('Done');
-    });
-});
-
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('index.ejs', {
         build: stdout
       });
     });
-  })
+  });
 
   router.get('/recovery', function(req, res, next) {
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
