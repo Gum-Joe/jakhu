@@ -9,6 +9,8 @@ exports.createTmp = function createTmp(argument) {
 }
 
 exports.clean = function clean(x) {
-  console.log('Cleaning out files');
-  console.log('Cleaned out ./tmp...'+clicolour.greenBright("OK"));
+  // clean out ./tmp
+  exec("rm -rfv ./tmp/*", function (error, stdout, stderr) {
+      console.log('Cleaned out ./tmp...'+clicolour.greenBright("OK"));
+  });
 }
