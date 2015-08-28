@@ -59,6 +59,8 @@ csharpapp
 # pptx
 ~$*
 # File created by Web-OS
-./tmp
-./config
-./web-os-testing
+tmp
+tmp/*
+config
+config/*
+web-os-testing

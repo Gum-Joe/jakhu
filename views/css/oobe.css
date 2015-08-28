@@ -50,6 +50,13 @@ form {
   color: blue;
 }
 
+.system-info-build {
+  /*padding-left: 100%*/
+  text-align: right;
+  padding-top: 10%;
+  padding-right: 0.5cm;
+}
+
 .option {
   width: 20cm;
   text-align: center;
@@ -60,4 +67,8 @@ form {
 .tick-pad {
   text-align: center;
   margin-left: 0%;
+}
+
+.b-o-t-rec {
+  padding-right: 10cm;
 }

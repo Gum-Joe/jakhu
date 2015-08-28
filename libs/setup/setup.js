@@ -25,4 +25,24 @@ exports.first = function first(x) {
         error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"config", err, err.code);
           }
         });
+
+        fs.stat('../../tmp', function(err, stat){
+          if(err === null){
+              // do noting
+            }
+            else if( err.code == 'ENOENT'){
+              // TODO: Add mkdrip config.
+              mkdirp('tmp', function(err) {
+                if (err) {
+                  error.throwError("SETUP_CREATE_DIR_TMP", err, err.code);
+                } else {
+                  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created tmp dir");
+                }
+              });
+
+            }
+            else{
+              error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"config", err, err.code);
+                }
+              });
 }
