@@ -1,6 +1,6 @@
 // The web-os Boot script
 var express = require('express');
-var git = require('nodegit');
+//var git = require('nodegit');
 var exec = require('child_process').exec;
 var boot = require('./index.js');
 exports.boot = require('./index.js');
@@ -21,6 +21,7 @@ exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
   boot.recovery.rollback.createBackup("ok");
   boot.kernal.createTmp();
+  boot.kernal.clean();
 }
 
 // TODO: Create boot types (safemode, full, recovery)
@@ -35,6 +36,9 @@ var util = require('util');
 process.stdin.on('data', function (text) {
   console.log('received data:', util.inspect(text));
   if (text === 'stop\n') {
+    boot.stop();
+  }
+  if(text === 'rs\n'){
     boot.stop();
   }
 });
