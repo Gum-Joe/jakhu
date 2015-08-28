@@ -1,6 +1,7 @@
 var winston = require('winston');
 var fs = require('fs');
 var clicolour = require('cli-color');
+var error = require('./error/bsod.js');
 winston.emitErrs = true;
 
 var logger = new winston.Logger({
@@ -30,14 +31,20 @@ exports.createlog = function createlog(argument) {
         // do noting
       }
       else if( err.code == 'ENOENT'){
-        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Create log file");
-        // TODO: Add creating logs.
+        fs.writeFile("./logs/wos.log", "-------------------Web-OS-logs--------------------", function(err) {
+            if(err) {
+                return console.log(err);
+            }
+
+            console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
+        });
+
       }
       else{
-        error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"config", err, err.code);
+        error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"logs", err, err.code);
           }
         });
-}
+};
 
 module.exports = logger;
 module.exports.stream = {

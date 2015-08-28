@@ -22,7 +22,7 @@ var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
 //var wlogger = require("./libs/wlogger.js");
 // var debuge = require("./libs/debug.js");
-var wlogger = require("./libs/logger");
+var wlogger = require("./libs/logger.js");
 var kernal = require('./boot/boot.js');
 
 var routes = require('./routes/index');
@@ -37,6 +37,8 @@ var app = express();
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
+// create file
+createlog("ok");
 var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
 
 
@@ -207,4 +209,27 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+function createlog(argument) {
+  fs.stat('./logs/wos.log', function(err, stat){
+    if(err === null){
+        // do noting
+      }
+      else if( err.code == 'ENOENT'){
+        fs.writeFile("./logs/wos.log", "-------------------Web-OS-logs--------------------", function(err) {
+            if(err) {
+                return console.log(err);
+            }
+
+            console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
+        });
+
+      }
+      else{
+        error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"logs", err, err.code);
+          }
+        });
+};
+
+// end of start function
 };
