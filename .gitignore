@@ -57,4 +57,8 @@ csharpapp
 ./recovery/rollback
 
 # pptx
-~ $
+~$*
+# File created by Web-OS
+./tmp
+./config
+./web-os-testing

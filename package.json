@@ -6,7 +6,7 @@
   "scripts": {
     "test": "mocha",
     "start": "nodemon bin/start",
-    "docker-start": "node bin/start",
+    "docker-start": "mkdir -v ./logs && echo ---LOGS--- >> ./logs/wos.log && node bin/start",
     "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && nyc report | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
