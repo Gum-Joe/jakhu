@@ -7,6 +7,7 @@ exports.boot = require('./index.js');
 var prompt = require('prompt');
 var app = require("../app.js");
 exports.oobe = require("../libs/setup/setup.js");
+var oobe = require("../libs/setup/setup.js");
 //boot.properties.git.getCommits;
 
 var getCommits = function getCommits(x) {
@@ -19,6 +20,7 @@ var getCommits = function getCommits(x) {
 // TODO: Create boot types (safemode, full, recovery)
 exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
+  oobe.first("ok");
   boot.recovery.rollback.createBackup("ok");
   boot.kernal.createTmp();
   boot.kernal.clean();

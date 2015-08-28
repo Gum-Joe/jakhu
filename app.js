@@ -98,7 +98,6 @@ app.listen(port, function () {
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
 	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  kernal.oobe.first("ok");
   kernal.boot("ok");
   kernal.startinput("ok");
 } );
