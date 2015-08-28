@@ -1,2 +1,2 @@
-export.set-lang = require setLang.coffee
-export.set-error-message = require setLang.coffee
+exports.set-lang = require setLang.coffee
+exports.set-error-message = require setLang.coffee
