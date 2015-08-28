@@ -53,7 +53,8 @@ form {
 .option {
   width: 20cm;
   text-align: center;
-  margin-left: 26%;
+  margin-left: 23%;
+  padding-right: 0.3cm;
 }
 
 .tick-pad {
