@@ -19,3 +19,16 @@ exports.stop = function stop(x) {
     }
   });
 }
+
+exports.monstop = function monstop(x) {
+  console.log(clicolour.redBright("Stopping the Web-OS server..."));
+  // Remove tmp and exit
+  // TODO: Change exit to whereever last step is.
+  fs.rmdir("./tmp", function (err) {
+    if(err == null){
+      console.log(clicolour.cyanBright("Deleting ./tmp...")+clicolour.greenBright("OK"));
+    } else {
+      console.log(clicolour.cyanBright("Deleting ./tmp...")+clicolour.redBright("ERROR!"));
+    }
+  });
+}

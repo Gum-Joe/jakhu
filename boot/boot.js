@@ -39,7 +39,7 @@ process.stdin.on('data', function (text) {
     boot.stop();
   }
   if(text === 'rs\n'){
-    boot.stop();
+    boot.monstop();
   }
 });
 }

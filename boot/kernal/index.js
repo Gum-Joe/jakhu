@@ -4,10 +4,11 @@ var exec = require('child_process').exec;
 
 exports.createTmp = function createTmp(argument) {
   mkdirp("./tmp", function(err){
-    console.log('Created ./tmp...'+clicolour.greenBright("OK"));
+    console.log(clicolour.cyanBright('Created ./tmp...')+clicolour.greenBright("OK"));
   })
 }
 
 exports.clean = function clean(x) {
-  console.log('Created ./tmp...'+clicolour.greenBright("OK"));
+  console.log('Cleaning out files');
+  console.log('Cleaned out ./tmp...'+clicolour.greenBright("OK"));
 }
