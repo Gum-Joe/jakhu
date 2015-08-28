@@ -23,7 +23,7 @@ Simply clone or fork this branch (the a1 branch) and start developing.
 
   3. `bower install`,
 
-  4. `coffee libs/*/*.coffee libs/*/*/*.coffee libs/*.coffee`,
+  4. `coffee -c libs/*/*.coffee libs/*/*/*.coffee libs/*.coffee`,
 
   * make sure the environment is dev...
 
