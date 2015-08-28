@@ -5,7 +5,7 @@ var error = require('../error/bsod.js')
 //var setup = require('')
 
 exports.first = function first(x) {
-    console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ")+"Beginning Web-OS first time setup...");
+// First time setup
   fs.stat('../../config', function(err, stat){
     if(err === null){
         // do noting

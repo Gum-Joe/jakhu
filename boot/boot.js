@@ -22,7 +22,6 @@ exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
   oobe.first("ok");
   boot.recovery.rollback.createBackup("ok");
-  boot.kernal.createTmp();
   boot.kernal.clean();
 }
 
