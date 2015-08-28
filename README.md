@@ -27,7 +27,7 @@ Simply clone or fork this branch (the a1 branch) and start developing.
 
   * make sure the environment is dev...
 
-  5. `export NODE_ENV="dev"` (or `set NODE_ENV="deve"` in windows)
+  5. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows)
 
   * and finally...
 
