@@ -81,6 +81,15 @@ router.get('/start', function(req, res, next) {
     console.log("Language: "+req.body.lang);
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
+    // Parse sample-xml : temp
+    var parser = new xml2js.Parser();
+fs.readFile(__dirname + '/config/smaple.xml', function(err, data) {
+    parser.parseString(data, function (err, result) {
+        console.dir(result);
+        console.log('Done');
+    });
+});
+
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('index.ejs', {
         build: stdout
