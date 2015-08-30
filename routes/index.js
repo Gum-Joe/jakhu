@@ -20,7 +20,8 @@ var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 var xml2js = require('xml2js');
 
-var oobe = require('../libs/setup/setup.js')
+var oobe = require('../libs/setup/setup.js');
+var os = require('os');
 
 // connect to db
 // done in connect.js
@@ -92,6 +93,21 @@ router.get('/start', function(req, res, next) {
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
     res.redirect('/type')
   });
+
+  router.post('/install-standard', function(req, res, next) {
+    console.log("");
+    // Here would be installing language packs but none are avalible
+    // TODO: Add console.log() req.body.stuff
+    console.log(req.body.allow);
+    console.log(os.type());
+    // TODO: Create scripts
+    
+    // TODO: Add running basic install, installing apps and finishing and rendering of install page
+    exec("./scripts/", function (error, stdout, stderr) {
+      res.redirect('/start');
+    });
+  });
+
   router.get('/set-install-standard', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
