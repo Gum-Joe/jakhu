@@ -73,6 +73,13 @@ router.get('/start', function(req, res, next) {
   });
   });
 
+  router.get('/type', function(req, res, next) {
+    exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+      res.render('installType.ejs', {
+        build: stdout
+      });
+    });
+    });
   router.post('/set-lang', function(req, res, next) {
     // Here would be installing language packs but none are avalible
     console.log("Language: "+req.body.lang);
@@ -80,9 +87,7 @@ router.get('/start', function(req, res, next) {
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.render('installType.ejs', {
-        build: stdout
-      });
+      res.redirect('/type')
     });
   });
 
