@@ -19,6 +19,7 @@ exports.buildLang = function buildLang(x, y, z) {
   }
   fs.writeFile("./config/config.xml", xml(langObj, true), function(err) {
     if(err) {
+        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "XML..."+clicolour.redBright("ERROR!"));
         return console.log(err);
     }
 
