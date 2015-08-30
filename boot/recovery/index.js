@@ -1,1 +1,1 @@
-exports.rollback = require('./rollback.js')
+exports.rollback = require('../recovery/rollback.js');
