@@ -90,19 +90,21 @@ router.get('/start', function(req, res, next) {
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
+    res.redirect('/type')
+  });
+  router.get('/set-install-standard', function(req, res, next) {
+    console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.redirect('/type')
+      res.redirect('/opt-standard');
     });
   });
-  router.get('/set-install', function(req, res, next) {
+
+  router.get('/opt-standard', function(req, res, next) {
     console.log("");
-    // Here would be installing language packs but none are avalible
-    console.log("Language: "+req.body.lang);
-    console.log("Region: "+req.body.region);
-    console.log("Allow sending: "+req.body.allow);
-    oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.redirect('/type')
+      res.render('options-standard.ejs', {
+        build: stdout
+      });
     });
   });
 
