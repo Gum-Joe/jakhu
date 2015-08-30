@@ -9211,7 +9211,7 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
-var jquery = require('jquery');
+var $ = require('jquery');
 $('#one').click(function () {
   $("#one").css({"backgroundColor": "red"});
 });
