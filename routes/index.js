@@ -21,7 +21,8 @@ var exec = require('child_process').exec;
 var xml2js = require('xml2js');
 
 // connect to db
-mongoose.connect('mongodb://localhost:27017/web-os');
+// done in connect.js
+//mongoose.connect('mongodb://localhost:27017/web-os');
 
 var userSchema = new mongoose.Schema({
   username: { type: String }
