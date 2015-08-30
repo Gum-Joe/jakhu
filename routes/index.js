@@ -58,6 +58,7 @@ router.use('passportconfig', passportconfig);
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // TODO: Insert boot checks
+  console.log("");
       exec("git rev-list HEAD --count", function (error, stdout, stderr) {
         res.render('boot.ejs', {
           build: stdout
@@ -66,6 +67,7 @@ router.get('/', function(req, res, next) {
   });
 
 router.get('/start', function(req, res, next) {
+  console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('index.ejs', {
       build: stdout
@@ -74,6 +76,7 @@ router.get('/start', function(req, res, next) {
   });
 
   router.get('/type', function(req, res, next) {
+    console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('installType.ejs', {
         build: stdout
@@ -81,6 +84,7 @@ router.get('/start', function(req, res, next) {
     });
     });
   router.post('/set-lang', function(req, res, next) {
+    console.log("");
     // Here would be installing language packs but none are avalible
     console.log("Language: "+req.body.lang);
     console.log("Region: "+req.body.region);
@@ -92,6 +96,7 @@ router.get('/start', function(req, res, next) {
   });
 
   router.get('/recovery', function(req, res, next) {
+    console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('recovery.ejs', {
         build: stdout
@@ -100,6 +105,7 @@ router.get('/start', function(req, res, next) {
     });
 
 router.get('/step1', function(req, res, next) {
+  console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('step-1.ejs', {
       build: stdout
@@ -108,10 +114,12 @@ router.get('/step1', function(req, res, next) {
 });
 
 router.get('/oobe', function(req, res, next) {
+  console.log("");
   res.render('oobe/index.ejs');
 });
 
 router.get('/admin', function(req, res, next) {
+  console.log("");
   res.render('admin/index.ejs', {
     // url query (?x=y)
     user: req.param("user"),
@@ -126,6 +134,7 @@ router.get('/admin', function(req, res, next) {
   });
 
 router.post('/login', function(req, res, next) {
+  console.log("");
     //passport.authenticate('local');
   // res.render('index.html', { title: 'Done' });
 });
