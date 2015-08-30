@@ -19,6 +19,7 @@
     </div>
 
     <form method="post" action="/set-opt-standard">
+      <!-- TODO: Style tick boxes -->
   <div class="checkbox tick-pad">
     <label>
       <input type="checkbox" name="allow">Heroku
@@ -26,8 +27,34 @@
 
   </div>
 
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox" name="allow">Git
+    </label>
+  </div>
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox" name="allow">ssh
+    </label>
+  </div>
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox" name="allow">Putty
+    </label>
+  </div>
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox" name="allow">FTP
+    </label>
+  </div>
+  <div class="checkbox tick-pad">
+    <label>
+      <input type="checkbox" name="allow">AWS
+    </label>
+  </div>
+
   <div class="oobe-next btn-group btn-group-lg b-o" role="group" aria-label="...">
-    <button type="submit" class="btn btn-default web-os-main-font">Next</button>
+    <button type="submit" class="btn btn-default web-os-main-font">Install</button>
   </div>
 </form>
       <div class="system-info-build">
