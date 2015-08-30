@@ -80,7 +80,7 @@ router.get('/start', function(req, res, next) {
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.render('index.ejs', {
+      res.render('installType.ejs', {
         build: stdout
       });
     });
