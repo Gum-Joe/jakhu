@@ -74,5 +74,10 @@ form {
 }
 
 .selection-box {
-  
+  padding-left: 4cm;
+}
+
+.selection-box-h3:hover {
+  background-image: url('img/boot.jpg');
+  width: 10cm;
 }
