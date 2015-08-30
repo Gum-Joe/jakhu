@@ -75,6 +75,7 @@ form {
 
 .selection-box-box {
   width: 30cm;
+  border-radius: 5px;
 }
 
 .selection-box {
@@ -87,5 +88,5 @@ form {
 }
 
 .selection-sub {
-  padding-left: 0.5cm;
+  padding-left: 1cm;
 }
