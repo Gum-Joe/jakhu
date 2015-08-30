@@ -3,10 +3,15 @@ var clicolour = require('cli-color');
 var mkdirp = require('mkdirp');
 var error = require('../../error/bsod.js');
 var xml = require('xml');
+var exec = require('child_process').exec;
 
 
 exports.buildLang = function buildLang(x, y, z) {
   console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Createing xml...");
+  // Create xml to write to
+  exec("echo > ../../../config/config.xml", function (error, stdout, stderr) {
+      console.log(stdout);
+  });
   if(z !== undefined){
     var langObj = [ { config: [ {language: x} , {region: y} , {allowSend: true} ] } ];
   } else {
