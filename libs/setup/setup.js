@@ -1,7 +1,9 @@
 var fs = require('fs');
 var clicolour = require('cli-color');
 var mkdirp = require('mkdirp');
-var error = require('../error/bsod.js')
+var error = require('../error/bsod.js');
+var builder = require('./oobe/builder.js');
+exports.builder = require('./oobe/builder.js');
 //var setup = require('')
 
 exports.first = function first(x) {

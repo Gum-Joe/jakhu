@@ -20,6 +20,8 @@ var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 var xml2js = require('xml2js');
 
+var oobe = require('../libs/setup/setup.js')
+
 // connect to db
 // done in connect.js
 //mongoose.connect('mongodb://localhost:27017/web-os');
@@ -76,6 +78,7 @@ router.get('/start', function(req, res, next) {
     console.log("Language: "+req.body.lang);
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
+    oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('index.ejs', {
         build: stdout
