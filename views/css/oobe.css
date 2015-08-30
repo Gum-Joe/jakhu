@@ -93,20 +93,5 @@ form {
 }
 
 .oobe-dep-options {
-  font-size: 30px;
-}
-
-.check input {
-    display: none;
-}
-
-.check span {
-    width: 20px;
-    height: 20px;
-    display: block;
-    background: url("link_to_image");
-}
-
-.check input:checked + span {
-    background: url("link_to_another_image");
+  /*font-size: 30px;*/
 }
