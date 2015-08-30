@@ -73,11 +73,15 @@ form {
   padding-right: 10cm;
 }
 
+.selection-box-box {
+  width: 30cm;
+}
+
 .selection-box {
   padding-left: 4cm;
 }
 
-.selection-box-h3:hover {
+.selection-box-box:hover {
   background-image: url('img/boot.jpg');
-  width: 10cm;
+  width: 30cm;
 }
