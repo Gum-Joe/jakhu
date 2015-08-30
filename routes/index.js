@@ -94,6 +94,17 @@ router.get('/start', function(req, res, next) {
       res.redirect('/type')
     });
   });
+  router.get('/set-install', function(req, res, next) {
+    console.log("");
+    // Here would be installing language packs but none are avalible
+    console.log("Language: "+req.body.lang);
+    console.log("Region: "+req.body.region);
+    console.log("Allow sending: "+req.body.allow);
+    oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
+    exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+      res.redirect('/type')
+    });
+  });
 
   router.get('/recovery', function(req, res, next) {
     console.log("");
