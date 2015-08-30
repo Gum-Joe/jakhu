@@ -20,13 +20,24 @@ var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 var xml2js = require('xml2js');
 
+// connect to db
+mongoose.connect('mongodb://localhost:27017/web-os');
+
 var userSchema = new mongoose.Schema({
   username: { type: String }
 , email: String
 , pwd: String
 });
+
+var configSchema = new mongoose.Schema({
+  lang: { type: String }
+, region: String
+, allowSend: String
+, dev: Boolean
+});
 var exits = false;
 var Suser = mongoose.model('usersch', userSchema);
+var config = mongoose.model('config', configSchema);
 var counts = getdocs("ok");
 
 function getdocs(x){
