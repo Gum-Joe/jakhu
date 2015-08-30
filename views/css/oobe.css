@@ -85,3 +85,7 @@ form {
   background-image: url('img/boot.jpg');
   width: 30cm;
 }
+
+.selection-sub {
+  padding-left: 0.5cm;
+}
