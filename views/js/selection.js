@@ -1,5 +1,3 @@
-$(document).ready(){
-  $('#a').click(function () {
-    document.getElementById("a").style.background.color = "red";
-  });
-};
+$('#one').click(function () {
+  $("#one").css({"backgroundColor": "red"});
+});

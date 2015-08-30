@@ -76,6 +76,7 @@ form {
 .selection-box-box {
   width: 30cm;
   border-radius: 5px;
+  padding: 0.5cm;
 }
 
 .selection-box {
