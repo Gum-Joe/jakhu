@@ -54,31 +54,13 @@ router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // Check to see if need to load ./boot
-  //fs.stat('./tmp', function(err){
-    //if(err == null){
-      // Do the normal job
+  // TODO: Insert boot checks
       exec("git rev-list HEAD --count", function (error, stdout, stderr) {
         res.render('boot.ejs', {
           build: stdout
         });
       });
-    //} else {
-      // redirct to ./boot
-      //res.redirct("/boot");
-    //}
-  //});
   });
-  // boot
-  /*
-  For later
-router.get('/start', function(req, res, next) {
-  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-    res.render('booting.ejs', {
-      build: stdout
-    });
-  });
-});*/
 
 router.get('/start', function(req, res, next) {
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
