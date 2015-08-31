@@ -95,6 +95,8 @@ form {
 .license {
   font-family: Source-Sans-Pro-Light;
   background-color: white;
+  width: 10cm;
+  text-align: center;
 }
 
 .lt {
