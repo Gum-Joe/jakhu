@@ -76,6 +76,15 @@ router.get('/start', function(req, res, next) {
   });
   });
 
+  router.get('/license', function(req, res, next) {
+    console.log("");
+    exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+      res.render('license.ejs', {
+        build: stdout
+      });
+    });
+    });
+
   router.get('/type', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -91,7 +100,7 @@ router.get('/start', function(req, res, next) {
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
-    res.redirect('/type')
+    res.redirect('/license')
   });
 
   router.post('/install-standard', function(req, res, next) {
@@ -101,7 +110,7 @@ router.get('/start', function(req, res, next) {
     console.log(req.body.allow);
     console.log(os.type());
     // TODO: Create scripts
-    
+
     // TODO: Add running basic install, installing apps and finishing and rendering of install page
     exec("./scripts/", function (error, stdout, stderr) {
       res.redirect('/start');
