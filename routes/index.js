@@ -84,6 +84,21 @@ router.get('/start', function(req, res, next) {
       });
     });
     });
+    router.get('/decline', function(req, res, next) {
+      // TODO: Add License handlers
+      console.log("");
+      exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+        res.render('decline.ejs', {
+          build: stdout
+        });
+      });
+      });
+
+router.get('/accept', function(req, res, next) {
+        console.log("");
+        // TODO: Add license handlers
+        res.redirect('/type');
+        });
 
   router.get('/type', function(req, res, next) {
     console.log("");

@@ -95,7 +95,8 @@ form {
 }
 
 .selection-box-box:hover {
-  background-image: url('img/boot.jpg');
+  /*background-image: url('img/boot.jpg');*/
+  background-image: url('img/accept-decline.jpg');
   width: 30cm;
 }
 
