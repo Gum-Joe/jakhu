@@ -98,7 +98,7 @@ router.get('/start', function(req, res, next) {
         // TODO: Add License handlers
         // oobe.license.decline();
         console.log("");
-        res.redirect('/type');
+        res.redirect('/wosl');
         });
 
         router.get('/decline-n', function(req, res, next) {
@@ -110,8 +110,44 @@ router.get('/accept', function(req, res, next) {
         console.log("");
         // TODO: Add license handlers
         // oobe.license.accept();
-        res.redirect('/type');
+        res.redirect('/wosl');
         });
+router.get('/wosl', function(req, res, next) {
+          console.log("");
+          exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+            res.render('licensewos.ejs', {
+              build: stdout
+            });
+          });
+          });
+          router.get('/declinew', function(req, res, next) {
+            // TODO: Add License handlers
+            console.log("");
+            exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+              res.render('declinewos.ejs', {
+                build: stdout
+              });
+            });
+            });
+
+            router.get('/declinew-y', function(req, res, next) {
+              // TODO: Add License handlers
+              // oobe.license.web.decline();
+              console.log("");
+              res.redirect('/decline');
+              });
+
+              router.get('/declinew-n', function(req, res, next) {
+                console.log("");
+                res.redirect('/wosl');
+                });
+
+          router.get('/acceptw', function(req, res, next) {
+              console.log("");
+              // TODO: Add license handlers
+              // oobe.license.web.accept();
+              res.redirect('/type');
+              });
 
   router.get('/type', function(req, res, next) {
     console.log("");
