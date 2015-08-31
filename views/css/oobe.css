@@ -85,10 +85,13 @@ form {
   width: 30cm;
   border-radius: 5px;
   padding: 0.5cm;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .selection-box {
-  padding-left: 3cm;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .selection-box-box:hover {
