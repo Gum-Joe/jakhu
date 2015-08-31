@@ -144,6 +144,18 @@ form {
   width: auto;
 }
 
+.accept:hover {
+  border-width:2px;
+  border-style:solid;
+  border-color:black;
+  background-image: url('img/accept-decline.jpg');
+  font-size: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  width: auto;
+  width: auto;
+}
+
 .accept-p {
   text-align: center;
   padding: 0.1cm;
