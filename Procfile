@@ -1,3 +1,1 @@
-web: make run
-
-build: make install
+web: export NODE_ENV='dev' && make run
