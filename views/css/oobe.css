@@ -131,3 +131,22 @@ form {
   text-align: center;
   font-family: Source-Sans-Pro-Bold;
 }
+
+.accept {
+  border-width:2px;
+  border-style:solid;
+  border-color:white;
+  background-image: url('img/nav-back-two.png');
+  font-size: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  width: auto;
+  width: auto;
+}
+
+.accept-p {
+  text-align: center;
+  padding: 0.1cm;
+  padding-top: 0.4cm;
+  width: auto;
+}
