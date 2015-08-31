@@ -40,6 +40,8 @@ body {
 
 form {
   font-family: Source-Sans-Pro-Light;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .fork {
@@ -56,8 +58,18 @@ form {
 .option {
   width: 20cm;
   text-align: center;
-  margin-left: 23%;
-  padding-right: 0.3cm;
+  margin-left: auto;
+  margin-right: auto;
+  /*padding-right: 0.3cm;*/
+}
+
+.center {
+  text-align: center;
+}
+
+.form{
+  margin-left: 1cm;
+  margin-right: 1cm;
 }
 
 .tick-pad {
@@ -92,11 +104,17 @@ form {
   /*font-size: 30px;*/
 }
 
+/*.par-l {
+  padding-left: 13cm;
+}*/
+
 .license {
   font-family: Source-Sans-Pro-Light;
   background-color: white;
   width: 10cm;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .lt {
