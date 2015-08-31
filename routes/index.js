@@ -94,9 +94,22 @@ router.get('/start', function(req, res, next) {
       });
       });
 
+      router.get('/decline-y', function(req, res, next) {
+        // TODO: Add License handlers
+        // oobe.license.decline();
+        console.log("");
+        res.redirect('/type');
+        });
+
+        router.get('/decline-n', function(req, res, next) {
+          console.log("");
+          res.redirect('/license');
+          });
+
 router.get('/accept', function(req, res, next) {
         console.log("");
         // TODO: Add license handlers
+        // oobe.license.accept();
         res.redirect('/type');
         });
 
