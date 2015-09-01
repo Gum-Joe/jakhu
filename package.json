@@ -66,6 +66,7 @@
     "grunt-cli": "^0.1.13",
     "grunt-exec": "^0.4.6",
     "grunt-mocha": "^0.4.13",
+    "grunt-mocha-test": "^0.12.7",
     "grunt-shell": "^1.1.2",
     "istanbul": "^0.3.17",
     "js2coffee": "^2.1.0",
