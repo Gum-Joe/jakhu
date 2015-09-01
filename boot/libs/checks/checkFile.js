@@ -14,7 +14,6 @@ exports.checkFiles = function checkFiles(x){
     fs.stat(files[i], function(err, stat){
       if(err === null){
           return console.log('Checked out file '+files[i]+"..."+clicolour.greenBright("OK"));
-          console.log(i);
         }
         else if( err.code == 'ENOENT'){
           console.log('Checked out file '+files[i]+"..."+clicolour.redBright("ERROR!"));
