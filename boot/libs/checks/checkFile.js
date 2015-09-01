@@ -9,7 +9,7 @@ var i;
 
 exports.checkFiles = function checkFiles(x){
   // TODO: Fix issue where files[i] is undefined
-  console.log(clicolour.yellowBright("ALPHA:")+"Checking out files need fixing, does in fact check out files correctly");
+  console.log(clicolour.yellowBright("ALPHA:")+"Checking out files need fixing, does in fact check out files correctly. Will fix in alpha version");
   for (var i = 0; i < files.length; i++) {
     fs.stat(files[i], function(err, stat){
       if(err === null){
@@ -26,6 +26,7 @@ exports.checkFiles = function checkFiles(x){
             }
           });
   }
+  /*
       fs.stat(files[0], function(err, stat){
         if(err === null){
             return console.log('Checked out file '+files[0]+"..."+clicolour.greenBright("OK"));
@@ -64,6 +65,6 @@ exports.checkFiles = function checkFiles(x){
                   console.log('Checked out file '+files[1]+"..."+clicolour.redBright("ERROR!"));
                   error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+files[1], err, err.code);
                     }
-                  });
+                  });*/
 
     };
