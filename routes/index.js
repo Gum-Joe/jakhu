@@ -70,7 +70,7 @@ router.get('/', function(req, res, next) {
 router.get('/start', function(req, res, next) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-    res.render('index.ejs', {
+    res.render('oobe/index.ejs', {
       build: stdout
     });
   });
@@ -79,7 +79,7 @@ router.get('/start', function(req, res, next) {
   router.get('/license', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.render('license.ejs', {
+      res.render('oobe/license.ejs', {
         build: stdout
       });
     });
@@ -88,7 +88,7 @@ router.get('/start', function(req, res, next) {
       // TODO: Add License handlers
       console.log("");
       exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-        res.render('decline.ejs', {
+        res.render('oobe/decline.ejs', {
           build: stdout
         });
       });
@@ -115,7 +115,7 @@ router.get('/accept', function(req, res, next) {
 router.get('/wosl', function(req, res, next) {
           console.log("");
           exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-            res.render('licensewos.ejs', {
+            res.render('oobe/licensewos.ejs', {
               build: stdout
             });
           });
@@ -124,7 +124,7 @@ router.get('/wosl', function(req, res, next) {
             // TODO: Add License handlers
             console.log("");
             exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-              res.render('declinewos.ejs', {
+              res.render('oobe/declinewos.ejs', {
                 build: stdout
               });
             });
@@ -152,7 +152,7 @@ router.get('/wosl', function(req, res, next) {
   router.get('/type', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.render('installType.ejs', {
+      res.render('oobe/installType.ejs', {
         build: stdout
       });
     });
@@ -191,7 +191,7 @@ router.get('/wosl', function(req, res, next) {
   router.get('/opt-standard', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      res.render('options-standard.ejs', {
+      res.render('oobe/options-standard.ejs', {
         build: stdout
       });
     });
