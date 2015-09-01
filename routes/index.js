@@ -134,7 +134,7 @@ router.get('/wosl', function(req, res, next) {
               // TODO: Add License handlers
               // oobe.license.web.decline();
               console.log("");
-              res.redirect('/wosl');
+              res.redirect('/type');
               });
 
               router.get('/declinew-n', function(req, res, next) {
