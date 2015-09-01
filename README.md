@@ -30,6 +30,9 @@ Simply clone or fork this branch (the a1 branch) and start developing.
 
   6. `npm start`
 
+# What is a1-dist
+a1-dist is a branch in an distributable state and does not include any features, only oobe
+
 # How does our branching system work?
 First, a new branch, called a1 (alpha 1), is created off the master. This is the the first stage of development, which has the most bugs and is not ready for release. Secondly, we make a new branch called b1 (beta 1) . This is where all of the fixing and adding of extra features goes on in addition to community testing and contributing (you can also test and contribute to the alpha branch). To add to this, two new branches, alpha-master (for previous alpha branches merged into the beta branches) and beta-master (for previous beta branches merged into the master branch), are created.  When ready, the a1 branch is merged into alpha-master and b1.  Finally, when b1 is ready, it is merged into beta-master and master. So it is basically ax is merged into alpha-master, then bx is merged into beta-master and master when ready.
 
