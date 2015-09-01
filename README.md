@@ -30,7 +30,7 @@ Simply clone or fork this branch (the a1 branch) and start developing.
 
   6. `npm start`
 
-# What is a1-dist
+# What is a1-dist?
 a1-dist is a branch in an distributable state and does not include any features, only oobe
 
 # How does our branching system work?
