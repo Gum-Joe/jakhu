@@ -28,6 +28,26 @@ exports.first = function first(x) {
           }
         });
 
+        fs.stat('../../instances', function(err, stat){
+          if(err === null){
+              // do noting
+            }
+            else if( err.code == 'ENOENT'){
+              // TODO: Add mkdrip config.
+              mkdirp('instances', function(err) {
+                if (err) {
+                  error.throwError("SETUP_CREATE_DIR_INSTANCES", err, err.code);
+                } else {
+                  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created Instances dir");
+                }
+              });
+
+            }
+            else{
+              error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"instances", err, err.code);
+                }
+              });
+
         fs.stat('../../tmp', function(err, stat){
           if(err === null){
               // do noting
