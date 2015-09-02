@@ -67,6 +67,16 @@ router.get('/', function(req, res, next) {
       });
   });
 
+  router.get('/signin', function(req, res, next) {
+    // TODO: Insert boot checks
+    console.log("");
+        exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+          res.render('signin.ejs', {
+            build: stdout
+          });
+        });
+    });
+
 router.get('/start', function(req, res, next) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {

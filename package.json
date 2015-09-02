@@ -13,6 +13,9 @@
     "type": "git",
     "url": "git+https://github.com/Gum-Joe/Web-OS.git"
   },
+  "bin": {
+    "web": "bin/start"
+  },
   "keywords": [
     "Web-OS",
     "Connections",
