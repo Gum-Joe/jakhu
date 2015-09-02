@@ -245,8 +245,9 @@ router.get('/admin', function(req, res, next) {
 
   });
 
-router.post('/login', function(req, res, next) {
+router.post('/login', passport.authenticate('local'), function(req, res, next) {
   console.log("");
+  res.redirect("/");
     //passport.authenticate('local');
   // res.render('index.html', { title: 'Done' });
 });

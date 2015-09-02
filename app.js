@@ -180,11 +180,6 @@ app.use(function(req, res, next) {
   next(err);
 });
 
-app.post('/login', function(req, res) {
-   // passportlocal.authenticate('local');
-  res.redirect('/');
-});
-
 // error handlers
 
 // development error handler
