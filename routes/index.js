@@ -40,7 +40,7 @@ var configSchema = new mongoose.Schema({
 , dev: Boolean
 });
 var exits = false;
-var Suser = mongoose.model('usersch', userSchema);
+var Suser = mongoose.model('users', userSchema);
 var config = mongoose.model('config', configSchema);
 var counts = getdocs("ok");
 
@@ -245,12 +245,10 @@ router.get('/admin', function(req, res, next) {
 
   });
 
-router.post('/login', passport.authenticate('local'), function(req, res, next) {
-  console.log("");
-  res.redirect("/");
-    //passport.authenticate('local');
-  // res.render('index.html', { title: 'Done' });
-});
+router.post('/login', passport.authenticate('local', {
+    successRedirect: '/loginSuccess',
+    failureRedirect: '/loginFailure'
+  }));
 
 function checkBoot(argument) {
   fs.stat('./tmp', function(err){
