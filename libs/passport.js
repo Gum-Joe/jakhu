@@ -114,5 +114,5 @@ passport.deserializeUser(function(id, done) {
 // passport.deserializeUser(suser.deserializeUser());
 
 
-module.exports = app;
-module.exports = mongoose.model('userspassportreal', userSchema);;
+module.exports = passport;
+module.exports = mongoose.model('users', userSchema);;

@@ -60,6 +60,7 @@ app.use(logger({stream: logFile}));
 if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');
 }
+
 //app.use(logger('stream', wlogger.logger));
 //app.use(require('morgan')({ "stream": wlogger.stream }));
 //wlogger.debug("Overriding 'Express' logger");
