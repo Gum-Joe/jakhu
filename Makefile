@@ -33,7 +33,7 @@ fork:
 	npm install -g bower nodemon coffee-script nodemon nyc; \
 	gem install bundle; \
 	bundle install; \
-	sass views/css/main.scss:views/css/main.css; \
+	sass views/css/dashboard.scss:views/css/dashboard.css; \
 	echo Done; \
 
 install:
@@ -42,7 +42,7 @@ install:
 	npm install -g bower nodemon coffee-script nodemon nyc; \
 	gem install bundle; \
 	bundle install; \
-	sass views/css/main.scss:views/css/main.css; \
+	sass views/css/dashboard.scss:views/css/dashboard.css; \
 	echo Done; \
 
 test-coveralls:
@@ -51,7 +51,7 @@ test-coveralls:
 		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
 ci:
-	sass views/css/main.scss:views/css/main.css; \
+	sass views/css/dashboard.scss:views/css/dashboard.css; \
 	nyc npm test
 
 #.PHONY test
