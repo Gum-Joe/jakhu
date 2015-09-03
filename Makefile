@@ -28,19 +28,21 @@ tests:
 	echo Done; \
 
 fork:
-	echo Installing Modules; \
+	echo Installing Modules and compileing; \
 	npm install; \
 	npm install -g bower nodemon coffee-script nodemon nyc; \
 	gem install bundle; \
 	bundle install; \
+	sass views/css/main.scss:views/css/main.css; \
 	echo Done; \
 
 install:
-	echo Installing Modules; \
+	echo Installing Modules and compileing; \
 	npm install; \
 	npm install -g bower nodemon coffee-script nodemon nyc; \
 	gem install bundle; \
 	bundle install; \
+	sass views/css/main.scss:views/css/main.css; \
 	echo Done; \
 
 test-coveralls:
@@ -49,6 +51,7 @@ test-coveralls:
 		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
 ci:
+	sass views/css/main.scss:views/css/main.css; \
 	nyc npm test
 
 #.PHONY test

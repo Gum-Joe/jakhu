@@ -27,9 +27,9 @@ Simply clone or fork this branch (the a1 branch) and start developing.
   4. `bower install`,
   5. `gem install bundle`
   6. `bundle install`
-  7. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
-
-  8. `npm start`
+  7. `sass views/css/main.scss:views/css/main.css`
+  8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
+  9. `npm start`
 
 On Linux:
 `make fork && npm start`
