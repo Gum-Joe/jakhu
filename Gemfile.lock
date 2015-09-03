@@ -4,6 +4,7 @@ GEM
     sass (3.4.17)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES

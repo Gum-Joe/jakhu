@@ -1,0 +1,13 @@
+@import url(web-os.css);
+@import url(fonts.css);
+@import url(boot.css);
+body, html {
+  background-image: url("img/nav-back-two.png"); }
+
+.email {
+  height: 0.7cm; }
+
+.email-in {
+  height: 1cm; }
+
+/*# sourceMappingURL=dashboard.css.map */
