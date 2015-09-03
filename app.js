@@ -9,6 +9,7 @@ var clicolour = require('cli-color');
 var fs = require("fs");
 var morgan = require("morgan");
 var ooberoutes = require("./routes/oobe.js");
+var dashboard = require("./routes/dashboard.js")
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -78,6 +79,7 @@ var suser = mongoose.model('usersc', userSchema);
 app.use('/', routes);
 app.use('/', ooberoutes);
 app.use('/users', users);
+app.use('/dashboard', dashboard);
 app.use('passportconfig', passportconfig);
 
 // Setup HTTPS
