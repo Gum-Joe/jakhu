@@ -10,7 +10,9 @@ nav {
   background-image: white;
   border-radius: 0px; }
 
-.container-fluid .header h1 {
+.container-fluid .header {
   margin-left: 1cm; }
+  .container-fluid .header h3 {
+    margin-left: 1cm; }
 
 /*# sourceMappingURL=dashboard.css.map */
