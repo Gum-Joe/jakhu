@@ -5,7 +5,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   console.log("");
   res.render('dashboard/index.ejs', {
-    user: req.user
+    user: req.param("user")
   });
 });
 
