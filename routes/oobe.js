@@ -183,25 +183,6 @@ router.get('/oobe', function(req, res, next) {
   res.render('oobe/index.ejs');
 });
 
-router.get('/admin', function(req, res, next) {
-  console.log("");
-  res.render('admin/index.ejs', {
-    // url query (?x=y)
-    user: req.param("user"),
-    //users: Suser.count({}, function(err, count){
-    //return count;
-///})
-    users: 1000,
-    sessions: 500,
-    plugins: 5
-  });
-
-  });
-
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/loginSuccess',
-    failureRedirect: '/loginFailure'
-  }));
 
 function checkBoot(argument) {
   fs.stat('./tmp', function(err){

@@ -51,71 +51,9 @@ var userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(passportlocalmongoose);
-var suser = mongoose.model('userspassport', userSchema);
-
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(expressSession({
-    secret: process.env.SESSION_SECRET || 'the',
-    resave: true,
-    saveUninitialized: true
-    }));
-// passport config
-// awaiting solve
-var isValidPassword = function(user, password){
-    return bcrypt.compareSync(password, user.password);
-    }
-
-passport.use(new passportlocal.Strategy(function (username, password, done) {
-    passReqToCallback : true;
-  },
-  function(req, username, password, done) {
-    // check in mongo if a user with username exists or not
-    suser.findOne({ 'username' :  username },
-      function(err, user) {
-        // In case of any error, return using the done method
-        if (err){
-            return done(err);
-            console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'User Not Found with username '+ username);
-            }
-        // Username does not exist, log error & redirect back
-        if (!user){
-          console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'User Not Found with username '+ username);
-          return done(null, false,
-                req.flash('message', 'User Not found.'));
-        }
-        // User exists but wrong password, log the error
-        if (!isValidPassword(user, password)){
-          console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'Invalid Password');
-          return done(null, false,
-              req.flash('message', 'Invalid Password'));
-        }
-        // User and password both match, return user from
-        // done method which will be treated like success
-        return done(null, {id: user, name: username, email: username});
-      }
-    );
-}));
-
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-    suser.findById(id, function(err, user) {
-        done(err, user);
-    });
-});
-
 // connect to db
 // done in connect.js
 //mongoose.connect('mongodb://localhost:27017/web-os');
-
-var userSchema = new mongoose.Schema({
-  username: { type: String }
-, email: String
-, pwd: String
-});
 
 var configSchema = new mongoose.Schema({
   lang: { type: String }
