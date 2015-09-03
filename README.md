@@ -18,17 +18,21 @@ Web-OS is a nodejs based system for managing your web-app(s). Features include:
 # Start developing
 Simply clone or fork this branch (the a1 branch) and start developing.
 ## Setup:
- Make sure you have nodejs and npm installed.
+ Make sure you have nodejs, npm and ruby installed.
   1. `git clone https://github.com/Gum-Joe/Web-OS.git -b a1`
-  2. `npm install -g bower mocha less coffee-script nodemon`,
+  2. `npm install -g bower mocha less coffee-script nodemon nyc`,
 
   3. `npm install`,
 
   4. `bower install`,
+  5. `gem install bundle`
+  6. `bundle install`
+  7. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
 
-  5. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
+  8. `npm start`
 
-  6. `npm start`
+On Linux:
+`make install`
 
 # What is a1-dist?
 a1-dist is a branch in an distributable state and does not include any features, only oobe
