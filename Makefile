@@ -17,30 +17,39 @@ run:
 	node node_modules/mongodb/bin/mongod --dbpath ./api/data | node app.js;
 
 tests:
-	# Install modules
+	echo Installing modules; \
 	npm install; \
 	npm install --dev; \
-	npm install -g bower; \
+	npm install -g bower mocha nodemon; \
 	bower install; \
-	echo Testing...; \
-	echo Installing nyc...; \
-	npm install -g nyc; \
-	echo Testing....
+	gem install bundle; \
+	bundle install; \
 	nyc npm test; \
-	echo ; \
+	echo Done; \
+
+fork:
+	echo Installing Modules; \
+	npm install; \
+	npm install -g bower nodemon coffee-script nodemon nyc; \
+	gem install bundle; \
+	bundle install; \
 	echo Done; \
 
 install:
 	echo Installing Modules; \
 	npm install; \
-	npm install bower; \
-	node node_modules/bower/bin/bower install; \
-	echo Done;
+	npm install -g bower nodemon coffee-script nodemon nyc; \
+	gem install bundle; \
+	bundle install; \
+	echo Done; \
 
 test-coveralls:
 	@NODE_ENV=test Web-OS_COVERAGE=1 ./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
 		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
+
+ci:
+	nyc npm test
 
 #.PHONY test
 

@@ -15,7 +15,7 @@ env:
 
 install:
   - npm install
+  - npm install -g bower mocha nyc
   - bundle install
-  - npm install -g bower mocha
 
-script: "make tests"
+script: "make ci"

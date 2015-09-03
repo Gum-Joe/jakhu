@@ -32,7 +32,10 @@ Simply clone or fork this branch (the a1 branch) and start developing.
   8. `npm start`
 
 On Linux:
-`make install`
+`make fork && npm start`
+
+## Test:
+`make tests`
 
 # What is a1-dist?
 a1-dist is a branch in an distributable state and does not include any features, only oobe
