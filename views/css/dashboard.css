@@ -4,10 +4,18 @@
 body, html {
   background-image: url("img/nav-back-two.png"); }
 
+<<<<<<< HEAD
 .email {
   height: 0.7cm; }
 
 .email-in {
   height: 1cm; }
+=======
+nav {
+  font-family: Source-Sans-Pro-Light;
+  border-radius: 0px;
+  background-image: white;
+  border-radius: 0px; }
+>>>>>>> 9933de0edb0ca03f5a4ad0d8c4fab95752616167
 
 /*# sourceMappingURL=dashboard.css.map */

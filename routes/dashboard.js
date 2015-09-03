@@ -4,7 +4,9 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   console.log("");
-  res.render('dashboard/index.ejs');
+  res.render('dashboard/index.ejs', {
+    user: req.user
+  });
 });
 
 module.exports = router;
