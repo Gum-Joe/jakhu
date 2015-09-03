@@ -13,4 +13,9 @@ os:
 env:
   - NODE_ENV=development
 
+install:
+  - npm install
+  - bundle install
+  - npm install -g bower mocha
+
 script: "make tests"

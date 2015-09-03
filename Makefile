@@ -17,8 +17,7 @@ run:
 	node node_modules/mongodb/bin/mongod --dbpath ./api/data | node app.js;
 
 tests:
-	echo Runing tests; \
-	echo Installing modules; \
+	# Install modules
 	npm install; \
 	npm install --dev; \
 	npm install -g bower; \
@@ -27,11 +26,8 @@ tests:
 	echo Installing nyc...; \
 	npm install -g nyc; \
 	echo Testing....
-	npm test; \
+	nyc npm test; \
 	echo ; \
-	echo Done; \
-	echo Now testing C#; \
-	cd app && make run; \
 	echo Done; \
 
 install:
