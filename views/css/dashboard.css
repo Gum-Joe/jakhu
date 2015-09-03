@@ -1,0 +1,10 @@
+@import url(web-os.css);
+@import url(fonts.css);
+@import url(boot.css);
+body, html {
+  background-image: url("img/nav-back-two.png"); }
+
+nav {
+  font-family: Source-Sans-Pro-Light; }
+
+/*# sourceMappingURL=dashboard.css.map */
