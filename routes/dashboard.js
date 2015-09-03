@@ -5,8 +5,11 @@ var exec = require('child_process').exec;
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   console.log("");
-  res.render('dashboard/index.ejs', {
-    user: req.param("user");
+  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+    res.render('dashboard/index.ejs', {
+      user: req.param("user"),
+      build: stdout
+    });
   });
 });
 
