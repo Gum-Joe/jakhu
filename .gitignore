@@ -64,3 +64,6 @@ tmp/*
 config
 config/*
 web-os-testing
+
+# Sass cache
+.sass-cache
