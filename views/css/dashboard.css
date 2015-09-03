@@ -5,6 +5,8 @@ body, html {
   background-image: url("img/nav-back-two.png"); }
 
 nav {
-  font-family: Source-Sans-Pro-Light; }
+  font-family: Source-Sans-Pro-Light;
+  border-radius: 0px;
+  background-image: white; }
 
 /*# sourceMappingURL=dashboard.css.map */
