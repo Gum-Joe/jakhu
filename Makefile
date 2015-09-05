@@ -20,7 +20,7 @@ tests:
 	echo Installing modules; \
 	npm install; \
 	npm install --dev; \
-	npm install -g bower mocha nodemon; \
+	npm install -g bower mocha nodemon codeclimate-test-reporter; \
 	bower install; \
 	gem install bundle; \
 	bundle install; \
@@ -30,7 +30,7 @@ tests:
 fork:
 	echo Installing Modules and compileing; \
 	npm install; \
-	npm install -g bower nodemon coffee-script nodemon nyc; \
+	npm install -g bower nodemon coffee-script nodemon nyc codeclimate-test-reporter; \
 	gem install bundle; \
 	bundle install; \
 	sass views/css/dashboard.scss:views/css/dashboard.css; \
@@ -39,7 +39,7 @@ fork:
 install:
 	echo Installing Modules and compileing; \
 	npm install; \
-	npm install -g bower nodemon coffee-script nodemon nyc; \
+	npm install -g bower nodemon coffee-script nodemon nyc codeclimate-test-reporter; \
 	gem install bundle; \
 	bundle install; \
 	sass views/css/dashboard.scss:views/css/dashboard.css; \

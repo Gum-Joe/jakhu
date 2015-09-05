@@ -4,10 +4,11 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha && npm run coveralls && npm run cover-ci",
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
-    "coveralls": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && nyc report | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "istanbul cover *.js */*.js */*/*.js */*/*/*.js",
+    "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
