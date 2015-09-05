@@ -6,6 +6,7 @@
   margin-left: auto;
   margin-right: auto;
 }
+
 body, html{
   background-image: url("/css/img/nav-back-two.png");
 }
@@ -91,4 +92,8 @@ nav .navbar, .navbar-default, .navtop {
 .table {
   width: 70%;
   @include cent();
+}
+
+.back-o {
+  background-color: white;
 }
