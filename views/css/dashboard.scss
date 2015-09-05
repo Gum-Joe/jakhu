@@ -101,11 +101,6 @@ nav .navbar, .navbar-default, .navtop {
   border-color: white;
   @include cent();
   @include boot();
-  tbody {
-    .t-ruby {
-      background-image: url("/css/img/ruby.png");
-    }
-  }
 }
 .t-node {
   background-image: url("/css/img/node-gradient.jpg");
@@ -113,7 +108,6 @@ nav .navbar, .navbar-default, .navtop {
 .t-ruby {
   background-image: url("/css/img/ruby.png");
 }
-
 .t-python {
   background-image: url("/css/img/python.jpg");
 }

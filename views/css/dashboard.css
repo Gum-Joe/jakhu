@@ -65,8 +65,6 @@ nav .navbar, .navbar-default, .navtop {
   margin-left: auto;
   margin-right: auto;
   background-image: url("/css/img/boot.jpg"); }
-  .table tbody .t-ruby {
-    background-image: url("/css/img/ruby.png"); }
 
 .t-node {
   background-image: url("/css/img/node-gradient.jpg"); }
