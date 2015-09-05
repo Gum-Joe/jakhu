@@ -65,6 +65,22 @@ nav .navbar, .navbar-default, .navtop {
   margin-left: auto;
   margin-right: auto;
   background-image: url("/css/img/boot.jpg"); }
+  .table .t-node {
+    background-image: url("/css/img/node-gradient.jpg"); }
+  .table .t-ruby {
+    background-image: url("/css/img/ruby.png"); }
+  .table .t-python {
+    background-image: url("/css/img/python.jpg"); }
+  .table .t-php {
+    background-image: url("/css/img/php.png"); }
+  .table tbody .t-node {
+    background-image: url("/css/img/node-gradient.jpg"); }
+  .table tbody .t-ruby {
+    background-image: url("/css/img/ruby.png"); }
+  .table tbody .t-python {
+    background-image: url("/css/img/python.jpg"); }
+  .table tbody .t-php {
+    background-image: url("/css/img/php.png"); }
 
 .t-node {
   background-image: url("/css/img/node-gradient.jpg"); }
@@ -76,6 +92,6 @@ nav .navbar, .navbar-default, .navtop {
   background-image: url("/css/img/python.jpg"); }
 
 .t-php {
-  background-image: url("/css/img/php.jpg"); }
+  background-image: url("/css/img/php.png"); }
 
 /*# sourceMappingURL=dashboard.css.map */

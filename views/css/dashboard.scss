@@ -101,6 +101,33 @@ nav .navbar, .navbar-default, .navtop {
   border-color: white;
   @include cent();
   @include boot();
+  .t-node {
+    background-image: url("/css/img/node-gradient.jpg");
+  }
+  .t-ruby {
+    background-image: url("/css/img/ruby.png");
+  }
+  .t-python {
+    background-image: url("/css/img/python.jpg");
+  }
+  .t-php {
+    background-image: url("/css/img/php.png");
+  }
+  tbody {
+    .t-node {
+      background-image: url("/css/img/node-gradient.jpg");
+    }
+    .t-ruby {
+      background-image: url("/css/img/ruby.png");
+    }
+    .t-python {
+      background-image: url("/css/img/python.jpg");
+    }
+    .t-php {
+      background-image: url("/css/img/php.png");
+    }
+
+  }
 }
 .t-node {
   background-image: url("/css/img/node-gradient.jpg");
@@ -112,5 +139,5 @@ nav .navbar, .navbar-default, .navtop {
   background-image: url("/css/img/python.jpg");
 }
 .t-php {
-  background-image: url("/css/img/php.jpg");
+  background-image: url("/css/img/php.png");
 }
