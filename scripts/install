@@ -20,10 +20,9 @@ com
   .option('-y, --yum', "Uses 'sudo yum' instead of 'sudo apt-get'")
   .option('-r, --ruby', "Install ruby Development Tools (Includes rails)")
   .option('-n, --node', "Install Nodejs")
-  .option('-a, --rails', "Do not install rails")
   .option('-e, --heroku', "Install Heroku toolbelt")
   .option('-c, --connect', "Installs FTP, SSH and SFTP")
-  .option('-g, --yum', "Install Git")
+  .option('-g, --git', "Install Git")
   .option('-p, --python', "Install Python Develpment Tools")
   .arguments('<os>')
   .action(function (os) {
