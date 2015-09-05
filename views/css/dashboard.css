@@ -58,7 +58,22 @@ nav .navbar, .navbar-default, .navtop {
 
 .table {
   width: 70%;
+  border-style: dashed;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: white;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  background-image: url("/css/img/boot.jpg"); }
+  .table tbody .t-node {
+    background-image: url("/css/img/node-gradient.jpg"); }
+  .table tbody .t-ruby {
+    background-image: url("/css/img/ruby.png"); }
+
+.t-node {
+  background-image: url("/css/img/node-gradient.jpg"); }
+
+.t-ruby {
+  background-image: url("/css/img/ruby.png"); }
 
 /*# sourceMappingURL=dashboard.css.map */
