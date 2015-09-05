@@ -66,7 +66,9 @@ nav .navbar, .navbar-default, .navtop {
   nav .navbar a, .navbar-default a, .navtop a {
     color: white; }
 
-table {
-  margin: 6px; }
+.table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=dashboard.css.map */

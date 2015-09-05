@@ -2,6 +2,10 @@
 @import "fonts.css";
 @import "boot.css";
 
+@mixin cent() {
+  margin-left: auto;
+  margin-right: auto;
+}
 body, html{
   background-image: url("/css/img/white.png");
   color: black;
@@ -97,6 +101,7 @@ nav .navbar, .navbar-default, .navtop {
   }
 }
 
-table {
-  margin: 6px;
+.table {
+  width: 50%;
+  @include cent();
 }
