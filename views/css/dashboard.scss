@@ -7,20 +7,7 @@
   margin-right: auto;
 }
 body, html{
-  background-image: url("/css/img/white.png");
-  color: black;
-}
-
-h1 {
-color: black;
-}
-
-h2 {
-color: black;
-}
-
-h3,h4,h5,h6,div,label {
-color: black;
+  background-image: url("/css/img/nav-back-two.png");
 }
 
 nav {
@@ -102,6 +89,6 @@ nav .navbar, .navbar-default, .navtop {
 }
 
 .table {
-  width: 50%;
+  width: 70%;
   @include cent();
 }

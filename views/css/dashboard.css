@@ -2,17 +2,7 @@
 @import url(fonts.css);
 @import url(boot.css);
 body, html {
-  background-image: url("/css/img/white.png");
-  color: black; }
-
-h1 {
-  color: black; }
-
-h2 {
-  color: black; }
-
-h3, h4, h5, h6, div, label {
-  color: black; }
+  background-image: url("/css/img/nav-back-two.png"); }
 
 nav {
   font-family: Source-Sans-Pro-Light;
@@ -67,7 +57,7 @@ nav .navbar, .navbar-default, .navtop {
     color: white; }
 
 .table {
-  width: 50%;
+  width: 70%;
   margin-left: auto;
   margin-right: auto; }
 
