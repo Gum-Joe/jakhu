@@ -30,6 +30,7 @@ com
   .parse(process.argv);
 
 getArgs();
+space();
 
 if(typeof osl === undefined){
   console.log("Please specify the OS you are running. Valid arguments are 'Linux' 'Windows_NT' (That's normal Windows) and 'OSX'");
@@ -67,7 +68,7 @@ function install(osa) {
 
 function installLocal(argument) {
   // Install locally
-  console.log("Installing locally in /packages/");
+  console.log("Installing locally in ./packages/");
   fs.readdir("./", function(err, files){
     if(files[0] !== '.git' && files[0] !== ".gitattributes" && files[0] !== "app.js"){
       space();
@@ -84,9 +85,103 @@ function installLocal(argument) {
     } else {
       console.log("Created ./packages dir");
     }
-  })
+  });
 }
 
 function space(argument) {
   console.log("                     ");
+}
+
+function getArgs(argument) {
+  // Gets arguments
+  if(com.local !== undefined){
+    console.log("+ using: Local Install in ./packages");
+    if(osl === 'Windows_NT'){
+      console.log("+ using: msiexec /a *.msi TARGETDIR='./packages'");
+    } else if(osl === 'OSX') {
+      console.log("+ using: brew (requires ruby)");
+    } else if (osl === 'Linux') {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    } else {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    }
+  } else {
+    if(osl === 'Windows_NT'){
+      console.log("+ using: msiexec");
+    } else if(osl === 'OSX') {
+      console.log("+ using: brew (requires ruby)");
+    } else if (osl === 'Linux') {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    } else {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    }
+  }
 }
