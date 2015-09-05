@@ -15,7 +15,9 @@ console.log("                     ");
 com
   .version('0.0.1')
   .option('-l, --local', 'Installs all the apps in /packages/ using msiexec and adds it to the path for the server on startup (Only avalible on Windows and Linux)')
-  .option('-v, --version', '')
+  .option('-v, --version', 'Outputs the version number')
+  .option('-s, --nosudo', 'Runs commands without sudo')
+  .option('-y, --yum', "Uses 'sudo yum' instead of 'sudo apt-get'")
   .arguments('<os>')
   .action(function (os) {
     if(os === undefined){
@@ -26,6 +28,8 @@ com
     osl = os;
   })
   .parse(process.argv);
+
+getArgs();
 
 if(typeof osl === undefined){
   console.log("Please specify the OS you are running. Valid arguments are 'Linux' 'Windows_NT' (That's normal Windows) and 'OSX'");
@@ -73,7 +77,14 @@ function installLocal(argument) {
       process.exit(2);
     }
   });
-  mkdirp("./packages")
+  mkdirp("./packages", function (err) {
+    if(err){
+      console.log("ERROR!");
+      console.log("Could not make dir ./packages");
+    } else {
+      console.log("Created ./packages dir");
+    }
+  })
 }
 
 function space(argument) {
