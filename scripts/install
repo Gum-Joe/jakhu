@@ -207,7 +207,14 @@ function exec(command) {
   // Runs a command
   try {
     execute(command, function(error, stdout, stderr){
-
+      console.log(stdout);
+      console.log(stderr);
+      if(stderr){
+        space();
+        console.log("ERROR! Could not run "+command);
+        console.log("Full error:");
+        console.log(stderr);
+      }
     });
   } catch (e) {
     space();
