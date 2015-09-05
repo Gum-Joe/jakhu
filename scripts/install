@@ -87,6 +87,7 @@ function installLocal(argument) {
       console.log("Created ./packages dir");
     }
   });
+  // Read packages to install
 }
 
 function space(argument) {
