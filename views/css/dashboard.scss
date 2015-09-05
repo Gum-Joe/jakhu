@@ -55,3 +55,34 @@ nav {
 .panel-body {
   color: white;
 }
+
+nav .navbar, .navbar-default, .navtop {
+  background-image: url("/css/img/boot.jpg");
+  color: white;
+  .container-fluid {
+    div {
+      a {
+        color: white;
+      }
+      ul {
+        .active {
+          background-image: url("/css/img/nav-back-two.png");
+          color: white;
+        }
+        a {
+          color: white;
+        }
+        li:hover {
+          background-image: url("/css/img/nav-back-two.png");
+        }
+        a:hover {
+          color: white;
+          background-image: url("/css/img/nav-back-two.png");
+        }
+      }
+    }
+  }
+  a {
+    color: white;
+  }
+}
