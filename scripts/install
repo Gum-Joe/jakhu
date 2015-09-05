@@ -102,11 +102,9 @@ function installLocal(argument) {
     console.log("+ apt-get update");
     // Check if need to use sudo
     if(com.nosudo){
-      //execa("apt-get update");
-      run_cmd( "apt-get", ["update"], function(text) { console.log (text) });
+      execa("apt-get update");
     } else {
-      //execa("sudo apt-get update");
-      run_cmd( "sudo", ["apt-get", "update"], function(text) { console.log (text) });
+      execa("sudo apt-get update");
     }
   }
 }
@@ -222,12 +220,3 @@ function execa(command) {
     }
   });
 }
-
-function run_cmd(cmd, args, callBack ) {
-    var spawn = require('child_process').spawn;
-    var child = spawn(cmd, args);
-    var resp = "";
-
-    child.stdout.on('data', function (buffer) { resp += buffer.toString() });
-    child.stdout.on('end', function() { callBack (resp) });
-} // ()
