@@ -2,7 +2,8 @@
 var exec = require('child_process').exec;
 var os = require('os');
 var com = require('commander');
-
+var fs = require('fs');
+var mkdirp = require('mkdirp');
 // This is the Web-OS install script
 
 console.log("Web-OS install script");
@@ -63,8 +64,16 @@ function install(osa) {
 function installLocal(argument) {
   // Install locally
   console.log("Installing locally in /packages/");
-  space();
-  console.log("Please make sure that this is ran in the root dir ");
+  fs.readdir("./", function(err, files){
+    if(files[0] !== '.git' && files[0] !== ".gitattributes" && files[0] !== "app.js"){
+      space();
+      console.log("Please make sure this is ran in the root dir of Web-OS");
+      space();
+      console.log("Exiting with exit code 2");
+      process.exit(2);
+    }
+  });
+  mkdirp("./packages")
 }
 
 function space(argument) {
