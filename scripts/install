@@ -98,7 +98,7 @@ function installLocal(argument) {
   // Read packages to install & install
   if(osl === 'Linux' && com.yum === undefined){
     space();
-    console.log("Output appears after");
+    console.log("Output appears after command has been run");
     space();
     console.log("Running 'apt-get update' for you");
     console.log("+ apt-get update");
