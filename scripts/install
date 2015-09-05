@@ -108,6 +108,25 @@ function installLocal(argument) {
     } else {
       execa("sudo apt-get update -y");
     }
+    space();
+    console.log("Installing tar and unzip");
+    console.log("+ apt-get install -y tar unzip");
+    // Check if need to use sudo
+    if(com.nosudo){
+      execa("apt-get install -y tar unzip");
+    } else {
+      execa("sudo apt-get install -y tar unzip");
+    }
+  } else if (osl === 'Linux' && com.yum !== undefined) {
+    space();
+    console.log("Installing tar and unzip");
+    console.log("+ yum install -y tar unzip");
+    // Check if need to use sudo
+    if(com.nosudo){
+      execa("yum install -y tar unzip");
+    } else {
+      execa("sudo yum install -y tar unzip");
+    }
   }
 }
 
