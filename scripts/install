@@ -1,5 +1,5 @@
 #!/usr/env/node
-var execute = require('child_process').exec;
+var exec = require('child_process').exec;
 var os = require('os');
 var com = require('commander');
 var fs = require('fs');
@@ -77,6 +77,7 @@ function installLocal(argument) {
   console.log("Installing locally in ./packages/");
   fs.readdir("./", function(err, files){
     if(files[0] !== '.git' && files[0] !== ".gitattributes" && files[0] !== "app.js"){
+      console.log(files);
       space();
       console.log("Please make sure this is ran in the root dir of Web-OS");
       space();
@@ -100,7 +101,9 @@ function installLocal(argument) {
     console.log("+ apt-get update");
     // Check if need to use sudo
     if(com.nosudo){
-      exec("apt-get update");
+      execa("apt-get update");
+    } else {
+      execa("sudo apt-get update");
     }
   }
 }
@@ -203,24 +206,16 @@ function getArgs(argument) {
   }
 }
 
-function exec(command) {
+function execa(command) {
   // Runs a command
-  try {
-    execute(command, function(error, stdout, stderr){
-      console.log(stdout);
+  exec(command, function(error, stdout, stderr){
+    console.log(stdout);
+    console.log(stderr);
+    if(stderr){
+      space();
+      console.log("ERROR! Could not run "+command);
+      console.log("Full error:");
       console.log(stderr);
-      if(stderr){
-        space();
-        console.log("ERROR! Could not run "+command);
-        console.log("Full error:");
-        console.log(stderr);
-      }
-    });
-  } catch (e) {
-    space();
-    console.log("ERROR! Could not run "+command);
-    console.log(e);
-  } finally {
-    console.log("Done!");
-  }
+    }
+  });
 }
