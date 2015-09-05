@@ -14,5 +14,16 @@ nav {
   margin-left: 1cm; }
   .container-fluid .header h3 {
     margin-left: 1cm; }
+.container-fluid .table-head {
+  margin-left: 1cm; }
+  .container-fluid .table-head div {
+    margin-left: 2cm; }
+
+.gly {
+  width: 1.25cm; }
+
+.gly:hover {
+  background-color: green;
+  width: 1.25cm; }
 
 /*# sourceMappingURL=dashboard.css.map */
