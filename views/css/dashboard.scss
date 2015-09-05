@@ -3,7 +3,20 @@
 @import "boot.css";
 
 body, html{
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/css/img/white.png");
+  color: black;
+}
+
+h1 {
+color: black;
+}
+
+h2 {
+color: black;
+}
+
+h3,h4,h5,h6,div,label {
+color: black;
 }
 
 nav {
@@ -27,14 +40,18 @@ nav {
   }
 }
 .gly {
-  width: 1.77cm;
+  width: 5cm;
   padding: 10px;
   padding-right: 0;
 }
 .gly:hover {
   background-image: url("/css/img/boot.jpg");
-  width: 1.77cm;
+  width: 10cm;
   border-radius: 10px;
   padding: 10px;
   padding-right: 0;
+}
+
+.panel-body {
+  color: white;
 }

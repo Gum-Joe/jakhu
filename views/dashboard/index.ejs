@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/dashboard.css" media="screen" title="no title" charset="utf-8">
   </head>
-  <body>
+  <body class="co">
     <!--Navbar-->
     <nav class="navbar navbar-default navtop">
   <div class="container-fluid">
@@ -77,38 +77,54 @@
 
 
 </p>
-
-    <div class="container-fluid">
-      <div class="header">
-          <h1>Welcome back, <%=user %>! </h1>
-      </div>
+<div class="row">
+  <div class="container-fluid">
+    <div class="header">
+        <h1>Welcome back, <%=user %>! </h1>
     </div>
-    <div class="container-fluid">
-      <div class="header">
-        <h3>Your Web-apps:</h3>
-      </div>
+  </div>
+  <div class="container-fluid">
+    <div class="header">
+      <h3>Your Web-apps:</h3>
     </div>
-    <div class="container-fluid">
-      <div class="table-head">
+  </div>
+  <div class="container-fluid">
+    <div class="table-head">
+      <p>
+        <span class="glyphicon glyphicon-plus"></span> New <p>   </p>
+        <span class="glyphicon glyphicon-pencil"></span> Edit
+        <span class="glyphicon glyphicon-download-alt"></span> Install more tools
+      </p>
+      <span class="glyphicon glyphicon-plus"></span> New
+      <span class="glyphicon glyphicon-pencil"></span> Edit
+      <span class="glyphicon glyphicon-download-alt"></span> Install more tools
         <div class="gly">
           <span class="glyphicon glyphicon-plus"></span> New
         </div>
-      </div>
-    </div>
-    <div class="container-fluid">
-      <div class="table-head">
         <div class="gly">
           <span class="glyphicon glyphicon-pencil"></span> Edit
         </div>
+      <div class="gly">
+        <span class="glyphicon glyphicon-download-alt"></span> Install more tools
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="table-head">
-        <div class="gly">
-          <span class="glyphicon glyphicon-pencil"></span> Install more tools
-        </div>
+  </div>
+  <div class="container-fluid">
+    <div class="table-head">
+      <div class="gly">
+        <span class="glyphicon glyphicon-pencil"></span> Edit
       </div>
     </div>
+  </div>
+  <div class="container-fluid">
+    <div class="table-head">
+      <div class="gly">
+        <span class="glyphicon glyphicon-download-alt"></span> Install more tools
+      </div>
+    </div>
+  </div>
+</div>
+
     <!--System info -->
     <div class="container-fluid">
       <div class="system-info-build">
