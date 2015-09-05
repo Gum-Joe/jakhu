@@ -27,11 +27,14 @@ nav {
   }
 }
 .gly {
-  width: 1.25cm;
-  padding-top: 10px;
+  width: 1.77cm;
+  padding: 10px;
+  padding-right: 0;
 }
 .gly:hover {
-  background-color: green;
-  width: 1.25cm;
-  padding-top: 10px;
+  background-image: url("/css/img/boot.jpg");
+  width: 1.77cm;
+  border-radius: 10px;
+  padding: 10px;
+  padding-right: 0;
 }
