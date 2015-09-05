@@ -55,7 +55,6 @@ function install(osa) {
     } else {
       installLocal();
     }
-    installLocal();
   } else {
     // TODO: Function goes here
   }
@@ -63,4 +62,11 @@ function install(osa) {
 
 function installLocal(argument) {
   // Install locally
+  console.log("Installing locally in /packages/");
+  space();
+  console.log("Please make sure that this is ran in the root dir ");
+}
+
+function space(argument) {
+  console.log("                     ");
 }
