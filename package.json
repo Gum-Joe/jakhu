@@ -4,7 +4,7 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "mocha && npm run coveralls && npm run cover-ci",
+    "test": "mocha",
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
