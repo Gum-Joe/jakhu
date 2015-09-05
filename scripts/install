@@ -1,5 +1,5 @@
 #!/usr/env/node
-var exec = require('child_process').exec;
+var execute = require('child_process').exec;
 var os = require('os');
 var com = require('commander');
 var fs = require('fs');
@@ -93,7 +93,16 @@ function installLocal(argument) {
       console.log("Created ./packages dir");
     }
   });
-  // Read packages to install
+  // Read packages to install & install
+  if(osl === 'Linux' && com.yum === undefined){
+    space();
+    console.log("Running 'apt-get update' for you");
+    console.log("+ apt-get update");
+    // Check if need to use sudo
+    if(com.nosudo){
+      exec("apt-get update");
+    }
+  }
 }
 
 function space(argument) {
@@ -191,5 +200,20 @@ function getArgs(argument) {
         }
       }
     }
+  }
+}
+
+function exec(command) {
+  // Runs a command
+  try {
+    execute(command, function(error, stdout, stderr){
+
+    });
+  } catch (e) {
+    space();
+    console.log("ERROR! Could not run "+command);
+    console.log(e);
+  } finally {
+    console.log("Done!");
   }
 }
