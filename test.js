@@ -1,1 +1,1 @@
-exports.t = require("./bin/start");
+exports.t = require("./boot/boot.js");
