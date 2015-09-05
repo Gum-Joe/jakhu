@@ -20,10 +20,12 @@ nav {
     margin-left: 2cm; }
 
 .gly {
-  width: 1.25cm; }
+  width: 1.25cm;
+  padding-top: 10px; }
 
 .gly:hover {
   background-color: green;
-  width: 1.25cm; }
+  width: 1.25cm;
+  padding-top: 10px; }
 
 /*# sourceMappingURL=dashboard.css.map */
