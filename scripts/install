@@ -78,6 +78,7 @@ function installLocal(argument) {
       process.exit(2);
     }
   });
+  // Mkdir packages
   mkdirp("./packages", function (err) {
     if(err){
       console.log("ERROR!");
