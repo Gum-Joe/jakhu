@@ -10,6 +10,18 @@ nav {
   background-image: white;
   border-radius: 0px; }
 
+.t-node {
+  background-image: url("/css/img/node-gradient.jpg"); }
+
+.t-ruby {
+  background-image: url("/css/img/ruby.png"); }
+
+.t-python {
+  background-image: url("/css/img/python.jpg"); }
+
+.t-php {
+  background-image: url("/css/img/php.png"); }
+
 .container-fluid .header {
   margin-left: 1cm; }
   .container-fluid .header h3 {
