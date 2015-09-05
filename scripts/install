@@ -219,6 +219,7 @@ function execa(command) {
       console.log("ERROR! Could not run "+command);
       console.log("Full error:");
       console.log(stderr);
+      console.log("Done!");
     }
   });
 }
