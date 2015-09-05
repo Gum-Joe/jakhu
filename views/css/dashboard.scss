@@ -64,6 +64,9 @@ nav .navbar, .navbar-default, .navtop {
       a {
         color: white;
       }
+      a:hover {
+        color: red;
+      }
       ul {
         .active {
           background-image: url("/css/img/nav-back-two.png");
@@ -71,6 +74,13 @@ nav .navbar, .navbar-default, .navtop {
         }
         a {
           color: white;
+        }
+        li {
+          ul {
+            a {
+              color: black
+            }
+          }
         }
         li:hover {
           background-image: url("/css/img/nav-back-two.png");

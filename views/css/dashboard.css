@@ -49,11 +49,15 @@ nav .navbar, .navbar-default, .navtop {
   color: white; }
   nav .navbar .container-fluid div a, .navbar-default .container-fluid div a, .navtop .container-fluid div a {
     color: white; }
+  nav .navbar .container-fluid div a:hover, .navbar-default .container-fluid div a:hover, .navtop .container-fluid div a:hover {
+    color: red; }
   nav .navbar .container-fluid div ul .active, .navbar-default .container-fluid div ul .active, .navtop .container-fluid div ul .active {
     background-image: url("/css/img/nav-back-two.png");
     color: white; }
   nav .navbar .container-fluid div ul a, .navbar-default .container-fluid div ul a, .navtop .container-fluid div ul a {
     color: white; }
+  nav .navbar .container-fluid div ul li ul a, .navbar-default .container-fluid div ul li ul a, .navtop .container-fluid div ul li ul a {
+    color: black; }
   nav .navbar .container-fluid div ul li:hover, .navbar-default .container-fluid div ul li:hover, .navtop .container-fluid div ul li:hover {
     background-image: url("/css/img/nav-back-two.png"); }
   nav .navbar .container-fluid div ul a:hover, .navbar-default .container-fluid div ul a:hover, .navtop .container-fluid div ul a:hover {
