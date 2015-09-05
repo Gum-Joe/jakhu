@@ -98,13 +98,15 @@ function installLocal(argument) {
   // Read packages to install & install
   if(osl === 'Linux' && com.yum === undefined){
     space();
+    console.log("Output appears after");
+    space();
     console.log("Running 'apt-get update' for you");
     console.log("+ apt-get update");
     // Check if need to use sudo
     if(com.nosudo){
-      execa("apt-get update");
+      execa("apt-get update -y");
     } else {
-      execa("sudo apt-get update");
+      execa("sudo apt-get update -y");
     }
   }
 }
