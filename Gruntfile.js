@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     // Watching
     watch: {
       scripts: {
-        files: 'views/css/*.scss',
+        files: ['views/css/*.scss', 'Gruntfile.js'],
         tasks: ['compile:sass'],
         options: {
           interrupt: true,
@@ -58,9 +58,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
-  grunt.registerTask('compile:sass', ['sass:sass:min', 'sass:sass:dist']);
+  grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
   grunt.registerTask('compile:watch', 'watch');
-
-  // mochaTest
 
 };
