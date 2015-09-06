@@ -127,6 +127,12 @@ nav .navbar, .navbar-default, .navtop {
   @include buttons();
   @include middle();
   thead {
+    tr {
+      th {
+        text-align: center;
+        @include cent();
+      }
+    }
     text-align: center;
   }
   .t-node {

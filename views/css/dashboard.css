@@ -105,6 +105,11 @@ nav .navbar a, .navbar-default a, .navtop a {
 .table thead {
   text-align: center;
 }
+.table thead tr th {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 .table .t-node {
   background-image: url("/css/img/node-gradient.jpg");
 }
