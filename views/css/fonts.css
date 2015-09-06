@@ -50,6 +50,16 @@
      src: url(fonts/source-sans-pro/SourceSansPro-Regular.otf);
 }
 
+@font-face {
+     font-family: Fira-Sans-Bold;
+     src: url(fonts/fira-sans/FiraSans-Bold.otf);
+}
+
+@font-face {
+     font-family: Fira-Sans-Bold-Italic;
+     src: url(fonts/fira-sans/FiraSans-BoldItalic.otf);
+}
+
 .web-os-main-font {
   font-family: FiraSans-UltraLight;
 }
