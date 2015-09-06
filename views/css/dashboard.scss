@@ -12,6 +12,14 @@
   background-image: url("/css/img/boot.jpg");
 }
 
+@mixin buttons {
+  font-family: Source-Sans-Pro-Light;
+}
+
+@mixin middle {
+  text-align: center;
+}
+
 
 body, html{
   background-image: url("/css/img/nav-back-two.png");
@@ -116,6 +124,8 @@ nav .navbar, .navbar-default, .navtop {
   border-color: white;
   @include cent();
   @include boot();
+  @include buttons();
+  @include middle();
   .t-node {
     background-image: url("/css/img/node-gradient.jpg");
   }
@@ -142,6 +152,13 @@ nav .navbar, .navbar-default, .navtop {
       background-image: url("/css/img/php.png");
     }
 
+  }
+  $ar: 0.5cm;
+  button {
+    text-align: center;
+    padding: 0;
+    padding-right: $ar;
+    padding-left: $ar;
   }
 }
 .t-node {

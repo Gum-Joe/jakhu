@@ -99,6 +99,8 @@ nav .navbar a, .navbar-default a, .navtop a {
   margin-left: auto;
   margin-right: auto;
   background-image: url("/css/img/boot.jpg");
+  font-family: Source-Sans-Pro-Light;
+  text-align: center;
 }
 .table .t-node {
   background-image: url("/css/img/node-gradient.jpg");
@@ -123,6 +125,12 @@ nav .navbar a, .navbar-default a, .navtop a {
 }
 .table tbody .t-php {
   background-image: url("/css/img/php.png");
+}
+.table button {
+  text-align: center;
+  padding: 0;
+  padding-right: 0.5cm;
+  padding-left: 0.5cm;
 }
 
 .t-node {
