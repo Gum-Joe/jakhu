@@ -4,12 +4,15 @@ var execute = require('child_process').exec;
 
 module.exports = function(grunt) {
 
-  // Add the grunt-mocha-test tasks.
+  // Add tasks.
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.initConfig({
     // Configure a mochaTest task
+    // Configure Watching
+
     mochaTest: {
       test: {
         options: {
@@ -38,14 +41,25 @@ module.exports = function(grunt) {
           'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
         }
       }
+    },
+    // Watching
+    watch: {
+      scripts: {
+        files: 'views/css/*.scss',
+        tasks: ['compile:sass'],
+        options: {
+          interrupt: true,
+        }
+      }
     }
   });
 
   grunt.registerTask('default', 'mochaTest');
 
-  grunt.registerTask('compile:scss', 'sass:dist');
-  grunt.registerTask('compile:min', 'sass:min');
-  grunt.registerTask('compile', ['sass:min', 'sass:dist']);
+  grunt.registerTask('compile:sass:scss', 'sass:dist');
+  grunt.registerTask('compile:sass:min', 'sass:min');
+  grunt.registerTask('compile:sass', ['sass:sass:min', 'sass:sass:dist']);
+  grunt.registerTask('compile:watch', 'watch');
 
   // mochaTest
 
