@@ -52,8 +52,8 @@ test-coveralls:
 
 ci:
 	sass views/css/dashboard.scss:views/css/dashboard.css; \
-	nyc npm test
-	npm grunt
+	nyc npm test; \
+	grunt ci
 
 #.PHONY test
 
