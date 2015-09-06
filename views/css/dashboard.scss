@@ -126,6 +126,9 @@ nav .navbar, .navbar-default, .navtop {
   @include boot();
   @include buttons();
   @include middle();
+  thead {
+    text-align: center;
+  }
   .t-node {
     background-image: url("/css/img/node-gradient.jpg");
   }
