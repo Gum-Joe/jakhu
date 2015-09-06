@@ -93,6 +93,7 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask('default', ['compile:sass', 'install', 'test']);
+  grunt.registerTask('ci', ['compile:sass', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
 

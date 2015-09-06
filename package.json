@@ -8,7 +8,8 @@
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
-    "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "grunt": "grunt ci"
   },
   "repository": {
     "type": "git",
