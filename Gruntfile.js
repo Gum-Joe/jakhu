@@ -8,6 +8,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-js2coffee');
 
   grunt.initConfig({
     // Configure a mochaTest task
@@ -24,6 +26,26 @@ module.exports = function(grunt) {
         src: ['test/*.js']
       }
     },
+    js2coffee: {
+    options: {
+      // Task-level options go here
+    },
+    // Compile all
+    // individual CofeeScript files, retaining the same directory structure
+    // in the destination folder
+    root: {
+      options: {},
+      files: [
+        {
+          expand: true,
+          cwd: './',
+          src: ['*.js'],
+          dest: './source/',
+          ext: '.coffee'
+        }
+      ]
+    }
+  },
     sass: {                              // Task
       dist: {                            // Target
         options: {                       // Target options
@@ -42,7 +64,12 @@ module.exports = function(grunt) {
         }
       }
     },
-    // Watching
+    exec: {
+      bundle: 'bundle install',
+      install: 'npm install',
+      dev: 'npm install --dev',
+      test: 'npm test'
+    },
     watch: {
       scripts: {
         files: ['views/css/*.scss', 'Gruntfile.js'],
@@ -53,12 +80,19 @@ module.exports = function(grunt) {
       }
     }
   });
+  grunt.registerTask('default', ['compile:sass', 'install', 'test']);
 
-  grunt.registerTask('default', 'mochaTest');
+  grunt.registerTask('test', 'mochaTest');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
   grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
   grunt.registerTask('compile:watch', 'watch');
+  grunt.registerTask('compile:coffee', 'js2coffee:root');
+
+  grunt.registerTask('install:bundle', 'exec:bundle');
+  grunt.registerTask('install:npm', 'exec:install');
+  grunt.registerTask('install:dev', 'exec:dev');
+  grunt.registerTask('install', ['exec:dev', 'exec:install', 'exec:bundle']);
 
 };
