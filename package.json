@@ -45,6 +45,7 @@
     "express-session": "^1.11.3",
     "git": "^0.1.5",
     "html": "0.0.10",
+    "html2jade": "^0.8.4",
     "jade": "^1.11.0",
     "jquery": "^2.1.4",
     "mkdirp": "^0.5.1",
