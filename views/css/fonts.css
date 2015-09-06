@@ -16,6 +16,21 @@
 }
 
 @font-face {
+     font-family: Courier-Prime-Bold;
+     src: url(fonts/courier-prime/Courier_Prime_Bold.ttf);
+}
+
+@font-face {
+     font-family: Courier-Prime-Bold-Italic;
+     src: url(fonts/courier-prime/Courier_Prime_Bold_Italic.ttf);
+}
+
+@font-face {
+     font-family: Courier-Prime-Italic;
+     src: url(fonts/courier-prime/Courier_Prime_Italic.ttf);
+}
+
+@font-face {
      font-family: Courier_Prime;
      src: url(fonts/courier-prime/Courier_Prime.ttf);
 }
