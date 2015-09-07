@@ -4,7 +4,7 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
+    "test": "./node_modules/.bin/grunt test",
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
@@ -61,7 +61,7 @@
     "python-shell": "^0.1.0",
     "serve-favicon": "^2.3.0",
     "stylus": "^0.51.1",
-    "supertest": "^1.0.1",
+    "supertest": "^1.1.0",
     "winston": "^1.0.1",
     "xml": "^1.0.0",
     "xml2js": "^0.4.10"

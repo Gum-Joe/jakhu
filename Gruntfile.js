@@ -24,6 +24,15 @@ module.exports = function(grunt) {
           clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
         },
         src: ['test/*.js']
+      },
+      server: {
+        options: {
+          reporter: 'spec',
+          captureFile: 'coverage/cover.txt', // Optionally capture the reporter output to a file
+          quiet: false, // Optionally suppress output to standard out (defaults to false)
+          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
+        },
+        src: ['test/server/*.js']
       }
     },
     js2coffee: {
@@ -96,6 +105,7 @@ module.exports = function(grunt) {
   grunt.registerTask('ci', ['compile:sass', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
+  grunt.registerTask('test:server', 'mochaTest:server');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
