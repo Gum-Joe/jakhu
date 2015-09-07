@@ -25,7 +25,4 @@ describe('GET requests', function () {
       .expect(200, done);
     done();
   });
-  after(function () {
-    //app.close();
-  })
 });
