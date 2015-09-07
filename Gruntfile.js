@@ -89,7 +89,8 @@ module.exports = function(grunt) {
       bundle: 'bundle install',
       install: 'npm install',
       dev: 'npm install --dev',
-      test: 'npm test'
+      test: 'npm test',
+      logs: 'mkdir logs && touch logs/wos.log'
     },
     watch: {
       scripts: {
@@ -102,7 +103,7 @@ module.exports = function(grunt) {
     }
   });
   grunt.registerTask('default', ['compile:sass', 'install', 'test']);
-  grunt.registerTask('ci', ['compile:sass', 'test']);
+  grunt.registerTask('ci', ['create:logs', 'compile:sass', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
   grunt.registerTask('test:server', 'mochaTest:server');
@@ -118,5 +119,7 @@ module.exports = function(grunt) {
   grunt.registerTask('install:npm', 'exec:install');
   grunt.registerTask('install:dev', 'exec:dev');
   grunt.registerTask('install', ['exec:dev', 'exec:install', 'exec:bundle']);
+
+  grunt.registerTask('create:logs', 'exec:logs');
 
 };
