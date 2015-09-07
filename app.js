@@ -1,4 +1,4 @@
-exports.start = function start(){
+exports.start = function start(x){
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -98,14 +98,19 @@ app.use('passportconfig', passportconfig);
 
 
 var port = process.env.PORT || 8080;
-
-app.listen(port, function () {
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  kernal.boot("ok");
-  kernal.startinput("ok");
-} );
+if(x !== "basic" && x !== "ci"){
+  app.listen(port, function () {
+  	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+  	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+    kernal.boot("ok");
+    kernal.startinput("ok");
+  });
+} else {
+  app.listen(6060, function () {
+  	// server started for mocha test
+  });
+}
 // HTTPS
 //httpsserver = https.createServer(options);
 // Turn on HTTPS
@@ -232,3 +237,9 @@ function createlog(argument) {
 
 // end of start function
 };
+
+// Close server
+
+exports.close = function close(argument) {
+  process.exit(1);
+}
