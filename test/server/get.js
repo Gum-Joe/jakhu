@@ -6,8 +6,9 @@ var fs = require('fs');
 
 describe('GET requests', function () {
   console.log("Please make sure the server is not running before running these tests");
-  before(function () {
+  before(function (done) {
     app.start("basic");
+    done();
   });
   it('GET / and should return 200', function (done) {
     request("http://localhost:6060")
@@ -15,6 +16,7 @@ describe('GET requests', function () {
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200, done);
+    done();
   });
   it('GET /dashboard and should return 200', function (done) {
     request("http://localhost:6060")
@@ -22,5 +24,6 @@ describe('GET requests', function () {
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200, done);
+    done();
   });
 });
