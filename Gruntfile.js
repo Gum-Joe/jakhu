@@ -16,15 +16,6 @@ module.exports = function(grunt) {
     // Configure Watching
 
     mochaTest: {
-      test: {
-        options: {
-          reporter: 'spec',
-          captureFile: 'coverage/cover.txt', // Optionally capture the reporter output to a file
-          quiet: false, // Optionally suppress output to standard out (defaults to false)
-          clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
-        },
-        src: ['test/*.js']
-      },
       server: {
         options: {
           reporter: 'spec',

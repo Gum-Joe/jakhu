@@ -15,7 +15,7 @@ describe('GET requests', function () {
       .get('/')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
-      .expect(200, done);
+      .expect(200);
     done();
   });
   it('GET /dashboard and should return 200', function (done) {
@@ -23,7 +23,7 @@ describe('GET requests', function () {
       .get('/dashboard')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
-      .expect(200, done);
+      .expect(200);
     done();
   });
 });
