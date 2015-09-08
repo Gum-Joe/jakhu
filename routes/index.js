@@ -51,6 +51,7 @@ var userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(passportlocalmongoose);
+
 // connect to db
 // done in connect.js
 //mongoose.connect('mongodb://localhost:27017/web-os');
@@ -73,9 +74,6 @@ function getdocs(x){
 });
 
 };
-
-console.log(counts);
-
 //router.use('passportconfig', passportconfig);
 
 /* GET home page. */

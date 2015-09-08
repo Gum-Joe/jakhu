@@ -20,6 +20,7 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
+//This prints undefined
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
 //var wlogger = require("./libs/wlogger.js");

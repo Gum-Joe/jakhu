@@ -37,7 +37,6 @@ module.exports = function(grunt) {
       options: {},
       files: [
         {
-          expand: true,
           cwd: './',
           src: ['**/*.js'],
           dest: './source/',
@@ -50,8 +49,8 @@ module.exports = function(grunt) {
       files: [
         {
           expand: true,
-          cwd: './libs',
-          src: ['*.js'],
+          cwd: './',
+          src: ['**/*.js'],
           dest: './source/',
           ext: '.coffee'
         }
@@ -103,7 +102,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:sass:min', 'sass:min');
   grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
   grunt.registerTask('compile:watch', 'watch');
-  grunt.registerTask('compile:coffee', 'js2coffee:root');
+  grunt.registerTask('compile:coffee', 'js2coffee:bin');
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
 
   grunt.registerTask('install:bundle', 'exec:bundle');
