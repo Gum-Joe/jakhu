@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-js2coffee');
 
   grunt.initConfig({
@@ -25,6 +26,15 @@ module.exports = function(grunt) {
         },
         src: ['test/server/*.js']
       }
+    },
+    copy: {
+      main: {
+        expand: true,
+        cwd: 'node_modules/',
+        src: '**/*',
+        dest: 'tmp/node_modules',
+        expand: true,
+      },
     },
     js2coffee: {
     options: {
@@ -102,7 +112,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:sass:min', 'sass:min');
   grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
   grunt.registerTask('compile:watch', 'watch');
-  grunt.registerTask('compile:coffee', 'js2coffee:bin');
+  grunt.registerTask('compile:coffee', ['copy:main', 'js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
 
   grunt.registerTask('install:bundle', 'exec:bundle');

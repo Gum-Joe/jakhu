@@ -8,6 +8,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-exec'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-js2coffee'
   grunt.initConfig
     
@@ -22,6 +23,11 @@ module.exports = (grunt) ->
           clearRequireCache: false # Optionally clear the require cache before running tests (defaults to false)
 
         src: ['test/server/*.js']
+
+    copy:
+      main:
+        src: 'node_modules/'
+        dest: 'tmp/'
 
     js2coffee:
       options: {}
@@ -101,7 +107,10 @@ module.exports = (grunt) ->
     'sass:dist'
   ]
   grunt.registerTask 'compile:watch', 'watch'
-  grunt.registerTask 'compile:coffee', 'js2coffee:bin'
+  grunt.registerTask 'compile:coffee', [
+    'copy:main'
+    'js2coffee:bin'
+  ]
   grunt.registerTask 'compile:coffee:sub', 'js2coffee:bin'
   grunt.registerTask 'install:bundle', 'exec:bundle'
   grunt.registerTask 'install:npm', 'exec:install'
