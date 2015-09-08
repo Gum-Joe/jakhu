@@ -11,8 +11,24 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-js2coffee');
+  grunt.loadNpmTasks('grunt-coveralls');
 
   grunt.initConfig({
+    coveralls: {
+    options: {
+      // LCOV coverage file relevant to every target
+      src: 'coverage/lcov.info',
+
+      // When true, grunt-coveralls will only print a warning rather than
+      // an error, to prevent CI builds from failing unnecessarily (e.g. if
+      // coveralls.io is down). Optional, defaults to false.
+      force: false
+    },
+    your_target: {
+      // Target-specific LCOV coverage file
+      src: 'coverage/extra-results-*.info'
+    },
+  },
     // Configure a mochaTest task
     // Configure Watching
 
@@ -39,6 +55,7 @@ module.exports = function(grunt) {
     js2coffee: {
     options: {
       // Task-level options go here
+      ignore: "node_modules"
     },
     // Compile all
     // individual CofeeScript files, retaining the same directory structure
@@ -112,7 +129,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:sass:min', 'sass:min');
   grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
   grunt.registerTask('compile:watch', 'watch');
-  grunt.registerTask('compile:coffee', ['copy:main', 'js2coffee:bin']);
+  grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
 
   grunt.registerTask('install:bundle', 'exec:bundle');

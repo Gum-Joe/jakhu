@@ -1,0 +1,1 @@
+istanbul cover Gruntfile.js

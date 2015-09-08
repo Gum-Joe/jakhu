@@ -26,13 +26,18 @@ module.exports = (grunt) ->
 
     copy:
       main:
-        src: 'node_modules/'
-        dest: 'tmp/'
+        expand: true
+        cwd: 'node_modules/'
+        src: '**/*'
+        dest: 'tmp/node_modules'
+        expand: true
 
     js2coffee:
-      options: {}
-      
-      # Task-level options go here
+      options:
+        
+        # Task-level options go here
+        ignore: 'node_modules'
+
       
       # Compile all
       # individual CofeeScript files, retaining the same directory structure
@@ -107,10 +112,7 @@ module.exports = (grunt) ->
     'sass:dist'
   ]
   grunt.registerTask 'compile:watch', 'watch'
-  grunt.registerTask 'compile:coffee', [
-    'copy:main'
-    'js2coffee:bin'
-  ]
+  grunt.registerTask 'compile:coffee', ['js2coffee:bin']
   grunt.registerTask 'compile:coffee:sub', 'js2coffee:bin'
   grunt.registerTask 'install:bundle', 'exec:bundle'
   grunt.registerTask 'install:npm', 'exec:install'
