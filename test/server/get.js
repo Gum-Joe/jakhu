@@ -15,7 +15,6 @@ describe('GET requests', function () {
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200, done);
-    done();
   });
   it('GET /dashboard and should return 200', function (done) {
     request("http://localhost:6060")
@@ -23,6 +22,5 @@ describe('GET requests', function () {
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200, done);
-    done();
   });
 });
