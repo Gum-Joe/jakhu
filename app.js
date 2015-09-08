@@ -40,7 +40,7 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
 // create file
-createlog("ok");
+//createlog("ok");
 var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
 
 
