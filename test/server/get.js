@@ -114,102 +114,60 @@ describe('GET requests', function () {
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /acceptw and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/acceptw')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /type and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/type')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /set-lang and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/set-lang')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /install-standard and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/install-standard')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /set-install-standard and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/set-install-standard')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /opt-standard and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/opt-standard')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
+  it('GET /recovery and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/accept')
+      .get('/recovery')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
     done();
   });
-  it('GET /accept and should return 200', function (done) {
-    request("http://localhost:6060")
-      .get('/accept')
-      .set('Accept', 'text/html')
-      .expect('Content-Type', /html/)
-      .expect(200);
-    done();
-  });
-  it('GET /accept and should return 200', function (done) {
-    request("http://localhost:6060")
-      .get('/accept')
-      .set('Accept', 'text/html')
-      .expect('Content-Type', /html/)
-      .expect(200);
-    done();
-  });
-  it('GET /accept and should return 200', function (done) {
-    request("http://localhost:6060")
-      .get('/accept')
-      .set('Accept', 'text/html')
-      .expect('Content-Type', /html/)
-      .expect(200);
-    done();
-  });
-  it('GET /accept and should return 200', function (done) {
-    request("http://localhost:6060")
-      .get('/accept')
-      .set('Accept', 'text/html')
-      .expect('Content-Type', /html/)
-      .expect(200);
-    done();
-  });
-  it('GET /accept and should return 200', function (done) {
-    request("http://localhost:6060")
-      .get('/accept')
-      .set('Accept', 'text/html')
-      .expect('Content-Type', /html/)
-      .expect(200);
-    done();
-  });
-
-
 });
