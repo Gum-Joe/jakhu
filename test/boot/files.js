@@ -8,7 +8,7 @@ var should = require('should');
 
 describe('Boot up Checks', function () {
   it('Cleaning', function (done) {
-    b.clean(function (err) {
+    b.clean('test', function (err) {
       if(err){
         should.fail();
       }

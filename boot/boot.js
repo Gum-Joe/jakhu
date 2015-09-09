@@ -22,7 +22,7 @@ exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
   oobe.first("ok");
   boot.recovery.rollback.createBackup("ok");
-  boot.kernal.clean(function (err) {
+  boot.kernal.clean('o', function (err) {
     if(err){
       throw new Error('Could not clean');
     }

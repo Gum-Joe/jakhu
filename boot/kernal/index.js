@@ -8,10 +8,14 @@ exports.createTmp = function createTmp(argument) {
   })
 }
 
-exports.clean = function clean(x) {
+exports.clean = function clean(y,x) {
   // clean out ./tmp
   exec("rm -rfv ./tmp/*", function (error, stdout, stderr) {
+    if(y === 'test'){
+      // do nothin
+    } else {
       console.log('Cleaned out ./tmp...'+clicolour.greenBright("OK"));
+    }
       if(stderr){
         x(stderr);
       } else {
