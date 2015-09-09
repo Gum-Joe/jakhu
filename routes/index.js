@@ -226,7 +226,7 @@ router.get('/wosl', function(req, res, next) {
       });
     });
   });
-
+  
   router.get('/recovery', function(req, res, next) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
