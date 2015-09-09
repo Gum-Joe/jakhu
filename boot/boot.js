@@ -22,7 +22,11 @@ exports.boot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
   oobe.first("ok");
   boot.recovery.rollback.createBackup("ok");
-  boot.kernal.clean();
+  boot.kernal.clean(function (err) {
+    if(err){
+      throw new Error('Could not clean');
+    }
+  });
 }
 
 // TODO: Create boot types (safemode, full, recovery)

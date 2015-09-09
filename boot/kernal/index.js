@@ -12,5 +12,10 @@ exports.clean = function clean(x) {
   // clean out ./tmp
   exec("rm -rfv ./tmp/*", function (error, stdout, stderr) {
       console.log('Cleaned out ./tmp...'+clicolour.greenBright("OK"));
+      if(stderr){
+        x(stderr);
+      } else {
+        x(null);
+      }
   });
 }
