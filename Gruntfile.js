@@ -15,25 +15,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-html2jade');
 
   grunt.initConfig({
-    /**html2jade: {
-      options: {
-        // Task-specific options go here.
-        double:true,
-        numeric:false,
-        scalate:false,
-        nspaces:2,
-        tabs:false,
-        donotencode:false,
-        bodyless:false,
-      },
-      all: {
-        // Target-specific file lists and/or options go here.
-        src: ['views/index.ejs']
-        output
-      },
-    },*/
+    clean: {
+      all: ['tmp', 'views/jade', 'views/css/sass']
+    },
     html2jade: {
-     all: {
+     most: {
        options: {
        },
        files: {
@@ -125,6 +111,7 @@ module.exports = function(grunt) {
         },
         files: {                         // Dictionary of files
           'views/css/dashboard.css': 'views/css/dashboard.scss',       // 'destination': 'source'
+          'views/css/sass/dashboard.css': 'views/css/dashboard.scss'
         }
       },
       min: {                            // Target
@@ -133,6 +120,7 @@ module.exports = function(grunt) {
         },
         files: {                         // Dictionary of files
           'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
+          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss'
         }
       }
     },
@@ -153,8 +141,8 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['compile:sass', 'install', 'test']);
-  grunt.registerTask('ci', ['create:logs', 'compile:sass', 'test']);
+  grunt.registerTask('default', ['clean', 'compile:sass', 'test', 'compile:jade']);
+  grunt.registerTask('ci', ['create:logs', 'compile', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
   grunt.registerTask('test:server', 'mochaTest:server');
@@ -165,6 +153,8 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:watch', 'watch');
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
+  grunt.registerTask('compile:jade', 'html2jade:most');
+  grunt.registerTask('compile', ['compile:sass', 'compile:jade']);
 
   grunt.registerTask('install:bundle', 'exec:bundle');
   grunt.registerTask('install:npm', 'exec:install');
