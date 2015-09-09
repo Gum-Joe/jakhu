@@ -26,9 +26,9 @@ describe('GET requests', function () {
       .expect(200);
     done();
   });
-  it('GET /dashboard and should return 200', function (done) {
+  it('GET /start and should return 200', function (done) {
     request("http://localhost:6060")
-      .get('/dashboard')
+      .get('/start')
       .set('Accept', 'text/html')
       .expect('Content-Type', /html/)
       .expect(200);
@@ -42,4 +42,174 @@ describe('GET requests', function () {
       .expect(200);
     done();
   });
+  it('GET /license and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/license')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /decline and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/decline')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /decline-y and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/decline-y')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /decline-n and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/decline-n')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /wosl and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/wosl')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /declinew and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/declinew')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /declinew-y and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/declinew-y')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /declinew-n and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/declinew-n')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+  it('GET /accept and should return 200', function (done) {
+    request("http://localhost:6060")
+      .get('/accept')
+      .set('Accept', 'text/html')
+      .expect('Content-Type', /html/)
+      .expect(200);
+    done();
+  });
+
+
 });

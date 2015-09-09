@@ -139,6 +139,13 @@ module.exports = function(grunt) {
         options: {
           interrupt: true,
         }
+      },
+      test: {
+        files: ['test/**/*.js', 'Gruntfile.js'],
+        tasks: ['test'],
+        options: {
+          interrupt: true,
+        }
       }
     }
   });

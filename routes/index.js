@@ -171,7 +171,7 @@ router.get('/wosl', function(req, res, next) {
                 console.log("");
                 res.redirect('/wosl');
                 });
-
+//
           router.get('/acceptw', function(req, res, next) {
               console.log("");
               // TODO: Add license handlers
