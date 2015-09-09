@@ -12,8 +12,42 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-js2coffee');
   grunt.loadNpmTasks('grunt-coveralls');
+  grunt.loadNpmTasks('grunt-html2jade');
 
   grunt.initConfig({
+    /**html2jade: {
+      options: {
+        // Task-specific options go here.
+        double:true,
+        numeric:false,
+        scalate:false,
+        nspaces:2,
+        tabs:false,
+        donotencode:false,
+        bodyless:false,
+      },
+      all: {
+        // Target-specific file lists and/or options go here.
+        src: ['views/index.ejs']
+        output
+      },
+    },*/
+    html2jade: {
+     all: {
+       options: {
+       },
+       files: {
+         //src: 'views/index.ejs',
+         'views/jade/index.jade': ['views/index.ejs'],
+         'views/jade/boot.jade': ['views/boot.ejs'],
+         'views/jade/booting.jade': ['views/booting.ejs'],
+         'views/jade/recovery.jade': ['views/recovery.ejs'],
+         'views/jade/setup.jade': ['views/setup.ejs'],
+         'views/jade/signin.jade': ['views/signin.ejs'],
+         'views/jade/signup.jade': ['views/signup.ejs']
+       }
+     }
+   },
     coveralls: {
     options: {
       // LCOV coverage file relevant to every target
@@ -24,9 +58,9 @@ module.exports = function(grunt) {
       // coveralls.io is down). Optional, defaults to false.
       force: false
     },
-    your_target: {
+    report: {
       // Target-specific LCOV coverage file
-      src: 'coverage/extra-results-*.info'
+      src: 'coverage/locv2.info'
     },
   },
     // Configure a mochaTest task
