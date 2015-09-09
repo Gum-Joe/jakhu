@@ -1,4 +1,4 @@
-# Web-OS [![Dep Status](https://travis-ci.org/Gum-Joe/Web-OS.svg?branch=a1)](https://travis-ci.org/Gum-Joe/Web-OS) [![app veyor Build status](https://ci.appveyor.com/api/projects/status/93bp43bnds9wl230?svg=true)](https://ci.appveyor.com/project/Gum-Joe/web-os) [![Code Climate](https://codeclimate.com/github/Gum-Joe/Web-OS/badges/gpa.svg)](https://codeclimate.com/github/Gum-Joe/Web-OS) [![Dependency Status](https://david-dm.org/Gum-Joe/Web-OS.svg)](https://david-dm.org/Gum-Joe/Web-OS) [![devDependency Status](https://david-dm.org/Gum-Joe/Web-OS/dev-status.svg)](https://david-dm.org/Gum-Joe/Web-OS#info=devDependencies) [![Inline docs](http://inch-ci.org/github/Gum-Joe/Web-OS.svg?branch=master)](http://inch-ci.org/github/Gum-Joe/Web-OS)
+# Web-OS [![Dep Status](https://travis-ci.org/Gum-Joe/Web-OS.svg?branch=a1)](https://travis-ci.org/Gum-Joe/Web-OS) [![app veyor Build status](https://ci.appveyor.com/api/projects/status/93bp43bnds9wl230?svg=true)](https://ci.appveyor.com/project/Gum-Joe/web-os) [![Code Climate](https://codeclimate.com/github/Gum-Joe/Web-OS/badges/gpa.svg)](https://codeclimate.com/github/Gum-Joe/Web-OS) [![Dependency Status](https://david-dm.org/Gum-Joe/Web-OS.svg)](https://david-dm.org/Gum-Joe/Web-OS) [![devDependency Status](https://david-dm.org/Gum-Joe/Web-OS/dev-status.svg)](https://david-dm.org/Gum-Joe/Web-OS#info=devDependencies) [![Inline docs](http://inch-ci.org/github/Gum-Joe/Web-OS.svg?branch=master)](http://inch-ci.org/github/Gum-Joe/Web-OS) [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Gum-Joe/Web-OS)
 A brand new way to manage your web-apps: recovery, backup, managment and more.
 
 **NOTICE:** All development happens on the a1 branch. Please look at that branch instead.
@@ -20,14 +20,14 @@ Simply clone or fork this branch (the a1 branch) and start developing.
 ## Setup:
  Make sure you have nodejs, npm and ruby installed.
   1. `git clone https://github.com/Gum-Joe/Web-OS.git -b a1`
-  2. `npm install -g bower mocha less coffee-script nodemon nyc`,
+  2. `npm install -g bower mocha less coffee-script nodemon nyc grunt`,
 
   3. `npm install`,
 
   4. `bower install`,
   5. `gem install bundle`
   6. `bundle install`
-  7. `sass views/css/main.scss:views/css/main.css`
+  7. `grunt`
   8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
   9. `npm start`
 
