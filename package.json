@@ -4,7 +4,7 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/grunt test",
+    "test": "./node_modules/.bin/grunt",
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
