@@ -3,6 +3,8 @@
 @import "boot.css";
 @import "mixins";
 
+$n : none;
+
 @mixin cent() {
   margin-left: auto;
   margin-right: auto;
@@ -18,6 +20,13 @@
 
 @mixin middle {
   text-align: center;
+}
+
+@mixin nnobor {
+  border-radius: 0;
+  border-left: $n;
+  border-right:$n;
+  border-top: $n;
 }
 
 
@@ -76,6 +85,8 @@ nav {
 }
 
 nav .navbar, .navbar-default, .navtop {
+  padding-bottom: 0;
+  @include nnobor;
   background-image: url("/css/img/boot.jpg");
   color: white;
   .container-fluid {
@@ -88,13 +99,17 @@ nav .navbar, .navbar-default, .navtop {
       }
       ul {
         .active {
-          background-image: url("/css/img/nav-back-two.png");
-          color: white;
-        }
-        a {
-          color: white;
+          background-image: url("/css/img/python.jpg");
+          a {
+            color: white;
+            background-image: url("/css/img/php.png");
+          }
+          a:hover {
+            color: white;
+          }
         }
         li {
+          border-radius: 10px;
           ul {
             a {
               color: black
@@ -102,12 +117,21 @@ nav .navbar, .navbar-default, .navtop {
           }
         }
         li:hover {
-          background-image: url("/css/img/nav-back-two.png");
+          background-image: url("/css/img/python.jpg");
         }
         a:hover {
           color: white;
-          background-image: url("/css/img/nav-back-two.png");
+          background-image: url("/css/img/python.jpg");
         }
+      }
+    }
+    .navbar-header {
+      a {
+        color: white;
+      }
+      a:hover {
+        color: url('/css/img/python.jpg');
+        background-image: url("/css/img/node-gradient.jpg");
       }
     }
   }

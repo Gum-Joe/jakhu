@@ -60,6 +60,11 @@ nav {
 }
 
 nav .navbar, .navbar-default, .navtop {
+  padding-bottom: 0;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
   background-image: url("/css/img/boot.jpg");
   color: white;
 }
@@ -70,21 +75,34 @@ nav .navbar .container-fluid div a:hover, .navbar-default .container-fluid div a
   color: red;
 }
 nav .navbar .container-fluid div ul .active, .navbar-default .container-fluid div ul .active, .navtop .container-fluid div ul .active {
-  background-image: url("/css/img/nav-back-two.png");
+  background-image: url("/css/img/python.jpg");
+}
+nav .navbar .container-fluid div ul .active a, .navbar-default .container-fluid div ul .active a, .navtop .container-fluid div ul .active a {
+  color: white;
+  background-image: url("/css/img/php.png");
+}
+nav .navbar .container-fluid div ul .active a:hover, .navbar-default .container-fluid div ul .active a:hover, .navtop .container-fluid div ul .active a:hover {
   color: white;
 }
-nav .navbar .container-fluid div ul a, .navbar-default .container-fluid div ul a, .navtop .container-fluid div ul a {
-  color: white;
+nav .navbar .container-fluid div ul li, .navbar-default .container-fluid div ul li, .navtop .container-fluid div ul li {
+  border-radius: 10px;
 }
 nav .navbar .container-fluid div ul li ul a, .navbar-default .container-fluid div ul li ul a, .navtop .container-fluid div ul li ul a {
   color: black;
 }
 nav .navbar .container-fluid div ul li:hover, .navbar-default .container-fluid div ul li:hover, .navtop .container-fluid div ul li:hover {
-  background-image: url("/css/img/nav-back-two.png");
+  background-image: url("/css/img/python.jpg");
 }
 nav .navbar .container-fluid div ul a:hover, .navbar-default .container-fluid div ul a:hover, .navtop .container-fluid div ul a:hover {
   color: white;
-  background-image: url("/css/img/nav-back-two.png");
+  background-image: url("/css/img/python.jpg");
+}
+nav .navbar .container-fluid .navbar-header a, .navbar-default .container-fluid .navbar-header a, .navtop .container-fluid .navbar-header a {
+  color: white;
+}
+nav .navbar .container-fluid .navbar-header a:hover, .navbar-default .container-fluid .navbar-header a:hover, .navtop .container-fluid .navbar-header a:hover {
+  color: url("/css/img/python.jpg");
+  background-image: url("/css/img/node-gradient.jpg");
 }
 nav .navbar a, .navbar-default a, .navtop a {
   color: white;
