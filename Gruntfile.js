@@ -13,7 +13,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-js2coffee');
   grunt.loadNpmTasks('grunt-coveralls');
   grunt.loadNpmTasks('grunt-html2jade');
-
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  
   grunt.initConfig({
     clean: {
       all: ['tmp', 'views/jade', 'views/css/sass']
