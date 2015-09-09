@@ -14,7 +14,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-coveralls');
   grunt.loadNpmTasks('grunt-html2jade');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  
+
   grunt.initConfig({
     clean: {
       all: ['tmp', 'views/jade', 'views/css/sass']
@@ -142,8 +142,8 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['clean', 'compile:sass', 'test', 'compile:jade']);
-  grunt.registerTask('ci', ['create:logs', 'compile', 'test']);
+  grunt.registerTask('default', ['clean', 'test', 'compile']);
+  grunt.registerTask('ci', ['clean', 'create:logs', 'compile', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
   grunt.registerTask('test:server', 'mochaTest:server');
