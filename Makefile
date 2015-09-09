@@ -51,9 +51,8 @@ test-coveralls:
 		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
 ci:
-	sass views/css/dashboard.scss:views/css/dashboard.css; \
-	nyc npm test; \
-	grunt ci --verbose
+	grunt ci --verbose; \
+	nyc npm test;
 
 #.PHONY test
 
