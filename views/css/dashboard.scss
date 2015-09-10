@@ -150,6 +150,7 @@ nav .navbar, .navbar-default, .navtop {
   @include boot();
   @include buttons();
   @include middle();
+  $tm : 1cm;
   thead {
     tr {
       th {
@@ -192,6 +193,11 @@ nav .navbar, .navbar-default, .navtop {
     padding: 0;
     padding-right: $ar;
     padding-left: $ar;
+  }
+}
+.buttons {
+  .sub {
+    margin-left: 1cm;
   }
 }
 .t-node {
