@@ -1,2 +1,1 @@
-#!/usr/bin/bash
-docker build --no-cache -t gum-joe/web-os .
+docker build --no-cache -t gumjoe/web-os ./

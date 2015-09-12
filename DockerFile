@@ -20,8 +20,6 @@ RUN git clone https://github.com/Gum-Joe/Web-OS.git /home/Projects/Web-OS -b a1
 # Install app dependencies
 RUN cd /home/Projects/Web-OS; npm install
 RUN cd /home/Projects/Web-OS; bundle install
-# Compile sass
-cd /home/Projects/Web-OS; sass views/css/dashboard.scss:views/css/dashboard.css
 # Install mocha and bower and coffee and less and nodemon
 RUN npm install -g bower mocha less coffee-script nodemon
 # env
@@ -30,8 +28,9 @@ RUN export WOS_DEV="true"
 RUN export WOS_TEST_DIR="../Web-OS-tests"
 # Create logs
 RUN cd /home/Projects/Web-OS; mkdir logs; echo "-------------Web-OS logs-----------------" >> ./logs/wos.log
+# Compile stuff
+RUN grunt
 # Expose the port
 EXPOSE  8080
 # Run
-CMD cd /home/Projects/Web-OS; mocha
 CMD cd /home/Projects/Web-OS; npm run docker-start
