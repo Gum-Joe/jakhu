@@ -6,3 +6,5 @@ gem 'sass', '3.4.17'
 gem 'rails', '~> 4.2.4'
 # Compass for sass
 gem 'compass', '~> 1.0.3'
+# css parser for compass
+gem 'css_parser', '~> 1.3.6'
