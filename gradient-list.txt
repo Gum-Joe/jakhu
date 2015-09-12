@@ -1,0 +1,3 @@
+This is the css gradient list and their matches for accent
+
+blue : #5F9EA0;

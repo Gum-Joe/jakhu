@@ -1,5 +1,6 @@
 // set to gradient
 @import "var";
+@import "mixins";
 
 @mixin bootgr {
   background: -webkit-linear-gradient($accent, $ac2); /* For Safari 5.1 to 6.0 */

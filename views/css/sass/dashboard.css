@@ -6,7 +6,15 @@ body, html {
 }
 
 body, html {
-  background-image: url("/css/img/nav-back-two.png");
+  /*background-image: url("/css/img/nav-back-two.png");*/
+  background: -webkit-linear-gradient(blue, #5F9EA0);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(blue, #5F9EA0);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(blue, #5F9EA0);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(blue, #5F9EA0);
+  /* Standard syntax */
 }
 
 nav {
