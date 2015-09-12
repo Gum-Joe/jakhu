@@ -5,7 +5,7 @@ RUN apt-get update
 RUN apt-get install -y curl
 # Install ruby for gemfile
 RUN apt-get install -y ruby-full
-gem install bundle
+RUN gem install bundle
 # Install Node.js and npm
 RUN curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
 RUN apt-get install -y nodejs
