@@ -117,7 +117,9 @@ module.exports = function(grunt) {
           'views/css/theme.css': 'views/css/theme.scss',       // 'destination': 'source'
           'views/css/sass/theme.css': 'views/css/theme.scss',
           'views/css/boot.theme.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
-          'views/css/sass/boot.theme.css': 'views/css/boot.theme.scss'
+          'views/css/sass/boot.theme.css': 'views/css/boot.theme.scss',
+          'views/css/var.css': 'views/css/var.scss',       // 'destination': 'source'
+          'views/css/sass/var.css': 'views/css/var.scss'
         }
       },
       min: {                            // Target
@@ -126,7 +128,22 @@ module.exports = function(grunt) {
         },
         files: {                         // Dictionary of files
           'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss'
+          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss',
+          'views/css/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
+          'views/css/sass/theme.min.css': 'views/css/theme.scss',
+          'views/css/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
+          'views/css/sass/boot.theme.min.css': 'views/css/boot.theme.scss',
+          'views/css/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
+          'views/css/sass/var.min.css': 'views/css/var.scss',
+          //min in dir
+          'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
+          'views/css/sass/min/dashboard.min.css': 'views/css/dashboard.scss',
+          'views/css/min/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
+          'views/css/sass/min/theme.min.css': 'views/css/theme.scss',
+          'views/css/min/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
+          'views/css/sass/min/boot.theme.min.css': 'views/css/boot.theme.scss',
+          'views/css/min/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
+          'views/css/sass/min/var.min.css': 'views/css/var.scss'
         }
       }
     },

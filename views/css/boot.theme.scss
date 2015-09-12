@@ -1,10 +1,11 @@
 // set to gradient
+@import "var";
 
 @mixin bootgr {
-  background: -webkit-linear-gradient(red, blue); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(red, blue); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(red, blue); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(red, blue); /* Standard syntax */
+  background: -webkit-linear-gradient($accent, $ac2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($accent, $ac2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($accent, $ac2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($accent, $ac2); /* Standard syntax */
 }
 body,html {
   @include bootgr;
