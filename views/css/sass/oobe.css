@@ -1,32 +1,37 @@
-@import "web-os.css";
-@import "boot.css";
-@import "fonts.css";
-@import "mixins";
-
+@import url(web-os.css);
+@import url(boot.css);
+@import url(fonts.css);
 .base-pad {
   padding-left: 4.5cm;
 }
 
-.web-os-back, html, body{
+.web-os-back, html, body {
   /*For after-install:
   background-image: url("img/nav-back-two.png");
   */
   /*background-image: url("img/boot.jpg");*/
-  @include grad;
+  background: -webkit-linear-gradient(blue, #5F9EA0);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(blue, #5F9EA0);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(blue, #5F9EA0);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(blue, #5F9EA0);
+  /* Standard syntax */
 }
 
-.web-os-oobe-back{
+.web-os-oobe-back {
   background-image: url("img/nav-back-two.png");
 }
 
 body {
-    color: white;
+  color: white;
 }
 
 .sub-title {
-   /* TODO: Create Subtitle class for subtitles  */
-   padding-left: 4.5cm;
-   font-size: 25px;
+  /* TODO: Create Subtitle class for subtitles  */
+  padding-left: 4.5cm;
+  font-size: 25px;
 }
 
 .boot-title-oobe {
@@ -69,7 +74,7 @@ form {
   text-align: center;
 }
 
-.form{
+.form {
   margin-left: 1cm;
   margin-right: 1cm;
 }
@@ -97,7 +102,7 @@ form {
 }
 
 .selection-box-box:hover {
-  background-image: url('img/accept-decline.jpg');
+  background-image: url("img/accept-decline.jpg");
   width: 30cm;
 }
 
@@ -112,11 +117,10 @@ form {
 /*.par-l {
   padding-left: 13cm;
 }*/
-
 .license {
   font-family: Source-Sans-Pro-Light;
   background-color: white;
-/*  width: 20cm;*/
+  /*  width: 20cm;*/
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -135,10 +139,10 @@ form {
 }
 
 .accept {
-  border-width:2px;
-  border-style:solid;
-  border-color:white;
-  background-image: url('img/nav-back-two.png');
+  border-width: 2px;
+  border-style: solid;
+  border-color: white;
+  background-image: url("img/nav-back-two.png");
   font-size: 20px;
   border-radius: 3px;
   margin-left: auto;
@@ -147,10 +151,10 @@ form {
 }
 
 .accept:hover {
-  border-width:2px;
-  border-style:solid;
-  border-color:black;
-  background-image: url('img/accept-decline.jpg');
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  background-image: url("img/accept-decline.jpg");
   font-size: 20px;
   border-radius: 3px;
   margin-left: auto;
@@ -164,3 +168,5 @@ form {
   padding-top: 0.4cm;
   width: auto;
 }
+
+/*# sourceMappingURL=oobe.css.map */

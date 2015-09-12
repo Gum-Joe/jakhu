@@ -119,7 +119,9 @@ module.exports = function(grunt) {
           'views/css/boot.theme.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
           'views/css/sass/boot.theme.css': 'views/css/boot.theme.scss',
           'views/css/var.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/sass/var.css': 'views/css/var.scss'
+          'views/css/sass/var.css': 'views/css/var.scss',
+          'views/css/oobe.css': 'views/css/oobe.scss',       // 'destination': 'source'
+          'views/css/sass/oobe.css': 'views/css/oobe.scss'
         }
       },
       min: {                            // Target
