@@ -2,6 +2,10 @@
 @import url(fonts.css);
 @import url(boot.css);
 body, html {
+  background-color: black;
+}
+
+body, html {
   background-image: url("/css/img/nav-back-two.png");
 }
 

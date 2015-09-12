@@ -113,7 +113,11 @@ module.exports = function(grunt) {
         },
         files: {                         // Dictionary of files
           'views/css/dashboard.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/sass/dashboard.css': 'views/css/dashboard.scss'
+          'views/css/sass/dashboard.css': 'views/css/dashboard.scss',
+          'views/css/theme.css': 'views/css/theme.scss',       // 'destination': 'source'
+          'views/css/sass/theme.css': 'views/css/theme.scss',
+          'views/css/boot.theme.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
+          'views/css/sass/boot.theme.css': 'views/css/boot.theme.scss'
         }
       },
       min: {                            // Target
@@ -139,7 +143,7 @@ module.exports = function(grunt) {
         tasks: ['compile:sass'],
         options: {
           interrupt: true,
-        }
+        },
       },
       test: {
         files: ['test/**/*.js', 'Gruntfile.js'],
@@ -147,10 +151,18 @@ module.exports = function(grunt) {
         options: {
           interrupt: true,
         }
+      },
+      main: {
+        files: ['views/**/*.scss', '*.js', 'libs/**/*.js', 'boot/**/*.js'],
+        tasks: ['compile', 'test'],
+        options: {
+          interrupt: true,
+        }
       }
     }
   });
   grunt.registerTask('default', ['clean', 'test', 'compile']);
+  grunt.registerTask('main', ['watch:main']);
   grunt.registerTask('ci', ['clean', 'create:logs', 'compile', 'test']);
 
   grunt.registerTask('test', 'mochaTest');
@@ -159,7 +171,7 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
   grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
-  grunt.registerTask('compile:watch', 'watch');
+  grunt.registerTask('compile:watch', 'watch:scripts');
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
   grunt.registerTask('compile:jade', 'html2jade:most');
