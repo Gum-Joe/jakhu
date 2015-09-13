@@ -47,3 +47,10 @@
   background: -moz-linear-gradient($accent, $ac2); /* For Firefox 3.6 to 15 */
   background: linear-gradient($accent, $ac2); /* Standard syntax */
 }
+
+@mixin gradb($x, $y) {
+  background: -webkit-linear-gradient($x, $y); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($x, $y); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($x, $y); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($x, $y); /* Standard syntax */
+}

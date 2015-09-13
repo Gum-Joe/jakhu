@@ -15,7 +15,7 @@ body, html{
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-image: white;
+  background-color: $nav;
   border-radius: 0px;
 }
 .t-node {
@@ -65,7 +65,8 @@ nav {
 nav .navbar, .navbar-default, .navtop {
   padding-bottom: 0;
   @include nnobor;
-  background-image: url("/css/img/boot.jpg");
+  //background-image: url("/css/img/boot.jpg");
+  @include gradb($nav, $nav2);
   color: white;
   .container-fluid {
     div {

@@ -1,3 +1,11 @@
 This is the css gradient list and their matches for accent
 
-blue : #5F9EA0;
+accent = blue
+$accent : blue;
+$ac2 : #5F9EA0;
+
+accent = dark
+$accent : #1A1A1A;
+$ac2 : #313131;
+$nav : #000000;
+$nav2 : #191919;

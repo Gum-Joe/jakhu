@@ -1,9 +1,11 @@
 @import url(web-os.css);
 @import url(boot.css);
 @import url(fonts.css);
-/* accent = blue
-$accent : blue;
-$ac2 : #5F9EA0;*/
+/* accent = dark
+$accent : #1A1A1A;
+$ac2 : #313131;
+$nav : #000000;
+$nav2 : #191919;*/
 .base-pad {
   padding-left: 4.5cm;
 }
@@ -13,13 +15,13 @@ $ac2 : #5F9EA0;*/
   background-image: url("img/nav-back-two.png");
   */
   /*background-image: url("img/boot.jpg");*/
-  background: -webkit-linear-gradient(#1A1A1A, #313131);
+  background: -webkit-linear-gradient(blue, #5F9EA0);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#1A1A1A, #313131);
+  background: -o-linear-gradient(blue, #5F9EA0);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#1A1A1A, #313131);
+  background: -moz-linear-gradient(blue, #5F9EA0);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#1A1A1A, #313131);
+  background: linear-gradient(blue, #5F9EA0);
   /* Standard syntax */
 }
 

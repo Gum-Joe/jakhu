@@ -1,7 +1,2 @@
-/* accent = blue
-$accent : blue;
-$ac2 : #5F9EA0;*/
-
-// accent = dark
-$accent : #1A1A1A;
-$ac2 : #313131;
+// collects all the vars together
+@import "accent";
