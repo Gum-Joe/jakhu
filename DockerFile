@@ -19,9 +19,10 @@ RUN ls
 RUN git clone https://github.com/Gum-Joe/Web-OS.git /home/Projects/Web-OS -b a1
 # Install app dependencies
 RUN cd /home/Projects/Web-OS; npm install
-RUN cd /home/Projects/Web-OS; bundle install
-# Install mocha and bower and coffee and less and nodemon
-RUN npm install -g bower mocha less coffee-script nodemon
+# Should be bundle install
+RUN cd /home/Projects/Web-OS; gem install sass
+# Install mocha and bower and coffee and less and nodemon and grunt
+RUN npm install -g bower mocha less coffee-script nodemon grunt-cli
 # env
 RUN export NODE_ENV="dev"
 RUN export WOS_DEV="true"

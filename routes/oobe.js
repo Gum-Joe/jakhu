@@ -2,11 +2,12 @@ var express = require('express');
 var router = express.Router();
 var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
-var xml2js = require('xml2js');
+// redefine when needed
+//var xml2js = require('xml2js');
 
 var oobe = require('../libs/setup/setup.js');
 var os = require('os');
-var kernal = require('../boot/boot.js');
+//var kernal = require('../boot/boot.js');
 var fs = require('fs');
 
 /* GET home page. */
@@ -127,7 +128,7 @@ router.get('/wosl', function(req, res, next) {
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
-    res.redirect('/license')
+    res.redirect('/license');
   });
 
   router.post('/install-standard', function(req, res, next) {
@@ -187,9 +188,9 @@ router.get('/oobe', function(req, res, next) {
 function checkBoot(argument) {
   fs.stat('./tmp', function(err){
     if(err == null){
-      var boot = false;
+      var bootc = false;
     } else {
-      var boot = true;
+      var bootc = true;
     }
   });
 }

@@ -1,31 +1,28 @@
 @import url(web-os.css);
 @import url(fonts.css);
 @import url(boot.css);
-/* accent = dark
-$accent : #1A1A1A;
-$ac2 : #313131;
-$nav : #000000;
-$nav2 : #191919;*/
+/*$nav : #9999FF;
+$nav2 : #000080;*/
 body, html {
   background-color: black;
 }
 
 body, html {
   /*background-image: url("/css/img/nav-back-two.png");*/
-  background: -webkit-linear-gradient(blue, #5F9EA0);
+  background: -webkit-linear-gradient(#1A1A1A, #313131);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(blue, #5F9EA0);
+  background: -o-linear-gradient(#1A1A1A, #313131);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(blue, #5F9EA0);
+  background: -moz-linear-gradient(#1A1A1A, #313131);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(blue, #5F9EA0);
+  background: linear-gradient(#1A1A1A, #313131);
   /* Standard syntax */
 }
 
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-color: #9999FF;
+  background-color: #000000;
   border-radius: 0px;
 }
 
@@ -82,13 +79,13 @@ nav .navbar, .navbar-default, .navtop {
   border-left: none;
   border-right: none;
   border-top: none;
-  background: -webkit-linear-gradient(#9999FF, #000080);
+  background: -webkit-linear-gradient(#000000, #191919);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#9999FF, #000080);
+  background: -o-linear-gradient(#000000, #191919);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#9999FF, #000080);
+  background: -moz-linear-gradient(#000000, #191919);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#9999FF, #000080);
+  background: linear-gradient(#000000, #191919);
   /* Standard syntax */
   color: white;
 }
