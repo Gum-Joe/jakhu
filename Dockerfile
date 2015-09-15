@@ -29,6 +29,8 @@ RUN export WOS_DEV="true"
 RUN export WOS_TEST_DIR="../Web-OS-tests"
 # Create logs
 RUN cd /home/Projects/Web-OS; mkdir logs; echo "-------------Web-OS logs-----------------" >> ./logs/wos.log
+# Install bootstrap
+bower install
 # Compile stuff
 RUN cd /home/Projects/Web-OS; grunt
 # Expose the port
