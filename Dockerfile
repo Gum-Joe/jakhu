@@ -30,7 +30,7 @@ RUN export WOS_TEST_DIR="../Web-OS-tests"
 # Create logs
 RUN cd /home/Projects/Web-OS; mkdir logs; echo "-------------Web-OS logs-----------------" >> ./logs/wos.log
 # Install bootstrap
-RUN cd /home/Projects/Web-OS; bower install
+RUN cd /home/Projects/Web-OS; bower install --allow-root
 # Compile stuff
 RUN cd /home/Projects/Web-OS; grunt
 # Expose the port
