@@ -18,21 +18,22 @@ var getCommits = function getCommits(x) {
 }
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
-exports.boot = function startboot(boottype) {
+exports.startboot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
+  boot.mongo.start(function (err) {
+    console.log(err);
+  });
   oobe.first("ok");
   boot.recovery.rollback.createBackup("ok");
-  boot.kernal.clean('o', function (err) {
+  /**boot.kernal.clean('o', function (err) {
     if(err){
       throw new Error('Could not clean');
     }
-  });
+  });*/
+  app.start();
 }
 
 // TODO: Create boot types (safemode, full, recovery)
-exports.startboot = function startboot(boottype) {
-  app.start();
-}
 
 exports.startinput = function startinput(x){
   process.stdin.resume();

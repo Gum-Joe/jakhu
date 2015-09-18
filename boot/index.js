@@ -2,6 +2,7 @@ exports.checks = require('./libs/checks/checkFile.js');
 exports.properties = require('./libs/properties.js');
 exports.recovery = require('./recovery/index.js');
 exports.kernal = require('./kernal/index.js');
+exports.mongo = require('./kernal/mongo.js');
 var fs = require('fs');
 var clicolour = require('cli-color');
 

@@ -11,7 +11,7 @@ exports.checkFiles = function checkFiles(x){
   // TODO: Fix issue where files[i] is undefined
   console.log(clicolour.yellowBright("ALPHA:")+"Checking out files need fixing, does in fact check out files correctly. Will fix in alpha version");
   for (var i = 0; i < files.length; i++) {
-    fs.stat(files[i], function(err, stat){
+    fs.statSync(files[i], function(err, stat){
       if(err === null){
           return console.log('Checked out file '+files[i]+"..."+clicolour.greenBright("OK"));
         }
