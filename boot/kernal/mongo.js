@@ -32,8 +32,6 @@ exports.start = function start(callback) {
         setTimeout(function() {
           console.log("Downloading MongoDB...");
         }, 2000000);
-        // unzip
-        fs.createReadStream('tmp/packages/mongo.zip').pipe(unzip.Extract({ path: 'packages/mongo' }));
       } else {
         // stary DB
         exec('bash -c "cd packages/mongo/mongo*/bin && ls"', function (stdout) {
