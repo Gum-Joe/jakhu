@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     clean: {
-      all: ['tmp', 'views/jade', 'views/css/sass']
+      all: ['tmp', 'views/jade', 'views/css/sass'],
+      cleanup: ['tmp', 'testing']
     },
     html2jade: {
      most: {
@@ -154,7 +155,8 @@ module.exports = function(grunt) {
       install: 'npm install',
       dev: 'npm install --dev',
       test: 'npm test',
-      logs: 'mkdir logs && touch logs/wos.log'
+      logs: 'mkdir logs && touch logs/wos.log',
+      testtmp: 'mkdir testing && touch testing/test.txt'
     },
     watch: {
       scripts: {
@@ -184,7 +186,7 @@ module.exports = function(grunt) {
   grunt.registerTask('main', ['watch:main']);
   grunt.registerTask('ci', ['clean', 'create:logs', 'compile', 'test']);
 
-  grunt.registerTask('test', 'mochaTest');
+  grunt.registerTask('test', ['exec:testtmp', 'mochaTest', 'clean:cleanup']);
   grunt.registerTask('test:server', 'mochaTest:server');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');

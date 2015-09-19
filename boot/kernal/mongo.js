@@ -55,6 +55,21 @@ exports.start = function start(callback) {
           };
         } else {
           var terminal = require('child_process').spawn('bash', ['docker run mongo']);
+          terminal.stdout.on('data', function (data) {
+              console.log('stdout: ' + data);
+          });
+
+          terminal.stderr.on('data', function (data) {
+              console.log('stderr: ' + data);
+          });
+
+          terminal.on('exit', function (code) {
+              console.log('Done with '  + code);
+          });
+
+          setTimeout(function() {
+            console.log("Downloading MongoDB...");
+          }, 2000000);
         }
 
         terminal.stdout.on('data', function (data) {
