@@ -51,13 +51,10 @@ private
 #vs
 libs/apps/*.opensdf
 
-csharpapp
-
 # recovery
-./recovery/rollback
+recovery/rollback
 
 # pptx
-~$*
 # File created by Web-OS
 tmp
 tmp/*
