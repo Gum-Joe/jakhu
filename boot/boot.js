@@ -8,6 +8,8 @@ var prompt = require('prompt');
 var app = require("../app.js");
 exports.oobe = require("../libs/setup/setup.js");
 var oobe = require("../libs/setup/setup.js");
+var fs = require('fs');
+var unzip = require('unzip');
 //boot.properties.git.getCommits;
 
 var getCommits = function getCommits(x) {
@@ -20,6 +22,7 @@ var getCommits = function getCommits(x) {
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   boot.checks.checkFiles("ok");
+  //Start DB
   boot.mongo.start(function (err) {
     console.log(err);
   });

@@ -1,3 +1,6 @@
 [submodule "libs/app"]
 	path = libs/app
 	url = https://github.com/Gum-Joe/Web-OS-apps
+[submodule "libs/switchboard"]
+	path = libs/switchboard
+	url = https://github.com/Gum-Joe/Web-OS-switchboard
