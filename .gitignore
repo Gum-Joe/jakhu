@@ -63,10 +63,10 @@ tmp
 tmp/*
 config
 config/*
-web-os-testing
+web-os-testing/*
 
 # Sass cache
-.sass-cache
+.sass-cache/*
 
 #packages
-packages
+packages/*
