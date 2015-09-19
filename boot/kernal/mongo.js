@@ -26,7 +26,7 @@ exports.start = function start(callback) {
         });
 
         terminal.on('exit', function (code) {
-            console.log('child process exited with code ' + code);
+            console.log('Done with '  + code);
         });
 
         setTimeout(function() {
@@ -34,9 +34,15 @@ exports.start = function start(callback) {
         }, 2000000);
       } else {
         // stary DB
-        exec('bash -c "cd packages/mongo/mongo*/bin && ls"', function (stdout) {
-          console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Database started"+stdout);
+        var m = require('child_process').spawn('bash', ['./scripts/mongo.sh']);
+
+        m.on('exit', function (code) {
+            console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Database started with "+code);
         });
+
+        setTimeout(function() {
+          console.log("Starting MongoDB...");
+        }, 2000000);
       };
     });
   } else {

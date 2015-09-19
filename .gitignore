@@ -67,3 +67,7 @@ web-os-testing/*
 
 #packages
 packages/*
+
+# DB
+db
+api
