@@ -5,7 +5,7 @@ var datea = "./recovery/rollback/backup";
 var exec = require('child_process').exec;
 
 //var PythonShell = require('python-shell');
-exports.createBackup = function createBackup(x){
+exports.createBackup = function createBackup(x, call){
   if(x === "test"){
     mkdirp("./testing", function (err) {
       if(err){
@@ -16,8 +16,11 @@ exports.createBackup = function createBackup(x){
       };
     });
     // Copy test stuff
-    exec("cp -R ./testing ./tmp/test", function(){
+    exec("cp -R ./testing ./tmp/test", function(stdout, stderr, error){
       //console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created rollback Backup");
+      if(stderr || error){
+        call('Expected coppied file to exist - rollback backup failed');
+      };
     });
   } else {
     mkdirp(datea, function (err) {
