@@ -156,7 +156,9 @@ module.exports = function(grunt) {
       dev: 'npm install --dev',
       test: 'npm test',
       logs: 'mkdir logs && touch logs/wos.log',
-      testtmp: 'mkdir testing && touch testing/test.txt'
+      testtmp: 'mkdir testing && echo testing > testing/test.txt',
+      createtmp: 'mkdir tmp',
+      testt: 'cd tmp && mkdir test'
     },
     watch: {
       scripts: {
@@ -186,7 +188,7 @@ module.exports = function(grunt) {
   grunt.registerTask('main', ['watch:main']);
   grunt.registerTask('ci', ['clean', 'create:logs', 'compile', 'test']);
 
-  grunt.registerTask('test', ['exec:testtmp', 'mochaTest', 'clean:cleanup']);
+  grunt.registerTask('test', ['mochaTest', 'clean:cleanup']);
   grunt.registerTask('test:server', 'mochaTest:server');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
