@@ -184,9 +184,9 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('default', ['clean', 'test', 'compile']);
+  grunt.registerTask('default', ['test', 'clean', 'compile']);
   grunt.registerTask('main', ['watch:main']);
-  grunt.registerTask('ci', ['clean', 'create:logs', 'compile', 'test']);
+  grunt.registerTask('ci', ['compile', 'clean', 'create:logs', 'test']);
 
   grunt.registerTask('test', ['mochaTest', 'clean:cleanup']);
   grunt.registerTask('test:server', 'mochaTest:server');
