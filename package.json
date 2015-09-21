@@ -4,7 +4,7 @@
   "description": "A 'OS' on the web",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/grunt",
+    "test": "./node_modules/.bin/grunt --verbose",
     "start": "nodemon bin/start",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
@@ -70,6 +70,7 @@
   "devDependencies": {
     "blanket": "^1.1.7",
     "chai": "^3.2.0",
+    "codeclimate-test-reporter": "^0.1.1",
     "coveralls": "^2.11.3",
     "expect": "^1.9.0",
     "grunt": "^0.4.5",

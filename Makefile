@@ -51,9 +51,8 @@ test-coveralls:
 		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
 ci:
-	grunt ci --verbose; \
-	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls; \
-	nyc npm test;
+	nyc npm test; \
+	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls;
 
 #.PHONY test
 
