@@ -52,6 +52,7 @@ test-coveralls:
 
 ci:
 	nyc npm test; \
+	mkdir -p testing tmp/test
 	echo testing > testing/test.txt; \
 	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls;
 
