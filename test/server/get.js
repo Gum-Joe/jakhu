@@ -4,7 +4,7 @@ var http = require('http');
 var app = require("../../app.js");
 var fs = require('fs');
 
-describe('GET requests', function () {
+describe('GET requests', function (done) {
   console.log("Please make sure the server is not running before running these tests");
   before(function (done) {
     app.start("basic");
