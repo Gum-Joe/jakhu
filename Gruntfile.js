@@ -5,7 +5,7 @@ var execute = require('child_process').exec;
 module.exports = function(grunt) {
 
   // Add tasks.
-  
+
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -189,7 +189,7 @@ module.exports = function(grunt) {
   grunt.registerTask('main', ['watch:main']);
   grunt.registerTask('ci', ['compile', 'clean', 'create:logs', 'test']);
 
-  grunt.registerTask('test', ['mochaTest', 'clean:cleanup']);
+  grunt.registerTask('test', ['exec:testtmp', 'mochaTest', 'clean:cleanup']);
   grunt.registerTask('test:server', 'mochaTest:server');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
