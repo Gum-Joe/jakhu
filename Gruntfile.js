@@ -159,12 +159,20 @@ module.exports = function(grunt) {
       logs: 'mkdir logs && touch logs/wos.log',
       testtmp: 'mkdir testing && echo testing > testing/test.txt',
       createtmp: 'mkdir tmp',
-      testt: 'cd tmp && mkdir test'
+      testt: 'cd tmp && mkdir test',
+      start: 'node bin/start'
     },
     watch: {
       scripts: {
         files: ['views/css/*.scss', 'Gruntfile.js'],
         tasks: ['compile:sass'],
+        options: {
+          interrupt: true,
+        },
+      },
+      start: {
+        files: ['**/*.coffee', '**/*.js', 'bin/**/*'],
+        tasks: ['exec:start'],
         options: {
           interrupt: true,
         },
@@ -207,5 +215,6 @@ module.exports = function(grunt) {
   grunt.registerTask('install', ['exec:dev', 'exec:install', 'exec:bundle']);
 
   grunt.registerTask('create:logs', 'exec:logs');
+  grunt.registerTask('start', 'watch:start');
 
 };
