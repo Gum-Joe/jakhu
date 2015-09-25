@@ -160,7 +160,7 @@ module.exports = function(grunt) {
       testtmp: 'mkdir testing && echo testing > testing/test.txt',
       createtmp: 'mkdir tmp',
       testt: 'cd tmp && mkdir test',
-      start: 'node bin/start'
+      start: 'echo Y && node bin/start'
     },
     watch: {
       scripts: {
@@ -171,7 +171,7 @@ module.exports = function(grunt) {
         },
       },
       start: {
-        files: ['**/*.coffee', '**/*.js', 'bin/**/*'],
+        files: ['Gruntfile.js'],
         tasks: ['exec:start'],
         options: {
           interrupt: true,
@@ -216,5 +216,4 @@ module.exports = function(grunt) {
 
   grunt.registerTask('create:logs', 'exec:logs');
   grunt.registerTask('start', 'watch:start');
-
 };

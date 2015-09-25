@@ -1,0 +1,5 @@
+#!/usr/env/coffee
+#The reg config
+regroot = './registry'
+mkdir = true
+compileall = true

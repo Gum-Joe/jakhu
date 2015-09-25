@@ -6,9 +6,13 @@ var mkdirp = require('mkdirp');
 var unzip = require('unzip');
 var terminal = require('child_process').exec;
 var clicolour = require('cli-color');
+var mongodb = require('mongodb');
+var Db = require('mongodb').Db;
+var Server = require('mongodb').Server
 
 exports.start = function start(callback) {
-  if(os.type() === "Windows_NT"){
+  var db = new Db('test', new Server('localhost', 27017));
+  /*if(os.type() === "Windows_NT"){
     // start mongo
     // download if not Here
     // and exec
@@ -110,5 +114,5 @@ exports.start = function start(callback) {
     });
   } else {
     callback("EOS", "Not windows");
-  };
+  };*/
 }
