@@ -7,6 +7,7 @@
 import:
   - database.yml
   - instances.yml
+  - tmp/os.yml
 
 # Name of server
 # possible valuses - string or enviroment variable ($enviromentname)
@@ -19,10 +20,23 @@ name: Web-OS-server
 # possible values that can be included are: nodejs (includes javascript & coffeescript support),
 # ruby, rails (includes ruby support) and python
 # More to come
-# These are the defaults
+# These are the defaults that are Installed on setup
+# On setup, Web-OS will also add languages already installed
 languages:
   - nodejs
   - rails
   - python
 
 # Deploy services
+# These are the deploy services' software for deploying
+# that are installed
+# These include git repo's and hosting software, such as aws
+# possible values are heroku, aws, azure, git, github, docker, ftp and sftp
+# On setup, Web-OS will scan for currently installed services
+
+deploy:
+  - heroku
+  - aws
+  - azure
+  - git
+  - ftp
