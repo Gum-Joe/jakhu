@@ -58,8 +58,6 @@ recovery/rollback
 # File created by Web-OS
 tmp
 tmp/*
-config
-config/*
 web-os-testing/*
 
 # Sass cache
