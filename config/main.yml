@@ -16,6 +16,10 @@ import:
 # no /\*!&^%$£""(){}[];:~# charectres
 name: Web-OS-server
 
+# Intialize config & reconfigure on every startup
+# possible valuses: true, false
+init: true
+
 # Installed languages for coding
 # possible values that can be included are: nodejs (includes javascript & coffeescript support),
 # ruby, rails (includes ruby support) and python
@@ -47,6 +51,12 @@ registry.dir: registry
 
 # Should Web-OS use rollback for backing up itself?
 rollback: true
+# How often (daily, hourly)
+# Possible values: startup, config (when the config changes), log (when you login), request (per request)
+# Mutiple values
+rollback.time:
+  - startup
+  - config
 # Rollback dir for rollback backup
 # $serverhome: the directory web-os runns in
 # $userhome: the directory for this web-os server, loated in the user home (~/.web/<servername>)
@@ -60,6 +70,12 @@ rollback.createmeta: true
 # Backup your instances (servers)?
 # possible values: true, false
 rollback.instances: true
+# How often (daily, hourly)
+# Possible values: startup, config (when the config changes), log (when you login), request (per request)
+# Mutiple values
+rollback.instances.time:
+  - startup
+  - config
 # Where to backup?
 rollback.instances.dir: $rollback.dir/instances/$instance.name
 # Should rollback use the date to store backups for instances?
@@ -68,9 +84,3 @@ rollback.instances.usedate: true
 # Create metadata for rollback backups for instances?
 # possible values: true, false
 rollback.instances.createmeta: true
-
-# Booleans
-#
-# Intialize config & reconfigure every startup
-# possible valuses: true, false
-init: true
