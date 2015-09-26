@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router();
+var oobeooberouter = express.ooberouter();
 //var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 // redefine when needed
@@ -11,7 +11,7 @@ var os = require('os');
 var fs = require('fs');
 
 /* GET home page. */
-router.get('/', function(req, res) {
+ooberouter.get('/', function(req, res) {
   // TODO: Insert boot checks
   console.log("");
       exec("git rev-list HEAD --count", function (error, stdout) {
@@ -21,7 +21,7 @@ router.get('/', function(req, res) {
       });
   });
 
-  router.get('/signin', function(req, res) {
+  ooberouter.get('/signin', function(req, res) {
     // TODO: Insert boot checks
     console.log("");
         exec("git rev-list HEAD --count", function (error, stdout) {
@@ -31,7 +31,7 @@ router.get('/', function(req, res) {
         });
     });
 
-router.get('/start', function(req, res) {
+ooberouter.get('/start', function(req, res) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout) {
     res.render('oobe/index.ejs', {
@@ -40,7 +40,7 @@ router.get('/start', function(req, res) {
   });
   });
 
-  router.get('/license', function(req, res) {
+  ooberouter.get('/license', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout) {
       res.render('oobe/license.ejs', {
@@ -48,7 +48,7 @@ router.get('/start', function(req, res) {
       });
     });
     });
-    router.get('/decline', function(req, res) {
+    ooberouter.get('/decline', function(req, res) {
       // TODO: Add License handlers
       console.log("");
       exec("git rev-list HEAD --count", function (error, stdout) {
@@ -58,25 +58,25 @@ router.get('/start', function(req, res) {
       });
       });
 
-      router.get('/decline-y', function(req, res) {
+      ooberouter.get('/decline-y', function(req, res) {
         // TODO: Add License handlers
         // oobe.license.decline();
         console.log("");
         res.redirect('/wosl');
         });
 
-        router.get('/decline-n', function(req, res) {
+        ooberouter.get('/decline-n', function(req, res) {
           console.log("");
           res.redirect('/license');
           });
 
-router.get('/accept', function(req, res) {
+ooberouter.get('/accept', function(req, res) {
         console.log("");
         // TODO: Add license handlers
         // oobe.license.accept();
         res.redirect('/wosl');
         });
-router.get('/wosl', function(req, res) {
+ooberouter.get('/wosl', function(req, res) {
           console.log("");
           exec("git rev-list HEAD --count", function (error, stdout) {
             res.render('oobe/licensewos.ejs', {
@@ -84,7 +84,7 @@ router.get('/wosl', function(req, res) {
             });
           });
           });
-          router.get('/declinew', function(req, res) {
+          ooberouter.get('/declinew', function(req, res) {
             // TODO: Add License handlers
             console.log("");
             exec("git rev-list HEAD --count", function (error, stdout) {
@@ -94,26 +94,26 @@ router.get('/wosl', function(req, res) {
             });
             });
 
-            router.get('/declinew-y', function(req, res) {
+            ooberouter.get('/declinew-y', function(req, res) {
               // TODO: Add License handlers
               // oobe.license.web.decline();
               console.log("");
               res.redirect('/type');
               });
 
-              router.get('/declinew-n', function(req, res) {
+              ooberouter.get('/declinew-n', function(req, res) {
                 console.log("");
                 res.redirect('/wosl');
                 });
 
-          router.get('/acceptw', function(req, res) {
+          ooberouter.get('/acceptw', function(req, res) {
               console.log("");
               // TODO: Add license handlers
               // oobe.license.web.accept();
               res.redirect('/type');
               });
 
-  router.get('/type', function(req, res) {
+  ooberouter.get('/type', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout) {
       res.render('oobe/installType.ejs', {
@@ -121,7 +121,7 @@ router.get('/wosl', function(req, res) {
       });
     });
     });
-  router.post('/set-lang', function(req, res) {
+  ooberouter.post('/set-lang', function(req, res) {
     console.log("");
     // Here would be installing language packs but none are avalible
     console.log("Language: "+req.body.lang);
@@ -131,7 +131,7 @@ router.get('/wosl', function(req, res) {
     res.redirect('/license');
   });
 
-  router.post('/install-standard', function(req, res) {
+  ooberouter.post('/install-standard', function(req, res) {
     console.log("");
     // Here would be installing language packs but none are avalible
     // TODO: Add console.log() req.body.stuff
@@ -146,12 +146,12 @@ router.get('/wosl', function(req, res) {
     */
   });
 
-  router.get('/set-install-standard', function(req, res) {
+  ooberouter.get('/set-install-standard', function(req, res) {
     console.log("");
       res.redirect('/opt-standard');
   });
 
-  router.get('/opt-standard', function(req, res) {
+  ooberouter.get('/opt-standard', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout) {
       res.render('oobe/options-standard.ejs', {
@@ -171,4 +171,4 @@ function checkBoot(argument) {
   });
 }
 
-module.exports = router;
+module.exports = ooberouter;
