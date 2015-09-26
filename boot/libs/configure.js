@@ -2,9 +2,8 @@
 var YAML = require('yamljs');
 var fs = require('fs');
 var assert = require('assert');
-var exec = require('child_process').exec;
 // parse YAML string
-exports.loadconfig = function loadconfig(argument) {
+exports.loadconfig = function loadconfig() {
   // body...
   fs.readFile('./config/main.yml','utf8', function (err, data) {
     if(err){
@@ -25,17 +24,17 @@ exports.loadconfig = function loadconfig(argument) {
             fs.appendFile("./tmp/config.yml", data, 'utf8', function(err) {
               if(err) {
                 assert.fail(err.code, null, " Could not write to tmp file for config");
-              };
+              }
             });
           }
         });
-      };
-    };
+      }
+    }
 
     fs.appendFile("./tmp/config.yml", data, 'utf8', function(err) {
       if(err) {
         assert.fail(err.code, null, " Could not write to tmp file for config");
-      };
+      }
     });
 
     // read imports
@@ -44,4 +43,4 @@ exports.loadconfig = function loadconfig(argument) {
 
   // parse big one
   //fs.readFile()
-}
+};
