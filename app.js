@@ -80,7 +80,7 @@ var exits = false;
 var suser = mongoose.model('usersc', userSchema);
 
 app.use('/', routes);
-app.use('/', ooberoutes);
+app.use('/oobe', ooberoutes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('passportconfig', passportconfig);
