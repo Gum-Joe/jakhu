@@ -1,17 +1,18 @@
-var exec = require('child_process').exec;
+/**var exec = require('child_process').exec;
 var os = require('os');
 var fs = require('fs');
 var https = require('https');
 var mkdirp = require('mkdirp');
 var unzip = require('unzip');
-var terminal = require('child_process').exec;
+var terminal = require('child_process').exec;*/
 var clicolour = require('cli-color');
-var mongodb = require('mongodb');
-var Db = require('mongodb').Db;
-var Server = require('mongodb').Server
+/**var Db = require('mongodb').Db;
+var Server = require('mongodb').Server;*/
 
 exports.start = function start(callback) {
-  var db = new Db('test', new Server('localhost', 27017));
+  console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
+  //var db = new Db('test', new Server('localhost', 27017));
+  // for later
   /*if(os.type() === "Windows_NT"){
     // start mongo
     // download if not Here

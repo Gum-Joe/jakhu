@@ -143,7 +143,8 @@ router.get('/wosl', function(req, res) {
     /**exec("./scripts/", function (error, stdout) {
       res.redirect('/start');
     });
-  });*/
+    */
+  });
 
   router.get('/set-install-standard', function(req, res) {
     console.log("");
