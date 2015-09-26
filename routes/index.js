@@ -77,7 +77,7 @@ function getdocs(x){
 //router.use('passportconfig', passportconfig);
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res) {
   // TODO: Insert boot checks
   console.log("");
       exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -87,7 +87,7 @@ router.get('/', function(req, res, next) {
       });
   });
 
-  router.get('/signin', function(req, res, next) {
+  router.get('/signin', function(req, res) {
     // TODO: Insert boot checks
     console.log("");
         exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -97,7 +97,7 @@ router.get('/', function(req, res, next) {
         });
     });
 
-router.get('/start', function(req, res, next) {
+router.get('/start', function(req, res) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('oobe/index.ejs', {
@@ -106,7 +106,7 @@ router.get('/start', function(req, res, next) {
   });
   });
 
-  router.get('/license', function(req, res, next) {
+  router.get('/license', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('oobe/license.ejs', {
@@ -114,7 +114,7 @@ router.get('/start', function(req, res, next) {
       });
     });
     });
-    router.get('/decline', function(req, res, next) {
+    router.get('/decline', function(req, res) {
       // TODO: Add License handlers
       console.log("");
       exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -124,25 +124,25 @@ router.get('/start', function(req, res, next) {
       });
       });
 
-      router.get('/decline-y', function(req, res, next) {
+      router.get('/decline-y', function(req, res) {
         // TODO: Add License handlers
         // oobe.license.decline();
         console.log("");
         res.redirect('/wosl');
         });
 
-        router.get('/decline-n', function(req, res, next) {
+        router.get('/decline-n', function(req, res) {
           console.log("");
           res.redirect('/license');
           });
 
-router.get('/accept', function(req, res, next) {
+router.get('/accept', function(req, res) {
         console.log("");
         // TODO: Add license handlers
         // oobe.license.accept();
         res.redirect('/wosl');
         });
-router.get('/wosl', function(req, res, next) {
+router.get('/wosl', function(req, res) {
           console.log("");
           exec("git rev-list HEAD --count", function (error, stdout, stderr) {
             res.render('oobe/licensewos.ejs', {
@@ -150,7 +150,7 @@ router.get('/wosl', function(req, res, next) {
             });
           });
           });
-          router.get('/declinew', function(req, res, next) {
+          router.get('/declinew', function(req, res) {
             // TODO: Add License handlers
             console.log("");
             exec("git rev-list HEAD --count", function (error, stdout, stderr) {
@@ -160,26 +160,26 @@ router.get('/wosl', function(req, res, next) {
             });
             });
 
-            router.get('/declinew-y', function(req, res, next) {
+            router.get('/declinew-y', function(req, res) {
               // TODO: Add License handlers
               // oobe.license.web.decline();
               console.log("");
               res.redirect('/type');
               });
 
-              router.get('/declinew-n', function(req, res, next) {
+              router.get('/declinew-n', function(req, res) {
                 console.log("");
                 res.redirect('/wosl');
                 });
 //
-          router.get('/acceptw', function(req, res, next) {
+          router.get('/acceptw', function(req, res) {
               console.log("");
               // TODO: Add license handlers
               // oobe.license.web.accept();
               res.redirect('/type');
               });
 
-  router.get('/type', function(req, res, next) {
+  router.get('/type', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('oobe/installType.ejs', {
@@ -187,7 +187,7 @@ router.get('/wosl', function(req, res, next) {
       });
     });
     });
-  router.post('/set-lang', function(req, res, next) {
+  router.post('/set-lang', function(req, res) {
     console.log("");
     // Here would be installing language packs but none are avalible
     console.log("Language: "+req.body.lang);
@@ -197,7 +197,7 @@ router.get('/wosl', function(req, res, next) {
     res.redirect('/license')
   });
 
-  router.post('/install-standard', function(req, res, next) {
+  router.post('/install-standard', function(req, res) {
     console.log("");
     // Here would be installing language packs but none are avalible
     // TODO: Add console.log() req.body.stuff
@@ -211,14 +211,14 @@ router.get('/wosl', function(req, res, next) {
     });
   });
 
-  router.get('/set-install-standard', function(req, res, next) {
+  router.get('/set-install-standard', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.redirect('/opt-standard');
     });
   });
 
-  router.get('/opt-standard', function(req, res, next) {
+  router.get('/opt-standard', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('oobe/options-standard.ejs', {
@@ -226,8 +226,8 @@ router.get('/wosl', function(req, res, next) {
       });
     });
   });
-  
-  router.get('/recovery', function(req, res, next) {
+
+  router.get('/recovery', function(req, res) {
     console.log("");
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       res.render('recovery.ejs', {
@@ -236,7 +236,7 @@ router.get('/wosl', function(req, res, next) {
     });
     });
 
-router.get('/step1', function(req, res, next) {
+router.get('/step1', function(req, res) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout, stderr) {
     res.render('step-1.ejs', {
@@ -245,12 +245,12 @@ router.get('/step1', function(req, res, next) {
   });
 });
 
-router.get('/oobe', function(req, res, next) {
+router.get('/oobe', function(req, res) {
   console.log("");
   res.render('oobe/index.ejs');
 });
 
-router.get('/admin', function(req, res, next) {
+router.get('/admin', function(req, res) {
   console.log("");
   res.render('admin/index.ejs', {
     // url query (?x=y)
