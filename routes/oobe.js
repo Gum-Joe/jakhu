@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var kernal = require('../boot/boot.js');
+//var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 // redefine when needed
 //var xml2js = require('xml2js');
@@ -140,16 +140,14 @@ router.get('/wosl', function(req, res) {
     // TODO: Create scripts
 
     // TODO: Add running basic install, installing apps and finishing and rendering of install page
-    exec("./scripts/", function (error, stdout) {
+    /**exec("./scripts/", function (error, stdout) {
       res.redirect('/start');
     });
-  });
+  });*/
 
   router.get('/set-install-standard', function(req, res) {
     console.log("");
-    exec("git rev-list HEAD --count", function (error, stdout) {
       res.redirect('/opt-standard');
-    });
   });
 
   router.get('/opt-standard', function(req, res) {
@@ -164,10 +162,10 @@ router.get('/wosl', function(req, res) {
 
 function checkBoot(argument) {
   fs.stat('./tmp', function(err){
-    if(err == null){
-      var bootc = false;
+    if(err === null){
+      //return bootc = false;
     } else {
-      var bootc = true;
+      //var bootc = true;
     }
   });
 }
