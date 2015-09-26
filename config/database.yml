@@ -20,5 +20,3 @@ address: localhost
 #
 # What port is the DB running on/what port to run the DB on?
 port: 27017
-
-#
