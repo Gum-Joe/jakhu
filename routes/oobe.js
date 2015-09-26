@@ -161,29 +161,6 @@ router.get('/wosl', function(req, res) {
     });
   });
 
-  router.get('/recovery', function(req, res) {
-    console.log("");
-    exec("git rev-list HEAD --count", function (error, stdout) {
-      res.render('recovery.ejs', {
-        build: stdout
-      });
-    });
-    });
-
-router.get('/step1', function(req, res) {
-  console.log("");
-  exec("git rev-list HEAD --count", function (error, stdout) {
-    res.render('step-1.ejs', {
-      build: stdout
-    });
-  });
-});
-
-router.get('/oobe', function(req, res) {
-  console.log("");
-  res.render('oobe/index.ejs');
-});
-
 
 function checkBoot(argument) {
   fs.stat('./tmp', function(err){
