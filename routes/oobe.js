@@ -1,5 +1,5 @@
 var express = require('express');
-var oobeooberouter = express.ooberouter();
+var ooberouter = express.Router();
 //var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 // redefine when needed
