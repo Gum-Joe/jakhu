@@ -65,7 +65,8 @@
     "unzip": "^0.1.11",
     "winston": "^1.0.1",
     "xml": "^1.0.0",
-    "xml2js": "^0.4.10"
+    "xml2js": "^0.4.10",
+    "yamljs": "^0.2.4"
   },
   "devDependencies": {
     "blanket": "^1.1.7",

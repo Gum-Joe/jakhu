@@ -6,8 +6,6 @@
 # Reads from imported files
 import:
   - database.yml
-  - instances.yml
-  - tmp/os.yml
 
 # Name of server
 # possible valuses - string or enviroment variable ($enviromentname)

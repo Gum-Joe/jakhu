@@ -10,6 +10,7 @@ exports.oobe = require("../libs/setup/setup.js");
 var oobe = require("../libs/setup/setup.js");
 var fs = require('fs');
 var unzip = require('unzip');
+var config = require('./libs/configure.js')
 //boot.properties.git.getCommits;
 
 var getCommits = function getCommits(x) {
@@ -21,6 +22,8 @@ var getCommits = function getCommits(x) {
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
+  // Load configure
+  config.loadconfig();
   boot.checks.checkFiles("ok");
   //Start DB
   boot.mongo.start(function (err) {
