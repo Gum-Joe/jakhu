@@ -10,3 +10,4 @@ exclude_paths:
   - "routes/dashboard.js"
   - "routes/signup.js"
   - "routes/users.js"
+  - "views/js/*.js"
