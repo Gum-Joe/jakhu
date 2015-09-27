@@ -7,9 +7,11 @@ describe('Logger test', function () {
   it('should test to see if a log file can be found', function (done) {
     done();
     logger.createlog();
-    if(fs.existsSync('./logs/wos.log') !== true){
-      assert.fail('ERNOENT || other', null, " Expected log file to exist - did not");
-    };
+    delayed.delay(function () {
+      if(fs.existsSync('./logs/wos.log') !== true){
+        assert.fail('ERNOENT || other', null, " Expected log file to exist - did not");
+      };
+    }, 750)
   });
   it('should see if a log is created', function (done) {
     fs.unlinkSync('./logs/wos.log');

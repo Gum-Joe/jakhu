@@ -7,13 +7,17 @@ var fs = require('fs');
 var clicolour = require('cli-color');
 
 exports.stop = function stop(x) {
-  console.log(clicolour.redBright("Stopping the Web-OS server..."));
+  if(x !== 'test'){
+    console.log(clicolour.redBright("Stopping the Web-OS server..."));
+  }
   // Remove tmp and exit
   // TODO: Change exit to whereever last step is.
 };
 
 exports.monstop = function monstop(x) {
-  console.log(clicolour.redBright("Stopping the Web-OS server..."));
+  if(x !== 'test'){
+    console.log(clicolour.redBright("Stopping the Web-OS server..."));
+  }
   // Remove tmp and exit
   // TODO: Change exit to whereever last step is.
 }

@@ -1,4 +1,4 @@
-exports.start = function start(x){
+exports.start = function start(x, y, portt){
   //console.log(data);
 var express = require('express');
 var path = require('path');
@@ -44,7 +44,11 @@ var salt = bcrypt.genSaltSync(10);
 
 // create file
 //createlog("ok");
-var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+// during baic startup for testing, will not create log
+if(y !== true){
+  var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+}
+
 
 
 // view engine setup
@@ -77,7 +81,7 @@ var userSchema = new mongoose.Schema({
 , pwd: String
 });
 var exits = false;
-var suser = mongoose.model('usersc', userSchema);
+//var suser = mongoose.model('usersc', userSchema);
 
 app.use('/', routes);
 app.use('/oobe', ooberoutes);
@@ -110,9 +114,15 @@ if(x !== "basic" && x !== "ci"){
     kernal.startinput("ok");
   });
 } else {
-  app.listen(6060, function () {
-  	// server started for mocha test
-  });
+  if(portt === undefined){
+    app.listen(6060, function () {
+    	// server started for mocha test
+    });
+  } else {
+    app.listen(portt, function () {
+    	// server started for mocha test
+    });
+  }
 }
 // HTTPS
 //httpsserver = https.createServer(options);
