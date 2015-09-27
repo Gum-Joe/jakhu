@@ -9,7 +9,7 @@ var clicolour = require('cli-color');
 /**var Db = require('mongodb').Db;
 var Server = require('mongodb').Server;*/
 
-exports.start = function start(callback) {
+exports.start = function start() {
   console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
   //var db = new Db('test', new Server('localhost', 27017));
   // for later
@@ -116,4 +116,4 @@ exports.start = function start(callback) {
   } else {
     callback("EOS", "Not windows");
   };*/
-}
+};
