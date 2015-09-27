@@ -12,13 +12,6 @@ var fs = require('fs');
 var unzip = require('unzip');
 var config = require('./libs/configure.js')
 //boot.properties.git.getCommits;
-
-var getCommits = function getCommits(x) {
-  //This runs on startup - see bin/start
-  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
-      console.log(stdout);
-  });
-}
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
