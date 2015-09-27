@@ -9,8 +9,13 @@ var clicolour = require('cli-color');
 /**var Db = require('mongodb').Db;
 var Server = require('mongodb').Server;*/
 
-exports.start = function start() {
-  console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
+exports.start = function start(x) {
+  if(x !== 'test'){
+    console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
+  } else {
+    return 'Sorry, you will need to start your own MongoDB';
+  }
+
   //var db = new Db('test', new Server('localhost', 27017));
   // for later
   /*if(os.type() === "Windows_NT"){

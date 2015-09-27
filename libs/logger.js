@@ -25,7 +25,7 @@ var logger = new winston.Logger({
     exitOnError: false
 });
 
-var createlog = function createlog(argument) {
+var createlog = function createlog(x) {
   fs.stat('./logs/wos.log', function(err, stat){
     if(err === null){
         // do noting
@@ -35,8 +35,10 @@ var createlog = function createlog(argument) {
             if(err) {
                 return console.log(err);
             }
+            if(x !== "test"){
+              console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
+            }
 
-            console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
         });
 
       }
