@@ -170,4 +170,14 @@ describe('GET requests', function (done) {
       .expect(200);
     done();
   });
+  /*it('should test the reply of GET /users', function (done) {
+    http.get("http://localhost:6060/users", function(res) {
+      console.log(res.reply);
+        res.on('data', function(body) {
+            console.log(body)
+            assert.equal(body, "respond with a resource", 'Expected server to respond with "respond with a resource", it did not');
+            done();
+        });
+    });
+  });*/
 });

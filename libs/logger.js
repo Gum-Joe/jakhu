@@ -25,7 +25,7 @@ var logger = new winston.Logger({
     exitOnError: false
 });
 
-exports.createlog = function createlog(argument) {
+var createlog = function createlog(argument) {
   fs.stat('./logs/wos.log', function(err, stat){
     if(err === null){
         // do noting
@@ -46,7 +46,7 @@ exports.createlog = function createlog(argument) {
         });
 };
 
-module.exports = logger;
+module.exports = {logger, createlog};
 module.exports.stream = {
     write: function(message, encoding){
         logger.info(message);
