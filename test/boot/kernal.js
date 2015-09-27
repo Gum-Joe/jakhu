@@ -15,4 +15,14 @@ describe('Kernal tests', function () {
     }, 750);
     done();
   });
+  it('should clean tmp', function (done) {
+    fs.openSync('./tmp/test.txt', 'w');
+    ken.clean();
+    delayed.delay(function () {
+      if(fs.existsSync('./tmp/test.txt') === true){
+        assert.fail(true, false, 'Expected tmp to be clean - it was not');
+      };
+    }, 750);
+    done();
+  })
 });
