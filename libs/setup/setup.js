@@ -16,7 +16,7 @@ exports.first = function first() {
           if (err) {
             error.throwError("SETUP_CREATE_DIR_CONFIG", err, err.code);
           } else {
-            console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created config dir");
+            //console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created config dir");
           }
         });
       }else{
@@ -33,7 +33,7 @@ exports.first = function first() {
                 if (err) {
                   error.throwError("SETUP_CREATE_DIR_INSTANCES", err, err.code);
                 } else {
-                  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created Instances dir");
+                  //console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created Instances dir");
                 }
               });
 
@@ -52,7 +52,7 @@ exports.first = function first() {
                 if (err) {
                   error.throwError("SETUP_CREATE_DIR_TMP", err, err.code);
                 } else {
-                  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created tmp dir");
+                  //console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created tmp dir");
                 }
               });
 

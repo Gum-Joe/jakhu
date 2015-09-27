@@ -135,65 +135,9 @@ if(x !== "basic" && x !== "ci"){
     }); */
 
 
-
-app.on('error', onError);
-app.on('listening', onListening);
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
 /**
  * Event listener for HTTP server "error" event.
  */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = httpsserver.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  wlogger.debug('Listening on ' + bind);
-}
 
 
 // catch 404 and forward to error handler
@@ -226,27 +170,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
-function createlog(argument) {
-  fs.stat('./logs/wos.log', function(err, stat){
-    if(err === null){
-        // do noting
-      }
-      else if( err.code == 'ENOENT'){
-        fs.writeFile("./logs/wos.log", "-------------------Web-OS-logs--------------------", function(err) {
-            if(err) {
-                return console.log(err);
-            }
-
-            console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
-        });
-
-      }
-      else{
-        error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"logs", err, err.code);
-          }
-        });
-};
 
 // end of start function
 };
