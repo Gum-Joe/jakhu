@@ -4,7 +4,7 @@ var clicolour = require('cli-color');
 var error = require('./error/bsod.js');
 winston.emitErrs = true;
 
-var logger = new winston.Logger({
+var logger = exports.logger = new winston.Logger({
     transports: [
         new winston.transports.File({
             level: 'info',
@@ -25,7 +25,7 @@ var logger = new winston.Logger({
     exitOnError: false
 });
 
-var createlog = function createlog(x) {
+exports.createlog = function createlog(x) {
   fs.stat('./logs/wos.log', function(err, stat){
     if(err === null){
         // do noting
@@ -48,7 +48,6 @@ var createlog = function createlog(x) {
         });
 };
 
-module.exports = {logger, createlog};
 module.exports.stream = {
     write: function(message, encoding){
         logger.info(message);
