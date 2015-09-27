@@ -4,7 +4,7 @@ var clicolour = require('cli-color');
 //var error = require('../../error/bsod.js');
 var xml = require('xml');
 var exec = require('child_process').exec;
-var langObj
+var langObj;
 
 
 exports.buildLang = function buildLang(x, y, z) {

@@ -11,8 +11,7 @@ exports.first = function first() {
   fs.stat('../../config', function(err){
     if(err === null){
         // do noting
-      }
-      else if( err.code === 'ENOENT'){
+      } else if(err.code === 'ENOENT'){
         mkdirp('config', function(err) {
           if (err) {
             error.throwError("SETUP_CREATE_DIR_CONFIG", err, err.code);
@@ -20,8 +19,7 @@ exports.first = function first() {
             console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created config dir");
           }
         });
-      }
-      else{
+      }else{
         error.throwError("BOOT_CHECKS_FILES_"+err.code+":"+"config", err, err.code);
           }
         });
