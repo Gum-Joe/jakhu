@@ -140,7 +140,7 @@ router.post('/login', passport.authenticate('local', {
     failureRedirect: '/loginFailure'
   }));
 
-function checkBoot(argument) {
+/*function checkBoot(argument) {
   fs.stat('./tmp', function(err){
     if(err == null){
       var boot = false;
@@ -148,6 +148,6 @@ function checkBoot(argument) {
       var boot = true;
     }
   });
-}
+}*/
 
 module.exports = router;
