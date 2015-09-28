@@ -19,8 +19,7 @@
   space = "                                                                 ";
 
   exports.throwError = function(code, err, ercode) {
-    throw err;
-    console.error("                                   ");
+    console.log("                                   ");
     blue(space + "             -- BEGIN ERROR --");
     red(space + "          Web-OS ran into a problem");
     yell(space + "To protect your data, we have shut down Web-OS");

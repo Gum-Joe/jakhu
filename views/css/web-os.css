@@ -1,5 +1,10 @@
 @import "float.css";
-@import "fonts.css";
+
+@font-face {
+     font-family: FiraSans-UltraLight;
+     src: url(fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+
 
 .web-os-back{
   background-image: url("img/nav-back-two.png");
