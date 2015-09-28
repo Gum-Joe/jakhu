@@ -8,3 +8,5 @@ gem 'rails', '~> 4.2.4'
 gem 'compass', '~> 1.0.3'
 # css parser for compass
 gem 'css_parser', '~> 1.3.6'
+
+gem 'travis', '~> 1.8.0'
