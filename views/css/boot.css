@@ -1,6 +1,8 @@
 @import "web-os.css";
-@import "fonts.css";
-@import "boot.theme.css";
+
+body,html {
+  background-image: url("./img/boot.jpg");
+}
 
 .system-info-build {
   /*padding-left: 100%*/

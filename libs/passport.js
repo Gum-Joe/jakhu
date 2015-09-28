@@ -21,7 +21,7 @@ var clicolour = require('cli-color');
 var expressSession = require('express-session');
 var bcrypt = require('bcryptjs');
 
-var salt = bcrypt.genSaltSync(10);
+var salt = bcrypt.genSaltSync(10); 
 
 var app = express();
 
@@ -36,9 +36,9 @@ var exits = false;
 var suser = mongoose.model('user', userSchema);
 var Suser = mongoose.model('user', userSchema);*/
 
-//app.use(cookieParser('the'));
-app.use(expressSession({
-    secret: process.env.SESSION_SECRET || 'the',
+app.use(cookieParser('$%£lWeBOS66$%£22'));
+app.use(expressSession({ 
+    secret: process.env.SESSION_SECRET || '$%£lWeBOS66$%£22',
     resave: true,
     saveUninitialized: true
     }));
@@ -59,9 +59,9 @@ var isValidPassword = function(user, password){
 passport.use(new passportlocal.Strategy(function (username, password, done) {
     passReqToCallback : true;
   },
-  function(req, username, password, done) {
+  function(req, username, password, done) { 
     // check in mongo if a user with username exists or not
-    suser.findOne({ 'username' :  username },
+    suser.findOne({ 'username' :  username }, 
       function(err, user) {
         // In case of any error, return using the done method
         if (err){
@@ -71,21 +71,21 @@ passport.use(new passportlocal.Strategy(function (username, password, done) {
         // Username does not exist, log error & redirect back
         if (!user){
           console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'User Not Found with username '+ username);
-          return done(null, false,
-                req.flash('message', 'User Not found.'));
+          return done(null, false, 
+                req.flash('message', 'User Not found.'));                 
         }
-        // User exists but wrong password, log the error
+        // User exists but wrong password, log the error 
         if (!isValidPassword(user, password)){
           console.log(clicolour.cyanBright("connections ") + clicolour.redBright("error ") + 'Invalid Password');
-          return done(null, false,
+          return done(null, false, 
               req.flash('message', 'Invalid Password'));
         }
-        // User and password both match, return user from
+        // User and password both match, return user from 
         // done method which will be treated like success
         return done(null, {id: user, name: username, email: username});
       }
     );
-}));
+})); 
 
 // passport.use(new passportlocal.Strategy(suser.authenticate()));
 
@@ -114,5 +114,5 @@ passport.deserializeUser(function(id, done) {
 // passport.deserializeUser(suser.deserializeUser());
 
 
-module.exports = passport;
-module.exports = mongoose.model('users', userSchema);;
+module.exports = app;
+module.exports = mongoose.model('userspassportreal', userSchema);;

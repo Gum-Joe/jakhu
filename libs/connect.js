@@ -23,35 +23,31 @@ var clicolour = require('cli-color');
 // var bcrypt = require('bcrypt');
 
 // connect
-exports.stadaradconnect = function (x, callback) {
+exports.stadaradconnect = function (x) {
 		var url = 'mongodb://localhost:27017/web-os';
 MongoClient.connect(url, function(err, db) {
   assert.equal(null, err);
-	if(x !== 'test'){
-		console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Connected correctly to mongo server.");
-	} else {
-		if(err){
-			callback('error');
-		} else {
-			callback('connected');
-		};
-	};
-	db.close();
+  console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Connected correctly to mongo server.");
+  db.close();
 });
 };
 
-exports.connect = function (x, call) {
-	mongoose.connect('mongodb://localhost:27017/web-os');
+exports.connect = function () {
+	mongoose.connect('mongodb://localhost:27017/connections');
 
 db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
   // yay!
-	if(x !== test){
-		console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Yay! We succefully connected to the db");
-	} else {
-		call('connected')
-	}
-
+  console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Yay! We succefully connected to the db");
 });
 }
+
+
+
+
+
+
+
+
+
