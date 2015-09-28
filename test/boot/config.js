@@ -5,5 +5,5 @@ describe('Config tests', function () {
   it('should configure Web-OS', function (done) {
     c.loadconfig();
     done();
-  })
-})
+  });
+});
