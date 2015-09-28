@@ -10,6 +10,9 @@ node_js:
 os:
   - linux
 
+services:
+  - mongodb
+
 env:
   - NODE_ENV=development
 
