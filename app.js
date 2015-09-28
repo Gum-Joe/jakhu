@@ -1,13 +1,17 @@
-exports.start = function start(){
+exports.start = function start(x, y, portt){
+  //console.log(data);
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressSession = require('express-session');
 var clicolour = require('cli-color');
 var fs = require("fs");
 var morgan = require("morgan");
+var ooberoutes = require("./routes/oobe.js");
+var dashboard = require("./routes/dashboard.js")
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -18,11 +22,12 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
+//This prints undefined
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
 //var wlogger = require("./libs/wlogger.js");
 // var debuge = require("./libs/debug.js");
-var wlogger = require("./libs/logger");
+var wlogger = require("./libs/logger.js");
 var kernal = require('./boot/boot.js');
 
 var routes = require('./routes/index');
@@ -37,7 +42,13 @@ var app = express();
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
-var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+// create file
+//createlog("ok");
+// during baic startup for testing, will not create log
+if(y !== true){
+  var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+}
+
 
 
 // view engine setup
@@ -46,7 +57,7 @@ app.set('view engine', 'jade');
 app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'icon.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -54,11 +65,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'views')));
-app.use(logger({stream: logFile}));
-app.use(logger('stream', wlogger.logger));
+app.use(express.static(path.join(__dirname, 'test')));
+if(process.env.NODE_ENV === "dev"){
+  app.set('env', 'development');
+}
+
+//app.use(logger('stream', wlogger.logger));
 //app.use(require('morgan')({ "stream": wlogger.stream }));
-wlogger.debug("Overriding 'Express' logger");
-app.use(require("morgan")("combined", { "stream": wlogger.stream }));
+//wlogger.debug("Overriding 'Express' logger");
+//app.use(require("morgan")("combined", { "stream": wlogger.stream }));
 
 var userSchema = new mongoose.Schema({
   username: { type: String }
@@ -66,10 +81,12 @@ var userSchema = new mongoose.Schema({
 , pwd: String
 });
 var exits = false;
-var suser = mongoose.model('usersc', userSchema);
+//var suser = mongoose.model('usersc', userSchema);
 
 app.use('/', routes);
+app.use('/oobe', ooberoutes);
 app.use('/users', users);
+app.use('/dashboard', dashboard);
 app.use('passportconfig', passportconfig);
 
 // Setup HTTPS
@@ -88,14 +105,25 @@ app.use('passportconfig', passportconfig);
 
 
 var port = process.env.PORT || 8080;
-
-app.listen(port, function () {
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  //kernal.boot("ok");
-  kernal.startinput("ok");
-} );
+if(x !== "basic" && x !== "ci"){
+  app.listen(port, function () {
+  	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+  	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+    //kernal.boot("ok");
+    kernal.startinput("ok");
+  });
+} else {
+  if(portt === undefined){
+    app.listen(6060, function () {
+    	// server started for mocha test
+    });
+  } else {
+    app.listen(portt, function () {
+    	// server started for mocha test
+    });
+  }
+}
 // HTTPS
 //httpsserver = https.createServer(options);
 // Turn on HTTPS
@@ -107,65 +135,9 @@ app.listen(port, function () {
     }); */
 
 
-
-app.on('error', onError);
-app.on('listening', onListening);
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
-}
-
 /**
  * Event listener for HTTP server "error" event.
  */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = httpsserver.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  wlogger.debug('Listening on ' + bind);
-}
 
 
 // catch 404 and forward to error handler
@@ -173,11 +145,6 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
-});
-
-app.post('/login', function(req, res) {
-   // passportlocal.authenticate('local');
-  res.redirect('/');
 });
 
 // error handlers
@@ -203,4 +170,12 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+// end of start function
 };
+
+// Close server
+
+exports.close = function close(argument) {
+  process.exit(1);
+}

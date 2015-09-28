@@ -1,24 +1,25 @@
 language: node_js
-
 node_js:
-  - "0.12"
-  - "0.11"
-  - "0.10"
-  - "stable" 
-  - "iojs"
-
-addons:
-  apt:
-    packages:
-    - xbuild
-
+- '0.12'
+- '0.11'
+- '0.10'
+- stable
+- iojs
 os:
-  - linux
-  - osx
-
+- linux
+services:
+- mongodb
 env:
-  - NODE_ENV=development
+- NODE_ENV=development
+install:
+- npm install
+- npm install -g bower mocha nyc codeclimate-test-reporter
+- bundle install
+script: make ci
 
-script: "make tests"
-  
-  
+deploy:
+  provider: heroku
+  api_key:
+    secure: nBRqTVLSrspwnFBIwI4M9P8HTliydVsA+9Kh/B7hKDFvuVSbvbb4bIv36WwVimt+RGsRMEkVALvUSC651IqhByCV0MCvmbXQlzbQH3ygdIXH/qUSKNm54hi6+CH5ekONuN/58V5pbTHo+MVl55NglGlcA0SujrcsEn7ZHB27LNmbhV2JZ6Xn/uBNFiY1ug116MoisHlYGLgWCXs4RD/dt6HbFWaQ4EJaVFFs/4DKcldw270/EmCzSDrVXfGTKmT8adHIG2wVum/JEhUAJ0NuliQ/glQBjGeKjy1xKutPWxl1hzns0dkaAeBqXgV8mNWq4sAN43LKNLVJl7UKj0jRYYhrm3C9nptdFcM0yZUz8aVhK7QC2Qoj+dw8mcMK5EvJ0Q6M69ZZtF1xCoQAw203865VrCBXC3b6a6hyKyugjCWa9EiO1c1leuNOBN7CHk8IxoHUyvOjVywgTlPaBLQvrebL+ZIN9MHaHGRJDIN4klm013oVNOqs5kwGAWqzFkPBYJJ6CnyfNvjAzFzpTLCd6zGTX0/x5rIMyssB1WssE0lnox+MUKI/cuf/ncgbP6QALTXxhkw5v72Ct69Gracxbc4ntZ1AmjG2fw+BnhcmD2GG5O/SziVDr+IWoBQa6CibuYtrwDGMNCQo7K0P8wdxn1ou7djTSXTMByvZw36Xcr8=
+    app:
+      a1: web-os

@@ -1,12 +1,5 @@
-@font-face {
-     font-family: FiraSans-UltraLight;
-     src: url(fonts/fira-sans/FiraSans-UltraLight.otf);
-}
-
-@font-face {
-     font-family: Courier_Prime;
-     src: url(fonts/courier-prime/Courier_Prime.ttf);
-}
+@import "fonts.css";
+@import "theme.css";
 
 .right {
 	float: right;

@@ -1,0 +1,25 @@
+This is the css gradient list and their matches for accent
+
+//accent = blue
+$accent : blue;
+$ac2 : #5F9EA0;
+$nav : #000099;
+$nav2 : #000099;
+
+accent = dark
+$accent : #1A1A1A;
+$ac2 : #313131;
+$nav : #000000;
+$nav2 : #191919;
+
+// accent = red
+$accent : #FF0000;
+$ac2 : #FF4D4D;
+$nav : #FF1919;
+$nav2 : #FF1919;
+
+// accent = green
+$accent : #00CC00;
+$ac2 : #33FF33;
+$nav : #33FF33;
+$nav2 : #33FF33;

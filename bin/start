@@ -1,8 +1,16 @@
 #!/usr/bin/env node
 var express = require('express');
 var kernal = require('../boot/boot.js');
-var git = require('nodegit');
+//var git = require('nodegit');
 var exec = require('child_process').exec;
+var com = require('commander');
+
+com
+  .version('1.0.0')
+  .option('-l, --local', 'Runs the server on your system instead of in a docker container')
+  .option('-v, --version', 'Outputs the version number')
+  .option('-d, --docker', 'Runs server in docker')
+  .parse(process.argv);
 
 // start
 // TODO: Create boot types (safemode, full, recovery)

@@ -1,0 +1,9 @@
+[submodule "libs/app"]
+	path = libs/app
+	url = https://github.com/Gum-Joe/Web-OS-apps
+[submodule "libs/switchboard"]
+	path = libs/switchboard
+	url = https://github.com/Gum-Joe/Web-OS-switchboard
+[submodule "Web-OS-registry-module"]
+	path = libs/registry
+	url = https://github.com/Gum-Joe/Web-OS-registry
