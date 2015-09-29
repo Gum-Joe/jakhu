@@ -3,6 +3,8 @@
 @import url(fonts.css);
 /*$nav : #9999FF;
 $nav2 : #000080;*/
+/*$nav : #9999FF;
+$nav2 : #000080;*/
 .base-pad {
   padding-left: 4.5cm;
 }
@@ -27,7 +29,7 @@ $nav2 : #000080;*/
 }
 
 body {
-  color: white;
+  color: black;
 }
 
 .sub-title {

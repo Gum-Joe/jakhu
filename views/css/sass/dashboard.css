@@ -70,7 +70,7 @@ nav {
 }
 
 .panel-body {
-  color: white;
+  color: black;
 }
 
 nav .navbar, .navbar-default, .navtop {
@@ -130,6 +130,7 @@ nav .navbar a, .navbar-default a, .navtop a {
 }
 
 .table {
+  color: white;
   width: 70%;
   border-style: dashed;
   border-width: 1px;

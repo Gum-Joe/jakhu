@@ -2,6 +2,7 @@
 @import "boot.css";
 @import "fonts.css";
 @import "mixins";
+@import "var";
 
 .base-pad {
   padding-left: 4.5cm;
@@ -20,7 +21,7 @@
 }
 
 body {
-    color: white;
+    color: $text;
 }
 
 .sub-title {
