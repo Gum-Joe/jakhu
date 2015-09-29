@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": ";;;;AAUA,UAAU;EALR,UAAU,EAAE,qCAAsC;;EAClD,UAAU,EAAE,gCAAiC;;EAC7C,UAAU,EAAE,kCAAmC;;EAC/C,UAAU,EAAE,6BAA8B",
-"sources": ["boot.theme.scss"],
+"sources": ["../boot.theme.scss"],
 "names": [],
 "file": "boot.theme.css"
 }

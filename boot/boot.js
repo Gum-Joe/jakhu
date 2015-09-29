@@ -10,7 +10,8 @@ exports.oobe = require("../libs/setup/setup.js");
 var oobe = require("../libs/setup/setup.js");
 var fs = require('fs');
 var unzip = require('unzip');
-var config = require('./libs/configure.js')
+var config = require('./libs/configure.js');
+var io = require('socket.io')(express.listen);
 //boot.properties.git.getCommits;
 //start boot
 // TODO: Create boot types (safemode, full, recovery)

@@ -11,7 +11,9 @@ var clicolour = require('cli-color');
 var fs = require("fs");
 var morgan = require("morgan");
 var ooberoutes = require("./routes/oobe.js");
-var dashboard = require("./routes/dashboard.js")
+var dashboard = require("./routes/dashboard.js");
+var mkdirp = require('mkdirp');
+var io = require('./libs/socket.io.js')
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -43,7 +45,8 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
 // create file
-//createlog("ok");
+mkdirp('logs')
+wlogger.createlog("ok");
 // during baic startup for testing, will not create log
 if(y !== true){
   var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
@@ -102,8 +105,6 @@ app.use('passportconfig', passportconfig);
 , rejectUnauthorized: true
 }; */
 
-
-
 var port = process.env.PORT || 8080;
 if(x !== "basic" && x !== "ci"){
   app.listen(port, function () {
@@ -123,7 +124,10 @@ if(x !== "basic" && x !== "ci"){
     	// server started for mocha test
     });
   }
-}
+};
+
+// start scoket
+io.start(app.listen)
 // HTTPS
 //httpsserver = https.createServer(options);
 // Turn on HTTPS
