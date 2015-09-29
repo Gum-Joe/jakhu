@@ -22,7 +22,7 @@ body, html {
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-color: #000000;
+  background-color: #3d4178;
   border-radius: 0px;
 }
 
@@ -79,13 +79,13 @@ nav .navbar, .navbar-default, .navtop {
   border-left: none;
   border-right: none;
   border-top: none;
-  background: -webkit-linear-gradient(#000000, #191919);
+  background: -webkit-linear-gradient(#3d4178, #3d4178);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#000000, #191919);
+  background: -o-linear-gradient(#3d4178, #3d4178);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#000000, #191919);
+  background: -moz-linear-gradient(#3d4178, #3d4178);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#000000, #191919);
+  background: linear-gradient(#3d4178, #3d4178);
   /* Standard syntax */
   color: white;
 }
@@ -198,6 +198,14 @@ nav .navbar a, .navbar-default a, .navtop a {
 
 .t-php {
   background-image: url("/css/img/php.png");
+}
+
+.pad-nav-b {
+  margin-left: 2.5cm;
+}
+
+.pad-nav-s {
+  margin-right: 2.5cm;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
