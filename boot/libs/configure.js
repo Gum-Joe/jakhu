@@ -3,7 +3,8 @@ var YAML = require('yamljs');
 var fs = require('fs');
 var assert = require('assert');
 // parse YAML string
-exports.loadconfig = function loadconfig() {
+module.exports = {
+loadconfig: function loadconfig() {
   // body...
   fs.readFile('./config/main.yml','utf8', function (err, data) {
     if(err){
@@ -42,5 +43,9 @@ exports.loadconfig = function loadconfig() {
   });
 
   // parse big one
-  //fs.readFile()
-};
+}, getdata: function getdata(data) {
+  // parse YAML
+  var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
+  return parsed
+
+}};

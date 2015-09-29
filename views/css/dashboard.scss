@@ -66,6 +66,7 @@ nav .navbar, .navbar-default, .navtop {
   padding-bottom: 0;
   @include nnobor;
   //background-image: url("/css/img/boot.jpg");
+  //background-image: url('/css/img/nav-back-two.png');
   @include gradb($nav, $nav2);
   color: white;
   .container-fluid {
@@ -193,9 +194,25 @@ nav .navbar, .navbar-default, .navtop {
   background-image: url("/css/img/php.png");
 }
 
+$marg : 2.5cm;
 .pad-nav-b {
-  margin-left: 2.5cm;
+  margin-left: $marg;
 }
 .pad-nav-s {
-  margin-right: 2.5cm;
+  margin-right: $marg;
+}
+
+.h {
+  margin-top: 2cm;
+}
+
+.box {
+  margin-left: $marg;
+  margin-right: $marg;
+  padding: 0.8cm;
+  //background-color: #6468a1;
+  background-image: url('/css/img/nav-back-two.png');
+  h1,h2,h3,h4,p {
+    color: white;
+  }
 }

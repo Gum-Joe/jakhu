@@ -6,6 +6,10 @@
 # Reads from imported files
 import:
   - database.yml
+  - instances.yml
+
+# user name
+user: admin
 
 # Name of server
 # possible valuses - string or enviroment variable ($enviromentname)
