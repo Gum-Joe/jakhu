@@ -22,7 +22,7 @@ body, html {
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-color: #3d4178;
+  background-color: #262738;
   border-radius: 0px;
 }
 
@@ -79,13 +79,13 @@ nav .navbar, .navbar-default, .navtop {
   border-left: none;
   border-right: none;
   border-top: none;
-  background: -webkit-linear-gradient(#3d4178, #3d4178);
+  background: -webkit-linear-gradient(#262738, #262738);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#3d4178, #3d4178);
+  background: -o-linear-gradient(#262738, #262738);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#3d4178, #3d4178);
+  background: -moz-linear-gradient(#262738, #262738);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#3d4178, #3d4178);
+  background: linear-gradient(#262738, #262738);
   /* Standard syntax */
   color: white;
 }
