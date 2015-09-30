@@ -3,7 +3,7 @@ var router = express.Router();
 var exec = require('child_process').exec;
 var config = require('../boot/libs/configure.js').getdata;
 
-/* GET users listing. */
+/* GET dashborad home. */
 router.get('/', function(req, res) {
   console.log("");
   exec("git rev-list HEAD --count", function (error, stdout) {
@@ -11,6 +11,7 @@ router.get('/', function(req, res) {
       user: req.param("user"),
       build: stdout,
       imgprofile: '/css/img/profile.jpg',
+      instances: config.instances
     });
   });
 });
