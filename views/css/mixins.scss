@@ -6,6 +6,11 @@
   margin-right: auto;
 }
 
+@mixin margin {
+  margin-left: $marg;
+  margin-right: $marg;
+}
+
 @mixin boot() {
   background-image: url("/css/img/boot.jpg");
 }

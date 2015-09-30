@@ -60,6 +60,11 @@
      src: url(fonts/fira-sans/FiraSans-BoldItalic.otf);
 }
 
+@font-face {
+     font-family: Fira-Sans;
+     src: url(fonts/fira-sans/FiraSans-Regular.otf);
+}
+
 .web-os-main-font {
   font-family: FiraSans-UltraLight;
 }

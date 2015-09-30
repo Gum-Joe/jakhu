@@ -215,11 +215,13 @@ $marg : 2.5cm;
 
 .h {
   margin-top: 2cm;
+  margin-left: $marg;
+  margin-right: $marg;
 }
 
 .box {
-  margin-left: $marg;
-  margin-right: $marg;
+  //margin-left: $marg;
+  //margin-right: $marg;
   padding: 0.8cm;
   //background-color: #6468a1;
   background-image: url('/css/img/nav-back-two.png');
@@ -229,6 +231,10 @@ $marg : 2.5cm;
   h1,h2,h3,h4,p {
     color: white;
   }
+  button {
+    height: 1cm;
+    width: 1cm;
+  }
 }
 
 $heighti : 20px;
@@ -237,4 +243,9 @@ $heighti : 20px;
   width: $heighti;
   border-radius: 20px;
   margin-left: 5px;
+}
+
+.table-t {
+  @include margin;
+  font-family: Fira-Sans;
 }

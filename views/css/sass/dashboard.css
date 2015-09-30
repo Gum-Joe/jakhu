@@ -227,11 +227,11 @@ nav .navbar a, .navbar-default a, .navtop a {
 
 .h {
   margin-top: 2cm;
+  margin-left: 2.5cm;
+  margin-right: 2.5cm;
 }
 
 .box {
-  margin-left: 2.5cm;
-  margin-right: 2.5cm;
   padding: 0.8cm;
   background-image: url("/css/img/nav-back-two.png");
   border-style: solid;
@@ -241,12 +241,22 @@ nav .navbar a, .navbar-default a, .navtop a {
 .box h1, .box h2, .box h3, .box h4, .box p {
   color: white;
 }
+.box button {
+  height: 1cm;
+  width: 1cm;
+}
 
 #profile-img {
   height: 20px;
   width: 20px;
   border-radius: 20px;
   margin-left: 5px;
+}
+
+.table-t {
+  margin-left: 2.5cm;
+  margin-right: 2.5cm;
+  font-family: Fira-Sans;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
