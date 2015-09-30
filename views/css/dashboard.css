@@ -22,7 +22,7 @@ body, html {
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-color: #704444;
+  background-color: #5381ed;
   border-radius: 0px;
 }
 
@@ -79,13 +79,13 @@ nav .navbar, .navbar-default, .navtop {
   border-left: none;
   border-right: none;
   border-top: none;
-  background: -webkit-linear-gradient(#704444, #704444);
+  background: -webkit-linear-gradient(#5381ed, #5381ed);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#704444, #704444);
+  background: -o-linear-gradient(#5381ed, #5381ed);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#704444, #704444);
+  background: -moz-linear-gradient(#5381ed, #5381ed);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#704444, #704444);
+  background: linear-gradient(#5381ed, #5381ed);
   /* Standard syntax */
   color: white;
 }
@@ -117,6 +117,22 @@ nav .navbar .container-fluid div ul li:hover, .navbar-default .container-fluid d
 nav .navbar .container-fluid div ul a:hover, .navbar-default .container-fluid div ul a:hover, .navtop .container-fluid div ul a:hover {
   color: white;
   background-image: url("/css/img/python.jpg");
+}
+nav .navbar .container-fluid div ul .dropdown-menu, .navbar-default .container-fluid div ul .dropdown-menu, .navtop .container-fluid div ul .dropdown-menu {
+  background: -webkit-linear-gradient(#5381ed, #5381ed);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#5381ed, #5381ed);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#5381ed, #5381ed);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#5381ed, #5381ed);
+  /* Standard syntax */
+}
+nav .navbar .container-fluid div ul .dropdown-menu .list, .navbar-default .container-fluid div ul .dropdown-menu .list, .navtop .container-fluid div ul .dropdown-menu .list {
+  padding-bottom: 9px;
+}
+nav .navbar .container-fluid div ul .dropdown-menu li a, .navbar-default .container-fluid div ul .dropdown-menu li a, .navtop .container-fluid div ul .dropdown-menu li a {
+  color: white;
 }
 nav .navbar .container-fluid .navbar-header a, .navbar-default .container-fluid .navbar-header a, .navtop .container-fluid .navbar-header a {
   color: white;

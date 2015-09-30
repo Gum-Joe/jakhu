@@ -103,6 +103,17 @@ nav .navbar, .navbar-default, .navtop {
           color: white;
           background-image: url("/css/img/python.jpg");
         }
+        .dropdown-menu {
+          @include gradb($nav, $nav2);
+          .list {
+            padding-bottom: 9px;
+          }
+          li {
+            a {
+              color: white;
+            }
+          }
+        }
       }
     }
     .navbar-header {
