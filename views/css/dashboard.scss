@@ -212,7 +212,18 @@ $marg : 2.5cm;
   padding: 0.8cm;
   //background-color: #6468a1;
   background-image: url('/css/img/nav-back-two.png');
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
   h1,h2,h3,h4,p {
     color: white;
   }
+}
+
+$heighti : 20px;
+#profile-img {
+  height: $heighti;
+  width: $heighti;
+  border-radius: 20px;
+  margin-left: 5px;
 }

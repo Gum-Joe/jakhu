@@ -9,13 +9,13 @@ body, html {
 
 body, html {
   /*background-image: url("/css/img/nav-back-two.png");*/
-  background: -webkit-linear-gradient(white, white);
+  background: -webkit-linear-gradient(#EEEEEE, #EEEEEE);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(white, white);
+  background: -o-linear-gradient(#EEEEEE, #EEEEEE);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(white, white);
+  background: -moz-linear-gradient(#EEEEEE, #EEEEEE);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(white, white);
+  background: linear-gradient(#EEEEEE, #EEEEEE);
   /* Standard syntax */
 }
 
@@ -218,9 +218,19 @@ nav .navbar a, .navbar-default a, .navtop a {
   margin-right: 2.5cm;
   padding: 0.8cm;
   background-image: url("/css/img/nav-back-two.png");
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
 }
 .box h1, .box h2, .box h3, .box h4, .box p {
   color: white;
+}
+
+#profile-img {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  margin-left: 5px;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

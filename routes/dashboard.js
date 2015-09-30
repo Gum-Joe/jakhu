@@ -8,7 +8,8 @@ router.get('/', function(req, res) {
   exec("git rev-list HEAD --count", function (error, stdout) {
     res.render('dashboard/index.ejs', {
       user: req.param("user"),
-      build: stdout
+      build: stdout,
+      imgprofile: '/css/img/profile.jpg'
     });
   });
 });
