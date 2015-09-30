@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
+var config = require('../boot/libs/configure.js');
 
 /* GET users listing. */
 router.get('/', function(req, res) {
@@ -9,7 +10,7 @@ router.get('/', function(req, res) {
     res.render('dashboard/index.ejs', {
       user: req.param("user"),
       build: stdout,
-      imgprofile: '/css/img/profile.jpg'
+      imgprofile: '/css/img/profile.jpg',
     });
   });
 });
