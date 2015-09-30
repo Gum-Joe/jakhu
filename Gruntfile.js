@@ -207,7 +207,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
-  grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
+  grunt.registerTask('compile:sass', ['sass:dist', 'sass:min']);
   grunt.registerTask('compile:watch', 'watch:scripts');
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
