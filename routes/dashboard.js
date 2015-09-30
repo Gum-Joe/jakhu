@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
-var config = require('../boot/libs/configure.js');
+var config = require('../boot/libs/configure.js').getdata;
 
 /* GET users listing. */
 router.get('/', function(req, res) {
