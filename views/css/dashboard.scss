@@ -63,12 +63,28 @@ nav {
 }
 
 nav .navbar, .navbar-default, .navtop {
+  border-color: white;
   padding-bottom: 0;
   @include nnobor;
   //background-image: url("/css/img/boot.jpg");
   //background-image: url('/css/img/nav-back-two.png');
   @include gradb($nav, $nav2);
   color: white;
+  div {
+    border-color: white;
+    div {
+      border-color: white;
+      button {
+        border-color: white;
+        span {
+          border-color: white;
+        }
+      }
+    }
+    ul {
+      border-color: white;
+    }
+  }
   .container-fluid {
     div {
       a {
@@ -247,5 +263,10 @@ $heighti : 20px;
 
 .table-t {
   @include margin;
-  font-family: Fira-Sans;
+  font-family: Arial;
+  div button {
+    background: $nav;
+    color: white;
+    margin-left: auto;
+  }
 }

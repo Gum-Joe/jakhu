@@ -65,6 +65,16 @@
      src: url(fonts/fira-sans/FiraSans-Regular.otf);
 }
 
+@font-face {
+  font-family: Source-Code-Pro-Regular;
+  src: url(/css/fonts/source-code-pro/SourceCodePro-Regular.otf)
+}
+
+@font-face {
+  font-family: Source-Code-Pro-Light;
+  src: url(/css/fonts/source-code-pro/SourceCodePro-Light.otf)
+}
+
 .web-os-main-font {
   font-family: FiraSans-UltraLight;
 }

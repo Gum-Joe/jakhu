@@ -74,6 +74,7 @@ nav {
 }
 
 nav .navbar, .navbar-default, .navtop {
+  border-color: white;
   padding-bottom: 0;
   border-radius: 0;
   border-left: none;
@@ -88,6 +89,21 @@ nav .navbar, .navbar-default, .navtop {
   background: linear-gradient(#5381ed, #5381ed);
   /* Standard syntax */
   color: white;
+}
+nav .navbar div, .navbar-default div, .navtop div {
+  border-color: white;
+}
+nav .navbar div div, .navbar-default div div, .navtop div div {
+  border-color: white;
+}
+nav .navbar div div button, .navbar-default div div button, .navtop div div button {
+  border-color: white;
+}
+nav .navbar div div button span, .navbar-default div div button span, .navtop div div button span {
+  border-color: white;
+}
+nav .navbar div ul, .navbar-default div ul, .navtop div ul {
+  border-color: white;
 }
 nav .navbar .container-fluid div a, .navbar-default .container-fluid div a, .navtop .container-fluid div a {
   color: white;
@@ -256,7 +272,12 @@ nav .navbar a, .navbar-default a, .navtop a {
 .table-t {
   margin-left: 2.5cm;
   margin-right: 2.5cm;
-  font-family: Fira-Sans;
+  font-family: Arial;
+}
+.table-t div button {
+  background: #5381ed;
+  color: white;
+  margin-left: auto;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
