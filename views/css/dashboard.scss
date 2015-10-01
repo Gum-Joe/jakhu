@@ -263,10 +263,46 @@ $heighti : 20px;
 
 .table-t {
   @include margin;
-  font-family: Arial;
+  margin-right: auto;
+  margin-left: 0;
+  font-family: OpenSans-Regular;
+  div {
+    width: 50%;
+    float: left;
+  }
   div button {
-    background: $nav;
-    color: white;
+    background: $accent;
+    color: $text;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    @include table-t-div-shares;
+  }
+  div button:hover {
+    background: $aa;
+    color: $text;
+    @include table-t-div-shares;
+  }
+}
+
+#con {
+  margin-left: auto;
+  margin-right: 0;
+  div {
     margin-left: auto;
+    margin-right: 0;
+  }
+  div button {
+    background: $accent;
+    color: $text;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    //@include table-t-div-shares;
+    margin-left: auto;
+    margin-right: 0;
+  }
+  div button:hover {
+    background: $aa;
+    color: $text;
+    @include table-t-div-shares;
   }
 }

@@ -75,6 +75,11 @@
   src: url(/css/fonts/source-code-pro/SourceCodePro-Light.otf)
 }
 
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+
 .web-os-main-font {
   font-family: FiraSans-UltraLight;
 }

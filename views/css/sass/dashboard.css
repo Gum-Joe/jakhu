@@ -272,12 +272,50 @@ nav .navbar a, .navbar-default a, .navtop a {
 .table-t {
   margin-left: 2.5cm;
   margin-right: 2.5cm;
-  font-family: Arial;
+  margin-right: auto;
+  margin-left: 0;
+  font-family: OpenSans-Regular;
+}
+.table-t div {
+  width: 50%;
+  float: left;
 }
 .table-t div button {
-  background: #5381ed;
-  color: white;
+  background: #EEEEEE;
+  color: black;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+}
+.table-t div button:hover {
+  background: #d6cece;
+  color: black;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+}
+
+#con {
   margin-left: auto;
+  margin-right: 0;
+}
+#con div {
+  margin-left: auto;
+  margin-right: 0;
+}
+#con div button {
+  background: #EEEEEE;
+  color: black;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  margin-left: auto;
+  margin-right: 0;
+}
+#con div button:hover {
+  background: #d6cece;
+  color: black;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
