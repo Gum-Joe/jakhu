@@ -147,7 +147,7 @@ nav .navbar, .navbar-default, .navtop {
   }
 }
 
-.table {
+/**.table {
   color: white;
   width: 70%;
   border-style: dashed;
@@ -202,7 +202,7 @@ nav .navbar, .navbar-default, .navtop {
     padding-right: $ar;
     padding-left: $ar;
   }
-}
+}*/
 .buttons {
   .sub {
     margin-left: 1cm;
@@ -221,7 +221,7 @@ nav .navbar, .navbar-default, .navtop {
   background-image: url("/css/img/php.png");
 }
 
-$marg : 2.5cm;
+//$marg : 2.5cm;
 .pad-nav-b {
   margin-left: $marg;
 }
@@ -238,9 +238,12 @@ $marg : 2.5cm;
 .box {
   //margin-left: $marg;
   //margin-right: $marg;
+  $z : 0cm;
   padding: 0.8cm;
-  //background-color: #6468a1;
-  background-image: url('/css/img/nav-back-two.png');
+  padding-top: $z;
+  padding-bottom: 0.1cm;
+  background-color: #5381ed;
+  //background-image: url('/css/img/nav-back-two.png');
   border-style: solid;
   border-color: white;
   border-radius: 10px;
@@ -263,12 +266,18 @@ $heighti : 20px;
 
 .table-t {
   @include margin;
-  margin-right: auto;
-  margin-left: 0;
+  /**margin-right: auto;
+  margin-left: 0;*/
   font-family: OpenSans-Regular;
+  h3 {
+    div {
+      float: right;
+    }
+  }
   div {
-    width: 50%;
-    float: left;
+    //width: 50%;
+    //float: left;
+
   }
   div button {
     background: $accent;
@@ -285,24 +294,23 @@ $heighti : 20px;
 }
 
 #con {
-  margin-left: auto;
-  margin-right: 0;
-  div {
-    margin-left: auto;
-    margin-right: 0;
-  }
   div button {
     background: $accent;
     color: $text;
     padding-left: 0.5cm;
     padding-right: 0.5cm;
     //@include table-t-div-shares;
-    margin-left: auto;
-    margin-right: 0;
   }
   div button:hover {
     background: $aa;
     color: $text;
-    @include table-t-div-shares;
+    //@include table-t-div-shares;
   }
+}
+
+#instances{
+  background-color: white;
+  @include margin;
+  font-family: Source-Sans-Pro-Regular;
+  font-size: 30px;
 }

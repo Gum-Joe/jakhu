@@ -22,7 +22,7 @@ body, html {
 nav {
   font-family: Source-Sans-Pro-Light;
   border-radius: 0px;
-  background-color: #5381ed;
+  background-color: #31337d;
   border-radius: 0px;
 }
 
@@ -80,13 +80,13 @@ nav .navbar, .navbar-default, .navtop {
   border-left: none;
   border-right: none;
   border-top: none;
-  background: -webkit-linear-gradient(#5381ed, #5381ed);
+  background: -webkit-linear-gradient(#31337d, #31337d);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#5381ed, #5381ed);
+  background: -o-linear-gradient(#31337d, #31337d);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#5381ed, #5381ed);
+  background: -moz-linear-gradient(#31337d, #31337d);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#5381ed, #5381ed);
+  background: linear-gradient(#31337d, #31337d);
   /* Standard syntax */
   color: white;
 }
@@ -135,13 +135,13 @@ nav .navbar .container-fluid div ul a:hover, .navbar-default .container-fluid di
   background-image: url("/css/img/python.jpg");
 }
 nav .navbar .container-fluid div ul .dropdown-menu, .navbar-default .container-fluid div ul .dropdown-menu, .navtop .container-fluid div ul .dropdown-menu {
-  background: -webkit-linear-gradient(#5381ed, #5381ed);
+  background: -webkit-linear-gradient(#31337d, #31337d);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#5381ed, #5381ed);
+  background: -o-linear-gradient(#31337d, #31337d);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#5381ed, #5381ed);
+  background: -moz-linear-gradient(#31337d, #31337d);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#5381ed, #5381ed);
+  background: linear-gradient(#31337d, #31337d);
   /* Standard syntax */
 }
 nav .navbar .container-fluid div ul .dropdown-menu .list, .navbar-default .container-fluid div ul .dropdown-menu .list, .navtop .container-fluid div ul .dropdown-menu .list {
@@ -161,58 +161,62 @@ nav .navbar a, .navbar-default a, .navtop a {
   color: white;
 }
 
-.table {
+/**.table {
   color: white;
   width: 70%;
   border-style: dashed;
   border-width: 1px;
   border-radius: 5px;
   border-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  background-image: url("/css/img/boot.jpg");
-  font-family: Source-Sans-Pro-Light;
-  text-align: center;
-}
-.table thead {
-  text-align: center;
-}
-.table thead tr th {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.table .t-node {
-  background-image: url("/css/img/node-gradient.jpg");
-}
-.table .t-ruby {
-  background-image: url("/css/img/ruby.png");
-}
-.table .t-python {
-  background-image: url("/css/img/python.jpg");
-}
-.table .t-php {
-  background-image: url("/css/img/php.png");
-}
-.table tbody .t-node {
-  background-image: url("/css/img/node-gradient.jpg");
-}
-.table tbody .t-ruby {
-  background-image: url("/css/img/ruby.png");
-}
-.table tbody .t-python {
-  background-image: url("/css/img/python.jpg");
-}
-.table tbody .t-php {
-  background-image: url("/css/img/php.png");
-}
-.table button {
-  text-align: center;
-  padding: 0;
-  padding-right: 0.5cm;
-  padding-left: 0.5cm;
-}
+  @include cent();
+  @include boot();
+  @include buttons();
+  @include middle();
+  $tm : 1cm;
+  thead {
+    tr {
+      th {
+        text-align: center;
+        @include cent();
+      }
+    }
+    text-align: center;
+  }
+  .t-node {
+    background-image: url("/css/img/node-gradient.jpg");
+  }
+  .t-ruby {
+    background-image: url("/css/img/ruby.png");
+  }
+  .t-python {
+    background-image: url("/css/img/python.jpg");
+  }
+  .t-php {
+    background-image: url("/css/img/php.png");
+  }
+  tbody {
+    .t-node {
+      background-image: url("/css/img/node-gradient.jpg");
+    }
+    .t-ruby {
+      background-image: url("/css/img/ruby.png");
+    }
+    .t-python {
+      background-image: url("/css/img/python.jpg");
+    }
+    .t-php {
+      background-image: url("/css/img/php.png");
+    }
 
+  }
+  $ar: 0.5cm;
+  button {
+    text-align: center;
+    padding: 0;
+    padding-right: $ar;
+    padding-left: $ar;
+  }
+}*/
 .buttons .sub {
   margin-left: 1cm;
 }
@@ -234,22 +238,24 @@ nav .navbar a, .navbar-default a, .navtop a {
 }
 
 .pad-nav-b {
-  margin-left: 2.5cm;
+  margin-left: 4cm;
 }
 
 .pad-nav-s {
-  margin-right: 2.5cm;
+  margin-right: 4cm;
 }
 
 .h {
   margin-top: 2cm;
-  margin-left: 2.5cm;
-  margin-right: 2.5cm;
+  margin-left: 4cm;
+  margin-right: 4cm;
 }
 
 .box {
   padding: 0.8cm;
-  background-image: url("/css/img/nav-back-two.png");
+  padding-top: 0cm;
+  padding-bottom: 0.1cm;
+  background-color: #5381ed;
   border-style: solid;
   border-color: white;
   border-radius: 10px;
@@ -270,15 +276,14 @@ nav .navbar a, .navbar-default a, .navtop a {
 }
 
 .table-t {
-  margin-left: 2.5cm;
-  margin-right: 2.5cm;
-  margin-right: auto;
-  margin-left: 0;
+  margin-left: 4cm;
+  margin-right: 4cm;
+  /**margin-right: auto;
+  margin-left: 0;*/
   font-family: OpenSans-Regular;
 }
-.table-t div {
-  width: 50%;
-  float: left;
+.table-t h3 div {
+  float: right;
 }
 .table-t div button {
   background: #EEEEEE;
@@ -295,27 +300,23 @@ nav .navbar a, .navbar-default a, .navtop a {
   padding-right: 0.5cm;
 }
 
-#con {
-  margin-left: auto;
-  margin-right: 0;
-}
-#con div {
-  margin-left: auto;
-  margin-right: 0;
-}
 #con div button {
   background: #EEEEEE;
   color: black;
   padding-left: 0.5cm;
   padding-right: 0.5cm;
-  margin-left: auto;
-  margin-right: 0;
 }
 #con div button:hover {
   background: #d6cece;
   color: black;
-  padding-left: 0.5cm;
-  padding-right: 0.5cm;
+}
+
+#instances {
+  background-color: white;
+  margin-left: 4cm;
+  margin-right: 4cm;
+  font-family: Source-Sans-Pro-Regular;
+  font-size: 30px;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
