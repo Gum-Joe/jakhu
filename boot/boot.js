@@ -12,13 +12,17 @@ var fs = require('fs');
 var unzip = require('unzip');
 var config = require('./libs/configure.js');
 var io = require('socket.io')(express.listen);
+var delayed = require('delayed');
 //boot.properties.git.getCommits;
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   // Load configure
   config.loadconfig();
-  boot.checks.checkFiles("ok");
+  boot.checks.files.checkFiles("ok");
+  delayed.delay(function () {
+    boot.checks.instances.instances(config.getdata('name'));
+  }, 1500)
   //Start DB
   boot.mongo.start(function (err) {
     console.log(err);

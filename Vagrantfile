@@ -15,7 +15,19 @@ Vagrant.configure(2) do |config|
   config.vm.box = "hashicorp/precise32"
 
   # Install software
-  config.vm.provision :shell, path: "vagrant.sh"
+  config.vm.provision "shell", inline: <<-SHELL
+     sudo apt-get update
+     sudo apt-get install -y apache2
+     # Instal git
+     sudo apt-get install -y git-core
+     # Install curl
+     sudo apt-get install -y curl
+     # Install Node.js and npm
+     curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
+     sudo apt-get install -y nodejs
+     # Install ruby for gemfile
+     sudo apt-get install -y ruby-full
+   SHELL
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs

@@ -1,4 +1,3 @@
 # instances
 instances:
-  - build
-  - main
+  - test
