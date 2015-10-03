@@ -313,4 +313,16 @@ $heighti : 20px;
   @include margin;
   font-family: Source-Sans-Pro-Regular;
   font-size: 30px;
+  .module {
+    padding: 0.5cm;
+    .name {
+      @include align(left);
+    }
+    .lang{
+      @include align(middle);
+    }
+    #button {
+      @include align(right);
+    }
+  }
 }

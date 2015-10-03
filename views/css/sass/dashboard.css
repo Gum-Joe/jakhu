@@ -318,5 +318,17 @@ nav .navbar a, .navbar-default a, .navtop a {
   font-family: Source-Sans-Pro-Regular;
   font-size: 30px;
 }
+#instances .module {
+  padding: 0.5cm;
+}
+#instances .module .name {
+  float: left;
+}
+#instances .module .lang {
+  float: middle;
+}
+#instances .module #button {
+  float: right;
+}
 
 /*# sourceMappingURL=dashboard.css.map */

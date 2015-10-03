@@ -64,3 +64,7 @@
   padding-left: 0.5cm;
   padding-right: 0.5cm;
 }
+
+@mixin align($a) {
+  float: $a;
+}
