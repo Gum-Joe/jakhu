@@ -68,3 +68,7 @@
 @mixin align($a) {
   float: $a;
 }
+
+@mixin font($size) {
+  font-size: $size;
+}

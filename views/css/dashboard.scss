@@ -308,20 +308,24 @@ $heighti : 20px;
   }
 }
 
-#instances{
+.instances{
   background-color: white;
   @include margin;
   font-family: Source-Sans-Pro-Regular;
   font-size: 30px;
   .module {
+    $pad : 0.2cm;
     padding: 0.5cm;
     .name {
       @include align(left);
     }
     .lang{
-      @include align(middle);
+      //@include align(center);
+      @include cent;
+      @include font(20px);
+      padding-top: $pad;
     }
-    #button {
+    .button {
       @include align(right);
     }
   }
