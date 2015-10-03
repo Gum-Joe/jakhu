@@ -319,14 +319,28 @@ $heighti : 20px;
     .name {
       @include align(left);
     }
-    .lang{
+    .langnodejs{
       //@include align(center);
       @include cent;
       @include font(20px);
       padding-top: $pad;
+      color: $node;
     }
     .button {
       @include align(right);
+      @include font(15px);
+      //text-align: center;
+      padding-top: $pad;
+      //padding-right: 2.8cm;
+    }
+    .btn-group {
+      //@include align(right);
     }
   }
+}
+
+#iconl {
+  $iconl : 0.8cm;
+  width: $iconl;
+  height: $iconl;
 }

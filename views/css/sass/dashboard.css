@@ -324,14 +324,22 @@ nav .navbar a, .navbar-default a, .navtop a {
 .instances .module .name {
   float: left;
 }
-.instances .module .lang {
+.instances .module .langnodejs {
   margin-left: auto;
   margin-right: auto;
   font-size: 20px;
   padding-top: 0.2cm;
+  color: #87d950;
 }
 .instances .module .button {
   float: right;
+  font-size: 15px;
+  padding-top: 0.2cm;
+}
+
+#iconl {
+  width: 0.8cm;
+  height: 0.8cm;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
