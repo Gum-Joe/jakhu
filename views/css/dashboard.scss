@@ -315,7 +315,7 @@ $heighti : 20px;
       $colbut : #46b053;
       color: $accent !important;
       border-color: $colbut;
-      background: $colbut;
+      background: #3e9648;
       @include table-t-div-shares;
     }
 #refresh {
@@ -399,4 +399,16 @@ $heighti : 20px;
   $iconl : 0.8cm;
   width: $iconl;
   height: $iconl;
+}
+
+.modal-content {
+  background-color: $nav;
+  .modal-body {
+    color: white;
+  }
+  .modal-header {
+    h4 {
+      color: white;
+    }
+  }
 }

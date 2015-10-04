@@ -318,7 +318,7 @@ nav .navbar a, .navbar-default a, .navtop a {
 .table-t #new:hover {
   color: #f7f7f7 !important;
   border-color: #46b053;
-  background: #46b053;
+  background: #3e9648;
   padding-left: 0.5cm;
   padding-right: 0.5cm;
   border-style: solid;
@@ -401,6 +401,16 @@ nav .navbar a, .navbar-default a, .navtop a {
 #iconl {
   width: 0.8cm;
   height: 0.8cm;
+}
+
+.modal-content {
+  background-color: #31337d;
+}
+.modal-content .modal-body {
+  color: white;
+}
+.modal-content .modal-header h4 {
+  color: white;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
