@@ -50,9 +50,5 @@ loadconfig: function loadconfig() {
   //checks.checkinstances('instances');
 
   // parse big one
-}, getdata: function getdata() {
-  // parse YAML
-  var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
-  return parsed
-
-}};
+}, getdata: YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'))
+};
