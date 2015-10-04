@@ -22,7 +22,7 @@ exports.startboot = function startboot(boottype) {
   boot.checks.files.checkFiles("ok");
   delayed.delay(function () {
     boot.checks.instances.instances(config.getdata);
-  }, 1500)
+  }, 3000)
   //Start DB
   boot.mongo.start(function (err) {
     console.log(err);
