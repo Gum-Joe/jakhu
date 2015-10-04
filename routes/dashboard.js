@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
-var config = require('../boot/libs/configure.js').getdata;
+var config = require('../boot/libs/configure.js').getdata();
 
 /* GET dashborad home. */
 router.get('/', function(req, res) {
@@ -11,7 +11,8 @@ router.get('/', function(req, res) {
       user: req.param("user"),
       build: stdout,
       imgprofile: '/css/img/profile.jpg',
-      instances: config.instances
+      instances: config.instances,
+      port: config.port
     });
   });
 });
