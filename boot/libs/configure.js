@@ -2,7 +2,8 @@
 var YAML = require('yamljs');
 var fs = require('fs');
 var assert = require('assert');
-var checks = require('./checks/instances.js')
+var checks = require('./checks/instances.js');
+var delayed = require('delayed');
 // parse YAML string
 module.exports = {
 loadconfig: function loadconfig() {
@@ -50,7 +51,7 @@ loadconfig: function loadconfig() {
   //checks.checkinstances('instances');
 
   // parse big one
-}, getdata: function getdata() {
+}, getdata: function getdata(p) {
   // parse YAML
   var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
   return parsed

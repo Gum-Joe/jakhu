@@ -19,22 +19,23 @@ var delayed = require('delayed');
 exports.startboot = function startboot(boottype) {
   // Load configure
   config.loadconfig();
-  boot.checks.files.checkFiles("ok");
   delayed.delay(function () {
+    boot.checks.files.checkFiles("ok");
     boot.checks.instances.instances(config.getdata('name'));
+    //Start DB
+    boot.mongo.start(function (err) {
+      console.log(err);
+    });
+    oobe.first("ok");
+    boot.recovery.rollback.createBackup("ok");
+    /**boot.kernal.clean('o', function (err) {
+      if(err){
+        throw new Error('Could not clean');
+      }
+    });*/
+    app.start();
   }, 1500)
-  //Start DB
-  boot.mongo.start(function (err) {
-    console.log(err);
-  });
-  oobe.first("ok");
-  boot.recovery.rollback.createBackup("ok");
-  /**boot.kernal.clean('o', function (err) {
-    if(err){
-      throw new Error('Could not clean');
-    }
-  });*/
-  app.start();
+
 }
 
 // TODO: Create boot types (safemode, full, recovery)

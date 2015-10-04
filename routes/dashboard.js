@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
+var delayed = require('delayed');
 var config = require('../boot/libs/configure.js').getdata();
 
 /* GET dashborad home. */

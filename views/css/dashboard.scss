@@ -311,6 +311,13 @@ $heighti : 20px;
     background: $accent;
     @include table-t-div-shares;
   }
+  #new:hover {
+      $colbut : #46b053;
+      color: $accent !important;
+      border-color: $colbut;
+      background: $colbut;
+      @include table-t-div-shares;
+    }
 #refresh {
     $colbutre : #b04646;
     color: $colbutre !important;
@@ -326,16 +333,18 @@ $heighti : 20px;
     @include table-t-div-shares;
   }
 
-  button {
+  #explore {
       $colbutbut : #53ed65;
       color: $boxcol !important;
       border-color: $boxcol;
       background: $accent;
       @include table-t-div-shares;
     }
-  button:hover {
-    background: $aa;
-    color: #89e84a;
+  #explore:hover {
+    $colbutbut : #53ed65;
+    color: white !important;
+    border-color: $boxcol;
+    background: $boxcol;
     @include table-t-div-shares;
   }
 }
