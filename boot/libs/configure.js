@@ -7,7 +7,7 @@ var checks = require('./checks/instances.js')
 module.exports = {
 loadconfig: function loadconfig() {
   // body...
-  fs.openSync('./tmp/config.yml', 'w');
+  //fs.openSync('./tmp/config.yml', 'w');
   fs.readFile('./config/main.yml','utf8', function (err, data) {
     if(err){
       assert.fail(err.code, null, " Could not read config file main.yml");
