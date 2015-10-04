@@ -34,7 +34,7 @@ exports.startboot = function startboot(boottype) {
       }
     });*/
     app.start();
-  }, 1500)
+  }, 2250)
 
 }
 
