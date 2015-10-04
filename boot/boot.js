@@ -21,8 +21,8 @@ exports.startboot = function startboot(boottype) {
   config.loadconfig();
   boot.checks.files.checkFiles("ok");
   delayed.delay(function () {
-    boot.checks.instances.instances(config.getdata);
-  }, 3000)
+    boot.checks.instances.instances(config.getdata('name'));
+  }, 1500)
   //Start DB
   boot.mongo.start(function (err) {
     console.log(err);

@@ -315,15 +315,6 @@ nav .navbar a, .navbar-default a, .navtop a {
   border-style: solid;
   border-radius: 5px !important;
 }
-.table-t #new:hover {
-  color: white !important;
-  border-color: #46b053;
-  background: #46b053;
-  padding-left: 0.5cm;
-  padding-right: 0.5cm;
-  border-style: solid;
-  border-radius: 5px !important;
-}
 .table-t #refresh {
   color: #b04646 !important;
   border-color: #b04646;
@@ -342,7 +333,7 @@ nav .navbar a, .navbar-default a, .navtop a {
   border-style: solid;
   border-radius: 5px !important;
 }
-.table-t #explore {
+.table-t button {
   color: #5381ed !important;
   border-color: #5381ed;
   background: #f7f7f7;
@@ -351,10 +342,9 @@ nav .navbar a, .navbar-default a, .navtop a {
   border-style: solid;
   border-radius: 5px !important;
 }
-.table-t #explore:hover {
-  color: white !important;
-  border-color: #5381ed;
-  background: #5381ed !important;
+.table-t button:hover {
+  background: #d6cece;
+  color: #89e84a;
   padding-left: 0.5cm;
   padding-right: 0.5cm;
   border-style: solid;
