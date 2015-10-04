@@ -4,4 +4,3 @@
 regroot = './registry'
 mkdir = true
 compileall = true
-
