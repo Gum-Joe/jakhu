@@ -242,13 +242,13 @@ nav .navbar, .navbar-default, .navtop {
   padding: 0.8cm;
   padding-top: $z;
   padding-bottom: 0.1cm;
-  background-color: #5381ed;
+  background-color: white;
   //background-image: url('/css/img/nav-back-two.png');
   border-style: solid;
-  border-color: white;
+  border-color: #5381ed;
   border-radius: 10px;
   h1,h2,h3,h4,p {
-    color: white;
+    color: #5381ed;
   }
   button {
     height: 1cm;

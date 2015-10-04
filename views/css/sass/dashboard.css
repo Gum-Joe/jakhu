@@ -255,13 +255,13 @@ nav .navbar a, .navbar-default a, .navtop a {
   padding: 0.8cm;
   padding-top: 0cm;
   padding-bottom: 0.1cm;
-  background-color: #5381ed;
+  background-color: white;
   border-style: solid;
-  border-color: white;
+  border-color: #5381ed;
   border-radius: 10px;
 }
 .box h1, .box h2, .box h3, .box h4, .box p {
-  color: white;
+  color: #5381ed;
 }
 .box button {
   height: 1cm;
