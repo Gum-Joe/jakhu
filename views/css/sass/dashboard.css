@@ -251,6 +251,10 @@ nav .navbar a, .navbar-default a, .navtop a {
   margin-right: 4cm;
 }
 
+#alpha-info {
+  text-decoration: none !important;
+}
+
 .box {
   padding: 0.8cm;
   padding-top: 0cm;
@@ -264,6 +268,23 @@ nav .navbar a, .navbar-default a, .navtop a {
   color: #5381ed;
 }
 .box button {
+  height: 1cm;
+  width: 1cm;
+}
+
+.box:hover {
+  padding: 0.8cm;
+  padding-top: 0cm;
+  padding-bottom: 0.1cm;
+  background-color: #5381ed;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+}
+.box:hover h1, .box:hover h2, .box:hover h3, .box:hover h4, .box:hover p {
+  color: white;
+}
+.box:hover button {
   height: 1cm;
   width: 1cm;
 }
@@ -285,19 +306,49 @@ nav .navbar a, .navbar-default a, .navtop a {
 .table-t h3 div {
   float: right;
 }
-.table-t div button {
+.table-t #new {
+  color: #46b053 !important;
+  border-color: #46b053;
   background: #f7f7f7;
-  color: black;
   padding-left: 0.5cm;
   padding-right: 0.5cm;
-  padding-left: 0.5cm;
-  padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
 }
-.table-t div button:hover {
-  background: #d6cece;
-  color: black;
+.table-t #refresh {
+  color: #b04646 !important;
+  border-color: #b04646;
+  background: #f7f7f7;
   padding-left: 0.5cm;
   padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
+}
+.table-t #refresh:hover {
+  color: white !important;
+  border-color: #b04646;
+  background: #b04646;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
+}
+.table-t button {
+  color: #5381ed !important;
+  border-color: #5381ed;
+  background: #f7f7f7;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
+}
+.table-t button:hover {
+  background: #d6cece;
+  color: #89e84a;
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
 }
 
 #con div button {

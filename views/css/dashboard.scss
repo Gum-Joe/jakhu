@@ -235,20 +235,45 @@ nav .navbar, .navbar-default, .navtop {
   margin-right: $marg;
 }
 
+#alpha-info {
+  text-decoration: none !important;
+}
 .box {
   //margin-left: $marg;
   //margin-right: $marg;
   $z : 0cm;
+  $boxcol : #5381ed;
   padding: 0.8cm;
   padding-top: $z;
   padding-bottom: 0.1cm;
   background-color: white;
   //background-image: url('/css/img/nav-back-two.png');
   border-style: solid;
-  border-color: #5381ed;
+  border-color: $boxcol;
   border-radius: 10px;
   h1,h2,h3,h4,p {
-    color: #5381ed;
+    color: $boxcol;
+  }
+  button {
+    height: 1cm;
+    width: 1cm;
+  }
+}
+
+.box:hover {
+  //margin-left: $marg;
+  //margin-right: $marg;
+  $z : 0cm;
+  padding: 0.8cm;
+  padding-top: $z;
+  padding-bottom: 0.1cm;
+  background-color: #5381ed;
+  //background-image: url('/css/img/nav-back-two.png');
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  h1,h2,h3,h4,p {
+    color: white;
   }
   button {
     height: 1cm;
@@ -279,16 +304,38 @@ $heighti : 20px;
     //float: left;
 
   }
-  div button {
+#new {
+    $colbut : #46b053;
+    color: $colbut !important;
+    border-color: $colbut;
     background: $accent;
-    color: $text;
-    padding-left: 0.5cm;
-    padding-right: 0.5cm;
     @include table-t-div-shares;
   }
-  div button:hover {
+#refresh {
+    $colbutre : #b04646;
+    color: $colbutre !important;
+    border-color: $colbutre;
+    background: $accent;
+    @include table-t-div-shares;
+  }
+
+#refresh:hover {
+    color: white !important;
+    border-color: $colbutre;
+    background: $colbutre;
+    @include table-t-div-shares;
+  }
+
+  button {
+      $colbutbut : #53ed65;
+      color: $boxcol !important;
+      border-color: $boxcol;
+      background: $accent;
+      @include table-t-div-shares;
+    }
+  button:hover {
     background: $aa;
-    color: $text;
+    color: #89e84a;
     @include table-t-div-shares;
   }
 }
