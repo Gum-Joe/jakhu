@@ -403,8 +403,19 @@ $heighti : 20px;
 
 .modal-content {
   background-color: $nav;
+  font-family: arial;
   .modal-body {
     color: white;
+    form {
+      div {
+        label {
+          color: white;
+        }
+      }
+    }
+    h4 {
+      color: white;
+    }
   }
   .modal-header {
     h4 {

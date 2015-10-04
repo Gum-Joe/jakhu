@@ -405,8 +405,15 @@ nav .navbar a, .navbar-default a, .navtop a {
 
 .modal-content {
   background-color: #31337d;
+  font-family: arial;
 }
 .modal-content .modal-body {
+  color: white;
+}
+.modal-content .modal-body form div label {
+  color: white;
+}
+.modal-content .modal-body h4 {
   color: white;
 }
 .modal-content .modal-header h4 {

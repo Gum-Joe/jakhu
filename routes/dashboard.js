@@ -13,7 +13,8 @@ router.get('/', function(req, res) {
       build: stdout,
       imgprofile: '/css/img/profile.jpg',
       instances: config.instances,
-      port: config.port
+      port: config.port,
+      config: config
     });
   });
 });
