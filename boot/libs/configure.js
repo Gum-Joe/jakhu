@@ -7,12 +7,19 @@ var delayed = require('delayed');
 // parse YAML string
 module.exports = {
 loadconfig: function loadconfig() {
-  // body...
-  fs.open('./tmp/config.yml', 'w', function (err) {
-    if(err){
-      //assert.fail(err.code, null, " File config.yml could not be created");
-    };
-  });
+  load();
+}, getdata: function getdata() {
+  // parse YAML
+  if(fs.existsSync('./tmp/config.yml') !== true){
+    load();
+  }
+  var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
+  return parsed
+
+}};
+
+function load() {
+  if(fs.existsSync('./tmp/config.yml') !== true){
   fs.readFile('./config/main.yml','utf8', function (err, data) {
     if(err){
       assert.fail(err.code, null, " Could not read config file main.yml");
@@ -43,7 +50,6 @@ loadconfig: function loadconfig() {
       if(err) {
         assert.fail(err.code, null, " Could not write to tmp file for config");
       }
-    });
 
     // read imports
     //console.log(parse.import);
@@ -51,9 +57,6 @@ loadconfig: function loadconfig() {
   //checks.checkinstances('instances');
 
   // parse big one
-}, getdata: function getdata(p) {
-  // parse YAML
-  var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
-  return parsed
-
-}};
+});
+};
+}

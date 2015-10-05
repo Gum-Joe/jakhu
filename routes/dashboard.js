@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var exec = require('child_process').exec;
 var delayed = require('delayed');
-var config = require('../boot/libs/configure.js').getdata();
+var config = require('../boot/libs/configure.js');
 
 /* GET dashborad home. */
 router.get('/', function(req, res) {
@@ -12,9 +12,9 @@ router.get('/', function(req, res) {
       user: req.param("user"),
       build: stdout,
       imgprofile: '/css/img/profile.jpg',
-      instances: config.instances,
-      port: config.port,
-      config: config
+      instances: config.getdata().instances,
+      port: config.getdata().port,
+      config: config.getdata()
     });
   });
 });

@@ -18,10 +18,11 @@ var delayed = require('delayed');
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   // Load configure
-  config.loadconfig();
-  delayed.delay(function () {
+config.loadconfig();
     boot.checks.files.checkFiles("ok");
-    boot.checks.instances.instances(config.getdata('name'));
+    /**delayed.delay(function () {
+      boot.checks.instances.instances(config.getdata('name'));
+    }, 300)*/
     //Start DB
     boot.mongo.start(function (err) {
       console.log(err);
@@ -34,7 +35,6 @@ exports.startboot = function startboot(boottype) {
       }
     });*/
     app.start();
-  }, 2250)
 
 }
 
