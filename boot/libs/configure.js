@@ -4,6 +4,7 @@ var fs = require('fs');
 var assert = require('assert');
 var checks = require('./checks/instances.js');
 var delayed = require('delayed');
+var config = require('web-os-config');
 // parse YAML string
 module.exports = {
 loadconfig: function loadconfig() {
@@ -14,7 +15,7 @@ loadconfig: function loadconfig() {
     load();
   }
   var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
-  return parsed
+  return config.getdata('./tmp/config.yml')
 
 }};
 
