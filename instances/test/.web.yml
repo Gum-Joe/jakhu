@@ -6,7 +6,7 @@ required:
   - ruby
 name: test
 # Command to start
-start: npm start
+start: npm
 # Install - npm install for nodejs
 install:
   - npm install
