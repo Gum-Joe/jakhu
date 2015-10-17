@@ -1,1 +1,5 @@
-ECHO is on.
+<config>
+    <language></language>
+    <region></region>
+    <allowSend>false</allowSend>
+</config>

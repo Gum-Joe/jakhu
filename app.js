@@ -33,6 +33,7 @@ var wlogger = require("./libs/logger.js");
 var kernal = require('./boot/boot.js');
 
 var routes = require('./routes/index');
+var api = require('./routes/api/api');
 var users = require('./routes/users');
 
 var debug = require('debug')('Web-OS:server');
@@ -90,6 +91,7 @@ app.use('/', routes);
 app.use('/oobe', ooberoutes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
+app.use('/api', api);
 app.use('passportconfig', passportconfig);
 
 // Setup HTTPS
