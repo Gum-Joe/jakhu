@@ -33,7 +33,6 @@ obj
 csharpapp/*/bin
 csharpapp/packages
 # api
-api
 
 # build
 build
@@ -68,7 +67,6 @@ packages/*
 
 # DB
 db
-api
 
 # Logs
 logs
