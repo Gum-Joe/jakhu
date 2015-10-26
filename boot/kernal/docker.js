@@ -15,7 +15,6 @@ function boot() {
     // Load Docker
     // Pull docker image
     var datew = new Date().getDate();
-    console.log(datew);
     if (docker.date === undefined) {
       console.log('Pulling images...');
       tub.pullImages('config/docker.yml', true);
