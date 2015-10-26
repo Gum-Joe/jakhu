@@ -151,3 +151,6 @@ node_modules
 
 # Vagrant stuff
 .vagrant
+
+# compiles css
+*.min.css
