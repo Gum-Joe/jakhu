@@ -24,6 +24,7 @@ function boot() {
       var da = YAM.stringify(imi, 4);
       fs.writeFile('config/docker.yml', da);
     }
+    // Start mongo
   }
 };
 module.exports = {boot: boot};
