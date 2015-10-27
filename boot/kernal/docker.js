@@ -3,7 +3,8 @@ var YAML = require('yaml-js');
 var YAM = require('yamljs');
 var fs = require('fs');
 var tub = require('web-os-container');
-function boot() {
+var tubx = require('web-os-container/libs/run.js');
+function bootDB() {
   // body...
   // Check if a docker ip is set
   var docker = YAML.load(fs.readFileSync('config/docker.yml'));
@@ -24,7 +25,8 @@ function boot() {
       fs.writeFile('config/docker.yml', da);
     }
     // Start mongo
+    tubx.run('docker', ['run', '-p', '27027:27017', '-d', 'mongo']);
   }
 };
-module.exports = {boot: boot};
-boot();
+module.exports = {boot: bootDB};
+bootDB();
