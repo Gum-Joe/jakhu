@@ -4,28 +4,16 @@ var YAM = require('yamljs');
 var fs = require('fs');
 var tub = require('web-os-container');
 var tubx = require('web-os-container/libs/run.js');
+var spawnSync = require('child_process').spawnSync;
 function bootDB() {
   // body...
-  // Check if a docker ip is set
-  var docker = YAML.load(fs.readFileSync('config/docker.yml'));
-  if (docker.ip === undefined) {
-    if (process.env.WEB_DOCKER_IP === undefined && process.env.WEB_DOCKER !== undefined || false) {
-      throw new Error('Your docker vm ip address is not set or set to the wrong env! Please set it as the enviroment variable "WEB_DOCKER_IP"')
-    };
+  // check to see if vagrant is installed
+  var vagrant = spawnSync('vagrant', ['--version']);
+  if(vagrant.stderr.toString('utf8') !== ""){
+    throw new Error('Vagrant is not installed! Please install it.')
   } else {
-    // Load Docker
-    // Pull docker image
-    var datew = new Date().getDate();
-    if (docker.date === undefined) {
-      console.log('Pulling images...');
-      tub.pullImages('config/docker.yml', true);
-      var imi = docker;
-      imi.date = datew
-      var da = YAM.stringify(imi, 4);
-      fs.writeFile('config/docker.yml', da);
-    }
-    // Start mongo
-    tubx.run('docker', ['run', '-p', '27027:27017', '-d', 'mongo']);
+    // Start
+    var db = spwan('sh', ['./dbv.sh'])
   }
 };
 module.exports = {boot: bootDB};
