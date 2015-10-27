@@ -7,6 +7,107 @@ body, html {
   background-color: black;
 }
 
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 44px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: white;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger {
+  display: block;
+  position: relative;
+  overflow: visible;
+  margin: 0;
+  padding: 0;
+  width: 96px;
+  height: 96px;
+  font-size: 0;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+
+.c-hamburger span::before {
+  top: -3px;
+}
+
+.c-hamburger span::after {
+  bottom: -3px;
+}
+
+.c-hamburger--htla {
+  background-color: #32dc64;
+}
+
+.c-hamburger--htla span {
+  transition: transform 0.3s;
+  -webkit-transition: transform 0.3s;
+}
+
+.c-hamburger--htla span::before {
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+  transition: transform 0.3s, width 0.3s, top 0.3s;
+  -webkit-transition: transform 0.3s, width 0.3s, top 0.3s;
+}
+
+.c-hamburger--htla span::after {
+  transform-origin: bottom right;
+  -webkit-transform-origin: bottom right;
+  transition: transform 0.3s, width 0.3s, bottom 0.3s;
+  -webkit-transition: transform 0.3s, width 0.3s, bottom 0.3s;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htla.is-active {
+  background-color: #18903c;
+}
+
+.c-hamburger--htla.is-active span {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+
+.c-hamburger--htla.is-active span::before,
+.c-hamburger--htla.is-active span::after {
+  width: 50%;
+}
+
+.c-hamburger--htla.is-active span::before {
+  top: 0;
+  transform: translateX(38px) translateY(4px) rotate(45deg);
+  -webkit-transform: translateX(38px) translateY(4px) rotate(45deg);
+}
+
+.c-hamburger--htla.is-active span::after {
+  bottom: 0;
+  transform: translateX(38px) translateY(-4px) rotate(-45deg);
+  -webkit-transform: translateX(38px) translateY(-4px) rotate(-45deg);
+}
+
 body, html {
   /*background-image: url("/css/img/nav-back-two.png");*/
   background: -webkit-linear-gradient(#f7f7f7, #f7f7f7);

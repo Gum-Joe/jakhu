@@ -2,4 +2,4 @@
 
 # Run vagrant init
 cd db
-vagrant init
+vagrant up
