@@ -5,11 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/.bin/grunt ci --verbose",
-    "start": "nodemon bin/start",
+    "start": "nodemon bin/start >> logs/log$(date +'%m-%d-%Y')",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
     "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "grunt": "grunt ci"
+    "grunt": "grunt ci",
+    "preinstall": "mkdir logs"
   },
   "repository": {
     "type": "git",
