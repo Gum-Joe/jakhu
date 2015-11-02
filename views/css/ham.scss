@@ -106,3 +106,42 @@ $hh : 1cm;
   transform: translateX(38px) translateY(-4px) rotate(-45deg);
   -webkit-transform: translateX(38px) translateY(-4px) rotate(-45deg);
 }
+
+.cd-primary-nav {
+  /* by default it's hidden - on top of the viewport */
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-100%);
+  transition-property: transform;
+  transition-duration: 0.4s;
+}
+
+.cd-primary-nav.is-visible {
+  transform: translateY(0);
+}
+
+.cd-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  height: 80px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.cd-header.is-fixed {
+  /* when the user scrolls down, we hide the header right above the viewport */
+  position: fixed;
+  top: -80px;
+  background-color: rgba(2, 23, 37, 0.96);
+  transition: transform 0.3s;
+}
+
+.cd-header.is-visible {
+  /* if the user changes the scrolling direction, we show the header */
+  transform: translate3d(0, 100%, 0);
+}
