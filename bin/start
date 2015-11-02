@@ -21,7 +21,7 @@ exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   kernal.startboot("ok");
 });
 
-process.on( 'SIGINT', function() {
+/* process.on( 'SIGINT', function() {
   console.log( "\n[info] Stopping Web-OS..." );
   // wish this worked on Windows
   process.exit(0)
@@ -36,4 +36,4 @@ if (process.platform === "win32") {
   rl.on("SIGINT", function () {
     process.emit("SIGINT");
   });
-}
+}*/
