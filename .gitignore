@@ -33,10 +33,9 @@ obj
 csharpapp/*/bin
 csharpapp/packages
 # api
-api
 
 # build
-build
+build/Release
 
 # ssl
 ssl
@@ -67,8 +66,7 @@ web-os-testing/*
 packages/*
 
 # DB
-db
-api
+db/data
 
 # Logs
 logs
@@ -150,3 +148,6 @@ $RECYCLE.BIN/
 *.lnk
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+# Vagrant stuff
+.vagrant

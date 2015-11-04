@@ -11,7 +11,7 @@ var Server = require('mongodb').Server;*/
 
 exports.start = function start(x) {
   if(x !== 'test'){
-    console.log(clicolour.cyanBright(" webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
+    console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
   } else {
     return 'Sorry, you will need to start your own MongoDB';
   };

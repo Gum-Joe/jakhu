@@ -6,6 +6,13 @@
 # Reads from imported files
 import:
   - database.yml
+  - instances.yml
+
+# user name
+user: admin
+
+# Port to run on
+port: 8080
 
 # Name of server
 # possible valuses - string or enviroment variable ($enviromentname)

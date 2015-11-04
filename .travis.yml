@@ -1,18 +1,19 @@
 language: node_js
 node_js:
-- '0.12'
-- '0.11'
-- '0.10'
-- stable
-- iojs
+  - '0.12'
+  - '0.11'
+  - '0.10'
+  - '4.1.2'
+  - '4.1.1'
+  - '4.0.0'
 os:
-- linux
+  - linux
 services:
-- mongodb
+  - mongodb
 env:
-- NODE_ENV=development
+  - NODE_ENV=development
 install:
-- npm install
-- npm install -g bower mocha nyc codeclimate-test-reporter
-- bundle install
+  - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
+  - npm install
+  - bundle install
 script: make ci

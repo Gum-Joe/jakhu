@@ -15,7 +15,7 @@ describe('Kernal tests', function () {
     }, 750);
     done();
   });
-  it('should clean tmp', function (done) {
+  /**it('should clean tmp', function (done) {
     fs.openSync('./tmp/test.txt', 'w');
     ken.clean();
     delayed.delay(function () {
@@ -24,5 +24,5 @@ describe('Kernal tests', function () {
       };
     }, 750);
     done();
-  })
+  })*/
 });

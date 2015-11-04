@@ -6,6 +6,11 @@
   margin-right: auto;
 }
 
+@mixin margin {
+  margin-left: $marg;
+  margin-right: $marg;
+}
+
 @mixin boot() {
   background-image: url("/css/img/boot.jpg");
 }
@@ -53,4 +58,19 @@
   background: -o-linear-gradient($x, $y); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient($x, $y); /* For Firefox 3.6 to 15 */
   background: linear-gradient($x, $y); /* Standard syntax */
+}
+
+@mixin table-t-div-shares {
+  padding-left: 0.5cm;
+  padding-right: 0.5cm;
+  border-style: solid;
+  border-radius: 5px !important;
+}
+
+@mixin align($a) {
+  float: $a;
+}
+
+@mixin font($size) {
+  font-size: $size;
 }

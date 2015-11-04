@@ -2,9 +2,25 @@
 var YAML = require('yamljs');
 var fs = require('fs');
 var assert = require('assert');
+var checks = require('./checks/instances.js');
+var delayed = require('delayed');
+var config = require('web-os-config');
 // parse YAML string
-exports.loadconfig = function loadconfig() {
-  // body...
+module.exports = {
+loadconfig: function loadconfig() {
+  load();
+}, getdata: function getdata() {
+  // parse YAML
+  if(fs.existsSync('./tmp/config.yml') !== true){
+    load();
+  }
+  var parsed = YAML.parse(fs.readFileSync('./tmp/config.yml','utf8'));
+  return config.getdata('./tmp/config.yml')
+
+}};
+
+function load() {
+  if(fs.existsSync('./tmp/config.yml') !== true){
   fs.readFile('./config/main.yml','utf8', function (err, data) {
     if(err){
       assert.fail(err.code, null, " Could not read config file main.yml");
@@ -35,12 +51,13 @@ exports.loadconfig = function loadconfig() {
       if(err) {
         assert.fail(err.code, null, " Could not write to tmp file for config");
       }
-    });
 
     // read imports
     //console.log(parse.import);
   });
+  //checks.checkinstances('instances');
 
   // parse big one
-  //fs.readFile()
+});
 };
+}

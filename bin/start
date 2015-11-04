@@ -20,3 +20,20 @@ exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("v1.0.0 build "+ stdout);
   kernal.startboot("ok");
 });
+
+/* process.on( 'SIGINT', function() {
+  console.log( "\n[info] Stopping Web-OS..." );
+  // wish this worked on Windows
+  process.exit(0)
+});
+
+if (process.platform === "win32") {
+  var rl = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  rl.on("SIGINT", function () {
+    process.emit("SIGINT");
+  });
+}*/

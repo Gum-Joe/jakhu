@@ -14,7 +14,7 @@
   </head>
   <body class="co">
     <!--Navbar-->
-    <nav class="navbar navbar-default navtop">
+    <nav class="navbar navbar-inverse navtop navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -24,89 +24,98 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Web-OS</a>
+      <div class="pad-nav-b">
+        <a class="navbar-brand" href="#">
+          Web-OS
+        </a>
+        <a class="navbar-brand" href="#">
+          /
+        </a>
+        <a class="navbar-brand" href="#">
+          Dashboard
+        </a>
+        </div>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li class="not-drop"><a href="#">Plugins</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="#">Running on port: <%=port%></a></li>
       </ul>
-      <form class="navbar-form navbar-left" role="search">
+      <!--<form class="navbar-form navbar-left" role="search">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Signout</a></li>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right pad-nav-s">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login with a 2cd level login <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name-nav">Welcome,   <%=user%> <img id="profile-img" src=<%=imgprofile%> alt="" /> <span class="caret"></span></a>
+       <ul class="dropdown-menu">
+         <li><a href="/dashboard/account/profile" class="list"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+         <li><a href="/dashboard/account/settings" class="list"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+         <li><a href="/dashboard/repos" class="list"><span class="glyphicon glyphicon-file"></span> My Repos</a></li>
+         <li><a href="/dashboard/console" class="list"><span class="glyphicon glyphicon-console"></span> Console</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/docs/home" class="list">Help</a></li>
+         <li><a href="/about" class="list">Release Notes</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/about" class="list">About...</a></li>
+       </ul>
+     </li>
+        <li><a href="#">Signout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<!--Spacing-->
-<p>
 
-
-
-
-
-
-
-</p>
-<div class="row">
-  <div class="container-fluid">
-    <div class="header">
-        <h1>Welcome back, <%=user %>! </h1>
+<a href="/about/alpha" style="text-decoration: none !important;" id="alpha-info">
+  <div class="container-fluid h">
+    <div class="box alert-dismissible alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h1>ALPHA Copy</h1>
+      <h3>
+      You're using an alpha copy of our software.
+      We just want to say thankyou, for helping us develop this.
+      However, this software is not yet feature complete
+      and there will be bugs.
+      </h3>
     </div>
   </div>
-  <div class="container-fluid">
-    <div class="header">
-      <h3>Your Web-apps:</h3>
-    </div>
-  </div>
-  <div class="back-o container-fluid">
-    <div class="buttons">
-      <div class="sub">
-        <span class="glyphicon glyphicon-plus"></span> New
-      </div>
-      <!-- Single button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Action <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li role="separator" class="divider"></li>
-    <li><a href="#">Separated link</a></li>
-  </ul>
+</a>
+
 </div>
+  <div class="container-fluid" id="con">
+    <div class="table-t">
+        <h3> <!--<span class="glyphicon glyphicon-console"></span>--> Web-apps
+        <div class="" role="group" aria-label="..." align="left">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-default" id="new" data-toggle="modal" data-target="#newModal"><span class="glyphicon glyphicon-plus"></span> New Web-app</button>
+          <button type="button" class="btn btn-default" id="explore"><span class="glyphicon glyphicon-globe"></span> Explore Web-apps</button>
+          <button type="button" class="btn btn-default" id="refresh"> <span class="glyphicon glyphicon-refresh"></span></button>
+        </div>
+        </h3>
     </div>
+  </div>
+
+  <div class="container-fluid instances" id="instances">
+    <div class="module row">
+      <div class="row">
+        <div class="col-md-4 name" id='name'>Gum-Joe/Web-OS</div>
+        <div class="col-md-2 langnodejs" id='lang'><img src="/css/img/Nodejs.jpg" alt="Nodejs Logo" id='iconl'/>Nodejs</div>
+        <div class="btn-group" role="group" aria-label="..." align="left">
+          <button type="button" class="btn btn-success">Start</button>
+          <button type="button" class="btn btn-danger">Stop</button>
+          <button type="button" class="btn btn-warning">Restart</button>
+          <button type="button" class="btn btn-primary">Settings</button>
+          <button type="button" class="btn btn-info">View</button>
+        </div>
+        <div class="col-md-2 button row" id="button">
+          <span class="glyphicon glyphicon-time"></span> Running...
+      </div>
+      </div>
+    </div>
+  </div>
 
     <table class="table">
               <thead>
@@ -119,7 +128,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr class="t-node">
+                <tr>
                   <td>Nodejs app</td>
                   <td>Nodejs</td>
                   <td>Heroku</td>
@@ -133,7 +142,7 @@
                     <button type="button" class="btn btn-info">View</button>
                   </td>
                 </tr>
-                <tr class="t-ruby">
+                <tr>
                   <td>Rails app</td>
                   <td>Rails</td>
                   <td>AWS</td>
@@ -147,7 +156,7 @@
                     <button type="button" class="btn btn-info">View</button>
                   </td>
                 </tr>
-                <tr class="t-python">
+                <tr>
                   <td>Python app</td>
                   <td>Python</td>
                   <td>NONE</td>
@@ -161,7 +170,7 @@
                     <button type="button" class="btn btn-info">View</button>
                   </td>
                 </tr>
-                <tr class="t-php">
+                <tr>
                   <td>PHP app</td>
                   <td>Php</td>
                   <td>Azure</td>
@@ -188,9 +197,83 @@
       </div>
     </div>
 
+    <!--Modals-->
+    <!-- Modal -->
+  <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New Web-app</h4>
+        </div>
+        <div class="modal-body">
+          You're setting up a web-app! The Web-app will be stored in instances/web-app-name.
+          You can chose from:
+          <ul>
+            <% for(var i = 0; i < config.languages.length; i++){%>
+              <li>A <%=config.languages[i]%> app</li>
+            <% } %>
+          </ul>
+          <form class="" action="/dashboard/createapp" method="post">
+            <div class="form-group">
+              <label for="name">What should we call your Web-app?</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What should we call it?">
+            </div>
+            <div class="form-group">
+              <label for="language">What language should your Web-app be?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                <% for(var i = 0; i < config.languages.length; i++){%>
+                  <option value="option"><%=config.languages[i]%></option>
+                <% } %>
+              </select>
+            </div>
+          </form>
+          <h4><u>If your Web-app exists...</u></h2>
+          <form class="" action="/dashboard/createapp" method="post">
+            <div class="form-group">
+              <label for="language">Where is the Web-app stored?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                  <option value="option">Git repo (Github, Bitbucket)</option>
+                  <option value="option">SVN repo (Apache)</option>
+                  <option value="option">Online</option>
+                  <option value="option">Locally</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="name">What is the address of the Web-app (the path to it if it is on your enviroment)</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What is the address of your Web-app?">
+            </div>
+            <div class="form-group">
+              <label for="name">What should we call it?</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What should we call it?">
+            </div>
+            <div class="form-group">
+              <label for="language">What language of the Web-app?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                <% for(var i = 0; i < config.languages.length; i++){%>
+                  <option value="option"><%=config.languages[i]%></option>
+                <% } %>
+              </select>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button submit" class="btn btn-primary">Create!</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Hamburger menu script for hamburger -->
+    <script src="/js/hamburger.js"></script>
+
   </body>
 </html>

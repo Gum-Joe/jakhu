@@ -1,4 +1,4 @@
-exports.checks = require('./libs/checks/checkFile.js');
+exports.checks = require('./libs/checks/index.js');
 exports.properties = require('./libs/properties.js');
 exports.recovery = require('./recovery/index.js');
 exports.kernal = require('./kernal/index.js');

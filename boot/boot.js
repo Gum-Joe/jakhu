@@ -10,26 +10,32 @@ exports.oobe = require("../libs/setup/setup.js");
 var oobe = require("../libs/setup/setup.js");
 var fs = require('fs');
 var unzip = require('unzip');
-var config = require('./libs/configure.js')
+var config = require('./libs/configure.js');
+var io = require('socket.io')(express.listen);
+var delayed = require('delayed');
 //boot.properties.git.getCommits;
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   // Load configure
-  config.loadconfig();
-  boot.checks.checkFiles("ok");
-  //Start DB
-  boot.mongo.start(function (err) {
-    console.log(err);
-  });
-  oobe.first("ok");
-  boot.recovery.rollback.createBackup("ok");
-  /**boot.kernal.clean('o', function (err) {
-    if(err){
-      throw new Error('Could not clean');
-    }
-  });*/
-  app.start();
+config.loadconfig();
+    boot.checks.files.checkFiles("ok");
+    /**delayed.delay(function () {
+      boot.checks.instances.instances(config.getdata('name'));
+    }, 300)*/
+    //Start DB
+    boot.mongo.start(function (err) {
+      console.log(err);
+    });
+    oobe.first("ok");
+    boot.recovery.rollback.createBackup("ok");
+    /**boot.kernal.clean('o', function (err) {
+      if(err){
+        throw new Error('Could not clean');
+      }
+    });*/
+    app.start();
+
 }
 
 // TODO: Create boot types (safemode, full, recovery)

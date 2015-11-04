@@ -3,6 +3,7 @@
 @import "boot.css";
 @import "mixins";
 @import "theme";
+@import "ham";
 
 $n : none;
 
@@ -59,15 +60,32 @@ nav {
 }
 
 .panel-body {
-  color: white;
+  color: $text;
 }
 
 nav .navbar, .navbar-default, .navtop {
+  border-color: white;
   padding-bottom: 0;
   @include nnobor;
   //background-image: url("/css/img/boot.jpg");
+  //background-image: url('/css/img/nav-back-two.png');
   @include gradb($nav, $nav2);
   color: white;
+  div {
+    border-color: white;
+    div {
+      border-color: white;
+      button {
+        border-color: white;
+        span {
+          border-color: white;
+        }
+      }
+    }
+    ul {
+      border-color: white;
+    }
+  }
   .container-fluid {
     div {
       a {
@@ -102,6 +120,17 @@ nav .navbar, .navbar-default, .navtop {
           color: white;
           background-image: url("/css/img/python.jpg");
         }
+        .dropdown-menu {
+          @include gradb($nav, $nav2);
+          .list {
+            padding-bottom: 9px;
+          }
+          li {
+            a {
+              color: white;
+            }
+          }
+        }
       }
     }
     .navbar-header {
@@ -119,7 +148,8 @@ nav .navbar, .navbar-default, .navtop {
   }
 }
 
-.table {
+/**.table {
+  color: white;
   width: 70%;
   border-style: dashed;
   border-width: 1px;
@@ -173,7 +203,7 @@ nav .navbar, .navbar-default, .navtop {
     padding-right: $ar;
     padding-left: $ar;
   }
-}
+}*/
 .buttons {
   .sub {
     margin-left: 1cm;
@@ -190,4 +220,207 @@ nav .navbar, .navbar-default, .navtop {
 }
 .t-php {
   background-image: url("/css/img/php.png");
+}
+
+//$marg : 2.5cm;
+.pad-nav-b {
+  margin-left: $marg;
+}
+.pad-nav-s {
+  margin-right: $marg;
+}
+
+.h {
+  margin-top: 2cm;
+  margin-left: $marg;
+  margin-right: $marg;
+}
+
+#alpha-info {
+  text-decoration: none !important;
+}
+.box {
+  //margin-left: $marg;
+  //margin-right: $marg;
+  $z : 0cm;
+  $boxcol : #5381ed;
+  padding: 0.8cm;
+  padding-top: $z;
+  padding-bottom: 0.1cm;
+  background-color: white;
+  //background-image: url('/css/img/nav-back-two.png');
+  border-style: solid;
+  border-color: $boxcol;
+  border-radius: 10px;
+  h1,h2,h3,h4,p {
+    color: $boxcol;
+  }
+  button {
+    height: 1cm;
+    width: 1cm;
+  }
+}
+
+.box:hover {
+  //margin-left: $marg;
+  //margin-right: $marg;
+  $z : 0cm;
+  padding: 0.8cm;
+  padding-top: $z;
+  padding-bottom: 0.1cm;
+  background-color: #5381ed;
+  //background-image: url('/css/img/nav-back-two.png');
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  h1,h2,h3,h4,p {
+    color: white;
+  }
+  button {
+    height: 1cm;
+    width: 1cm;
+  }
+}
+
+$heighti : 20px;
+#profile-img {
+  height: $heighti;
+  width: $heighti;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.table-t {
+  @include margin;
+  /**margin-right: auto;
+  margin-left: 0;*/
+  font-family: OpenSans-Regular;
+  h3 {
+    div {
+      float: right;
+    }
+  }
+  div {
+    //width: 50%;
+    //float: left;
+
+  }
+#new {
+    $colbut : #46b053;
+    color: $colbut !important;
+    border-color: $colbut;
+    background: $accent;
+    @include table-t-div-shares;
+  }
+  #new:hover {
+      $colbut : #46b053;
+      color: $accent !important;
+      border-color: $colbut;
+      background: #3e9648;
+      @include table-t-div-shares;
+    }
+#refresh {
+    $colbutre : #b04646;
+    color: $colbutre !important;
+    border-color: $colbutre;
+    background: $accent;
+    @include table-t-div-shares;
+  }
+
+#refresh:hover {
+    color: white !important;
+    border-color: $colbutre;
+    background: $colbutre;
+    @include table-t-div-shares;
+  }
+
+  #explore {
+      $colbutbut : #53ed65;
+      color: $boxcol !important;
+      border-color: $boxcol;
+      background: $accent;
+      @include table-t-div-shares;
+    }
+  #explore:hover {
+    $colbutbut : #53ed65;
+    color: white !important;
+    border-color: $boxcol;
+    background: $boxcol;
+    @include table-t-div-shares;
+  }
+}
+
+#con {
+  div button {
+    background: $accent;
+    color: $text;
+    padding-left: 0.5cm;
+    padding-right: 0.5cm;
+    //@include table-t-div-shares;
+  }
+  div button:hover {
+    background: $aa;
+    color: $text;
+    //@include table-t-div-shares;
+  }
+}
+
+.instances{
+  background-color: white;
+  @include margin;
+  font-family: Source-Sans-Pro-Regular;
+  font-size: 30px;
+  .module {
+    $pad : 0.2cm;
+    padding: 0.5cm;
+    .name {
+      @include align(left);
+    }
+    .langnodejs{
+      //@include align(center);
+      @include cent;
+      @include font(20px);
+      padding-top: $pad;
+      color: $node;
+    }
+    .button {
+      @include align(right);
+      @include font(15px);
+      //text-align: center;
+      padding-top: $pad;
+      //padding-right: 2.8cm;
+    }
+    .btn-group {
+      //@include align(right);
+    }
+  }
+}
+
+#iconl {
+  $iconl : 0.8cm;
+  width: $iconl;
+  height: $iconl;
+}
+
+.modal-content {
+  background-color: $nav;
+  font-family: arial;
+  .modal-body {
+    color: white;
+    form {
+      div {
+        label {
+          color: white;
+        }
+      }
+    }
+    h4 {
+      color: white;
+    }
+  }
+  .modal-header {
+    h4 {
+      color: white;
+    }
+  }
 }

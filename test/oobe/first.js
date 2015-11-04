@@ -10,5 +10,5 @@ describe('OOBE test', function () {
     // mv tmp instances and config into t
     set.first();
     done();
-  })
-})
+  });
+});

@@ -128,7 +128,7 @@ ooberouter.get('/wosl', function(req, res) {
     console.log("Region: "+req.body.region);
     console.log("Allow sending: "+req.body.allow);
     oobe.builder.buildLang(req.body.lang, req.body.region, req.body.allow);
-    res.redirect('/license');
+    res.redirect('/oobe/license');
   });
 
   ooberouter.post('/install-standard', function(req, res) {

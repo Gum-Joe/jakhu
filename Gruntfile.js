@@ -123,7 +123,9 @@ module.exports = function(grunt) {
           'views/css/var.css': 'views/css/var.scss',       // 'destination': 'source'
           'views/css/sass/var.css': 'views/css/var.scss',
           'views/css/oobe.css': 'views/css/oobe.scss',       // 'destination': 'source'
-          'views/css/sass/oobe.css': 'views/css/oobe.scss'
+          'views/css/sass/oobe.css': 'views/css/oobe.scss',
+          'views/css/float.css': 'views/css/float.scss',
+          'views/css/sass/float.css': 'views/css/float.scss'
         }
       },
       min: {                            // Target
@@ -131,23 +133,25 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {                         // Dictionary of files
-          'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
+          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
           'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss',
-          'views/css/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
+          'views/css/sass/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
           'views/css/sass/theme.min.css': 'views/css/theme.scss',
-          'views/css/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
+          'views/css/sass/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
           'views/css/sass/boot.theme.min.css': 'views/css/boot.theme.scss',
-          'views/css/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
+          'views/css/sass/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
           'views/css/sass/var.min.css': 'views/css/var.scss',
+          'views/css/sass/float.css': 'views/css/float.scss',
           //min in dir
-          'views/css/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
+          'views/css/sass/min/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
           'views/css/sass/min/dashboard.min.css': 'views/css/dashboard.scss',
-          'views/css/min/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
+          'views/css/sass/min/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
           'views/css/sass/min/theme.min.css': 'views/css/theme.scss',
-          'views/css/min/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
+          'views/css/sass/min/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
           'views/css/sass/min/boot.theme.min.css': 'views/css/boot.theme.scss',
-          'views/css/min/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/sass/min/var.min.css': 'views/css/var.scss'
+          'views/css/sass/min/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
+          'views/css/sass/min/var.min.css': 'views/css/var.scss',
+          'views/css/sass/min/float.min.css': 'views/css/float.scss'
         }
       }
     },
@@ -203,7 +207,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
   grunt.registerTask('compile:sass:min', 'sass:min');
-  grunt.registerTask('compile:sass', ['sass:min', 'sass:dist']);
+  grunt.registerTask('compile:sass', ['sass:dist', 'sass:min']);
   grunt.registerTask('compile:watch', 'watch:scripts');
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');

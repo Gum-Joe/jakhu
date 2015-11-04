@@ -47,7 +47,7 @@ db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
   // yay!
-	if(x !== test){
+	if(x !== 'test'){
 		console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Yay! We succefully connected to the db");
 	} else {
 		call('connected')

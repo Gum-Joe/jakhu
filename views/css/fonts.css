@@ -60,6 +60,26 @@
      src: url(fonts/fira-sans/FiraSans-BoldItalic.otf);
 }
 
+@font-face {
+     font-family: Fira-Sans;
+     src: url(fonts/fira-sans/FiraSans-Regular.otf);
+}
+
+@font-face {
+  font-family: Source-Code-Pro-Regular;
+  src: url(/css/fonts/source-code-pro/SourceCodePro-Regular.otf)
+}
+
+@font-face {
+  font-family: Source-Code-Pro-Light;
+  src: url(/css/fonts/source-code-pro/SourceCodePro-Light.otf)
+}
+
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+
 .web-os-main-font {
   font-family: FiraSans-UltraLight;
 }
