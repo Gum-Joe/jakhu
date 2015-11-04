@@ -199,8 +199,8 @@ module.exports = function(grunt) {
   });
   grunt.registerTask('default', ['test', 'clean', 'compile']);
   grunt.registerTask('main', ['watch:main']);
-  grunt.registerTask('ci', ['compile', 'clean', 'create:logs', 'test']);
-  grunt.registerTask('ciapp', ['compile', 'clean', 'create:logs', 'exec:testtmp', 'mochaTest']);
+  grunt.registerTask('ci', ['compile', 'clean', 'test']);
+  grunt.registerTask('ciapp', ['compile', 'clean', 'exec:testtmp', 'mochaTest']);
 
   grunt.registerTask('test', ['exec:testtmp', 'mochaTest', 'clean:cleanup']);
   grunt.registerTask('test:server', 'mochaTest:server');
