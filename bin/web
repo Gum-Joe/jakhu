@@ -1,0 +1,49 @@
+#!/usr/bin/env node
+
+"use strict"
+var express = require('express');
+var kernal = require('../boot/boot.js');
+//var git = require('nodegit');
+var exec = require('child_process').exec;
+var com = require('commander');
+
+com
+  .usage('<server> [options]')
+  .version('1.0.0')
+  .option('-l, --local', 'Runs the server on your system instead of in a docker container')
+  .option('-v, --version', 'Outputs the version number')
+  .option('-d, --docker', 'Runs server in docker')
+  .action(function (server, options) {
+     var ser = server;
+     var option = options;
+  })
+  .parse(process.argv);
+
+// start
+// TODO: Create boot types (safemode, full, recovery)
+
+if(typeof ser === 'undefined'){
+  exec("git rev-list HEAD --count", function (error, stdout, stderr) {
+    console.log("");
+    console.log("Web-OS");
+    console.log("v1.0.0 build "+ stdout);
+    kernal.startboot("ok");
+  });
+}
+
+/* process.on( 'SIGINT', function() {
+  console.log( "\n[info] Stopping Web-OS..." );
+  // wish this worked on Windows
+  process.exit(0)
+});
+
+if (process.platform === "win32") {
+  var rl = require("readline").createInterface({
+    input: process.stdin,
+    output: process.stdout
+  });
+
+  rl.on("SIGINT", function () {
+    process.emit("SIGINT");
+  });
+}*/
