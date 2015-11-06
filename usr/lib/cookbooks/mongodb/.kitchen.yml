@@ -24,4 +24,5 @@ platforms:
 
 suites:
   - name: default
-    attributes:
+    run_list:
+      - recipe[mongodb::default]
