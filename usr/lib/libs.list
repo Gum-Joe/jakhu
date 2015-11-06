@@ -1,3 +1,0 @@
-#!/usr/env node
-
-module.exports = {list: list};
