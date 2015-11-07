@@ -13,3 +13,4 @@ cookbooks:
   path: cookbooks
   sub:
     - mongodb
+  name: libchef
