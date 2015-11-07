@@ -7,3 +7,6 @@
 [submodule "Web-OS-registry-module"]
 	path = libs/registry
 	url = https://github.com/Gum-Joe/Web-OS-registry
+[submodule "usr/lib/cookbooks"]
+	path = usr/lib/cookbooks
+	url = https://github.com/Gum-Joe/Web-OS-cookbooks
