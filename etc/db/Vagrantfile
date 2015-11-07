@@ -12,7 +12,7 @@ Vagrant.configure(2) do |db|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  db.vm.box = "cbumgard/nodejs"
+  db.vm.box = "ubuntu/trusty64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -22,11 +22,11 @@ Vagrant.configure(2) do |db|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  db.vm.network "forwarded_port", guest: 27017, host: 27017
+  # db.vm.network "forwarded_port", guest: 27017, host: 27017
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  db.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -37,13 +37,16 @@ Vagrant.configure(2) do |db|
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
-  db.vm.synced_folder "./data", "/data"
-  db.vm.synced_folder "../../usr/lib/cookbooks", "/vagrant/cookbooks"
+  # db.vm.synced_folder "./data", "/data/db"
+  db.vm.synced_folder "../../usr/lib/cookbooks", "/cookbooks"
 
   # Chef provisioning
   # Updates mogodb and starts it
-  db.vm.provision "chef_solo" do |chef|
-    chef.add_recipe "mongodb"
+  db.vm.provision "chef_zero" do |chef|
+    # Specify the local paths where Chef data is stored
+    chef.cookbooks_path = "../../usr/lib/cookbooks/cookbooks"
+    # Add a recipe
+    chef.add_recipe "mongodb::default"
   end
 
   # Provider-specific configuration so you can fine-tune various
