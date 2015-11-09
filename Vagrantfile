@@ -17,16 +17,20 @@ Vagrant.configure(2) do |config|
   # Install software
   config.vm.provision "shell", inline: <<-SHELL
      sudo apt-get update
-     sudo apt-get install -y apache2
      # Instal git
      sudo apt-get install -y git-core
      # Install curl
      sudo apt-get install -y curl
      # Install Node.js and npm
-     curl --silent --location https://deb.nodesource.com/setup_0.12 | sudo bash -
-     sudo apt-get install -y nodejs
+     curl --silent --location https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+     source ~/.nvm/nvm.sh
+     nvm install v4.2.2
      # Install ruby for gemfile
      sudo apt-get install -y ruby-full
+     # Install gems
+     gem install bundle
+     cd /vagrant
+     bundle install
    SHELL
 
   # Disable automatic box update checking. If you disable this, then

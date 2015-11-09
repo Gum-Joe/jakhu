@@ -51,41 +51,25 @@ deploy:
   - git
   - ftp
 
-# Registry ouput directory
-registry.dir: registry
-
 # Should Web-OS use rollback for backing up itself?
-rollback: true
-# How often (daily, hourly)
-# Possible values: startup, config (when the config changes), log (when you login), request (per request)
-# Mutiple values
-rollback.time:
-  - startup
-  - config
-# Rollback dir for rollback backup
-# $serverhome: the directory web-os runns in
-# $userhome: the directory for this web-os server, loated in the user home (~/.web/<servername>)
-rollback.dir: $userhome/rollback
-# Should rollback use the date to store backups?
-# possible values: true, false
-rollback.usedate: true
-# Create metadata for rollback backups?
-# possible values: true, false
-rollback.createmeta: true
-# Backup your instances (servers)?
-# possible values: true, false
-rollback.instances: true
-# How often (daily, hourly)
-# Possible values: startup, config (when the config changes), log (when you login), request (per request)
-# Mutiple values
-rollback.instances.time:
-  - startup
-  - config
-# Where to backup?
-rollback.instances.dir: $rollback.dir/instances/$instance.name
-# Should rollback use the date to store backups for instances?
-# possible values: true, false
-rollback.instances.usedate: true
-# Create metadata for rollback backups for instances?
-# possible values: true, false
-rollback.instances.createmeta: true
+rollback:
+  rollback: true
+  # How often (daily, hourly)
+  # Possible values: startup, config (when the config changes), log (when you login), request (per request)
+  # Mutiple values
+  time:
+    - startup
+    - config
+  # Rollback dir for rollback backup
+  # $serverhome: the directory web-os runns in
+  # $userhome: the directory for this web-os server, loated in the user home (~/.web/<servername>)
+  dir: $userhome/rollback
+  # Should rollback use the date to store backups?
+  # possible values: true, false
+  usedate: true
+  # Create metadata for rollback backups?
+  # possible values: true, false
+  createmeta: true
+  # Backup your instances (servers)?
+  # possible values: true, false
+  instances: true
