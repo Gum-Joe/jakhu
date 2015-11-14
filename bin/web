@@ -38,10 +38,10 @@ if(typeof ser !== 'undefined'){
       console.log("v1.0.0 build "+ stdout);
     });
     var va = spawn('vagrant', ['up'])
-    va.on('stdout', function (data) {
+    va.stdout.on('data', function (data) {
       console.log(data.toString('utf8'));
     });
-    va.on('stdout', function (data) {
+    va.stderr.on('data', function (data) {
       console.log(data.toString('utf8'));
     });
   }
