@@ -1,34 +1,16 @@
-#include <stdio.h>
+// basic file operations
+#include <iostream>
+#include <fstream>
 #include <node.h>
-#include <openssl/rsa.h>
-#include <openssl/pem.h>
+using namespace std;
 
-bool generate_key()
-{
-
-  const int kBits = 1024;
-  const int kExp = 3;
-
-  int keylen;
-  //char *pem_key;
-
-  RSA *rsa = RSA_generate_key(kBits, kExp, 0, 0);
-
-  /* To get the C-string PEM form: */
-  BIO *bio = BIO_new(BIO_s_mem());
-  PEM_write_bio_RSAPrivateKey(bio, rsa, NULL, NULL, 0, NULL, NULL);
-
-  keylen = BIO_pending(bio);
-  void *pem_key = calloc(keylen+1, 1); /* Null-terminate */
-  BIO_read(bio, pem_key, keylen);
-
-  printf("%s", pem_key);
-
-  BIO_free_all(bio);
-  RSA_free(rsa);
-  free(pem_key);
+int write (char *txt, const char *loc) {
+  ofstream myfile;
+  myfile.open (loc);
+  myfile << strcat(txt, "\n");
+  myfile.close();
+  return 0;
 }
-
 
 namespace api {
 
@@ -41,7 +23,20 @@ using v8::Value;
 
 void Mkc(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
-  generate_key();
+  // get the param
+  v8::String::Utf8Value param1(args[0]->ToString());
+  v8::String::Utf8Value param2(args[1]->ToString());
+    // convert it to string
+  std::string foo = std::string(*param1);
+  std::string foo2 = std::string(*param2);
+  char *dir = new char[foo2.size() + 1];
+  std::copy(foo2.begin(), foo2.end(), dir);
+  dir[foo2.size()] = '\0'; // don't forget the terminating 0
+  // don't forget to free the string after finished using it
+  delete[] dir;
+  // arg 1 -> const char *
+  const char *loca = foo.c_str();
+  write(dir, loca);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Done."));
 }
 
