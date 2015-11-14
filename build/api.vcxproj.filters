@@ -84,7 +84,7 @@
     <ClCompile Include="..\src\decrypt.cc">
       <Filter>..\src</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\encrypt.cc">
+    <ClCompile Include="..\src\pem.cc">
       <Filter>..\src</Filter>
     </ClCompile>
     <ClCompile Include="..\src\filesystem.cc">
