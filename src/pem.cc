@@ -2,15 +2,10 @@
 #include <iostream>
 #include <fstream>
 #include <node.h>
+#include <stdio.h>
+#include <string.h>
+#include "write.hpp"
 using namespace std;
-
-int write (char *txt, const char *loc) {
-  ofstream myfile;
-  myfile.open (loc);
-  myfile << strcat(txt, "\n");
-  myfile.close();
-  return 0;
-}
 
 namespace api {
 
@@ -20,6 +15,7 @@ using v8::Local;
 using v8::Object;
 using v8::String;
 using v8::Value;
+using namespace tools;
 
 void Mkc(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
@@ -36,13 +32,13 @@ void Mkc(const FunctionCallbackInfo<Value>& args) {
   delete[] dir;
   // arg 1 -> const char *
   const char *loca = foo.c_str();
-  write(dir, loca);
+  tools::write(dir, loca);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Done."));
 }
 
 void initcmd(Local<Object> exports) {
   NODE_SET_METHOD(exports, "pem", Mkc);
-}
+};
 
 NODE_MODULE(api, initcmd)
 

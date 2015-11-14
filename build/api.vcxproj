@@ -142,11 +142,8 @@
   <ItemGroup>
     <ClCompile Include="..\src\mkdir_windows.cc"/>
     <ClCompile Include="..\src\mkdir_windows_bash.cc"/>
-    <ClCompile Include="..\src\decrypt.cc"/>
     <ClCompile Include="..\src\pem.cc"/>
-    <ClCompile Include="..\src\filesystem.cc"/>
-    <ClCompile Include="..\src\filesystem_encrypt.cc"/>
-    <ClCompile Include="..\src\filesystem_decrypt.cc"/>
+    <ClCompile Include="..\src\write.cc"/>
     <ClCompile Include="C:\Users\Kishan Sambhi\AppData\Roaming\npm\node_modules\node-gyp\src\win_delay_load_hook.c"/>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
