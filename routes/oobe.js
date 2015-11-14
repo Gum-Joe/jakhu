@@ -9,6 +9,7 @@ var oobe = require('../libs/setup/setup.js');
 var os = require('os');
 //var kernal = require('../boot/boot.js');
 var fs = require('fs');
+var db = require('../libs/database');
 
 /* GET home page. */
 ooberouter.get('/', function(req, res) {

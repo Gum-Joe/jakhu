@@ -74,25 +74,12 @@ if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');
 }
 
-//app.use(logger('stream', wlogger.logger));
-//app.use(require('morgan')({ "stream": wlogger.stream }));
-//wlogger.debug("Overriding 'Express' logger");
-//app.use(require("morgan")("combined", { "stream": wlogger.stream }));
-
-var userSchema = new mongoose.Schema({
-  username: { type: String }
-, email: String
-, pwd: String
-});
-var exits = false;
-//var suser = mongoose.model('usersc', userSchema);
-
 app.use('/', routes);
 app.use('/oobe', ooberoutes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/api', api);
-app.use('passportconfig', passportconfig);
+// app.use('passportconfig', passportconfig);
 
 // Setup HTTPS
 // uncommitted after finding way to get certs
@@ -130,31 +117,13 @@ if(x !== "basic" && x !== "ci"){
 
 // start scoket
 io.start(app.listen)
-// HTTPS
-//httpsserver = https.createServer(options);
-// Turn on HTTPS
-/** httpsserver.on('request', app);
-    httpsserver.listen(6060, function () {
-       console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "HTTPS Server Started " + port);
-        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "The date and time is:", Date());
-	onListening()
-    }); */
-
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
-
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -166,7 +135,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -181,7 +149,3 @@ app.use(function(err, req, res, next) {
 };
 
 // Close server
-
-exports.close = function close(argument) {
-  process.exit(1);
-}

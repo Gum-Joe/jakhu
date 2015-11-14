@@ -22,7 +22,7 @@ var expressSession = require('express-session');
 var bcrypt = require('bcryptjs');
 
 var salt = bcrypt.genSaltSync(10);
-
+var suser = require('./database').users;
 var app = express();
 
 
@@ -89,16 +89,6 @@ passport.use(new passportlocal.Strategy(function (username, password, done) {
 
 // passport.use(new passportlocal.Strategy(suser.authenticate()));
 
-
-var userSchema = new mongoose.Schema({
-  username: { type: String }
-, email: String
-, pwd: String
-});
-
-userSchema.plugin(passportlocalmongoose);
-var suser = mongoose.model('userspassport', userSchema);
-
 passport.serializeUser(function(user, done) {
     done(null, user.id);
 });
@@ -115,4 +105,3 @@ passport.deserializeUser(function(id, done) {
 
 
 module.exports = passport;
-module.exports = mongoose.model('users', userSchema);;

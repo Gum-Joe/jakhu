@@ -1,80 +1,17 @@
 var express = require('express');
 var router = express.Router();
-//var passportconfig = require("../libs/passport.js");
-var passport = require("passport");
-var passportLocal = require("passport-local");
 var fs = require('fs');
-
-var MongoClient = require('mongodb').MongoClient;
-var cursor = require('mongodb');
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
-var kernal = require('../boot/boot.js');
-
-var mongoose = require('mongoose');
-
 var dbName = "web-os";
 var port = "27017";
 var host = "localhost";
 var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 var xml2js = require('xml2js');
-
 var oobe = require('../libs/setup/setup.js');
 var os = require('os');
-
-var passport = require('passport');
-var passportlocal = require('passport-local');
-var passporthttp = require('passport-http');
-var passportlocalmongoose = require('passport-local-mongoose');
-
-// var routes = require('../routes/index');
-// var users = require('../routes/users');
-
-var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
 var clicolour = require('cli-color');
-var expressSession = require('express-session');
-var bcrypt = require('bcryptjs');
-
-var salt = bcrypt.genSaltSync(10);
-
+var db = require('../libs/database');
 var app = express();
-
-//passport
-var userSchema = new mongoose.Schema({
-  username: { type: String }
-, email: String
-, pwd: String
-});
-
-userSchema.plugin(passportlocalmongoose);
-
-// connect to db
-// done in connect.js
-//mongoose.connect('mongodb://localhost:27017/web-os');
-
-var configSchema = new mongoose.Schema({
-  lang: { type: String }
-, region: String
-, allowSend: String
-, dev: Boolean
-});
-var exits = false;
-var Suser = mongoose.model('userssssssss', userSchema);
-var config = mongoose.model('config', configSchema);
-var counts = getdocs("ok");
-
-function getdocs(x){
-  Suser.count({}, function(err, count){
-    return count;
-    counts = count;
-});
-
-};
-//router.use('passportconfig', passportconfig);
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -134,20 +71,5 @@ router.get('/admin', function(req, res) {
   });
 
   });
-
-router.post('/login', passport.authenticate('local', {
-    successRedirect: '/loginSuccess',
-    failureRedirect: '/loginFailure'
-  }));
-
-/*function checkBoot(argument) {
-  fs.stat('./tmp', function(err){
-    if(err == null){
-      var boot = false;
-    } else {
-      var boot = true;
-    }
-  });
-}*/
 
 module.exports = router;
