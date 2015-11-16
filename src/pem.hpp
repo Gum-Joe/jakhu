@@ -3,6 +3,7 @@
 #include <openssl/pem.h>
 #include <openssl/bn.h>
 #include <openssl/bio.h>
+#pragma once
 
 // Declare/define func
 int RSA_generate_key_ex(RSA *rsa, int bits, BIGNUM *e, BN_GENCB *cb){return 0;};
@@ -40,14 +41,14 @@ bool generate_key()
     }
 
     // 2. save public key
-    bp_public = BIO_new_file("public.pem", "w+");
+    bp_public = BIO_new_file("./public.pem", "w+");
     ret = PEM_write_bio_RSAPublicKey(bp_public, r);
     if(ret != 1){
         goto free_all;
     }
 
     // 3. save private key
-    bp_private = BIO_new_file("private.pem", "w+");
+    bp_private = BIO_new_file("./private.pem", "w+");
     ret = PEM_write_bio_RSAPrivateKey(bp_private, r, NULL, NULL, 0, NULL, NULL);
 
     // 4. free

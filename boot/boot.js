@@ -11,6 +11,7 @@ var oobe = require("../libs/setup/setup.js");
 var fs = require('fs');
 var unzip = require('unzip');
 var config = require('./libs/configure.js');
+var cert = require('./libs/certs.js');
 var io = require('socket.io')(express.listen);
 var delayed = require('delayed');
 //boot.properties.git.getCommits;
@@ -34,6 +35,8 @@ config.loadconfig();
         throw new Error('Could not clean');
       }
     });*/
+    // load certs
+    cert.generate();
     app.start();
 
 }
