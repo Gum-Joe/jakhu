@@ -19,7 +19,7 @@ var delayed = require('delayed');
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   // Load configure
-config.loadconfig();
+    config.loadconfig();
     boot.checks.files.checkFiles("ok");
     /**delayed.delay(function () {
       boot.checks.instances.instances(config.getdata('name'));
