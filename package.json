@@ -11,7 +11,7 @@
     "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "grunt": "grunt ci",
     "preinstall": "mkdir logs",
-    "install": "node-gyp rebuild"
+    "install": "echo No install"
   },
   "repository": {
     "type": "git",
