@@ -16,7 +16,7 @@ com
 // TODO: Create boot types (safemode, full, recovery)
 exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("");
-  console.log("Web-OS");
+  console.log("Boss");
   console.log("v1.0.0 build "+ stdout);
   kernal.startboot("ok");
 });
