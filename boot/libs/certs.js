@@ -4,6 +4,8 @@ var fs = require('fs');
 var mkdirp = require('mkdirp');
 var configh = require('web-os-config');
 var config = configh.getdata('./tmp/config.yml');
+var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
+var api = require('./build/Release/api');
 var generate = function generate(x) {
   // body...
   // Create key
@@ -22,6 +24,8 @@ var generate = function generate(x) {
     mkdirp('etc/certs');
     fs.openSync("etc/certs/"+config.name+"-public.pem", 'w');
     fs.appendFileSync("etc/certs/"+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'), 'utf8');
+    // write to file
+    api.write(home+'.web/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))
   };
 }
 
