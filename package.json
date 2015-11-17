@@ -1,7 +1,7 @@
 {
-  "name": "web-os",
+  "name": "boss",
   "version": "1.0.0",
-  "description": "A 'OS' on the web",
+  "description": "Be the boss of all web-apps, with simple tools",
   "main": "app.js",
   "scripts": {
     "test": "./node_modules/.bin/grunt ci --verbose",
