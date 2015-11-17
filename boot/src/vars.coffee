@@ -1,4 +1,4 @@
-# Sets vars for Web-OS
+# Sets vars for BOSS-OS
 fs = require('fs');
 cli = require('cli-color');
 
@@ -18,16 +18,16 @@ vars = () ->
   # She bang
   @shebang = "#!/usr/bin/bash\necho Setting enviroment varibles...\n"
   fs.appendFileSync(file, @shebang);
-  @home = 'export WEB_HOME="'+process.env.PWD+'"\n';
+  @home = 'export BOSS_HOME="'+process.env.PWD+'"\n';
   fs.appendFileSync(file, @home);
-  @whome = expor('WEB_USER_HOME')+shome+'/.web'+end
+  @whome = expor('BOSS_USER_HOME')+shome+'/.boss'+end
   fs.appendFileSync(file, @whome);
-  @usr = expor('WEB_USR_DIR')+pwd+'/usr'+end
+  @usr = expor('BOSS_USR_DIR')+pwd+'/usr'+end
   fs.appendFileSync(file, @usr);
-  @etc = expor('WEB_ETC_DIR')+pwd+'/etc'+end
+  @etc = expor('BOSS_ETC_DIR')+pwd+'/etc'+end
   fs.appendFileSync(file, @etc);
-  @in = expor('WEB_INSTANCES_DIR')+pwd+'/etc'+end
+  @in = expor('BOSS_INSTANCES_DIR')+pwd+'/etc'+end
   fs.appendFileSync(file, @in);
-  @in = expor('WEB_PROVIDER')+'vagrant'+end
+  @in = expor('BOSS_PROVIDER')+'vagrant'+end
   fs.appendFileSync(file, @in);
 vars();
