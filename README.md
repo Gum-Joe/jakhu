@@ -2,7 +2,7 @@
 
 
 Be the Boss of your web-apps, with simple tools for managing your web-apps.
-<h3>Formally know as Web-OS<h3>
+<h6>Formally know as Web-OS</h6>
 # What is Boss?
 Boss is a nodejs based system for managing your web-app(s). Features include:
 * Easy management for ports, scripts, web-app config, apps, login, databases, mobile apps and servers and more. You can do this all from the Boss in-app dashboard or the Boss online access portal (to be developed).
