@@ -25,17 +25,17 @@ exports.createBackup = function createBackup(x){
         error.throwError("RECOVERY_ROLLBACK_CREATE_BACKUP_DIR:"+err.code, err, err.code);
       }
       else {
-        console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR for today");
+        console.log(clicolour.cyanBright("boss ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR for today");
       };
     });
     // Create backup
     if(process.env.NODE_ENV !== "dev"){
-    exec("cp -R ./ ./recovery/rollback/backup", function(error, stdout, stderr){
-      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Created rollback Backup");
+    exec("cp -R ./ ~/.boss/recovery/rollback/backup", function(error, stdout, stderr){
+      console.log(clicolour.cyanBright("boss ")  + clicolour.yellowBright("recovery ")  + "Created rollback Backup");
     });
     // rm .git
-    exec("rm -rf ./recovery/rollback/backup/.git ./recovery/rollback/backup/node_modules", function(error, stdout, stderr){
-      console.log(clicolour.cyanBright("webOS ")  + clicolour.yellowBright("recovery ")  + "Removed .git folder and node_modules");
+    exec("rm -rf ~/.boss/recovery/rollback/backup/.git ~/.boss/recovery/rollback/backup/node_modules", function(error, stdout, stderr){
+      console.log(clicolour.cyanBright("boss ")  + clicolour.yellowBright("recovery ")  + "Removed .git folder and node_modules");
     });
   } else {
     console.log(clicolour.redBright("rollback: ") + "Not backing up as dev env");

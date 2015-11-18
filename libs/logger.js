@@ -31,12 +31,12 @@ exports.createlog = function createlog(x) {
         // do noting
       }
       else if( err.code == 'ENOENT'){
-        fs.writeFile("./logs/wos.log", "-------------------Web-OS-logs--------------------", function(err) {
+        fs.writeFile("./logs/wos.log", "-------------------Boss-logs--------------------", function(err) {
             if(err) {
                 return console.log(err);
             }
             if(x !== "test"){
-              console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("oobe ") + "Created log file");
+              console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("oobe ") + "Created log file");
             }
 
         });

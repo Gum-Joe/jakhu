@@ -5,7 +5,7 @@ var mkdirp = require('mkdirp');
 var configh = require('web-os-config');
 var config = configh.getdata('./tmp/config.yml');
 var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
-var api = require('./build/Release/api');
+var api = require('../../build/Release/api');
 var generate = function generate(x) {
   // body...
   // Create key

@@ -4,7 +4,7 @@ var fs = require('fs');
 var assert = require('assert');
 var checks = require('./checks/instances.js');
 var delayed = require('delayed');
-var config = require('web-os-config');
+var config = require('boss-config');
 // parse YAML string
 module.exports = {
 loadconfig: function loadconfig() {
