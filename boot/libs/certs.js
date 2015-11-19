@@ -2,7 +2,7 @@
 var NodeRSA = require('node-rsa');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var configh = require('web-os-config');
+var configh = require('boss-config');
 var config = configh.getdata('./tmp/config.yml');
 var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
 var api = require('../../build/Release/api');
