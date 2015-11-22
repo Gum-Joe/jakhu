@@ -24,10 +24,13 @@ Simply clone or fork this branch (the a1 branch) and start developing.
   6. `bundle install`
   7. `grunt`
   8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
-  9. `npm start`
+  9. `bin/boss server`
 
 On Linux:
-`make fork && npm start`
+`make fork && bin/boss server`
+
+To run in a Vagrant box (from host):
+`bin/boss vagrant`
 
 ## Test:
 `make ci`
