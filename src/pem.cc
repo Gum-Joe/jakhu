@@ -7,7 +7,7 @@
 #include "write.hpp"
 using namespace std;
 
-namespace api {
+namespace pem {
 
 using v8::FunctionCallbackInfo;
 using v8::Isolate;
@@ -17,7 +17,7 @@ using v8::String;
 using v8::Value;
 using namespace tools;
 
-void Mkc(const FunctionCallbackInfo<Value>& args) {
+void pemgggg(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
   // get the param
   v8::String::Utf8Value param1(args[0]->ToString());
@@ -36,10 +36,10 @@ void Mkc(const FunctionCallbackInfo<Value>& args) {
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Done."));
 }
 
-void initcmd(Local<Object> exports) {
-  NODE_SET_METHOD(exports, "pem", Mkc);
+void initpemg(Local<Object> exports) {
+  NODE_SET_METHOD(exports, "pem", pemgggg);
 };
 
-NODE_MODULE(api, initcmd)
+NODE_MODULE(pem, initpemg)
 
 }  // namespace demo

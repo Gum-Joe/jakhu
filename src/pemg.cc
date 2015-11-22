@@ -7,7 +7,7 @@
 //#include "write.hpp"
 #include "pem.hpp"
 
-namespace pem {
+namespace api {
 
 using v8::FunctionCallbackInfo;
 using v8::Isolate;

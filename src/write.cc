@@ -15,7 +15,7 @@ int writeex (char *txt, const char *loc) {
   return 0;
 }
 
-namespace write {
+namespace api {
 
 using v8::FunctionCallbackInfo;
 using v8::Isolate;

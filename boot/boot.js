@@ -11,7 +11,7 @@ var oobe = require("../libs/setup/setup.js");
 var fs = require('fs');
 var unzip = require('unzip');
 var config = require('./libs/configure.js');
-//var cert = require('./libs/certs.js');
+var cert = require('./libs/certs.js');
 
 var io = require('socket.io')(express.listen);
 var delayed = require('delayed');
@@ -33,7 +33,7 @@ exports.startboot = function startboot(boottype) {
     boot.recovery.rollback.createBackup("ok");
     // load certs
     delayed.delay(function () {
-      //cert.generate();
+      cert.generate();
     }, 1000)
     app.start();
 
