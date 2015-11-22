@@ -23,7 +23,7 @@ Simply clone or fork this branch (the a1 branch) and start developing.
   5. `gem install bundle`
   6. `bundle install`
   7. `grunt`
-  8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files.)
+  8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files. See <a href="https://github.com/Gum-Joe/boss.js/issues/25"><b>#25</b></a>)
   9. `bin/boss server`
 
 On Linux:
