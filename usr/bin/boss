@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-
+var execSync = require('child_process').execSync;
+execSync('node ./usr/bin/check.config.js');
 var express = require('express');
 var kernal = require('../boot/boot.js');
 //var git = require('nodegit');
@@ -20,8 +21,7 @@ com
   .parse(process.argv);
 
 // start
-// TODO: Create boot types (safemode, full, recovery)
-execSync('node ./usr/bin/check.config.js');
+// TODO: Create boot types (safemode, full, recovery
 
 if(typeof ser !== 'undefined'){
   if (ser === 'server') {

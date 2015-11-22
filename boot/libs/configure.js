@@ -5,6 +5,7 @@ var assert = require('assert');
 var checks = require('./checks/instances.js');
 var delayed = require('delayed');
 var config = require('boss-config');
+var mkdirp = require('mkdirp');
 // parse YAML string
 module.exports = {
 loadconfig: function loadconfig() {
@@ -68,6 +69,13 @@ function load() {
     }
     var parse = YAML.parse(data);
     // create full file
+    if(fs.existsSync('tmp') !== true){
+      mkdirp('./tmp', function (err) {
+        if(err){
+          throw new Error(err)
+        }
+      })
+    }
     fs.openSync('tmp/config.yml', 'w');
     // Check out imports and contruct one big yml
     for (var i = 0; i < parse.import.length; i++) {
