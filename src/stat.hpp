@@ -2,12 +2,12 @@
 #include <sys/stat.h>
 
 struct stat info;
-void statapi(pathname) {
+int statapi(const char *const pathname) {
   /* code */
   if( stat( pathname, &info ) != 0 )
-      printf( "cannot access %s\n", pathname );
+      return false;
   else if( info.st_mode & S_IFDIR )  // S_ISDIR() doesn't exist on my windows
-      printf( "%s is a directory\n", pathname );
+      return true;
   else
-      printf( "%s is no directory\n", pathname );
+      return false;
 }
