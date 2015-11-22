@@ -1,4 +1,7 @@
 // The web-os Boot script
+var execSync = require('child_process').execSync;
+execSync('node ./usr/bin/check.config.js');
+
 var express = require('express');
 //var git = require('nodegit');
 var exec = require('child_process').exec;
