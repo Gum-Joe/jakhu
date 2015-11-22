@@ -1,84 +1,279 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title>Dashboard | Web-OS</title>
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css.map">
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.css">
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-theme.css.map">
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="../bootstrap/dist/css/bootstrap-theme.css">
-        <link rel="stylesheet" href="css/admin.css">
-        
-	</head>
-	<body class="web-os-back">
-		    <nav class="navbar navbar-inverse navbar-fixed-top black-back">
-      <div class="container-fluid black-back">
-        <div class="navbar-header">
-          <button class="navbar-toggle collapsed" aria-expanded="false" aria-controls="navbar" type="button" data-toggle="collapse" data-target="#navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Web-OS</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Web-OS</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css.map" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css.map" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body class="co">
+    <!--Navbar-->
+    <nav class="navbar navbar-inverse navtop navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="pad-nav-b">
+        <a class="navbar-brand" href="#">
+          Web-OS
+        </a>
+        <a class="navbar-brand" href="#">
+          /
+        </a>
+        <a class="navbar-brand" href="#">
+          Dashboard
+        </a>
         </div>
-        <div class="navbar-collapse collapse" id="navbar">
-          <ul class="nav navbar-nav navbar-middle">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Plugins</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-          <!--<form class="navbar-form navbar-right">
-            <input class="form-control" type="text" placeholder="Search...">
-          </form>-->
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Running on port: <%=port%></a></li>
+      </ul>
+      <!--<form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
         </div>
-      </div>
-    </nav>
-    
-    <div class="container-fluid">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right pad-nav-s">
+        <li class="dropdown">
+       <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="name-nav">Welcome,   <%=user%> <img id="profile-img" src=<%=imgprofile%> alt="" /> <span class="caret"></span></a>
+       <ul class="dropdown-menu">
+         <li><a href="/dashboard/account/profile" class="list"><span class="glyphicon glyphicon-user"></span> My Profile</a></li>
+         <li><a href="/dashboard/account/settings" class="list"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+         <li><a href="/dashboard/repos" class="list"><span class="glyphicon glyphicon-file"></span> My Repos</a></li>
+         <li><a href="/dashboard/console" class="list"><span class="glyphicon glyphicon-console"></span> Console</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/docs/home" class="list">Help</a></li>
+         <li><a href="/about" class="list">Release Notes</a></li>
+         <li role="separator" class="divider"></li>
+         <li><a href="/about" class="list">About...</a></li>
+       </ul>
+     </li>
+        <li><a href="#">Signout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<a href="/about/alpha" style="text-decoration: none !important;" id="alpha-info">
+  <div class="container-fluid h">
+    <div class="box alert-dismissible alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h1>ALPHA Copy</h1>
+      <h3>
+      You're using an alpha copy of our software.
+      We just want to say thankyou, for helping us develop this.
+      However, this software is not yet feature complete
+      and there will be bugs.
+      </h3>
+    </div>
+  </div>
+</a>
+
+</div>
+  <div class="container-fluid" id="con">
+    <div class="table-t">
+        <h3> <!--<span class="glyphicon glyphicon-console"></span>--> Web-apps
+        <div class="" role="group" aria-label="..." align="left">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-default" id="new" data-toggle="modal" data-target="#newModal"><span class="glyphicon glyphicon-plus"></span> New Web-app</button>
+          <button type="button" class="btn btn-default" id="explore"><span class="glyphicon glyphicon-globe"></span> Explore Web-apps</button>
+          <button type="button" class="btn btn-default" id="refresh"> <span class="glyphicon glyphicon-refresh"></span></button>
+        </div>
+        </h3>
+    </div>
+  </div>
+
+  <div class="container-fluid instances" id="instances">
+    <div class="module row">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar pad-small-top-side">
-          <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
-            <li class="active" role="presentation"><a href="#">Overview</a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
+        <div class="col-md-4 name" id='name'>Gum-Joe/Web-OS</div>
+        <div class="col-md-2 langnodejs" id='lang'><img src="/css/img/Nodejs.jpg" alt="Nodejs Logo" id='iconl'/>Nodejs</div>
+        <div class="btn-group" role="group" aria-label="..." align="left">
+          <button type="button" class="btn btn-success">Start</button>
+          <button type="button" class="btn btn-danger">Stop</button>
+          <button type="button" class="btn btn-warning">Restart</button>
+          <button type="button" class="btn btn-primary">Settings</button>
+          <button type="button" class="btn btn-info">View</button>
         </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main minus">
-          <h1 class="page-header">Welcome Back, <%=user%></h1>
+        <div class="col-md-2 button row" id="button">
+          <span class="glyphicon glyphicon-time"></span> Running...
+      </div>
+      </div>
+    </div>
+  </div>
 
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <!--<img class="img-responsive" alt="Generic placeholder thumbnail" data-src="holder.js/200x200/auto/sky">-->
-                  <div class="alert alert-warning middle" role="alert"><h1 class="middle minus-alert"><%=users%></h1>Users</div>
-                    
-              <div class="alert alert-info middle" role="alert"><h1 class="middle minus-alert"><%=sessions%></h1>Active Users</div>
-               
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <div class="alert alert-success middle" role="alert"><h1 class="middle minus-alert"><%=plugins%></h1>Plugins installed</div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <div class="alert alert-info middle" role="alert"><h1 class="middle minus-alert"><%=plugins%></h1>Plugins active</div>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img class="img-responsive" alt="Generic placeholder thumbnail" data-src="holder.js/200x200/auto/vine">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div>
+    <table class="table">
+              <thead>
+                <tr>
+                  <th>Web-App Name</th>
+                  <th>Language</th>
+                  <th>Deployed to...</th>
+                  <th>Running</th>
+                  <th> Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nodejs app</td>
+                  <td>Nodejs</td>
+                  <td>Heroku</td>
+                  <td>Yes</td>
+                  <td>
+                    <!-- Start -->
+                    <button type="button" class="btn btn-success">Start</button>
+                    <button type="button" class="btn btn-danger">Stop</button>
+                    <button type="button" class="btn btn-warning">Restart</button>
+                    <button type="button" class="btn btn-primary">Settings</button>
+                    <button type="button" class="btn btn-info">View</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Rails app</td>
+                  <td>Rails</td>
+                  <td>AWS</td>
+                  <td>ERROR!</td>
+                  <td>
+                    <!-- Start -->
+                    <button type="button" class="btn btn-success">Start</button>
+                    <button type="button" class="btn btn-danger">Stop</button>
+                    <button type="button" class="btn btn-warning">Restart</button>
+                    <button type="button" class="btn btn-primary">Settings</button>
+                    <button type="button" class="btn btn-info">View</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Python app</td>
+                  <td>Python</td>
+                  <td>NONE</td>
+                  <td>Starting...</td>
+                  <td>
+                    <!-- Start -->
+                    <button type="button" class="btn btn-success">Start</button>
+                    <button type="button" class="btn btn-danger">Stop</button>
+                    <button type="button" class="btn btn-warning">Restart</button>
+                    <button type="button" class="btn btn-primary">Settings</button>
+                    <button type="button" class="btn btn-info">View</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>PHP app</td>
+                  <td>Php</td>
+                  <td>Azure</td>
+                  <td>Restarting..</td>
+                  <td>
+                    <!-- Start -->
+                    <button type="button" class="btn btn-success">Start</button>
+                    <button type="button" class="btn btn-danger">Stop</button>
+                    <button type="button" class="btn btn-warning">Restart</button>
+                    <button type="button" class="btn btn-primary">Settings</button>
+                    <button type="button" class="btn btn-info">View</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+  </div>
 
-          
-        </div>
+    <!--System info -->
+    <div class="container-fluid">
+      <div class="system-info-build">
+        <h5>ALPHA Copy,</h5>
+        <h5>Not all features may be avalible.</h5>
+        <h5>Build <%=build %></h5>
       </div>
     </div>
 
- 
-	</body>
-	<script src="../jquery/dist/jquery.js"></script>
-	<script src="../bootstrap/dist/js/bootstrap.js"></script>
+    <!--Modals-->
+    <!-- Modal -->
+  <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">New Web-app</h4>
+        </div>
+        <div class="modal-body">
+          You're setting up a web-app! The Web-app will be stored in instances/web-app-name.
+          You can chose from:
+          <ul>
+            <% for(var i = 0; i < config.languages.length; i++){%>
+              <li>A <%=config.languages[i]%> app</li>
+            <% } %>
+          </ul>
+          <form class="" action="/dashboard/createapp" method="post">
+            <div class="form-group">
+              <label for="name">What should we call your Web-app?</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What should we call it?">
+            </div>
+            <div class="form-group">
+              <label for="language">What language should your Web-app be?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                <% for(var i = 0; i < config.languages.length; i++){%>
+                  <option value="option"><%=config.languages[i]%></option>
+                <% } %>
+              </select>
+            </div>
+          </form>
+          <h4><u>If your Web-app exists...</u></h2>
+          <form class="" action="/dashboard/createapp" method="post">
+            <div class="form-group">
+              <label for="language">Where is the Web-app stored?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                  <option value="option">Git repo (Github, Bitbucket)</option>
+                  <option value="option">SVN repo (Apache)</option>
+                  <option value="option">Online</option>
+                  <option value="option">Locally</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="name">What is the address of the Web-app (the path to it if it is on your enviroment)</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What is the address of your Web-app?">
+            </div>
+            <div class="form-group">
+              <label for="name">What should we call it?</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="What should we call it?">
+            </div>
+            <div class="form-group">
+              <label for="language">What language of the Web-app?</label>
+              <select class="form-control" name="language" id="language">
+                <option value="option">Select one...</option>
+                <% for(var i = 0; i < config.languages.length; i++){%>
+                  <option value="option"><%=config.languages[i]%></option>
+                <% } %>
+              </select>
+            </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button submit" class="btn btn-primary">Create!</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Hamburger menu script for hamburger -->
+    <script src="/js/hamburger.js"></script>
+
+  </body>
 </html>

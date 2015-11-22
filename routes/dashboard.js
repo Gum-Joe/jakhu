@@ -14,7 +14,8 @@ router.get('/', function(req, res) {
       imgprofile: '/css/img/profile.jpg',
       instances: config.getdata().instances,
       port: config.getdata().port,
-      config: config.getdata()
+      config: config.getdata(),
+      showcase: '/css/img/showcase.jpg'
     });
   });
 });
