@@ -7,21 +7,19 @@ node_js:
   - '4.1.1'
   - '4.0.0'
   - '0.10'
-
-rvm:
-  - 1.9.3
-  - jruby-18mode # JRuby in 1.8 mode
-  - jruby-19mode # JRuby in 1.9 mode
-  - rbx-2.1.1
-  - 1.8.7
-  - ree
-
+apt:
+  sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc-4.8
+    - g++-4.8
 os:
   - linux
 services:
   - mongodb
 env:
   - NODE_ENV=development
+  - CXX=g++-4.8
 install:
   - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
   - npm install
