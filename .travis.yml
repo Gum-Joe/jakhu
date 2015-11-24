@@ -7,12 +7,13 @@ node_js:
   - '4.1.1'
   - '4.0.0'
   - '0.10'
-apt:
-  sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - gcc-4.8
-    - g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      packages:
+      - gcc-4.8
+      - g++-4.8
 os:
   - linux
 services:
