@@ -52,7 +52,7 @@ endif
 # Tasks
 # Clean-up
 clean:
-	@echo Removing code, build & spec...; \
+	echo Removing code, build & spec...; \
 	rm -rf views/css/*.css; \
 	rm -rf coveralls; \
 	rm -rf build;
@@ -60,7 +60,7 @@ clean:
 build:
 	echo 'Build here'
 
-build:
+test:
 	echo 'test here'
 
 
