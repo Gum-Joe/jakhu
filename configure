@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+# Install globals
+if [[ ! "node --version" ]]; then
+  #statements
+  echo "Please install nodejs"
+  # Download nodejs
+fi
