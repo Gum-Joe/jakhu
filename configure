@@ -1,7 +1,18 @@
 #!/usr/bin/bash
 # Install globals
+# TODO: Add install
 if [[ ! "node --version" ]]; then
   #statements
   echo "Please install nodejs"
+  # Download nodejs
+fi
+if [[ ! "gem --version" ]]; then
+  #statements
+  echo "Please install ruby and gem"
+  # Download nodejs
+fi
+if [[ ! "bundle --version" ]]; then
+  #statements
+  echo "Please install bundle"
   # Download nodejs
 fi
