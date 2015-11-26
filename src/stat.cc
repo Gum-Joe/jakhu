@@ -1,5 +1,4 @@
 #include <node.h>
-#include <direct.h>
 #include <stdlib.h>
 #include <iostream>
 #include <string.h>
