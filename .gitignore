@@ -151,3 +151,7 @@ node_modules
 
 # Vagrant stuff
 .vagrant
+
+# etc config
+requests.yml
+date.txt
