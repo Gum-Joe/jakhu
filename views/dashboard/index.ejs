@@ -70,9 +70,9 @@
   <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
     <!-- Carousel items -->
     <div class="carousel-inner">
-        <div class="active item" id="req"><h4>TODO: x requests today</h4></div>
-        <div class="item" id="wrun"><h4>TODO: x web-apps running</h4></div>
-        <div class="item" id="hours"><h4>TODO: Running for x hours and y minuets</h4></div>
+        <div class="active item"><h4 id="req">TODO: x requests today</h4></div>
+        <div class="item"><h4 id="wrun">TODO: x web-apps running</h4></div>
+        <div class="item"><h4 id="hours">TODO: Running for x hours and y minuets</h4></div>
     </div>
     <!--<ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -109,11 +109,16 @@
     <!-- Hamburger menu script for hamburger -->
     <script src="/js/hamburger.js"></script>
     <script src="/notie/notie.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
         //notie.alert(1, 'Success!', 1.5);
         $('.carousel').carousel();
-      })
+      });
+      var socket = io.connect();
+      socket.on('request', function(req){
+        document.getElementById("req").innerHTML = req+" requests today";
+      });
     </script>
   </body>
 </html>

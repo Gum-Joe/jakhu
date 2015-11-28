@@ -1,5 +1,3 @@
-exports.start = function start(x, y, portt){
-  //console.log(data);
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -13,7 +11,6 @@ var morgan = require("morgan");
 var ooberoutes = require("./routes/oobe.js");
 var dashboard = require("./routes/dashboard.js");
 var mkdirp = require('mkdirp');
-var io = require('./libs/socket.io.js')
 
 var passport = require('passport');
 var passportlocal = require('passport-local');
@@ -24,13 +21,13 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
-//This prints undefined
 var connect = require("./libs/connect.js");
 var passportconfig = require("./libs/passport.js");
-//var wlogger = require("./libs/wlogger.js");
-// var debuge = require("./libs/debug.js");
 var wlogger = require("./libs/logger.js");
 var kernal = require('./boot/boot.js');
+var mid = require('./libs/middleware.js')
+var stream = require('./libs/stream.js');
+var yml = require('./libs/yml.js');
 
 var routes = require('./routes/index');
 var api = require('./routes/api/api');
@@ -44,7 +41,11 @@ var app = express();
 
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
+var port = process.env.PORT || 8080;
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
+start = function start(x, y, portt){
 // create file
 mkdirp('logs')
 wlogger.createlog("ok");
@@ -52,9 +53,6 @@ wlogger.createlog("ok");
 if(y !== true){
   var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
 }
-
-
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -68,8 +66,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'test')));
+app.use(mid.count)
 if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');
 }
@@ -79,44 +79,21 @@ app.use('/oobe', ooberoutes);
 app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/api', api);
-// app.use('passportconfig', passportconfig);
+// listen
+server.listen(port, function () {
+  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+  //kernal.boot("ok");
+  kernal.startinput("ok");
+});
+io.sockets.on('connection', function(socket){
+  console.log('New socket created.');
+  // parse yml for req
+  console.log();
+  io.emit('request', yml.parse('etc/requests.yml').req);
+});
 
-// Setup HTTPS
-// uncommitted after finding way to get certs
-/** options = {
-  key: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-PRIVATE.key'))
-  // This certificate should be a bundle containing your server certificate and any intermediates
-  // cat certs/cert.pem certs/chain.pem > certs/server-bundle.pem
-, cert: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-SIGNED.crt'))
-  // ca only needs to be specified for peer-certificates
-//, ca: [ fs.readFileSync(path.join(caCertsPath, 'my-root-ca.crt.pem')) ]
-, requestCert: false
-, rejectUnauthorized: true
-}; */
-
-var port = process.env.PORT || 8080;
-if(x !== "basic" && x !== "ci"){
-  app.listen(port, function () {
-  	console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-  	console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-    //kernal.boot("ok");
-    kernal.startinput("ok");
-  });
-} else {
-  if(portt === undefined){
-    app.listen(6060, function () {
-    	// server started for mocha test
-    });
-  } else {
-    app.listen(portt, function () {
-    	// server started for mocha test
-    });
-  }
-};
-
-// start scoket
-io.start(app.listen)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -147,5 +124,4 @@ app.use(function(err, req, res, next) {
 
 // end of start function
 };
-
-// Close server
+module.exports = {start: start, app: server};
