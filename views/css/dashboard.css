@@ -9,8 +9,20 @@ nav {
 nav .container-fluid .navbar-header div a {
   color: white;
 }
+nav .container-fluid .navbar-header div a:hover {
+  background-color: #3757fa;
+  -webkit-box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
+  -moz-box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
+  box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
+}
 nav .container-fluid div ul li a {
   color: white !important;
+}
+nav .container-fluid div ul li:hover {
+  background-color: #3757fa;
+  -webkit-box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
+  -moz-box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
+  box-shadow: 0px 5px 7px -1px rgba(23, 22, 36, 0.75);
 }
 
 .navbar {
