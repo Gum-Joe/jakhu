@@ -1,5 +1,6 @@
 @import "mixins";
 @import "fonts.css";
+@import "carad";
 $navp : 3cm;
 $col : #ff5900;
 nav {
@@ -97,4 +98,12 @@ nav {
     font-family: Source-Sans-Pro-Light;
     text-align: center;
   }
+  div {
+    ol {
+      li {
+        //margin-top: 50px;
+      }
+    }
+  }
+
 }

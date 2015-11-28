@@ -65,7 +65,41 @@
 
 <div class="showcase">
   <h1>Welcome back, <%=user%></h1>
-  <h4>TODO: Stats go here</h4>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item" id="req"><h4>TODO: x requests today</h4></div>
+        <div class="item" id="wrun"><h4>TODO: x web-apps running</h4></div>
+        <div class="item" id="hours"><h4>TODO: Running for x hours and y minuets</h4></div>
+    </div>
+    <!--<ol class="carousel-indicators">
+        <li data-target="#carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel" data-slide-to="1"></li>
+        <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>-->
+    <!-- Carousel nav
+    <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>-->
+</div>
+
+  <!-- Controls
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>-->
+  <!-- Indicators
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>-->
+</div>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -78,6 +112,7 @@
     <script type="text/javascript">
       $(document).ready(function () {
         //notie.alert(1, 'Success!', 1.5);
+        $('.carousel').carousel();
       })
     </script>
   </body>
