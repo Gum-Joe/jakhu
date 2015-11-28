@@ -23,4 +23,4 @@ install:
   - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
   - npm install
   - bundle install
-script: make travis
+script: make ci
