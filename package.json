@@ -1,6 +1,6 @@
 {
   "name": "boss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Be the boss of all web-apps, with simple tools",
   "main": "app.js",
   "scripts": {
