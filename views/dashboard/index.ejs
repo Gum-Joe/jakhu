@@ -71,8 +71,8 @@
     <!-- Carousel items -->
     <div class="carousel-inner">
         <div class="active item"><h4 id="req">TODO: x requests today</h4></div>
-        <div class="item"><h4 id="wrun">TODO: x web-apps running</h4></div>
-        <div class="item"><h4 id="hours">TODO: Running for x hours and y minuets</h4></div>
+        <div class="item"><h4 id="wrun">Been running for <%=time%> minutes</h4></div>
+        <div class="item"><h4 id="weba">TODO: x web-apps running</h4></div>
     </div>
     <!--<ol class="carousel-indicators">
         <li data-target="#carousel" data-slide-to="0" class="active"></li>
@@ -118,6 +118,9 @@
       var socket = io.connect();
       socket.on('request', function(req){
         document.getElementById("req").innerHTML = req+" requests today";
+      });
+      socket.on('runtime', function(req){
+        document.getElementById("wrun").innerHTML = "Been running for "+req+' minutes';
       });
     </script>
   </body>

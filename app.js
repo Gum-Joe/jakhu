@@ -92,6 +92,13 @@ io.sockets.on('connection', function(socket){
   // parse yml for req
   console.log();
   io.emit('request', yml.parse('etc/requests.yml').req);
+  function f() {
+    var d = fs.readFileSync('etc/date.txt').toString();
+    var fd = parseInt(d);
+    var de = new Date().getHours().toString()+new Date().getMinutes().toString();
+    io.emit('runtime', de-fd);
+  }
+  setInterval(f, 60 * 1000);
 });
 
 // catch 404 and forward to error handler

@@ -37,7 +37,9 @@ exports.startboot = function startboot(boottype) {
     // load certs
     delayed.delay(function () {
       cert.generate();
-    }, 1000)
+    }, 1000);
+    fs.writeFileSync('etc/date.txt', new Date().getHours(), 'utf8')
+    fs.appendFileSync('etc/date.txt', new Date().getMinutes(), 'utf8')
     app.start();
 
 }
