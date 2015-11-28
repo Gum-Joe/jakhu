@@ -64,6 +64,8 @@
 </nav>
 
 <div class="showcase">
+  <h1>Welcome back, <%=user%></h1>
+  <h4>TODO: Stats go here</h4>
 </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -72,6 +74,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- Hamburger menu script for hamburger -->
     <script src="/js/hamburger.js"></script>
-
+    <script src="/notie/notie.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        //notie.alert(1, 'Success!', 1.5);
+      })
+    </script>
   </body>
 </html>
