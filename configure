@@ -1,9 +1,33 @@
 #!/usr/bin/bash
 # Install globals
 # TODO: Add install
+# VARS
+OSS=$OS
+# Main packages
+if [[ "$OSTYPE" =~ ^linux ]]; then
+    echo "Installing packages for installation..."
+    ./usr/resource/linux/packages.sh
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+      # Mac OSX
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+      # POSIX compatibility layer and Linux environment emulation for Windows
+elif [[ "$OSTYPE" == "msys" ]]; then
+      # Lightweight shell and GNU utilities compiled for Windows (part of MinGW)
+elif [[ "$OSTYPE" == "win32" ]]; then
+      # I'm not sure this can happen.
+elif [[ "$OSTYPE" == "freebsd"* ]]; then
+      # ...
+else
+        # Unknown.
+fi
 if [[ ! "node --version" ]]; then
   #statements
   echo "Please install nodejs"
+  # Download nodejs
+fi
+if [[ ! "npm --version" ]]; then
+  #statements
+  echo "Please install npm"
   # Download nodejs
 fi
 if [[ ! "gem --version" ]]; then
@@ -16,3 +40,5 @@ if [[ ! "bundle --version" ]]; then
   echo "Please install bundle"
   # Download nodejs
 fi
+
+# Check out files
