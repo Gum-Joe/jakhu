@@ -41,11 +41,11 @@ var app = express();
 
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
-var port = process.env.PORT || 8080;
-var server = http.createServer(app);
-var io = require('socket.io').listen(server);
 
 start = function start(x, y, portt){
+var port = process.env.PORT ||  portt || 8080;
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 // create file
 mkdirp('logs')
 wlogger.createlog("ok");
@@ -80,13 +80,17 @@ app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/api', api);
 // listen
-server.listen(port, function () {
-  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-  console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  //kernal.boot("ok");
-  kernal.startinput("ok");
-});
+if(y === true || x === 'basic' || x === 'ci'){
+  server.listen(port);
+} else {
+  server.listen(port, function () {
+    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+    //kernal.boot("ok");
+    kernal.startinput("ok");
+  });
+}
 io.sockets.on('connection', function(socket){
   console.log('New socket created.');
   // parse yml for req
@@ -131,4 +135,4 @@ app.use(function(err, req, res, next) {
 
 // end of start function
 };
-module.exports = {start: start, app: server};
+module.exports = {start: start};
