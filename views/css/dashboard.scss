@@ -121,12 +121,23 @@ html, body {
 .sidebar {
   width: 50px;
   background-color: black;
+  $c : 1cm;
+  @mixin widhe {
+    height: $c;
+    width: $c;
+  }
+  li:hover {
+    @include widhe;
+  }
   li {
+    @include widhe;
     a {
       border-radius: 0;
+      @include widhe;
     }
     a:hover {
       border-radius: 0;
+      @include widhe;
       background-color: #3757fa;
     }
   }

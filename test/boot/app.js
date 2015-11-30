@@ -4,6 +4,7 @@ var app = require('../../app.js');
 var express = require('express');
 var ap = express();
 var exec = require('child_process');
+var assert = require('assert');
 
 describe('app.js tests', function () {
   it('should test whether app.js is listening', function (done) {

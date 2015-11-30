@@ -47,8 +47,8 @@ var port = process.env.PORT ||  portt || 8080;
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 // create file
-mkdirp('logs')
-wlogger.createlog("ok");
+mkdirp('logs');
+if(y !== true){wlogger.createlog("ok");};
 // during baic startup for testing, will not create log
 if(y !== true){
   var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});

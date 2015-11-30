@@ -227,11 +227,23 @@ html, body {
   width: 50px;
   background-color: black;
 }
+.sidebar li:hover {
+  height: 1cm;
+  width: 1cm;
+}
+.sidebar li {
+  height: 1cm;
+  width: 1cm;
+}
 .sidebar li a {
   border-radius: 0;
+  height: 1cm;
+  width: 1cm;
 }
 .sidebar li a:hover {
   border-radius: 0;
+  height: 1cm;
+  width: 1cm;
   background-color: #3757fa;
 }
 
