@@ -14,7 +14,7 @@
   </head>
   <body class="co">
     <!--Navbar-->
-    <nav class="navbar navbar-inverse navtop navbar-fixed-top">
+    <nav class="navbar navbar-inverse navtop">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -83,22 +83,6 @@
     <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>-->
 </div>
-
-  <!-- Controls
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>-->
-  <!-- Indicators
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>-->
 </div>
 </div>
 <a href="#info">
@@ -107,9 +91,29 @@
   <div class="arrow"></div>
 </div>
 </a>
-<div class="container">
-  <h4>Web-apps</h4>
+<div class="headerdash">
+  <h2 id="info">Welcome back, <%=user%></h2>
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Wrapper for slides -->
+  <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+        <div class="active item"><h4 id="req">TODO: x requests today</h4></div>
+        <div class="item"><h4 id="wrun">Been running for <%=time%> minutes</h4></div>
+        <div class="item"><h4 id="weba">TODO: x web-apps running</h4></div>
+    </div>
 </div>
+</div>
+</div>
+<div class="dash">
+  <div class="">
+    <ul class="nav nav-pills nav-stacked sidebar">
+      <li role="presentation"><a href="#">Home</a></li>
+      <li role="presentation"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</div>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -131,6 +135,12 @@
       socket.on('runtime', function(req){
         document.getElementById("wrun").innerHTML = "Been running for "+req+' minutes';
       });
+      $(document).ready(function (){
+            $(".ase").click(function (){
+                $('html, body').animate({
+                    scrollTop: $("#info").offset().top}, 800);
+            });
+        });
     </script>
   </body>
 </html>
