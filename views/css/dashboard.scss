@@ -121,7 +121,7 @@ html, body {
 .sidebar {
   width: 50px;
   background-color: black;
-  $c : 1cm;
+  $c : 50px;
   @mixin widhe {
     height: $c;
     width: $c;
@@ -134,11 +134,42 @@ html, body {
     a {
       border-radius: 0;
       @include widhe;
+        #h1, #h2, #h3 {
+          height: 10px;
+          background-color: blue;
+          width: 10px;
+        }
     }
     a:hover {
       border-radius: 0;
       @include widhe;
-      background-color: #3757fa;
+      background-color: #262626;
     }
   }
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle {
+  background-color: black;
+  padding: 0;
+  padding-top: 23px;
+  padding-left: 5px;
+}
+#nav-toggle:hover {
+  background-color: #262626;
 }

@@ -228,23 +228,58 @@ html, body {
   background-color: black;
 }
 .sidebar li:hover {
-  height: 1cm;
-  width: 1cm;
+  height: 50px;
+  width: 50px;
 }
 .sidebar li {
-  height: 1cm;
-  width: 1cm;
+  height: 50px;
+  width: 50px;
 }
 .sidebar li a {
   border-radius: 0;
-  height: 1cm;
-  width: 1cm;
+  height: 50px;
+  width: 50px;
+}
+.sidebar li a #h1, .sidebar li a #h2, .sidebar li a #h3 {
+  height: 10px;
+  background-color: blue;
+  width: 10px;
 }
 .sidebar li a:hover {
   border-radius: 0;
-  height: 1cm;
-  width: 1cm;
-  background-color: #3757fa;
+  height: 50px;
+  width: 50px;
+  background-color: #262626;
+}
+
+#nav-toggle span, #nav-toggle span:before, #nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+}
+
+#nav-toggle span:before {
+  top: -10px;
+}
+
+#nav-toggle span:after {
+  bottom: -10px;
+}
+
+#nav-toggle {
+  background-color: black;
+  padding: 0;
+  padding-top: 23px;
+  padding-left: 10px;
+}
+
+#nav-toggle:hover {
+  background-color: #262626;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
