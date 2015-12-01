@@ -7,7 +7,7 @@ var fs = require('fs');
 describe('GET requests', function (done) {
   console.log("Please make sure the server is not running before running these tests");
   before(function (done) {
-    app.start("basic", true, '9090');
+    app.start("basic", true, 9090);
     done();
   });
   it('GET /', function (done) {
