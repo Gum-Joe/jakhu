@@ -112,6 +112,8 @@ nav .container-fluid div ul li:hover {
   box-shadow: 0px 5px 7px -1px #171624;
 }
 
+/*$nav : #9999FF;
+$nav2 : #000080;*/
 html, body {
   background-image: url(/css/img/nav-back-two.png);
 }
@@ -230,13 +232,16 @@ html, body {
 .sidebar li:hover {
   height: 50px;
   width: 50px;
+  border-width: 0;
 }
 .sidebar li {
   height: 50px;
   width: 50px;
+  border-width: 0;
 }
 .sidebar li a {
   border-radius: 0;
+  border: 0;
   height: 50px;
   width: 50px;
 }
@@ -246,6 +251,7 @@ html, body {
   width: 10px;
 }
 .sidebar li a:hover {
+  border: 0;
   border-radius: 0;
   height: 50px;
   width: 50px;
@@ -272,14 +278,14 @@ html, body {
 }
 
 #nav-toggle {
-  background-color: black;
+  background-color: #203db3;
   padding: 0;
   padding-top: 23px;
   padding-left: 6px;
 }
 
 #nav-toggle:hover {
-  background-color: #262626;
+  background-color: #207db3;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
