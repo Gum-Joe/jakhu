@@ -6,6 +6,11 @@
 }
 
 @font-face {
+     font-family: FiraSans-Book;
+     src: url(fonts/fira-sans/FiraSans-Book.otf);
+}
+
+@font-face {
      font-family: Source-Sans-Pro-Light;
      src: url(fonts/source-sans-pro/SourceSansPro-Light.otf);
 }

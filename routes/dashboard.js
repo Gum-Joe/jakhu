@@ -20,7 +20,8 @@ router.get('/', function(req, res) {
       port: config.getdata().port,
       config: config.getdata(),
       showcase: '/css/img/showcase.jpg',
-      time: de-fd
+      time: de-fd,
+      well: true
     });
   });
 });
