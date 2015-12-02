@@ -199,7 +199,7 @@ module.exports = function(grunt) {
   });
   grunt.registerTask('default', ['test', 'clean', 'compile']);
   grunt.registerTask('main', ['watch:main']);
-  grunt.registerTask('ci', ['compile', 'clean', 'test']);
+  grunt.registerTask('ci', ['compile', 'clean']);
   grunt.registerTask('ciapp', ['compile', 'clean', 'exec:testtmp', 'mochaTest']);
 
   grunt.registerTask('test', ['exec:testtmp', 'mochaTest', 'clean:cleanup']);

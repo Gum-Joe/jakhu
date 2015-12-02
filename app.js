@@ -43,7 +43,7 @@ var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
 start = function start(x, y, portt){
-var port = process.env.PORT ||  portt || 8080;
+var port = process.env.PORT || portt || 8080;
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
 // create file

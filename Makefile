@@ -1,4 +1,5 @@
 # here is the heroku makefile
+.PHONY: test build usr etc coverage bin
 run:
 	echo Installing bower modules; \
 	echo Installing bower; \
@@ -53,9 +54,13 @@ test-coveralls:
 ci:
 	mkdir -p testing tmp/test; \
 	echo testing > testing/test.txt; \
-	nyc npm test; \
+	grunt ci --verbose; \
 	mkdir -p testing tmp/test; \
 	echo testing > testing/test.txt; \
+	$(MAKE) coverage;
+
+coverage:
 	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls;
 
+a: coverage;
 #.PHONY test

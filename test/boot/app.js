@@ -8,15 +8,21 @@ var assert = require('assert');
 
 describe('app.js tests', function () {
   it('should test whether app.js is listening', function (done) {
-    app.start('basic', true, '2020');
+    app.start('basic', true, 2020);
     done();
   });
   it('should check that app.env is set to dev', function (done) {
+    // Create config.yml in ./tmp
+    // See #30
+    var execSync = require('child_process').execSync;
+    execSync('node ./usr/bin/check.config.js');
+    // Se NODE_ENV for development
     process.env.NODE_ENV='dev';
     // start app
-    app.start('basic', true, '3030');
+    app.start('basic', true, 3030);
+    // check env
     if(ap.get('env') !== 'dev'){
-      assert.fail(ap.get('env'), 'dev', 'Expected app env to be dev - it was not');
+      assert.fail(ap.get('env'), 'dev' || 'development', 'Expected app env to be dev - it was not');
     }
     done();
   });

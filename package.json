@@ -4,7 +4,7 @@
   "description": "Be the boss of all web-apps, with simple tools",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/.bin/grunt ci --verbose",
+    "test": "mocha test/**/*.js",
     "start": "nodemon bin/web",
     "docker-start": "git pull && node bin/start",
     "coveralls": "istanbul cover test.js",
