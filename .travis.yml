@@ -4,6 +4,7 @@ node_js:
   - '5.1.1'
   - '0.12.9'
   - '0.10.41'
+group: edge
 addons:
   apt:
     sources:
