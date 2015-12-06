@@ -1,24 +1,24 @@
 language: node_js
 node_js:
-  - '4.2.2'
-  - '4.2.1'
-  - '4.2.0'
-  - '4.1.2'
-  - '4.1.1'
-  - '4.0.0'
+  - '4.2.3'
+  - '5.1.1'
+  - '0.12.9'
+  - '0.10.41'
 addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - gcc-4.8
       - g++-4.8
+      - g++-4.9
 os:
   - linux
 services:
   - mongodb
 env:
-  - NODE_ENV=development
+  - CXX=g++-4.8
+  global:
+    - NODE_ENV=development
 install:
   - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
   - npm install

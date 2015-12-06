@@ -16,13 +16,12 @@ describe('app.js tests', function () {
     // See #30
     var execSync = require('child_process').execSync;
     execSync('node ./usr/bin/check.config.js');
-    // Se NODE_ENV for development
-    process.env.NODE_ENV='dev';
+    // Set NODE_ENV for development
     // start app
     app.start('basic', true, 3030);
     // check env
     if(ap.get('env') !== 'dev'){
-      assert.fail(ap.get('env'), 'dev' || 'development', 'Expected app env to be dev - it was not');
+      assert.fail(ap.get('env'), 'development', 'Expected app env to be dev - it was not');
     }
     done();
   });
