@@ -74,3 +74,20 @@
 @mixin font($size) {
   font-size: $size;
 }
+
+@mixin border-rad-c($px) {
+  -moz-border-radius-bottomleft: $px;
+  -webkit-border-bottom-left-radius: $px;
+  border-bottom-left-radius: $px;
+  -moz-border-radius-topleft: $px;
+  -webkit-border-top-left-radius: $px;
+  border-top-left-radius: $px;
+}
+@mixin border-rad-cd($px) {
+  -moz-border-radius-bottomright: $px;
+  -webkit-border-bottom-right-radius: $px;
+  border-bottom-right-radius: $px;
+  -moz-border-radius-topright: $px;
+  -webkit-border-top-right-radius: $px;
+  border-top-right-radius: $px;
+}

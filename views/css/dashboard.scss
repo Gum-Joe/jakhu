@@ -1,5 +1,6 @@
 // New dash
 @import "fonts.css";
+@import "mixins.scss";
 .welcome {
   padding-left: 15px;
   width: 230px;
@@ -7,6 +8,7 @@
   padding-bottom: 5px;
   background-color: #34495e;
   color: white;
+  position: relative;
   #wimg {
     width: 40px;
     height: 40px;
@@ -28,6 +30,7 @@
 }
 
 .sidebar {
+  position: fixed;
   background-color: #34495e;
   width: 230px;
   height: 100%;
@@ -36,6 +39,7 @@
     height: 100%;
     width: 230px;
     margin-bottom: 0 !important;
+    position: relative;
     li {
       list-style-type: none;
       color: white;
@@ -103,4 +107,58 @@
 }
 #wellup {
   background-color: #e67e22;
+}
+
+.navbar-nb {
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  margin-left: 230px;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+  }
+  li {
+    float: left;
+    .se {
+      .search {
+        border-color: white;
+        border: none;
+        background-color: white;
+        color: black;
+        padding-left: 5px;
+        @include border-rad-c(10px);
+      }
+      .button {
+        border: none;
+        left:-8px;
+        background-color: #3498db;
+        position:relative;
+        @include border-rad-cd(10px);
+      }
+      .button:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+      background-color: #111;
+  }
+  .se:hover {
+    background-color: #333;
+  }
+
 }

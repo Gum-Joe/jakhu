@@ -15,6 +15,26 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek' rel='stylesheet' type='text/css'>
   </head>
   <body class="co">
+    <div class="page">
+      <div class="navbar-nb">
+        <ul>
+          <li class="brand"><a href="#">Jump To:</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="news.asp">News</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+          <li><a href="about.asp">About</a></li>
+          <li class="seli">
+            <a class="se">
+              <form action="/dashboard" method="get">
+                <input class="search" type="text" placeholder="Search..." required name="search">
+                <input class="button" type="submit" value="Search">
+              </form>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Sidebar -->
     <div class="welcome">
       <img src="<%=imgprofile%>" alt="" id="wimg"/>
       <div class="wtext">
