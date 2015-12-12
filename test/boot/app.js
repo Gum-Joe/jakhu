@@ -20,8 +20,8 @@ describe('app.js tests', function () {
     // start app
     app.start('basic', true, 3030);
     // check env
-    if(ap.get('env') !== 'development'){
-      assert.fail(ap.get('env'), 'development', 'Expected app env to be dev - it was not');
+    if(ap.get('env') !== 'devlopment' && ap.get('env') !== 'dev' && ap.get('env') !== 'development'){
+      assert.fail(ap.get('env'), 'devlopment', 'Expected app env to be dev - it was not');
     }
     done();
   });
