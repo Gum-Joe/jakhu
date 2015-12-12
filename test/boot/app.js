@@ -20,13 +20,12 @@ describe('app.js tests', function () {
     // start app
     app.start('basic', true, 3030);
     // check env
-    if(ap.get('env') !== 'dev'){
+    if(ap.get('env') !== 'development'){
       assert.fail(ap.get('env'), 'development', 'Expected app env to be dev - it was not');
     }
     done();
   });
   it('should check that app.js console.logs on startup', function (done) {
-    process.env.NODE_ENV='dev';
     var o = '\nBoss\nv1.0.0 build 766\n\nALPHA:Checking out files need fixing, does in fact check out files correctly. Will fix in alpha version\n';
     var oa = 'boss database Sorry, you will need to start your own MongoDB\nrollback: Not backing up as dev env\nboss startup Running on port 8080\n';
     var ob = 'boss startup The date and time is: Mon Nov 30 2015 19:47:37 GMT+0000 (GMT Standard Time)\nboss startup undefined\nboss recovery Created Rollback DIR for today\nNew socket created.\n';
