@@ -35,7 +35,7 @@
   padding-bottom: 5px;
   color: white;
   ul {
-    height: 80px;
+    height: 100%;
     width: 230px;
     li {
       list-style-type: none;
@@ -43,7 +43,7 @@
       height: 50px;
       width: 230px;
       margin-left: -40px !important;
-      margin-top: -15px !important;
+      margin-top: -10px !important;
       .active-bar {
         width: 5px;
         height: 100%;

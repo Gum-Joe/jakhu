@@ -1,0 +1,102 @@
+@import url(fonts.css);
+.welcome {
+  padding-left: 15px;
+  width: 230px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #34495e;
+  color: white;
+}
+.welcome #wimg {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  position: absolute;
+  margin-top: 10px;
+}
+.welcome .wtext {
+  margin-left: 60px;
+}
+.welcome .wtext h5 {
+  font-family: 'Open Sans', sans-serif;
+}
+.welcome .wtext h4 {
+  font-family: 'Open Sans', sans-serif;
+  margin-top: -3px;
+}
+
+.sidebar {
+  background-color: #34495e;
+  width: 230px;
+  height: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+.sidebar ul {
+  height: 100%;
+  width: 230px;
+}
+.sidebar ul li {
+  list-style-type: none;
+  font-family: 'Open Sans', sans-serif;
+  height: 50px;
+  width: 230px;
+  margin-left: -40px !important;
+  margin-top: -10px !important;
+}
+.sidebar ul li .active-bar {
+  width: 5px;
+  height: 100%;
+  background-color: #2ecc71;
+  float: left;
+  margin-bottom: -15px;
+}
+.sidebar ul li h5 {
+  text-align: center;
+  padding-top: 15px;
+  word-spacing: 5px;
+}
+.sidebar ul li h5 .li-gap {
+  height: 0;
+  width: 5px;
+}
+.sidebar ul li:hover {
+  background-color: #2c3e50;
+}
+.sidebar ul .active {
+  background-color: #2c3e50;
+}
+
+.bforboss {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 100px;
+  background-color: #ecf0f1;
+  border-style: solid;
+  border-width: 2px;
+  border-color: white;
+  margin-left: 95px;
+  margin-top: -15px;
+}
+.bforboss h5 {
+  text-align: center;
+  margin-top: 5px;
+  color: white;
+  font-family: FiraSans-Book;
+}
+
+#wellb {
+  background-color: #2ecc71;
+}
+
+#notb {
+  background-color: #e74c3c;
+}
+
+#wellup {
+  background-color: #e67e22;
+}
+
+/*# sourceMappingURL=dashboard.css.map */
