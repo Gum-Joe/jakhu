@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAUA,SAAU,CALR,UAAU,CAAE,mCAAsC,CAClD,UAAU,CAAE,8BAAiC,CAC7C,UAAU,CAAE,gCAAmC,CAC/C,UAAU,CAAE,2BAA8B",
-"sources": ["../boot.theme.scss"],
-"names": [],
-"file": "boot.theme.min.css"
-}

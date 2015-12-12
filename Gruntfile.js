@@ -115,45 +115,13 @@ module.exports = function(grunt) {
         },
         files: {                         // Dictionary of files
           'views/css/dashboard.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/sass/dashboard.css': 'views/css/dashboard.scss',
           'views/css/theme.css': 'views/css/theme.scss',       // 'destination': 'source'
-          'views/css/sass/theme.css': 'views/css/theme.scss',
           'views/css/boot.theme.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
-          'views/css/sass/boot.theme.css': 'views/css/boot.theme.scss',
           'views/css/var.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/sass/var.css': 'views/css/var.scss',
           'views/css/oobe.css': 'views/css/oobe.scss',       // 'destination': 'source'
-          'views/css/sass/oobe.css': 'views/css/oobe.scss',
           'views/css/float.css': 'views/css/float.scss',
-          'views/css/sass/float.css': 'views/css/float.scss'
         }
       },
-      min: {                            // Target
-        options: {                       // Target options
-          style: 'compressed'
-        },
-        files: {                         // Dictionary of files
-          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/sass/dashboard.min.css': 'views/css/dashboard.scss',
-          'views/css/sass/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
-          'views/css/sass/theme.min.css': 'views/css/theme.scss',
-          'views/css/sass/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
-          'views/css/sass/boot.theme.min.css': 'views/css/boot.theme.scss',
-          'views/css/sass/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/sass/var.min.css': 'views/css/var.scss',
-          'views/css/sass/float.css': 'views/css/float.scss',
-          //min in dir
-          'views/css/sass/min/dashboard.min.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/sass/min/dashboard.min.css': 'views/css/dashboard.scss',
-          'views/css/sass/min/theme.min.css': 'views/css/theme.scss',       // 'destination': 'source'
-          'views/css/sass/min/theme.min.css': 'views/css/theme.scss',
-          'views/css/sass/min/boot.theme.min.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
-          'views/css/sass/min/boot.theme.min.css': 'views/css/boot.theme.scss',
-          'views/css/sass/min/var.min.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/sass/min/var.min.css': 'views/css/var.scss',
-          'views/css/sass/min/float.min.css': 'views/css/float.scss'
-        }
-      }
     },
     exec: {
       bundle: 'bundle install',
@@ -206,8 +174,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test:server', 'mochaTest:server');
 
   grunt.registerTask('compile:sass:scss', 'sass:dist');
-  grunt.registerTask('compile:sass:min', 'sass:min');
-  grunt.registerTask('compile:sass', ['sass:dist', 'sass:min']);
+  grunt.registerTask('compile:sass', ['sass:dist']);
   grunt.registerTask('compile:watch', 'watch:scripts');
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');

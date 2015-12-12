@@ -11,17 +11,18 @@
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/css/dashboard.css" media="screen" title="no title" charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek' rel='stylesheet' type='text/css'>
   </head>
   <body class="co">
     <div class="welcome">
       <img src="<%=imgprofile%>" alt="" id="wimg"/>
       <div class="wtext">
-        <h4>Welcome Back,</h3>
-        <h3>ADMIN</h2>
+        <h5>Welcome Back,</h5>
+        <h4>Admin</h4>
       </div>
     </div>
-    <% if(well === true){ %>
+    <!--<% if(well === true){ %>
       <div class="bforboss" id="wellb" data-toggle="tooltip" data-placement="right" title="All is well!">
         <h5>
           <span class="glyphicon glyphicon-ok"></span>
@@ -43,9 +44,11 @@
           </h5>
         </div>
       </a>
-    <% }; %>
+    <% }; %>-->
     <div class="sidebar">
-
+      <ul>
+        <li class="active"><div class="active-bar"></div><h5><span class="glyphicon glyphicon-dashboard"></span> Dashboard</h5></li>
+      </ul>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
