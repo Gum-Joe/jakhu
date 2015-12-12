@@ -29,18 +29,19 @@
   background-color: #34495e;
   width: 230px;
   height: 100%;
-  padding-top: 5px;
   color: white;
 }
 .sidebar ul {
   height: 100%;
   width: 230px;
+  margin-bottom: 0 !important;
 }
 .sidebar ul li {
   list-style-type: none;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  height: 50px;
+  height: 52px;
+  margin-bottom: 0 !important;
   width: 230px;
   margin-left: -40px !important;
   margin-top: -10px !important;
