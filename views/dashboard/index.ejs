@@ -22,6 +22,8 @@
           <li><a href="news.asp">News</a></li>
           <li><a href="contact.asp">Contact</a></li>
           <li><a href="about.asp">About</a></li>
+        </ul>
+        <ul class="nb-left">
           <li class="seli">
             <a class="se">
               <form action="/dashboard" method="get">
@@ -32,16 +34,19 @@
           </li>
         </ul>
       </div>
-    </div>
-    <!-- Sidebar -->
-    <div class="welcome">
-      <img src="<%=imgprofile%>" alt="" id="wimg"/>
-      <div class="wtext">
-        <h5>Welcome Back,</h5>
-        <h4>Admin</h4>
+      <div class="project-head">
+        <h1><%=sname%></h1>
       </div>
     </div>
     <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="welcome">
+        <img src="<%=imgprofile%>" alt="" id="wimg"/>
+        <div class="wtext">
+          <h5>Welcome Back,</h5>
+          <h4>Admin</h4>
+        </div>
+      </div>
       <ul>
         <a href="/dashboard"><li class="active"><div class="active-bar"></div><h5><span class="glyphicon glyphicon-dashboard"></span> Dashboard</h5></li></a>
         <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-th"></span> Apps</h5></li></a>
@@ -52,7 +57,7 @@
         <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-chevron-right">__</span> Terminal</h5></li></a>
         <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-refresh"></span> Updates</h5></li></a>
         <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-cog"></span> Settings</h5></li></a>
-        <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-log-out"></span> Sign Out</h5></li></a>
+        <a href="/signout"><li class="sidebar-li"><h5><span class="glyphicon glyphicon-log-out"></span> Sign Out</h5></li></a>
         <a><li class="sidebar-li"><h5><span class="glyphicon glyphicon-off"></span> Power</h5></li></a>
       </ul>
     </div>

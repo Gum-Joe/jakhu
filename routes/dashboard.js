@@ -21,7 +21,8 @@ router.get('/', function(req, res) {
       config: config.getdata(),
       showcase: '/css/img/showcase.jpg',
       time: de-fd,
-      well: true
+      well: true,
+      sname: config.getdata().name
     });
   });
 });

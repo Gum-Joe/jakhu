@@ -19,7 +19,7 @@ port: 8080
 # can only be be one word
 # and up to 20 charecters
 # no /\*!&^%$£""(){}[];:~# charectres
-name: sample-server
+name: Server-1
 
 # Intialize config & reconfigure on every startup
 # possible valuses: true, false
