@@ -33,7 +33,7 @@
   position: fixed;
   background-color: #34495e;
   width: 230px;
-  height: 100%;
+  height: auto;
   color: white;
   ul {
     height: 100%;
@@ -181,10 +181,26 @@ $nb-nav-height : 50px;
   position: absolute;
   width: $wid;
   margin-top: 48px;
-  //background-color: #ecf0f1;
-  background-color: #16a085;
+  background-color: #2ecc71;
   color: white;
   font-family: 'Open Sans', sans-serif;
   padding-left: 50px;
   padding-top: 8px;
+  h1 {
+    position: absolute;
+  }
+  ul {
+    float: right;
+    list-style-type: none;
+    margin-top: 23px;
+    li {
+      a {
+        button {
+          font-family: 'Open Sans', sans-serif !important;
+          color: white !important;
+          background: none !important;
+        }
+      }
+    }
+  }
 }

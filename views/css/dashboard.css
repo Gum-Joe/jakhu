@@ -32,7 +32,7 @@ $nav2 : #000080;*/
   position: fixed;
   background-color: #34495e;
   width: 230px;
-  height: 100%;
+  height: auto;
   color: white;
 }
 .sidebar ul {
@@ -187,11 +187,24 @@ $nav2 : #000080;*/
   position: absolute;
   width: 83.15%;
   margin-top: 48px;
-  background-color: #16a085;
+  background-color: #2ecc71;
   color: white;
   font-family: 'Open Sans', sans-serif;
   padding-left: 50px;
   padding-top: 8px;
+}
+.project-head h1 {
+  position: absolute;
+}
+.project-head ul {
+  float: right;
+  list-style-type: none;
+  margin-top: 23px;
+}
+.project-head ul li a button {
+  font-family: 'Open Sans', sans-serif !important;
+  color: white !important;
+  background: none !important;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

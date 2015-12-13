@@ -17,11 +17,13 @@ var app = express();
 router.get('/', function(req, res) {
   // TODO: Insert boot checks
   console.log("");
-      exec("git rev-list HEAD --count", function (error, stdout) {
-        res.render('boot.ejs', {
-          build: stdout
-        });
-      });
+  res.redirect('/dashboard/?user=Admin')
+      /* exec("git rev-list HEAD --count", function (error, stdout) {
+      *   res.render('boot.ejs', {
+      *     build: stdout
+      *   });
+      * });
+      */
   });
 
   router.get('/signin', function(req, res) {
