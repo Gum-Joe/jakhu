@@ -1,20 +1,27 @@
 .PHONY: clean build test
 # SRC for sass files
-SSRC=./views/css
+SSRC := ./views/css
 # Libs directory
-LIB=./libs
+LIB := ./libs
 # bin
-BIN=./bin
+BIN ?= ./bin
+# env
+ENV ?=dev
+# packages
+PACKAGE_JSON ?= package.json
 # Web env
-BOSS_SSRC=./views/css
-BOSS_LIB=./libs
-BOSS_BIN=./bin
-BOSS_ENV=dev
+BOSS_SSRC := $(SSRC)
+BOSS_LIB ?= $(LIB)
+BOSS_BIN ?= $(BIN)
+BOSS_ENV ?= $(ENV)
 # Spec
 COVERALLS_SERVICE_NAME=Makefile
 # Node env
-NODE_ENV=develpment
-@export NODE_ENV=development;
+NODE_ENV=$(ENV)
+# INSTALLES
+NPM ?= npm
+NPM_INSTALL ?= install
+NPM_SCRIPT ?= start
 # Check if nodejs is in PATH
 ifeq (, $(shell which node))
  $(error "Nodejs not found! Please check you have ran 'nvm use ...', or install node >4.0.0")
@@ -29,16 +36,7 @@ ifeq (, $(shell which mocha))
 endif
 # Compilers
 ifndef BOSS_CXX
-ifeq (, $(shell which g++-4.8))
-ifeq (, $(shell which g++-4.9))
-$(error "A g++ compiler >4.8 was not found! Install it using "(sudo) apt-get install g++-4.8"")
-else
-CXX=g++-4.9
-endif
-
-else
-CXX=g++-4.8
-endif
+CXX=g++
 endif
 # Ruby installed?
 ifeq (, $(shell which gem))
@@ -58,13 +56,15 @@ clean:
 	rm -rf build;
 
 build:
-	echo 'Build here'
+	@echo Building boss.js
+	echo "NPM(install) node_modules"
+	$(NPM) $(NPM_INSTALL); \
+	echo "BUNDLE(install) node_modules"
+	$(BUNDLE) $(BUNDLE_INSTALL)
+	echo "CXX(compile) "$(SRC)
 
 test:
 	echo 'test here'
 
 
-travis:
-	clean; \
-	build; \
-	test;
+travis: clean build test

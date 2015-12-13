@@ -6,6 +6,7 @@ var configh = require('boss-config');
 var config = configh.getdata('./tmp/config.yml');
 var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
 var api = require('../../build/Release/write');
+var stat = require('../../build/Release/stat').stat;
 var generate = function generate(x) {
   // body...
   // Create key
@@ -19,15 +20,18 @@ var generate = function generate(x) {
   if(fs.existsSync("etc/certs/"+config.name+"-private.pem") !== true){
     fs.openSync("etc/certs/"+config.name+"-private.pem", 'w');
     fs.appendFileSync("etc/certs/"+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'), 'utf8');
-    api.write(home+'.boss/certs/'+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'))
   };
   if(fs.existsSync("etc/certs/"+config.name+"-public.pem") !== true){
     mkdirp('etc/certs');
     fs.openSync("etc/certs/"+config.name+"-public.pem", 'w');
     fs.appendFileSync("etc/certs/"+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'), 'utf8');
-    // write to file
-    api.write(home+'.boss/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))
   };
+  if(stat(home+'.boss/certs/'+config.name+"-public.pem") === false){
+    api.write(home+'.boss/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))
+  }
+  if(stat(home+'.boss/certs/'+config.name+"-public.pem") === false){
+    api.write(home+'.boss/certs/'+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'))
+  }
 }
 
 module.exports = {generate: generate};
