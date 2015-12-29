@@ -1,5 +1,6 @@
 # here is the heroku makefile
 .PHONY: test build usr etc coverage bin
+include sass.mk
 run:
 	echo Installing bower modules; \
 	echo Installing bower; \

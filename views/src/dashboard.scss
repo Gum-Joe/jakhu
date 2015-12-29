@@ -1,9 +1,8 @@
 // New dash
-@import "fonts.css";
 @import "mixins.scss";
 .welcome {
-  padding-left: 15px;
-  width: 230px;
+  padding-left: 6.52%;
+  width: 17%;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #34495e;
@@ -32,22 +31,22 @@
 .sidebar {
   position: fixed;
   background-color: #34495e;
-  width: 230px;
+  width: 17%;
   height: auto;
   color: white;
   ul {
     height: 100%;
-    width: 230px;
+    width: 100%;
     margin-bottom: 0 !important;
     position: relative;
+    padding: 0 !important;
     li {
       list-style-type: none;
       color: white;
       font-family: 'Open Sans', sans-serif;
       height: 52px;
       margin-bottom: 0 !important;
-      width: 230px;
-      margin-left: -40px !important;
+      width: 100%;
       margin-top: -10px !important;
       .active-bar {
         width: 5px;
@@ -67,10 +66,15 @@
         }
       }
     }
+    .ctive {
+      background-color: #2c3e50;
+    }
+    /* mouse over link */
     li:hover {
       background-color: #2c3e50;
     }
-    .active {
+    /* selected link */
+    li:active {
       background-color: #2c3e50;
     }
     a {
@@ -109,9 +113,9 @@
   background-color: #e67e22;
 }
 .page {
-  margin-left: 230px;
+  margin-left: 17%;
 }
-$wid : 83.15%;
+$wid : 83%;
 $nb-nav-height : 50px;
 .navbar-nb {
   position: absolute;

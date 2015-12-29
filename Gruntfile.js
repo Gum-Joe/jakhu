@@ -114,12 +114,12 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {                         // Dictionary of files
-          'views/css/dashboard.css': 'views/css/dashboard.scss',       // 'destination': 'source'
-          'views/css/theme.css': 'views/css/theme.scss',       // 'destination': 'source'
-          'views/css/boot.theme.css': 'views/css/boot.theme.scss',       // 'destination': 'source'
-          'views/css/var.css': 'views/css/var.scss',       // 'destination': 'source'
-          'views/css/oobe.css': 'views/css/oobe.scss',       // 'destination': 'source'
-          'views/css/float.css': 'views/css/float.scss',
+          'views/css/dashboard.css': 'views/src/dashboard.scss',       // 'destination': 'source'
+          'views/css/theme.css': 'views/src/theme.scss',       // 'destination': 'source'
+          'views/css/boot.theme.css': 'views/src/boot.theme.scss',       // 'destination': 'source'
+          'views/css/var.css': 'views/src/var.scss',       // 'destination': 'source'
+          'views/css/oobe.css': 'views/src/oobe.scss',       // 'destination': 'source'
+          'views/css/float.css': 'views/src/float.scss',
         }
       },
     },
@@ -136,7 +136,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['views/css/*.scss', 'Gruntfile.js'],
+        files: ['views/src/*.scss', 'Gruntfile.js'],
         tasks: ['compile:sass'],
         options: {
           interrupt: true,
