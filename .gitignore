@@ -54,10 +54,10 @@ libs/apps/*.opensdf
 recovery/rollback
 
 # pptx
-# File created by Web-OS
+# File created by Jakhu
 tmp
 tmp/*
-web-os-testing/*
+Jakhu-testing/*
 
 # Sass cache
 .sass-cache/*

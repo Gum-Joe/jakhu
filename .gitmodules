@@ -1,12 +1,12 @@
 [submodule "libs/app"]
 	path = libs/app
-	url = https://github.com/Gum-Joe/boss-apps
+	url = https://github.com/Gum-Joe/jakhu-apps
 [submodule "libs/switchboard"]
 	path = libs/switchboard
-	url = https://github.com/Gum-Joe/boss-switchboard
+	url = https://github.com/Gum-Joe/jakhu-switchboard
 [submodule "Web-OS-registry-module"]
 	path = libs/registry
 	url = https://github.com/Gum-Joe/Web-OS-registry
 [submodule "usr/lib/cookbooks"]
 	path = usr/lib/cookbooks
-	url = https://github.com/Gum-Joe/boss-cookbooks
+	url = https://github.com/Gum-Joe/jakhu-cookbooks

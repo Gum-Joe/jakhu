@@ -1,4 +1,4 @@
-// The web-os Boot script
+// The Jakhu Boot script
 var execSync = require('child_process').execSync;
 execSync('node ./usr/bin/check.config.js');
 

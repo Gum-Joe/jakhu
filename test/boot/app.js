@@ -26,9 +26,9 @@ describe('app.js tests', function () {
     done();
   });
   it('should check that app.js console.logs on startup', function (done) {
-    var o = '\nBoss\nv1.0.0 build 766\n\nALPHA:Checking out files need fixing, does in fact check out files correctly. Will fix in alpha version\n';
-    var oa = 'boss database Sorry, you will need to start your own MongoDB\nrollback: Not backing up as dev env\nboss startup Running on port 8080\n';
-    var ob = 'boss startup The date and time is: Mon Nov 30 2015 19:47:37 GMT+0000 (GMT Standard Time)\nboss startup undefined\nboss recovery Created Rollback DIR for today\nNew socket created.\n';
+    var o = '\nJakhu\nv1.0.0 build 766\n\nALPHA:Checking out files need fixing, does in fact check out files correctly. Will fix in alpha version\n';
+    var oa = 'jakhu database Sorry, you will need to start your own MongoDB\nrollback: Not backing up as dev env\njakhu startup Running on port 8080\n';
+    var ob = 'jakhu startup The date and time is: Mon Nov 30 2015 19:47:37 GMT+0000 (GMT Standard Time)\njakhu startup undefined\njakhu recovery Created Rollback DIR for today\nNew socket created.\n';
     var oc = "\nconnection error: { [MongoError: connect ECONNREFUSED 127.0.0.1:27017]\n  name: 'MongoError',\n  message: 'connect ECONNREFUSED 127.0.0.1:27017' }\n";
     var out = exec.exec('node usr/test/test.js', function (error, stdout, stderr) {
       console.log(stdout);

@@ -1,10 +1,10 @@
-// Gets the config for web-os
+// Gets the config for Jakhu
 var YAML = require('yamljs');
 var fs = require('fs');
 var assert = require('assert');
 var checks = require('./checks/instances.js');
 var delayed = require('delayed');
-var config = require('boss-config');
+var config = require('jakhu-config');
 var mkdirp = require('mkdirp');
 // parse YAML string
 module.exports = {

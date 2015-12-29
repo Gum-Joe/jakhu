@@ -17,7 +17,7 @@ using v8::Value;
 void Mkdir(const FunctionCallbackInfo<Value>& args) {
   Isolate* isolate = args.GetIsolate();
   char *env = getenv("HOME");
-  const char *dir = "/.boss";
+  const char *dir = "/.jakhu";
   const char *home = strcat(env, dir);
   mkdir(home, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
   args.GetReturnValue().Set(String::NewFromUtf8(isolate, "Done."));

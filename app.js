@@ -33,7 +33,7 @@ var routes = require('./routes/index');
 var api = require('./routes/api/api');
 var users = require('./routes/users');
 
-var debug = require('debug')('Web-OS:server');
+var debug = require('debug')('Jakhu:server');
 var http = require('http');
 var https = require('https');
 
@@ -84,9 +84,9 @@ if(y === true || x === 'basic' || x === 'ci'){
   server.listen(port);
 } else {
   server.listen(port, function () {
-    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-    console.log(clicolour.cyanBright("boss ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
+    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
     //kernal.boot("ok");
     kernal.startinput("ok");
   });

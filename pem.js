@@ -1,6 +1,6 @@
 var NodeRSA = require('node-rsa');
 var fs = require('fs');
-var configh = require('web-os-config');
+var configh = require('Jakhu-config');
 // Create key
 var key = new NodeRSA({b: 2048});
 // export
