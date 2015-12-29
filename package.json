@@ -5,8 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha test/**/*.js",
-    "start": "nodemon bin/web",
-    "docker-start": "git pull && node bin/start",
+    "start": "nodemon bin/jakhu",
+    "docker-start": "git pull && node bin/jakhu",
     "coveralls": "istanbul cover test.js",
     "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "grunt": "grunt ci",
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/Gum-Joe/jakhu.git"
   },
   "bin": {
-    "web": "bin/start"
+    "jak": "bin/jakhu"
   },
   "keywords": [
     "Jakhu",
