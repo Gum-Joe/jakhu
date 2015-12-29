@@ -1,5 +1,25 @@
 /*$nav : #9999FF;
 $nav2 : #000080;*/
+.hamburger1 {
+  height: 100%;
+}
+.hamburger1 .ra {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5px;
+}
+.hamburger1 .r1 {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
 .welcome {
   padding-left: 6.52%;
   width: 17%;
@@ -28,7 +48,7 @@ $nav2 : #000080;*/
 }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   background-color: #34495e;
   width: 17%;
   height: auto;
@@ -40,6 +60,11 @@ $nav2 : #000080;*/
   margin-bottom: 0 !important;
   position: relative;
   padding: 0 !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
   /* mouse over link */
   /* selected link */
 }
@@ -60,7 +85,7 @@ $nav2 : #000080;*/
   margin-bottom: -15px;
 }
 .sidebar ul li h5 {
-  text-align: center;
+  text-align: left;
   padding-top: 17px;
   word-spacing: 5px;
 }
@@ -114,6 +139,14 @@ $nav2 : #000080;*/
 
 .page {
   margin-left: 17%;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
 }
 
 .navbar-nb {
@@ -209,6 +242,10 @@ $nav2 : #000080;*/
   font-family: 'Open Sans', sans-serif !important;
   color: white !important;
   background: none !important;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

@@ -14,31 +14,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek' rel='stylesheet' type='text/css'>
   </head>
   <body class="co">
-    <div class="page">
-      <div class="navbar-nb">
-        <ul>
-          <li class="brand"><a href="#">Jump To:</a></li>
-          <li><a href="#stats">Stats</a></li>
-          <li><a href="news.asp">News</a></li>
-          <li><a href="contact.asp">Contact</a></li>
-          <li><a href="about.asp">About</a></li>
-          <li class="seli">
-            <a class="se">
-              <form action="/dashboard" method="get">
-                <input class="search" type="text" placeholder="Search..." required name="search">
-                <input class="button" type="submit" value="Search">
-              </form>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="project-head">
-        <h1><%=sname%></h1>
-        <ul>
-          <li><a href="#new-web-app"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New web-app</button></a></li>
-        </ul>
-      </div>
-    </div>
     <div class="sidebar">
       <!-- Sidebar -->
       <div class="welcome">
@@ -61,6 +36,36 @@
         <a id="sidebara" href="/signout"><li class="sidebar-li"><h5><span class="glyphicon glyphicon-log-out"></span> Sign Out</h5></li></a>
         <a id="sidebara"><li class="sidebar-li"><h5><span class="glyphicon glyphicon-off"></span> Power</h5></li></a>
       </ul>
+    </div>
+    <div class="page">
+      <div class="navbar-nb">
+        <ul>
+          <li class="hamburger1"><a>
+            <div class="ra"></div>
+            <div class="r1"></div>
+            <div class="r1"></div></a>
+          </li>
+          <li class="brand"><a href="#">Jump To:</a></li>
+          <li><a href="#stats">Stats</a></li>
+          <li><a href="news.asp">News</a></li>
+          <li><a href="contact.asp">Contact</a></li>
+          <li><a href="about.asp">About</a></li>
+          <li class="seli">
+            <a class="se">
+              <form action="/dashboard" method="get">
+                <input class="search" type="text" placeholder="Search..." required name="search">
+                <input class="button" type="submit" value="Search">
+              </form>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="project-head">
+        <h1><%=sname%></h1>
+        <ul>
+          <li><a href="#new-web-app"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New web-app</button></a></li>
+        </ul>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

@@ -1,5 +1,6 @@
 // New dash
 @import "mixins.scss";
+@import "hamburger";
 .welcome {
   padding-left: 6.52%;
   width: 17%;
@@ -29,7 +30,7 @@
 }
 
 .sidebar {
-  position: fixed;
+  position: absolute;
   background-color: #34495e;
   width: 17%;
   height: auto;
@@ -40,6 +41,11 @@
     margin-bottom: 0 !important;
     position: relative;
     padding: 0 !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
     li {
       list-style-type: none;
       color: white;
@@ -57,7 +63,7 @@
         //margin-left: -55px !important;
       }
       h5 {
-        text-align: center;
+        text-align: left;
         padding-top: 17px;
         word-spacing: 5px;
         .li-gap {
@@ -114,6 +120,14 @@
 }
 .page {
   margin-left: 17%;
+  min-width: 100%;
+  min-height: 100%;
+  background-color: white;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
 }
 $wid : 83%;
 $nb-nav-height : 50px;
@@ -207,4 +221,8 @@ $nb-nav-height : 50px;
       }
     }
   }
+}
+
+body {
+  overflow-x: hidden;
 }
