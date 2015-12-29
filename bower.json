@@ -1,17 +1,17 @@
 {
-  "name": "boss",
+  "name": "jakhu",
   "version": "1.0.0",
-  "homepage": "https://github.com/Gum-Joe/Web-OS",
+  "homepage": "https://github.com/Gum-Joe/Jakhu",
   "authors": [
     "Gum-Joe"
   ],
-  "description": "A web-OS",
+  "description": "A Jakhu",
   "main": "app.js",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "web-Os",
+    "Jakhu",
     "OS",
     "Connections",
     "Login"

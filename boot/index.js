@@ -8,7 +8,7 @@ var clicolour = require('cli-color');
 
 exports.stop = function stop(x) {
   if(x !== 'test'){
-    console.log(clicolour.redBright("Stopping the Boss server..."));
+    console.log(clicolour.redBright("Stopping the Jakhu server..."));
   }
   // Remove tmp and exit
   // TODO: Change exit to whereever last step is.
@@ -16,7 +16,7 @@ exports.stop = function stop(x) {
 
 exports.monstop = function monstop(x) {
   if(x !== 'test'){
-    console.log(clicolour.redBright("Stopping the Boss server..."));
+    console.log(clicolour.redBright("Stopping the Jakhu server..."));
   }
   // Remove tmp and exit
   // TODO: Change exit to whereever last step is.

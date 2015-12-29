@@ -4,9 +4,9 @@ var os = require('os');
 var com = require('commander');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-// This is the Web-OS install script
+// This is the Jakhu install script
 
-console.log("Web-OS install script");
+console.log("Jakhu install script");
 console.log("                     ");
 console.log("May exit with an nodejs error if no os is defined");
 console.log("                     ");
@@ -56,7 +56,7 @@ fs.readdir("./", function(err, files){
   if(files[0] !== '.git' && files[0] !== ".gitattributes" && files[0] !== "app.js"){
     console.log(files);
     space();
-    console.log("Please make sure this is ran in the root dir of Web-OS");
+    console.log("Please make sure this is ran in the root dir of Jakhu");
     space();
     console.log("Exiting with exit code 2");
     process.exit(2);
@@ -71,7 +71,7 @@ function install(osa) {
     if(osa === "OSX"){
       console.log("Sorry, Local install is not avalible on OSX");
       console.log("However, you can add it by contributing to the install script scripts/install");
-      console.log("On https://github.com/Gum-Joe/Web-OS");
+      console.log("On https://github.com/Gum-Joe/Jakhu");
       console.log("          ");
       console.log("Exiting with exit code 1");
       process.exit(1);

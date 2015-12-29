@@ -1,4 +1,4 @@
-@import url(web-os.css);
+@import url(Jakhu.css);
 @import url(boot.css);
 @import url(fonts.css);
 /*$nav : #9999FF;
@@ -9,7 +9,7 @@ $nav2 : #000080;*/
   padding-left: 4.5cm;
 }
 
-.web-os-back, html, body {
+.Jakhu-back, html, body {
   /*For after-install:
   background-image: url("img/nav-back-two.png");
   */
@@ -24,7 +24,7 @@ $nav2 : #000080;*/
   /* Standard syntax */
 }
 
-.web-os-oobe-back {
+.Jakhu-oobe-back {
   background-image: url("img/nav-back-two.png");
 }
 

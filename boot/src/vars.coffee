@@ -1,4 +1,4 @@
-# Sets vars for BOSS-OS
+# Sets vars for JAKHU-OS
 fs = require('fs');
 cli = require('cli-color');
 
@@ -18,16 +18,16 @@ vars = () ->
   # She bang
   @shebang = "#!/usr/bin/bash\necho Setting enviroment varibles...\n"
   fs.appendFileSync(file, @shebang);
-  @home = 'export BOSS_HOME="'+process.env.PWD+'"\n';
+  @home = 'export JAKHU_HOME="'+process.env.PWD+'"\n';
   fs.appendFileSync(file, @home);
-  @whome = expor('BOSS_USER_HOME')+shome+'/.boss'+end
+  @whome = expor('JAKHU_USER_HOME')+shome+'/.jakhu'+end
   fs.appendFileSync(file, @whome);
-  @usr = expor('BOSS_USR_DIR')+pwd+'/usr'+end
+  @usr = expor('JAKHU_USR_DIR')+pwd+'/usr'+end
   fs.appendFileSync(file, @usr);
-  @etc = expor('BOSS_ETC_DIR')+pwd+'/etc'+end
+  @etc = expor('JAKHU_ETC_DIR')+pwd+'/etc'+end
   fs.appendFileSync(file, @etc);
-  @in = expor('BOSS_INSTANCES_DIR')+pwd+'/etc'+end
+  @in = expor('JAKHU_INSTANCES_DIR')+pwd+'/etc'+end
   fs.appendFileSync(file, @in);
-  @in = expor('BOSS_PROVIDER')+'vagrant'+end
+  @in = expor('JAKHU_PROVIDER')+'vagrant'+end
   fs.appendFileSync(file, @in);
 vars();

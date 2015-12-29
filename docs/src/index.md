@@ -1,1 +1,1 @@
-# Welcome to the Boss docs.
+# Welcome to the Jakhu docs.

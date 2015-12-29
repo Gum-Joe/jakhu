@@ -11,7 +11,7 @@
       if (err) {
         return errors.bsod.throwError("SETUP_CREATE_DIR_INSTANCES", err, err.code);
       } else {
-        return console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("setup ") + "Create Instances Dir");
+        return console.log(clicolour.cyanBright("Jakhu ") + clicolour.yellowBright("setup ") + "Create Instances Dir");
       }
     });
   };

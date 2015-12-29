@@ -26,7 +26,7 @@ if(typeof ser !== 'undefined'){
   if (ser === 'server') {
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       console.log("");
-      console.log("Boss");
+      console.log("Jakhu");
       console.log("v1.0.0 build "+ stdout);
       kernal.startboot("ok");
     });
@@ -34,7 +34,7 @@ if(typeof ser !== 'undefined'){
   if (ser === 'vagrant') {
     exec("git rev-list HEAD --count", function (error, stdout, stderr) {
       console.log("");
-      console.log("Boss");
+      console.log("Jakhu");
       console.log("v1.0.0 build "+ stdout);
     });
     var va = spawn('vagrant', ['up'])
@@ -48,7 +48,7 @@ if(typeof ser !== 'undefined'){
 }
 
 /* process.on( 'SIGINT', function() {
-  console.log( "\n[info] Stopping Web-OS..." );
+  console.log( "\n[info] Stopping Jakhu..." );
   // wish this worked on Windows
   process.exit(0)
 });

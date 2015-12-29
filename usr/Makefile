@@ -10,10 +10,10 @@ ENV ?=dev
 # packages
 PACKAGE_JSON ?= package.json
 # Web env
-BOSS_SSRC := $(SSRC)
-BOSS_LIB ?= $(LIB)
-BOSS_BIN ?= $(BIN)
-BOSS_ENV ?= $(ENV)
+JAKHU_SSRC := $(SSRC)
+JAKHU_LIB ?= $(LIB)
+JAKHU_BIN ?= $(BIN)
+JAKHU_ENV ?= $(ENV)
 # Spec
 COVERALLS_SERVICE_NAME=Makefile
 # Node env
@@ -35,7 +35,7 @@ ifeq (, $(shell which mocha))
  $(error "mocha not found! Please check you have ran 'nvm use ...', or install mocha")
 endif
 # Compilers
-ifndef BOSS_CXX
+ifndef JAKHU_CXX
 CXX=g++
 endif
 # Ruby installed?
@@ -56,7 +56,7 @@ clean:
 	rm -rf build;
 
 build:
-	@echo Building boss.js
+	@echo Building jakhu
 	echo "NPM(install) node_modules"
 	$(NPM) $(NPM_INSTALL); \
 	echo "BUNDLE(install) node_modules"

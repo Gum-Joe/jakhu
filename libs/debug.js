@@ -1,5 +1,5 @@
 var app = require('../app');
-var debug = require('debug')('Web-OS:server');
+var debug = require('debug')('Jakhu:server');
 var http = require('http');
 
 app.on('error', onError);

@@ -16,13 +16,13 @@ com
 // TODO: Create boot types (safemode, full, recovery)
 exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("");
-  console.log("Boss");
+  console.log("Jakhu");
   console.log("v1.0.0 build "+ stdout);
   kernal.startboot("ok");
 });
 
 /* process.on( 'SIGINT', function() {
-  console.log( "\n[info] Stopping Web-OS..." );
+  console.log( "\n[info] Stopping Jakhu..." );
   // wish this worked on Windows
   process.exit(0)
 });

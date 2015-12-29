@@ -1,1 +1,1 @@
-docker build --no-cache -t gumjoe/web-os ./
+docker build --no-cache -t gumjoe/Jakhu ./

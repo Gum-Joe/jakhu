@@ -2,9 +2,9 @@
 
 # Patches dir
 mkdir patches
-mkdir patches/web-os
-# Create web-os patches
-echo 'Generating patches for web-os'
+mkdir patches/Jakhu
+# Create Jakhu patches
+echo 'Generating patches for Jakhu'
 echo
 COM=`git rev-list HEAD --count`
-git format-patch -$COM -o ../patches/web-os
+git format-patch -$COM -o ../patches/Jakhu

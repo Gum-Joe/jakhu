@@ -11,7 +11,7 @@ var Server = require('mongodb').Server;*/
 
 exports.start = function start(x) {
   if(x !== 'test'){
-    console.log(clicolour.cyanBright("boss ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
+    console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own MongoDB");
   } else {
     return 'Sorry, you will need to start your own MongoDB';
   };
@@ -59,7 +59,7 @@ exports.start = function start(x) {
               console.log("Downloading MongoDB...");
             }, 2000000);
           } else {
-            console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own DB as their as so many distributions of Linux ");
+            console.log(clicolour.cyanBright("Jakhu ") + clicolour.magentaBright("database ") + "Sorry, you will need to start your own DB as their as so many distributions of Linux ");
           };
         } else {
           var terminal = require('child_process').spawn('bash', ['docker run mongo']);
@@ -102,14 +102,14 @@ exports.start = function start(x) {
             var m = require('child_process').spawn('bash', ['./scripts/mongo.sh']);
 
             m.on('exit', function (code) {
-                console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Database started with "+code);
+                console.log(clicolour.cyanBright("Jakhu ") + clicolour.magentaBright("database ") + "Database started with "+code);
             });
 
             setTimeout(function() {
               console.log("Starting MongoDB...");
             }, 2000000);
           } else {
-            console.log(clicolour.cyanBright("webOS ") + clicolour.magentaBright("database ") + "Sorry, but MongoDB is not stored locally as it was not downloaded");
+            console.log(clicolour.cyanBright("Jakhu ") + clicolour.magentaBright("database ") + "Sorry, but MongoDB is not stored locally as it was not downloaded");
           };
         } else {
           var terminal = require('child_process').spawn('bash', ['docker run mongo']);

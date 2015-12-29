@@ -1,4 +1,4 @@
-@import "web-os.css";
+@import "Jakhu.css";
 @import "boot.css";
 @import "fonts.css";
 @import "mixins";
@@ -8,7 +8,7 @@
   padding-left: 4.5cm;
 }
 
-.web-os-back, html, body{
+.Jakhu-back, html, body{
   /*For after-install:
   background-image: url("img/nav-back-two.png");
   */
@@ -16,7 +16,7 @@
   @include grad;
 }
 
-.web-os-oobe-back{
+.Jakhu-oobe-back{
   background-image: url("img/nav-back-two.png");
 }
 

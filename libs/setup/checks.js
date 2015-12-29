@@ -17,7 +17,7 @@
       } else if (err.code === 'ENOENT') {
         return instances.instancescreateInstancesDir("ok");
       } else {
-        return clicolour.yellowBright("Boss ran into a problem,", "To protect your data, we have shut down Web-OS", "                             ", "This error code may help:", "SETUP_DIR_INSTANCES_OTHER_" + err.code, "              ", "Here's the full error:", +err.code + err);
+        return clicolour.yellowBright("Jakhu ran into a problem,", "To protect your data, we have shut down Jakhu", "                             ", "This error code may help:", "SETUP_DIR_INSTANCES_OTHER_" + err.code, "              ", "Here's the full error:", +err.code + err);
       }
     });
   };

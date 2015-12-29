@@ -2,7 +2,7 @@
 var NodeRSA = require('node-rsa');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
-var configh = require('boss-config');
+var configh = require('jakhu-config');
 var config = configh.getdata('./tmp/config.yml');
 var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
 var api = require('../../build/Release/write');
@@ -26,11 +26,11 @@ var generate = function generate(x) {
     fs.openSync("etc/certs/"+config.name+"-public.pem", 'w');
     fs.appendFileSync("etc/certs/"+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'), 'utf8');
   };
-  if(stat(home+'.boss/certs/'+config.name+"-public.pem") === false){
-    api.write(home+'.boss/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))
+  if(stat(home+'.jakhu/certs/'+config.name+"-public.pem") === false){
+    api.write(home+'.jakhu/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))
   }
-  if(stat(home+'.boss/certs/'+config.name+"-public.pem") === false){
-    api.write(home+'.boss/certs/'+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'))
+  if(stat(home+'.jakhu/certs/'+config.name+"-public.pem") === false){
+    api.write(home+'.jakhu/certs/'+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'))
   }
 }
 
