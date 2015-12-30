@@ -4,9 +4,10 @@ var kernal = require('../boot/boot.js');
 //var git = require('nodegit');
 var exec = require('child_process').exec;
 var com = require('commander');
+var pack = require('../package.json');
 
 com
-  .version('1.0.0')
+  .version(pack.version)
   .option('-l, --local', 'Runs the server on your system instead of in a docker container')
   .option('-v, --version', 'Outputs the version number')
   .option('-d, --docker', 'Runs server in docker')
@@ -17,7 +18,7 @@ com
 exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("");
   console.log("Jakhu");
-  console.log("v1.0.0 build "+ stdout);
+  console.log(pack.version+" build "+ stdout);
   kernal.startboot("ok");
 });
 

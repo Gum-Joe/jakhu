@@ -93,6 +93,15 @@
                     scrollTop: $("#info").offset().top}, 800);
                 $('nav').removeClass('navbar-fixed-top');
             });
+            $(".hamburger1").click(function (){
+                //$(".page").css("margin-left", "204.9px");
+                // 61.47px
+                if($(".page").css("margin-left") !== "204.9px"){
+                  $(".page").animate({marginLeft: '204.9px'});
+                } else {
+                  $(".page").animate({marginLeft: '61.47px'});
+                }
+            });
             $('[data-toggle="tooltip"]').tooltip();
             $(".sidebar-li").click(function () {
               $(this).css('background-color', "#2c3e50");

@@ -3,7 +3,7 @@
 @import "hamburger";
 .welcome {
   padding-left: 6.52%;
-  width: 17%;
+  width: 15%;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #34495e;
@@ -28,11 +28,11 @@
     }
   }
 }
-
+$sbp : 13%;
 .sidebar {
   position: absolute;
   background-color: #34495e;
-  width: 17%;
+  width: 204.9px;
   height: auto;
   color: white;
   ul {
@@ -47,10 +47,11 @@
     left: 0;
     z-index: 0;
     li {
+      padding-left: $sbp;
       list-style-type: none;
       color: white;
       font-family: 'Open Sans', sans-serif;
-      height: 52px;
+      height: 50.6px;
       margin-bottom: 0 !important;
       width: 100%;
       margin-top: -10px !important;
@@ -60,12 +61,14 @@
         background-color: #2ecc71;
         float: left;
         margin-bottom: -15px;
-        //margin-left: -55px !important;
+      }
+      .active-bar::after {
+        margin-left: 10px;
       }
       h5 {
         text-align: left;
         padding-top: 17px;
-        word-spacing: 5px;
+        word-spacing: 19px;
         .li-gap {
           height: 0;
           width: 5px;
@@ -74,6 +77,10 @@
     }
     .ctive {
       background-color: #2c3e50;
+      padding-left: 0 !important;
+      h5 {
+        margin-left: $sbp;
+      }
     }
     /* mouse over link */
     li:hover {
@@ -119,22 +126,24 @@
   background-color: #e67e22;
 }
 .page {
-  margin-left: 17%;
+  // Set this property on click of hamburger
+  margin-left: 61.47px;
+  // END PROPERTY
   min-width: 100%;
   min-height: 100%;
   background-color: white;
   position: relative;
   top: 0;
-  bottom: 100%;
   left: 0;
   z-index: 1;
+  height: 100%;
 }
-$wid : 83%;
+$wid : 95.5%;
 $nb-nav-height : 50px;
 .navbar-nb {
   position: absolute;
   height: $nb-nav-height;
-  width: $wid;
+  width: 100%;
   ul {
     list-style-type: none;
     margin: 0;

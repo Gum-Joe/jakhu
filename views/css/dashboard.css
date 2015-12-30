@@ -22,7 +22,7 @@ $nav2 : #000080;*/
 
 .welcome {
   padding-left: 6.52%;
-  width: 17%;
+  width: 15%;
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #34495e;
@@ -50,7 +50,7 @@ $nav2 : #000080;*/
 .sidebar {
   position: absolute;
   background-color: #34495e;
-  width: 17%;
+  width: 204.9px;
   height: auto;
   color: white;
 }
@@ -69,10 +69,11 @@ $nav2 : #000080;*/
   /* selected link */
 }
 .sidebar ul li {
+  padding-left: 13%;
   list-style-type: none;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  height: 52px;
+  height: 50.6px;
   margin-bottom: 0 !important;
   width: 100%;
   margin-top: -10px !important;
@@ -84,10 +85,13 @@ $nav2 : #000080;*/
   float: left;
   margin-bottom: -15px;
 }
+.sidebar ul li .active-bar::after {
+  margin-left: 10px;
+}
 .sidebar ul li h5 {
   text-align: left;
   padding-top: 17px;
-  word-spacing: 5px;
+  word-spacing: 19px;
 }
 .sidebar ul li h5 .li-gap {
   height: 0;
@@ -95,6 +99,10 @@ $nav2 : #000080;*/
 }
 .sidebar ul .ctive {
   background-color: #2c3e50;
+  padding-left: 0 !important;
+}
+.sidebar ul .ctive h5 {
+  margin-left: 13%;
 }
 .sidebar ul li:hover {
   background-color: #2c3e50;
@@ -138,21 +146,21 @@ $nav2 : #000080;*/
 }
 
 .page {
-  margin-left: 17%;
+  margin-left: 61.47px;
   min-width: 100%;
   min-height: 100%;
   background-color: white;
   position: relative;
   top: 0;
-  bottom: 100%;
   left: 0;
   z-index: 1;
+  height: 100%;
 }
 
 .navbar-nb {
   position: absolute;
   height: 50px;
-  width: 83%;
+  width: 100%;
   /* Change the link color to #111 (black) on hover */
 }
 .navbar-nb ul {
@@ -222,7 +230,7 @@ $nav2 : #000080;*/
 .project-head {
   height: 100px;
   position: absolute;
-  width: 83%;
+  width: 95.5%;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
