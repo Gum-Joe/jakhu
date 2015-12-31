@@ -2,7 +2,7 @@
 @import "mixins.scss";
 @import "hamburger";
 .welcome {
-  padding-left: 6.52%;
+  padding-left: 5%;
   width: 15%;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -220,12 +220,22 @@ $nb-nav-height : 50px;
     float: right;
     list-style-type: none;
     margin-top: 23px;
+    // set to 15% on click of hamburger
+    // def: 5%
+    padding-right: 5%;
     li {
+      float:left;
+      margin-left: 10px;
       a {
         button {
           font-family: 'Open Sans', sans-serif !important;
           color: white !important;
-          background: none !important;
+          background: #3498db !important;
+          border-radius: 10px !important;
+          border-color: white !important;
+        }
+        button:hover {
+          background: #2980b9 !important;
         }
       }
     }
@@ -234,4 +244,20 @@ $nb-nav-height : 50px;
 
 body {
   overflow-x: hidden;
+}
+
+#delwa {
+  background: #e74c3c !important;
+}
+
+#delwa:hover {
+  background: #c0392b !important;
+}
+
+#syncwa {
+  background: #e67e22 !important;
+}
+
+#syncwa:hover {
+  background: #d35400 !important;
 }

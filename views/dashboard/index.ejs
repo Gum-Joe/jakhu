@@ -62,9 +62,28 @@
       </div>
       <div class="project-head">
         <h1><%=sname%></h1>
-        <ul>
-          <li><a href="#new-web-app"><button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New web-app</button></a></li>
-        </ul>
+        <div class="info">
+                  
+        </div>
+        <div class="">
+          <ul id="projectheader">
+            <li>
+              <a href="#new-web-app">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New web-app</button>
+              </a>
+            </li>
+            <li>
+              <a href="#delete-web-apps">
+                <button type="button" class="btn btn-default" id="delwa"><span class="glyphicon glyphicon-remove"></span> Delete web-apps</button>
+              </a>
+            </li>
+            <li>
+              <a href="#sync-web-apps">
+                <button type="button" class="btn btn-default" id="syncwa"><span class="glyphicon glyphicon-refresh"></span> Sync web-apps</button>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -98,8 +117,10 @@
                 // 61.47px
                 if($(".page").css("margin-left") !== "204.9px"){
                   $(".page").animate({marginLeft: '204.9px'});
+                  $("#projectheader").animate({paddingRight: '15%'});
                 } else {
                   $(".page").animate({marginLeft: '61.47px'});
+                  $("#projectheader").animate({paddingRight: '5%'});
                 }
             });
             $('[data-toggle="tooltip"]').tooltip();
