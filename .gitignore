@@ -4,6 +4,7 @@ logs
 
 # etc
 etc/*.txt
+etc/*.yml
 
 # Runtime data
 pids
