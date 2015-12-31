@@ -1,6 +1,6 @@
 {
   "name": "jakhu",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Be the jakhu of all web-apps, with simple tools",
   "main": "app.js",
   "scripts": {
