@@ -241,25 +241,37 @@ $nav2 : #000080;*/
 .project-head h1 {
   position: absolute;
 }
-.project-head ul {
+.project-head .buttonsph {
   float: right;
   list-style-type: none;
   margin-top: 23px;
   padding-right: 5%;
 }
-.project-head ul li {
+.project-head .buttonsph li {
   float: left;
   margin-left: 10px;
 }
-.project-head ul li a button {
+.project-head .buttonsph li a button {
   font-family: 'Open Sans', sans-serif !important;
   color: white !important;
   background: #3498db !important;
   border-radius: 10px !important;
   border-color: white !important;
 }
-.project-head ul li a button:hover {
+.project-head .buttonsph li a button:hover {
   background: #2980b9 !important;
+}
+.project-head .info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  width: 267.2px;
+  margin-left: 172.68px;
+  height: 100%;
+  margin-top: -8px;
+  padding-left: 5px;
 }
 
 body {
