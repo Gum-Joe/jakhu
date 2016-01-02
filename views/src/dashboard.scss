@@ -297,7 +297,14 @@ body {
         tbody {
           .successrun {
             td {
-              background-color: #25a75c;
+              background-color: #26A65B;
+              border-color: #ecf0f1;
+              color: white;
+            }
+          }
+          .unsuccessrun {
+            td {
+              background-color: #e74c3c;
               border-color: #ecf0f1;
               color: white;
             }

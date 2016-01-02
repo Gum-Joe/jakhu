@@ -323,7 +323,12 @@ body {
   border-radius: 10px;
 }
 .restofpage .container-fluid .runnings table tbody .successrun td {
-  background-color: #25a75c;
+  background-color: #26A65B;
+  border-color: #ecf0f1;
+  color: white;
+}
+.restofpage .container-fluid .runnings table tbody .unsuccessrun td {
+  background-color: #e74c3c;
   border-color: #ecf0f1;
   color: white;
 }
