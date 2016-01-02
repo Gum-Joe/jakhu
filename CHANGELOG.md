@@ -1,6 +1,6 @@
 ## Change Log
 This file specifies changes per release and when roadmap targets are complete. Change log targets are referenced by issue number
-## 02.01.16 - Change Log target TODO :construction:
+## 02.01.16 - Change Log target  <a href="https://github.com/Gum-Joe/jakhu/issues/11">#11</a> :construction:
 Started adding dashboard pages.
 <h5>Working on:</h5>
 * Dashboard main page
