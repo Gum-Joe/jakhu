@@ -1,0 +1,32 @@
+/*$nav : #9999FF;
+$nav2 : #000080;*/
+.hamburger1 {
+  height: 100%;
+}
+.hamburger1 .ra {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.5px;
+}
+.hamburger1 .r1 {
+  width: 30px;
+  height: 2px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+
+/*$nav : #9999FF;
+$nav2 : #000080;*/
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+body h1, body h2, body h3, body h4, body h5, body h6, body p, body div {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*# sourceMappingURL=dashboard-main.css.map */

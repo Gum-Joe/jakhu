@@ -161,7 +161,7 @@ $nav2 : #000080;*/
 .navbar-nb {
   position: absolute;
   height: 50px;
-  width: 95.5%;
+  width: 87.2%;
   /* Change the link color to #111 (black) on hover */
 }
 .navbar-nb ul {
@@ -231,25 +231,24 @@ $nav2 : #000080;*/
 .project-head {
   height: 100px;
   position: absolute;
-  width: 95.5%;
+  width: 87.2%;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
   font-family: 'Open Sans', sans-serif;
-  padding-left: 50px;
   padding-top: 8px;
 }
 .project-head h1 {
   position: absolute;
+  margin-left: 17%;
 }
 .project-head .buttonsph {
-  float: right;
   list-style-type: none;
-  margin-top: 23px;
+  margin-top: 75px;
   padding-right: 5%;
+  margin-right: 30%;
 }
 .project-head .buttonsph li {
-  float: left;
   margin-left: 10px;
 }
 .project-head .buttonsph li a button {
@@ -262,6 +261,9 @@ $nav2 : #000080;*/
 .project-head .buttonsph li a button:hover {
   background: #2980b9 !important;
 }
+.project-head .info {
+  margin-left: 150px;
+}
 .project-head .info ul {
   list-style-type: none;
   margin: 0;
@@ -269,7 +271,6 @@ $nav2 : #000080;*/
   overflow: hidden;
   position: absolute;
   width: 267.2px;
-  margin-left: 172.68px;
   height: 100%;
   margin-top: -2.4px;
   padding-left: 5px;
@@ -295,12 +296,4 @@ body {
   background: #d35400 !important;
 }
 
-.restofpage {
-  width: 95.5%;
-  background-color: #ecf0f1;
-  height: 495px;
-  position: absolute;
-  margin-top: 148px;
-}
-
-/*# sourceMappingURL=dashboard.css.map */
+/*# sourceMappingURL=dashboard-mobile.css.map */

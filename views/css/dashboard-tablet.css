@@ -161,7 +161,7 @@ $nav2 : #000080;*/
 .navbar-nb {
   position: absolute;
   height: 50px;
-  width: 95.5%;
+  width: 93.7%;
   /* Change the link color to #111 (black) on hover */
 }
 .navbar-nb ul {
@@ -231,7 +231,7 @@ $nav2 : #000080;*/
 .project-head {
   height: 100px;
   position: absolute;
-  width: 95.5%;
+  width: 93.7%;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
@@ -275,10 +275,6 @@ $nav2 : #000080;*/
   padding-left: 5px;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 #delwa {
   background: #e74c3c !important;
 }
@@ -295,12 +291,4 @@ body {
   background: #d35400 !important;
 }
 
-.restofpage {
-  width: 95.5%;
-  background-color: #ecf0f1;
-  height: 495px;
-  position: absolute;
-  margin-top: 148px;
-}
-
-/*# sourceMappingURL=dashboard.css.map */
+/*# sourceMappingURL=dashboard-tablet.css.map */

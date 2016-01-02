@@ -1,7 +1,6 @@
 // New dash
 @import "mixins.scss";
 @import "hamburger";
-
 .welcome {
   padding-left: 5%;
   width: 15%;
@@ -140,12 +139,12 @@ $sbp : 13%;
   height: 100%;
   width: 85%
 }
-$widdesktop : 95.5%;
+$widtablet : 93.7%;
 $nb-nav-height : 50px;
 .navbar-nb {
   position: absolute;
   height: $nb-nav-height;
-  width: $widdesktop;
+  width: $widtablet;
   ul {
     list-style-type: none;
     margin: 0;
@@ -208,7 +207,7 @@ $nb-nav-height : 50px;
 .project-head {
   height: 100px;
   position: absolute;
-  width: $widdesktop;
+  width: $widtablet;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
@@ -243,6 +242,7 @@ $nb-nav-height : 50px;
     }
   }
   .info {
+    //margin-left: 150px;
     ul {
       list-style-type: none;
       margin: 0;
@@ -260,7 +260,7 @@ $nb-nav-height : 50px;
 }
 
 body {
-  overflow-x: hidden;
+  //overflow-x: hidden;
 }
 
 #delwa {
@@ -277,13 +277,4 @@ body {
 
 #syncwa:hover {
   background: #d35400 !important;
-}
-
-.restofpage {
-  // #ecf0f1
-  width: $widdesktop;
-  background-color: #ecf0f1;
-  height: 495px;
-  position: absolute;
-  margin-top: 148px;
 }

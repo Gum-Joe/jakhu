@@ -10,7 +10,10 @@
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css.map" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
-    <link rel="stylesheet" href="/css/dashboard.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard.css" media="screen and (min-width: 993px)" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard-tablet.css" media="screen and (max-width: 993px)" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard-mobile.css" media="screen and (max-width: 656px)" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard-main.css" media="screen" title="no title" charset="utf-8">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek' rel='stylesheet' type='text/css'>
   </head>
   <body class="co">
@@ -45,11 +48,12 @@
             <div class="r1"></div>
             <div class="r1"></div></a>
           </li>
-          <li class="brand"><a href="#">Jump To:</a></li>
-          <li><a href="#stats">Stats</a></li>
-          <li><a href="news.asp">News</a></li>
-          <li><a href="contact.asp">Contact</a></li>
-          <li><a href="about.asp">About</a></li>
+          <li id="jumptonomobile" class="brand"><a href="#">Jump To:</a></li>
+          <li id="jumptonomobile2"><a href="#stats">Stats</a></li>
+          <li id="jumptonomobile3"><a href="news.asp">News</a></li>
+          <li id="jumptonomobile4"><a href="contact.asp">Contact</a></li>
+          <li id="jumptonomobile5"><a href="about.asp">About</a></li>
+          <li id="jumptonomobile6"><a href="help.asp">Help</a></li>
           <li class="seli">
             <a class="se">
               <form action="/dashboard" method="get">
@@ -62,17 +66,18 @@
       </div>
       <div class="project-head">
         <h1><%=sname%></h1>
-        <div class="info">
+        <div class="info" media="screen and (min-width: 463px)" id="info12">
           <ul>
-            <li><h5 id="wruntime">Been running for: <%=time%> mins</h5></li>
-            <li><h5 id="wruntime">Got <%=time%> mins</h5></li>
+            <li><h5 id="wruntime">Been running for <%=time%> mins</h5></li>
+            <li><h5 id="req">Got <%=time%> requests today</h5></li>
+            <li><h5 id="appsrun">x web-apps are running</h5></li>
           </ul>
         </div>
         <div class="">
           <ul id="projectheader" class="buttonsph">
             <li>
               <a href="#new-web-app">
-                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> New web-app</button>
+                <button type="button" class="btn btn-default" id="nwa"><span class="glyphicon glyphicon-plus"></span> New web-app</button>
               </a>
             </li>
             <li>
@@ -88,6 +93,11 @@
           </ul>
         </div>
       </div>
+      <div class="restofpage">
+        <div class="">
+
+        </div>
+      </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -97,46 +107,6 @@
     <script src="/js/hamburger.js"></script>
     <script src="/notie/notie.js" type="text/javascript"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function () {
-        //notie.alert(1, 'Success!', 1.5);
-        $('.carousel').carousel();
-      });
-      var socket = io.connect();
-      socket.on('request', function(req){
-        document.getElementById("req").innerHTML = req+" requests today";
-      });
-      socket.on('runtime', function(req){
-        document.getElementById("wruntime").innerHTML = "Been running for "+req+' mins';
-      });
-      $(document).ready(function (){
-            $(".ase").click(function (){
-                $('html, body').animate({
-                    scrollTop: $("#info").offset().top}, 800);
-                $('nav').removeClass('navbar-fixed-top');
-            });
-            $(".hamburger1").click(function (){
-                //$(".page").css("margin-left", "204.9px");
-                // 61.47px
-                if($(".page").css("margin-left") !== "204.9px"){
-                  $(".page").animate({marginLeft: '204.9px'});
-                  $("#projectheader").animate({paddingRight: '15%'});
-                } else {
-                  $(".page").animate({marginLeft: '61.47px'});
-                  $("#projectheader").animate({paddingRight: '5%'});
-                }
-            });
-            $('[data-toggle="tooltip"]').tooltip();
-            $(".sidebar-li").click(function () {
-              $(this).css('background-color', "#2c3e50");
-            })
-            $(".sidebara").mouseover(function () {
-              $(this).css('background-color', "#2c3e50");
-            })
-            $(".sidebara").mouseout(function () {
-              $(this).css('background-color', "#34495e");
-            })
-        });
-    </script>
+    <script src="/js/dashboard.js" type="text/javascript"></script>
   </body>
 </html>

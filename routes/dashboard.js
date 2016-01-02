@@ -4,6 +4,7 @@ var exec = require('child_process').exec;
 var delayed = require('delayed');
 var config = require('../boot/libs/configure.js');
 var fs = require('fs');
+var YAML = require('yamljs');
 
 /* GET dashborad home. */
 router.get('/', function(req, res) {
@@ -12,6 +13,7 @@ router.get('/', function(req, res) {
   var de = new Date().getHours().toString()+new Date().getMinutes().toString();
   console.log(de-fd);
   exec("git rev-list HEAD --count", function (error, stdout) {
+    var parsedreq = YAML.parse(fs.readFileSync('./etc/requests.yml','utf8'));
     res.render('dashboard/index.ejs', {
       user: req.param("user"),
       build: stdout,
@@ -22,7 +24,8 @@ router.get('/', function(req, res) {
       showcase: '/css/img/showcase.jpg',
       time: de-fd,
       well: true,
-      sname: config.getdata().name
+      sname: config.getdata().name,
+      requests: parsedreq.req
     });
   });
 });
