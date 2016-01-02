@@ -20,6 +20,18 @@ $nav2 : #000080;*/
   margin-top: 5px;
 }
 
+@font-face {
+  font-family: Open-Sans;
+  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
 .welcome {
   padding-left: 5%;
   width: 15%;
@@ -40,10 +52,10 @@ $nav2 : #000080;*/
   margin-left: 60px;
 }
 .welcome .wtext h5 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
 }
 .welcome .wtext h4 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
   margin-top: -3px;
 }
 
@@ -72,7 +84,7 @@ $nav2 : #000080;*/
   padding-left: 13%;
   list-style-type: none;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
   height: 50.6px;
   margin-bottom: 0 !important;
   width: 100%;
@@ -235,7 +247,7 @@ $nav2 : #000080;*/
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
   padding-top: 8px;
 }
 .project-head h1 {
@@ -252,7 +264,7 @@ $nav2 : #000080;*/
   margin-left: 10px;
 }
 .project-head .buttonsph li a button {
-  font-family: 'Open Sans', sans-serif !important;
+  font-family: Open-Sans !important;
   color: white !important;
   background: #3498db !important;
   border-radius: 10px !important;

@@ -23,10 +23,10 @@ $nav2 : #000080;*/
 /*$nav : #9999FF;
 $nav2 : #000080;*/
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
 }
 body h1, body h2, body h3, body h4, body h5, body h6, body p, body div {
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
 }
 
 /*# sourceMappingURL=dashboard-main.css.map */

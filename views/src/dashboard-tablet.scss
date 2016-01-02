@@ -1,6 +1,7 @@
 // New dash
 @import "mixins.scss";
 @import "hamburger";
+@import "fonts";
 .welcome {
   padding-left: 5%;
   width: 15%;
@@ -20,10 +21,10 @@
   .wtext {
     margin-left: 60px;
     h5 {
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
     }
     h4 {
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
       margin-top: -3px;
     }
   }
@@ -50,7 +51,7 @@ $sbp : 13%;
       padding-left: $sbp;
       list-style-type: none;
       color: white;
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
       height: 50.6px;
       margin-bottom: 0 !important;
       width: 100%;
@@ -211,7 +212,7 @@ $nb-nav-height : 50px;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
   padding-left: 50px;
   padding-top: 8px;
   h1 {
@@ -229,7 +230,7 @@ $nb-nav-height : 50px;
       margin-left: 10px;
       a {
         button {
-          font-family: 'Open Sans', sans-serif !important;
+          font-family: Open-Sans !important;;
           color: white !important;
           background: #3498db !important;
           border-radius: 10px !important;

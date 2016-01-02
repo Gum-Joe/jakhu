@@ -1,6 +1,7 @@
 // New dash
 @import "mixins.scss";
 @import "hamburger";
+@import "fonts";
 
 .welcome {
   padding-left: 5%;
@@ -21,10 +22,10 @@
   .wtext {
     margin-left: 60px;
     h5 {
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
     }
     h4 {
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
       margin-top: -3px;
     }
   }
@@ -51,7 +52,7 @@ $sbp : 13%;
       padding-left: $sbp;
       list-style-type: none;
       color: white;
-      font-family: 'Open Sans', sans-serif;
+      font-family: Open-Sans;
       height: 50.6px;
       margin-bottom: 0 !important;
       width: 100%;
@@ -212,7 +213,7 @@ $nb-nav-height : 50px;
   margin-top: 48px;
   background-color: #2ecc71;
   color: white;
-  font-family: 'Open Sans', sans-serif;
+  font-family: Open-Sans;
   padding-left: 50px;
   padding-top: 8px;
   h1 {
@@ -230,7 +231,7 @@ $nb-nav-height : 50px;
       margin-left: 10px;
       a {
         button {
-          font-family: 'Open Sans', sans-serif !important;
+          font-family: Open-Sans !important;;
           color: white !important;
           background: #3498db !important;
           border-radius: 10px !important;
@@ -286,4 +287,74 @@ body {
   height: 495px;
   position: absolute;
   margin-top: 148px;
+  .container-fluid {
+    margin-top: 10px;
+    .runnings {
+      table {
+        width: 400px;
+        text-align: center;
+        border-radius: 10px;
+        tbody {
+          .successrun {
+            td {
+              background-color: #25a75c;
+              border-color: #ecf0f1;
+              color: white;
+            }
+          }
+        }
+        thead {
+          text-align: inherit;
+          tr {
+            text-align: inherit;
+            th {
+              text-align: inherit;
+              background-color: #2980b9;
+              border-color: #ecf0f1;
+              color: #ecf0f1;
+            }
+            #state {
+              width: 10px;
+              border-top-left-radius: 10px;
+              -webkit-border-top-left-radius: 10px;
+              -moz-border-top-left-radius: 10px;
+            }
+            #run {
+              width: 50px;
+            }
+            #wa {
+              width: 150px;
+            }
+            #tub {
+              width: 50px;
+            }
+            #date {
+              border-top-right-radius: 10px;
+              -webkit-border-top-right-radius: 10px;
+              -moz-border-top-right-radius: 10px;
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+    .block-stats {
+      div {
+        //position: absolute;
+        margin-top: 10px;
+        border-style: solid;
+        border-radius: 5px;
+        table {
+          margin-top: 10px;
+          width: 10px;
+        }
+      }
+      .runtime {
+        width: 200px;
+        height: 100px;
+        background-color: #0275d8 !important;
+        border-color: #0275d8 !important;
+      }
+    }
+  }
 }
