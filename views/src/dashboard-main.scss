@@ -8,3 +8,66 @@ body {
     font-family: Open-Sans;
   }
 }
+.runnings {
+  table {
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    tbody {
+      .successrun {
+        td {
+          background-color: #26A65B;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+      .esuccessrun {
+        td {
+          background-color: #e88731;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+      .unsuccessrun {
+        td {
+          background-color: #e74c3c;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+    }
+    thead {
+      text-align: inherit;
+      tr {
+        text-align: inherit;
+        th {
+          text-align: inherit;
+          background-color: #2982bc;
+          border-color: #ecf0f1;
+          color: #ecf0f1;
+        }
+        #state {
+          width: 10px;
+          border-top-left-radius: 10px;
+          -webkit-border-top-left-radius: 10px;
+          -moz-border-top-left-radius: 10px;
+        }
+        #run {
+          width: 50px;
+        }
+        #wa {
+          width: 150px;
+        }
+        #tub {
+          width: 50px;
+        }
+        #date {
+          border-top-right-radius: 10px;
+          -webkit-border-top-right-radius: 10px;
+          -moz-border-top-right-radius: 10px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}

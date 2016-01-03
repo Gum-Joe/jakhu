@@ -29,4 +29,58 @@ body h1, body h2, body h3, body h4, body h5, body h6, body p, body div {
   font-family: Open-Sans;
 }
 
+.runnings table {
+  width: 400px;
+  text-align: center;
+  border-radius: 10px;
+}
+.runnings table tbody .successrun td {
+  background-color: #26A65B;
+  border-color: #ecf0f1;
+  color: white;
+}
+.runnings table tbody .esuccessrun td {
+  background-color: #e88731;
+  border-color: #ecf0f1;
+  color: white;
+}
+.runnings table tbody .unsuccessrun td {
+  background-color: #e74c3c;
+  border-color: #ecf0f1;
+  color: white;
+}
+.runnings table thead {
+  text-align: inherit;
+}
+.runnings table thead tr {
+  text-align: inherit;
+}
+.runnings table thead tr th {
+  text-align: inherit;
+  background-color: #2982bc;
+  border-color: #ecf0f1;
+  color: #ecf0f1;
+}
+.runnings table thead tr #state {
+  width: 10px;
+  border-top-left-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+}
+.runnings table thead tr #run {
+  width: 50px;
+}
+.runnings table thead tr #wa {
+  width: 150px;
+}
+.runnings table thead tr #tub {
+  width: 50px;
+}
+.runnings table thead tr #date {
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  width: 100px;
+}
+
 /*# sourceMappingURL=dashboard-main.css.map */
