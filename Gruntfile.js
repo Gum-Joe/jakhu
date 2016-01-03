@@ -138,7 +138,7 @@ module.exports = function(grunt) {
       start: 'echo Y && node bin/start'
     },
     watch: {
-      scripts: {
+      sass: {
         files: ['views/src/*.scss', 'Gruntfile.js'],
         tasks: ['compile:sass'],
         options: {
