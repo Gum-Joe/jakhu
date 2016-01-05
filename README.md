@@ -1,9 +1,24 @@
-# jakhu (Jakhu) [![Dep Status](https://travis-ci.org/Gum-Joe/jakhu.svg?branch=a1)](https://travis-ci.org/Gum-Joe/jakhu) [![Coverage Status](https://coveralls.io/repos/Gum-Joe/jakhu/badge.svg?branch=a1&service=github)](https://coveralls.io/github/Gum-Joe/jakhu?branch=a1) <a href="https://codeclimate.com/github/Gum-Joe/jakhu"><img src="https://codeclimate.com/github/Gum-Joe/jakhu/badges/gpa.svg" /></a> [![Dependency Status](https://david-dm.org/Gum-Joe/jakhu.svg)](https://david-dm.org/Gum-Joe/jakhu) [![devDependency Status](https://david-dm.org/Gum-Joe/jakhu/dev-status.svg)](https://david-dm.org/Gum-Joe/bos.jss#info=devDependencies)
+# jakhu [![Dep Status](https://travis-ci.org/Gum-Joe/jakhu.svg?branch=a1)](https://travis-ci.org/Gum-Joe/jakhu) [![Coverage Status](https://coveralls.io/repos/Gum-Joe/jakhu/badge.svg?branch=a1&service=github)](https://coveralls.io/github/Gum-Joe/jakhu?branch=a1) <a href="https://codeclimate.com/github/Gum-Joe/jakhu"><img src="https://codeclimate.com/github/Gum-Joe/jakhu/badges/gpa.svg" /></a> [![Dependency Status](https://david-dm.org/Gum-Joe/jakhu.svg)](https://david-dm.org/Gum-Joe/jakhu) [![devDependency Status](https://david-dm.org/Gum-Joe/jakhu/dev-status.svg)](https://david-dm.org/Gum-Joe/bos.jss#info=devDependencies)
 
 Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.
 
-# Start developing
-Simply clone or fork this branch (the a1 branch) and start developing.
+# Building
+## Unix (Debian, Ubuntu, CentOS) and Mac OSX
+Prerequisites:
+* gcc and g++ 4.8 or newer, or
+* clang and clang++ 3.4 or newer (for node-gyp)
+* Nodejs v4.0.0 or newer (v5.3.0 reccommended) & npm
+* Python
+* Ruby
+* Docker
+* Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)
+* Virtual box (for vagrant)
+* Mongodb (if you don't want to use docker or vagrant)
+
+<h5>Building:</h5>
+Install deps:
+`$ [sudo] npm install -g coffee-script grunt-cli `
+
 ## Setup:
  Make sure you have nodejs, npm and ruby installed.
   1. `git clone https://github.com/Gum-Joe/Jakhu.git`
