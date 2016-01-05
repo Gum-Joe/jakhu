@@ -1,16 +1,6 @@
 # jakhu (Jakhu) [![Dep Status](https://travis-ci.org/Gum-Joe/jakhu.svg?branch=a1)](https://travis-ci.org/Gum-Joe/jakhu) [![Coverage Status](https://coveralls.io/repos/Gum-Joe/jakhu/badge.svg?branch=a1&service=github)](https://coveralls.io/github/Gum-Joe/jakhu?branch=a1) <a href="https://codeclimate.com/github/Gum-Joe/jakhu"><img src="https://codeclimate.com/github/Gum-Joe/jakhu/badges/gpa.svg" /></a> [![Dependency Status](https://david-dm.org/Gum-Joe/jakhu.svg)](https://david-dm.org/Gum-Joe/jakhu) [![devDependency Status](https://david-dm.org/Gum-Joe/jakhu/dev-status.svg)](https://david-dm.org/Gum-Joe/bos.jss#info=devDependencies)
 
-# What is Jakhu?
-It is a simple, nodejs based, app for managing your web-app(s).
-# When do I use it?
-Say you have 2 web-apps/apps, on different/the same service providers, and want a easy to use way of natively managing the way it works, how it is doing (up time/down time) or want to deploy a new web-app.  This is where we come in. We can import the web-app and tell you about its up-time, down-time, warn you about attacks and check if it works (building, tests, linting .etc). In addition, we can help you deploy new web-apps.
-
-# Features:
-* Easy management for ports, scripts, web-app config, apps, login, databases, mobile apps and servers and more. You can do this all from the Jakhu in-app dashboard or the Jakhu online access portal (to be developed).
-
-* Easy recovery tools. These include rollback (for those little errors you Web-app has), reset (In case you need to wipe your Web-app's data (databases, file .etc), or remove the current config), web-terminal (For running commands) and refresh (In case you accidentally remove a important file, replace it without using rollback.)
-
-* Easy deployment. Simply select your hosting provider, provide an address and command to run and Jakhu will deploy your web-app if it runs successfully. In addition, add a Github Repo/Git repo/Service to host your open-source code (like we are doing, on GitHub)
+Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.
 
 # Start developing
 Simply clone or fork this branch (the a1 branch) and start developing.
