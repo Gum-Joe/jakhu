@@ -26,6 +26,7 @@ $ grunt sass:dist
 ```
 <h5>Getting started:</h5>
 ```
+$ export NODE_ENV=development
 $ ./bin/jakhu server
 ```
 
@@ -51,29 +52,12 @@ $ grunt sass:dist
 ```
 <h5>Getting started:</h5>
 ```
+$ export NODE_ENV=development
 $ ./bin/jakhu server
 ```
-
-## Setup:
- Make sure you have nodejs, npm and ruby installed.
-  1. `git clone https://github.com/Gum-Joe/Jakhu.git`
-  2. `npm install -g bower mocha less coffee-script nodemon nyc grunt`,
-  3. `npm install`,
-  4. `bower install`,
-  5. `gem install bundle`
-  6. `bundle install`
-  7. `grunt`
-  8. `export NODE_ENV="dev"` (or `set NODE_ENV="dev"` in windows - this is important or the whole thing will be backed up and you will end up with lots of files. See <a href="https://github.com/Gum-Joe/jakhu/issues/25"><b>#25</b></a>)
-  9. `bin/jakhu server`
-
-On Linux:
-`make fork && bin/jakhu server`
 
 To run in a Vagrant box (from host):
 `bin/jakhu vagrant`
 
-## Test:
-`make ci`
-
-# What is a1-dist?
-a1-dist is a branch in an distributable state and does not include any features, only oobe
+## Tests:
+`mocha test/**/*.js`
