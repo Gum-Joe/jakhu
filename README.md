@@ -4,6 +4,7 @@ Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a mode
 
 # Building
 ## Unix (Debian, Ubuntu, CentOS) and Mac OSX
+Simple install comeing soon!
 Prerequisites:
 * gcc and g++ 4.8 or newer, or
 * clang and clang++ 3.4 or newer (for node-gyp)
@@ -16,8 +17,42 @@ Prerequisites:
 * Mongodb (if you don't want to use docker or vagrant)
 
 <h5>Building:</h5>
-Install deps:
-`$ [sudo] npm install -g coffee-script grunt-cli `
+```
+$ [sudo] npm install -g coffee-script grunt-cli node-gyp
+$ [sudo] gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+```
+<h5>Getting started:</h5>
+```
+$ ./bin/jakhu server
+```
+
+## Windows
+Prerequisites:
+* Microsoft Visual Studio C++ 2013 
+* Nodejs v4.0.0 or newer (v5.3.0 reccommended) & npm
+* Python
+* Ruby
+* Docker with `docker-machine`
+* Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)
+* Virtual box (for vagrant & docker)
+* Mongodb (if you don't want to use docker or vagrant)
+* A bash enviroment (git-bash, mingw, cygwin, msys) with `git`
+
+<h5>Building:</h5>
+```
+$ [sudo] npm install -g coffee-script grunt-cli node-gyp
+$ [sudo] gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+```
+<h5>Getting started:</h5>
+```
+$ ./bin/jakhu server
+```
 
 ## Setup:
  Make sure you have nodejs, npm and ruby installed.
