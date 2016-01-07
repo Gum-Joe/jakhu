@@ -127,12 +127,37 @@
                   <td>default</td>
                   <td>01.02.03</td>
                 </tr>
-                <tr class="unsuccessrun">
-                  <td><span class="fa fa-remove"></span></td>
+                <tr class="unsuccessrun" id="lastrun">
+                  <td id="lastrun1"><span class="fa fa-remove"></span></td>
                   <td>sample/sample</td>
                   <td>#1</td>
                   <td>default</td>
-                  <td>01.02.03</td>
+                  <td id="lastrun2">01.02.03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+          <div class="apps">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th id="wa">Web-app</th>
+                  <th id="state">State</th>
+                  <th id="tub">Tubs</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="run successrunapp">
+                  <a href="sample/sample"><td>sample/sample</td></a>
+                  <td id="appstate">Running...</td>
+                  <td>1</td>
+                </tr>
+                <tr class="run errorrunapp" id="lastapp">
+                  <a href="sample/sample"><td id="lastapp1">sample/sample2</td></a>
+                  <td id="appstateerror">Error!</td>
+                  <td id="lastapp2">5</td>
                 </tr>
               </tbody>
             </table>

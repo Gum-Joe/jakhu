@@ -1,86 +1,64 @@
-/*$nav : #9999FF;
-$nav2 : #000080;*/
-.hamburger1 {
-  height: 100%;
-}
-.hamburger1 .ra {
-  width: 30px;
-  height: 2px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 1.5px;
-}
-.hamburger1 .r1 {
-  width: 30px;
-  height: 2px;
-  background-color: white;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-}
+/*
+Error: Invalid CSS after "...ckground-color:": expected expression (e.g. 1px, bold), was "}"
+        on line 120 of views/src/dashboard-main.scss
 
-/*$nav : #9999FF;
-$nav2 : #000080;*/
-body {
-  font-family: Open-Sans;
-}
-body h1, body h2, body h3, body h4, body h5, body h6, body p, body div {
-  font-family: Open-Sans;
-}
+115:           color: white;
+116:         }
+117:       }
+118:       .errorrunapp {
+119:         background-color:
+120:       }
+121:     }
+122:     thead {
+123:       text-align: inherit;
+124:       tr {
+125:         text-align: inherit;
 
-.runnings table {
-  width: 400px;
-  text-align: center;
-  border-radius: 10px;
-}
-.runnings table tbody .successrun td {
-  background-color: #26A65B;
-  border-color: #ecf0f1;
-  color: white;
-}
-.runnings table tbody .esuccessrun td {
-  background-color: #e88731;
-  border-color: #ecf0f1;
-  color: white;
-}
-.runnings table tbody .unsuccessrun td {
-  background-color: #e74c3c;
-  border-color: #ecf0f1;
-  color: white;
-}
-.runnings table thead {
-  text-align: inherit;
-}
-.runnings table thead tr {
-  text-align: inherit;
-}
-.runnings table thead tr th {
-  text-align: inherit;
-  background-color: #2982bc;
-  border-color: #ecf0f1;
-  color: #ecf0f1;
-}
-.runnings table thead tr #state {
-  width: 10px;
-  border-top-left-radius: 10px;
-  -webkit-border-top-left-radius: 10px;
-  -moz-border-top-left-radius: 10px;
-}
-.runnings table thead tr #run {
-  width: 50px;
-}
-.runnings table thead tr #wa {
-  width: 150px;
-}
-.runnings table thead tr #tub {
-  width: 50px;
-}
-.runnings table thead tr #date {
-  border-top-right-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -moz-border-top-right-radius: 10px;
-  width: 100px;
-}
-
-/*# sourceMappingURL=dashboard-main.css.map */
+Backtrace:
+views/src/dashboard-main.scss:120
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1162:in `expected'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/lexer.rb:221:in `expected!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/parser.rb:571:in `assert_expr'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/parser.rb:62:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1024:in `sass_script'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:877:in `value!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:750:in `block in try_declaration'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1138:in `call'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1138:in `rethrow'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:763:in `try_declaration'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:693:in `declaration_or_ruleset'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:658:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:647:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:639:in `block'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:658:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:639:in `block'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:658:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:639:in `block'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:708:in `declaration_or_ruleset'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:658:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:647:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:639:in `block'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:632:in `ruleset'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:657:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:117:in `stylesheet'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:42:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:403:in `_to_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+C:/Ruby21/bin/sass:23:in `load'
+C:/Ruby21/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"...ckground-color:\": expected expression (e.g. 1px, bold), was \"}\"\A         on line 120 of views/src/dashboard-main.scss\A \A 115:           color: white;\A 116:         }\A 117:       }\A 118:       .errorrunapp {\A 119:         background-color:\A 120:       }\A 121:     }\A 122:     thead {\A 123:       text-align: inherit;\A 124:       tr {\A 125:         text-align: inherit;"; }

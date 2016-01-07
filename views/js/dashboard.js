@@ -69,6 +69,9 @@ $(document).ready(function (){
   }
   // remove info if windows width is less than 463px
   // and make navbar only search bar
+  if($(window).width() < 650){
+    $("#info12").detach();
+  }
   if($(window).width() < 463){
     $("#info12").detach();
     $("#jumptonomobile").detach();

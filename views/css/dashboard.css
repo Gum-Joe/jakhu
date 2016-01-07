@@ -332,5 +332,11 @@ body {
   background-color: #0275d8 !important;
   border-color: #0275d8 !important;
 }
+.restofpage .container-fluid .runnings {
+  width: 400px;
+}
+.restofpage .container-fluid .apps {
+  width: 400px;
+}
 
 /*# sourceMappingURL=dashboard.css.map */

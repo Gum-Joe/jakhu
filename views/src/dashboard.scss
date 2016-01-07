@@ -288,7 +288,7 @@ body {
   position: absolute;
   margin-top: 148px;
   .container-fluid {
-    margin-top: 10px;
+    margin-top: $restofmargin;
     .block-stats {
       div {
         //position: absolute;
@@ -306,6 +306,12 @@ body {
         background-color: #0275d8 !important;
         border-color: #0275d8 !important;
       }
+    }
+    .runnings {
+      width: 400px;
+    }
+    .apps {
+      width: 400px;
     }
   }
 }

@@ -215,7 +215,7 @@ $nb-nav-height : 50px;
   color: white;
   font-family: Open-Sans;
   //padding-left: 50px;
-  padding-top: 8px;
+  padding-top: 0px;
   h1 {
     position: absolute;
     margin-left: 17%;
@@ -224,11 +224,14 @@ $nb-nav-height : 50px;
   .buttonsph {
     //float: right;
     list-style-type: none;
-    margin-top: 75px;
+    margin-top:60px;
+    margin-left: 16%;
+    width: 92.4%;
     // set to 15% on click of hamburger
     // def: 5%
-    padding-right: 5%;
-    margin-right: 30%;
+    //padding-right: 5%;
+    // margin-right: 30%;
+    position: relative;
     li {
       margin-left: 10px;
       a {
@@ -290,4 +293,89 @@ body {
   height: 495px;
   position: absolute;
   margin-top: 148px;
+}
+
+$tableruntimeradius : 10px;
+$restofmargin : 10px;
+.restofpage {
+  position: absolute;
+  .container-fluid {
+    margin-top: $restofmargin
+  }
+}
+.runnings {
+  table {
+    width: 350px;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 10px;
+    tbody {
+      #lastrun {
+        #lastrun1 {
+          border-bottom-left-radius: $tableruntimeradius;
+          -webkit-border-bottom-left-radius: $tableruntimeradius;
+          -moz-border-bottom-left-radius: $tableruntimeradius;
+        }
+        #lastrun2 {
+          border-bottom-right-radius: $tableruntimeradius;
+          -webkit-border-bottom-right-radius: $tableruntimeradius;
+          -moz-border-bottom-right-radius: $tableruntimeradius;
+        }
+      }
+      .successrun {
+        td {
+          background-color: #26A65B;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+      .esuccessrun {
+        td {
+          background-color: #e88731;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+      .unsuccessrun {
+        td {
+          background-color: #e74c3c;
+          border-color: #ecf0f1;
+          color: white;
+        }
+      }
+    }
+    thead {
+      text-align: inherit;
+      tr {
+        text-align: inherit;
+        th {
+          text-align: inherit;
+          background-color: #2c3e50;
+          border-color: #ecf0f1;
+          color: #ecf0f1;
+        }
+        #state {
+          width: 10px;
+          border-top-left-radius: $tableruntimeradius;
+          -webkit-border-top-left-radius: $tableruntimeradius;
+          -moz-border-top-left-radius: $tableruntimeradius;
+        }
+        #run {
+          width: 50px;
+        }
+        #wa {
+          width: 150px;
+        }
+        #tub {
+          width: 50px;
+        }
+        #date {
+          border-top-right-radius: $tableruntimeradius;
+          -webkit-border-top-right-radius: $tableruntimeradius;
+          -moz-border-top-right-radius: $tableruntimeradius;
+          width: 100px;
+        }
+      }
+    }
+  }
 }
