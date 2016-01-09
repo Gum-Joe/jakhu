@@ -289,29 +289,14 @@ body {
   margin-top: 148px;
   .container-fluid {
     margin-top: $restofmargin;
-    .block-stats {
-      div {
-        //position: absolute;
-        margin-top: 10px;
-        border-style: solid;
-        border-radius: 5px;
-        table {
-          margin-top: 10px;
-          width: 10px;
-        }
-      }
-      .runtime {
-        width: 200px;
-        height: 100px;
-        background-color: #0275d8 !important;
-        border-color: #0275d8 !important;
-      }
-    }
     .runnings {
       width: 400px;
+      position: absolute;
     }
     .apps {
       width: 400px;
+      margin-left: 405px;
+      position: absolute;
     }
   }
 }
