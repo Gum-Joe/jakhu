@@ -118,8 +118,10 @@ body h1, body h2, body h3, body h4, body h5, body h6, body p, body div {
   border-color: #ecf0f1;
   color: white;
 }
-.apps table tbody .errorrunapp {
-  background-color: #e74c3c;
+.apps table tbody .errorrunapp td {
+  background-color: #e74c3c !important;
+  border-color: #ecf0f1;
+  color: white;
 }
 .apps table thead {
   text-align: inherit;

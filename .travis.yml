@@ -5,7 +5,6 @@ node_js:
   - '4.2.1'
   - '4.2.0'
   - '4.1.2'
-  - '4.1.1'
   - '4.0.0'
 group: edge
 addons:
@@ -20,7 +19,10 @@ os:
 services:
   - mongodb
 env:
-  - CXX=g++-4.8
+  global:
+    - CXX=g++-4.8
+    - JAKHU_RUN_TYPE=local
+    - JAKHU_TEST=true
 install:
   - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
   - npm install
