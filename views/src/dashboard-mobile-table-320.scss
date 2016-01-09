@@ -1,0 +1,30 @@
+@import "dashboard-mobile-apple";
+
+.runnings, .apps {
+  width: 85% !important;
+  font-size: 10.5px !important;
+  table {
+    thead {
+      tr {
+        th {
+          font-size: 10.5px !important;
+          height: 10px !important;
+          //padding-top: 5px !important;
+          //padding-bottom: 5px !important;
+          padding: 5px !important;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-size: 10.5px !important;
+          height: 10px !important;
+          //padding-top: 5px !important;
+          //padding-bottom: 5px !important;
+          padding: 5px !important;
+        }
+      }
+    }
+  }
+}

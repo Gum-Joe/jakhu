@@ -166,13 +166,15 @@ $restofmargin : 10px;
   }
 }
 .apps {
-  width: 300px;
-  font-size: 10px !important;
+  table {
+    width: 95%;
+    font-size: 13px !important;
+  }
 }
 .runnings {
   table {
-    width: 300px;
-    font-size: 10px !important;
+    width: 95%;
+    font-size: 13px !important;
     text-align: center;
     border-radius: 10px;
     tbody {
