@@ -16,8 +16,6 @@ var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
 // awaiting solve
 // var bcrypt = require('bcrypt');
-var dockermac = process.env.DOCKER_HOST;
-var dockerip = dockermac.slice(6,dockermac.length-5);
 
 // connect
 exports.stadaradconnect = function (x, callback) {
@@ -38,6 +36,8 @@ MongoClient.connect(url, function(err, db) {
 };
 
 function startdbrun(argument) {
+	var dockermac = process.env.DOCKER_HOST;
+	var dockerip = dockermac.slice(6,dockermac.length-5);
 	// body...
 	exec('docker run --name jakhumongodb -p 27018:27017 -d mongo', (err, stdout, stderr) => {
   	if (err) {
@@ -52,6 +52,8 @@ function startdbrun(argument) {
 function startdb() {
 	// body...
 	// stop container
+	var dockermac = process.env.DOCKER_HOST;
+	var dockerip = dockermac.slice(6,dockermac.length-5);
 	if (process.env.JAKHU_RUN_TYPE == "docker" || process.env.JAKHU_RUN_TYPE == undefined) {
 		exec('docker stop jakhumongodb', (err, stdout, stderr) => {
 	  	if (err) {
