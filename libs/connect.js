@@ -37,7 +37,7 @@ MongoClient.connect(url, function(err, db) {
 
 function startdbrun(argument) {
 	var dockermac = process.env.DOCKER_HOST;
-	var dockerip = dockermac.slice(6,dockermac.length-5);
+	var dockerip = dockermac.slice(6,dockermac.length-5) || "0.0.0.0";
 	// body...
 	exec('docker run --name jakhumongodb -p 27018:27017 -d mongo', (err, stdout, stderr) => {
   	if (err) {
@@ -79,9 +79,9 @@ function startdb() {
 exports.connect = function (x, call) {
 	// Start db
 	// Check if started
-	var dockerhost = process.env.DOCKER_HOST;
-	var dockerip = dockerhost.slice(6,dockerhost.length-5) || "0.0.0.0";
-	if (process.env.JAKHU_TEST != "true" || process.env.JAKHU_RUN_TYPE === "docker") {
+	if (process.env.JAKHU_RUN_TYPE === "docker") {
+                var dockerhost = process.env.DOCKER_HOST;
+	        var dockerip = dockerhost.slice(6,dockerhost.length-5) || "0.0.0.0";
 		request("http://"+dockerip+":32771", function(error, response, body) {
 	  	if (error) {
 				// start db
