@@ -3,144 +3,6 @@
 @import "hamburger";
 @import "fonts";
 
-.welcome {
-  padding-left: 5%;
-  width: 15%;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #34495e;
-  color: white;
-  position: relative;
-  #wimg {
-    width: 40px;
-    height: 40px;
-    border-radius: 100px;
-    position: absolute;
-    margin-top: 10px;
-  }
-
-  .wtext {
-    margin-left: 60px;
-    h5 {
-      font-family: Open-Sans;
-    }
-    h4 {
-      font-family: Open-Sans;
-      margin-top: -3px;
-    }
-  }
-}
-$sbp : 13%;
-.sidebar {
-  position: absolute;
-  background-color: #34495e;
-  width: 204.9px;
-  height: auto;
-  color: white;
-  ul {
-    height: 100%;
-    width: 100%;
-    margin-bottom: 0 !important;
-    position: relative;
-    padding: 0 !important;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    li {
-      padding-left: $sbp;
-      list-style-type: none;
-      color: white;
-      font-family: Open-Sans;
-      height: 50.6px;
-      margin-bottom: 0 !important;
-      width: 100%;
-      margin-top: -10px !important;
-      .active-bar {
-        width: 5px;
-        height: 100%;
-        background-color: #2ecc71;
-        float: left;
-        margin-bottom: -15px;
-      }
-      .active-bar::after {
-        margin-left: 10px;
-      }
-      h5 {
-        text-align: left;
-        padding-top: 17px;
-        word-spacing: 19px;
-        .li-gap {
-          height: 0;
-          width: 5px;
-        }
-      }
-    }
-    .ctive {
-      background-color: #2c3e50;
-      padding-left: 0 !important;
-      h5 {
-        margin-left: $sbp;
-      }
-    }
-    /* mouse over link */
-    li:hover {
-      background-color: #2c3e50;
-    }
-    /* selected link */
-    li:active {
-      background-color: #2c3e50;
-    }
-    a {
-      text-decoration: none;
-    }
-  }
-}
-
-.bforjakhu {
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  border-radius: 100px;
-  background-color: #ecf0f1;
-  border-style: solid;
-  border-width: 2px;
-  border-color: white;
-  margin-left: 95px;
-  margin-top: -15px;
-  h5 {
-    text-align: center;
-    margin-top: 5px;
-    color: white;
-    font-family: FiraSans-Book;
-  }
-}
-#wellb {
-  background-color: #2ecc71;
-  //border-color: #27ae60 !important;
-}
-#notb {
-  background-color: #e74c3c;
-  //border-color: #c0392b !important;
-}
-#wellup {
-  background-color: #e67e22;
-}
-.page {
-  // Set this property on click of hamburger
-  margin-left: 61.47px;
-  // END PROPERTY
-  min-width: 100%;
-  min-height: 100%;
-  background-color: white;
-  position: relative;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  height: 100%;
-  width: 85%
-}
 $widmobile : 87.2%;
 $nb-nav-height : 50px;
 .navbar-nb {
@@ -303,10 +165,16 @@ $restofmargin : 10px;
     margin-top: $restofmargin
   }
 }
+.apps {
+  table {
+    width: 95%;
+    font-size: 13px !important;
+  }
+}
 .runnings {
   table {
-    width: 100%;
-    font-size: 15px;
+    width: 95%;
+    font-size: 13px !important;
     text-align: center;
     border-radius: 10px;
     tbody {

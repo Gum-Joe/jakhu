@@ -309,7 +309,7 @@ body {
 
 .restofpage {
   width: 95.5%;
-  background-color: #ecf0f1;
+  background-color: white;
   height: 495px;
   position: absolute;
   margin-top: 148px;
@@ -317,20 +317,14 @@ body {
 .restofpage .container-fluid {
   margin-top: 10px;
 }
-.restofpage .container-fluid .block-stats div {
-  margin-top: 10px;
-  border-style: solid;
-  border-radius: 5px;
+.restofpage .container-fluid .runnings {
+  width: 400px;
+  position: absolute;
 }
-.restofpage .container-fluid .block-stats div table {
-  margin-top: 10px;
-  width: 10px;
-}
-.restofpage .container-fluid .block-stats .runtime {
-  width: 200px;
-  height: 100px;
-  background-color: #0275d8 !important;
-  border-color: #0275d8 !important;
+.restofpage .container-fluid .apps {
+  width: 400px;
+  margin-left: 405px;
+  position: absolute;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
