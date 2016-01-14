@@ -2,6 +2,15 @@
 
 Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.
 
+At the moment, I need some some help as this is a large project. Any help is appreciated, but we really need Nodejs and ruby programmes.
+
+# Goals
+I need to:
+* Create a way to manage web-apps
+* Test the code (get ~90% test coverage for cli and browser tests)
+* The dashboard should be modern, attractive and informative
+The status of this is available in CHANGELOG.md and ROADMAP.md
+
 # Building
 ## Unix (Debian, Ubuntu, CentOS) and Mac OSX
 Simple install comeing soon!
@@ -32,7 +41,7 @@ $ ./bin/jakhu server
 
 ## Windows
 Prerequisites:
-* Microsoft Visual Studio C++ 2013 
+* Microsoft Visual Studio C++ 2013
 * Nodejs v4.0.0 or newer (v5.3.0 reccommended) & npm
 * Python
 * Ruby
