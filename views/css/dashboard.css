@@ -25,6 +25,14 @@ $nav2 : #000080;*/
   src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
 }
 @font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
   font-family: FiraSans-Light;
   src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
 }
@@ -63,7 +71,7 @@ $nav2 : #000080;*/
   position: absolute;
   background-color: #34495e;
   width: 204.9px;
-  height: auto;
+  height: 100%;
   color: white;
 }
 .sidebar ul {
@@ -310,7 +318,7 @@ body {
 .restofpage {
   width: 95.5%;
   background-color: white;
-  height: 495px;
+  height: 500px;
   position: absolute;
   margin-top: 148px;
 }

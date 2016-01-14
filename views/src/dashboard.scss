@@ -35,7 +35,7 @@ $sbp : 13%;
   position: absolute;
   background-color: #34495e;
   width: 204.9px;
-  height: auto;
+  height: 100%;
   color: white;
   ul {
     height: 100%;
@@ -284,7 +284,7 @@ body {
   // #ecf0f1
   width: $widdesktop;
   background-color: white;
-  height: 495px;
+  height: 500px;
   position: absolute;
   margin-top: 148px;
   .container-fluid {
