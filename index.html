@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Jakhu by Gum-Joe</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Jakhu</h1>
+        <h2>Manage all your web-apps with ease :closed_lock_with_key: :computer: :fireworks:</h2>
+        <a href="https://github.com/Gum-Joe/jakhu" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="jakhu-----" class="anchor" href="#jakhu-----" aria-hidden="true"><span class="octicon octicon-link"></span></a>jakhu <a href="https://travis-ci.org/Gum-Joe/jakhu"><img src="https://travis-ci.org/Gum-Joe/jakhu.svg?branch=a1" alt="Dep Status"></a> <a href="https://coveralls.io/github/Gum-Joe/jakhu?branch=a1"><img src="https://coveralls.io/repos/Gum-Joe/jakhu/badge.svg?branch=a1&amp;service=github" alt="Coverage Status"></a> <a href="https://codeclimate.com/github/Gum-Joe/jakhu"><img src="https://codeclimate.com/github/Gum-Joe/jakhu/badges/gpa.svg"></a> <a href="https://david-dm.org/Gum-Joe/jakhu"><img src="https://david-dm.org/Gum-Joe/jakhu.svg" alt="Dependency Status"></a> <a href="https://david-dm.org/Gum-Joe/jakhu#info=devDependencies"><img src="https://david-dm.org/Gum-Joe/jakhu/dev-status.svg" alt="devDependency Status"></a>
+</h1>
+
+<p>Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.</p>
+
+<p>At the moment, I need some some help as this is a large project. Any help is appreciated, but we really need Nodejs and ruby programmes.</p>
+
+<h1>
+<a id="goals" class="anchor" href="#goals" aria-hidden="true"><span class="octicon octicon-link"></span></a>Goals</h1>
+
+<p>I need to:</p>
+
+<ul>
+<li>Create a way to manage web-apps</li>
+<li>Test the code (get ~90% test coverage for cli and browser tests)</li>
+<li>The dashboard should be modern, attractive and informative
+The status of this is available in CHANGELOG.md and ROADMAP.md</li>
+</ul>
+
+<h1>
+<a id="building" class="anchor" href="#building" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building</h1>
+
+<h2>
+<a id="unix-debian-ubuntu-centos-and-mac-osx" class="anchor" href="#unix-debian-ubuntu-centos-and-mac-osx" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unix (Debian, Ubuntu, CentOS) and Mac OSX</h2>
+
+<p>Simple install coming soon!
+Prerequisites:</p>
+
+<ul>
+<li>gcc and g++ 4.8 or newer, or</li>
+<li>clang and clang++ 3.4 or newer (for node-gyp)</li>
+<li>Nodejs v4.0.0 or newer (v5.3.0 reccommended) &amp; npm</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Docker</li>
+<li>Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)</li>
+<li>Virtual box (for vagrant)</li>
+<li>Mongodb (if you don't want to use docker or vagrant)</li>
+</ul>
+
+<h5>
+<a id="building-1" class="anchor" href="#building-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building:</h5>
+
+<pre><code>$ [sudo] npm install -g coffee-script grunt-cli node-gyp
+$ [sudo] gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+</code></pre>
+
+<h5>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started:</h5>
+
+<pre><code>$ export NODE_ENV=development
+$ ./bin/jakhu server
+</code></pre>
+
+<h2>
+<a id="windows" class="anchor" href="#windows" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows</h2>
+
+<p>Prerequisites:</p>
+
+<ul>
+<li>Microsoft Visual Studio C++ 2013 </li>
+<li>Nodejs v4.0.0 or newer (v5.3.0 reccommended) &amp; npm</li>
+<li>Python</li>
+<li>Ruby</li>
+<li>Docker with <code>docker-machine</code>
+</li>
+<li>Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)</li>
+<li>Virtual box (for vagrant &amp; docker)</li>
+<li>Mongodb (if you don't want to use docker or vagrant)</li>
+<li>A bash enviroment (git-bash, mingw, cygwin, msys) with <code>git</code>
+</li>
+</ul>
+
+<h5>
+<a id="building-2" class="anchor" href="#building-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Building:</h5>
+
+<pre><code>$ [sudo] npm install -g coffee-script grunt-cli node-gyp
+$ [sudo] gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+</code></pre>
+
+<h5>
+<a id="getting-started-1" class="anchor" href="#getting-started-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting started:</h5>
+
+<pre><code>$ export NODE_ENV=development
+$ ./bin/jakhu server
+</code></pre>
+
+<p>To run in a Vagrant box (from host):
+<code>bin/jakhu vagrant</code></p>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests:</h2>
+
+<p><code>mocha test/**/*.js</code></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Gum-Joe/jakhu/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Gum-Joe/jakhu/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Gum-Joe/jakhu"></a> is maintained by <a href="https://github.com/Gum-Joe">Gum-Joe</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
