@@ -58,7 +58,6 @@ function startdb() {
 		exec('docker stop jakhumongodb', (err, stdout, stderr) => {
 	  	if (err) {
 				//console.error("Error when stoping mongodb docker container!");
-	    	return;
 	  	}
 		});
 		// start it.
@@ -68,7 +67,6 @@ function startdb() {
 				//console.error("Error when starting mongodb docker container!");
 	    	//console.error(err);
 				startdbrun();
-	    	return;
 	  	} else {
 				connect("no", `${dockerip}:27018`);
 			}
@@ -79,7 +77,7 @@ function startdb() {
 exports.connect = function (x, call) {
 	// Start db
 	// Check if started
-	if (process.env.JAKHU_RUN_TYPE === "docker") {
+	if (process.env.JAKHU_RUN_TYPE === "docker" || typeof process.env.JAKHU_RUN_TYPE === 'undefined') {
                 var dockerhost = process.env.DOCKER_HOST;
 	        var dockerip = dockerhost.slice(6,dockerhost.length-5) || "0.0.0.0";
 		request("http://"+dockerip+":32771", function(error, response, body) {

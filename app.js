@@ -86,8 +86,7 @@ if(y === true || x === 'basic' || x === 'ci'){
   server.listen(port, function () {
     console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "Running on port " + port);
     console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-    //kernal.boot("ok");
+    connect.connect();
     kernal.startinput("ok");
   });
 }
