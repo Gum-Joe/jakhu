@@ -114,6 +114,9 @@ $widdesktop : 95.5%;
         padding: 0;
         padding-top: 5px;
         padding-bottom: 5px;
+        #daterun {
+          border-right: none !important;
+        }
         li {
           display: inline;
           padding-left: 10px;
@@ -135,68 +138,15 @@ $widdesktop : 95.5%;
 }
 
 .apps {
-  table {
-    text-align: center;
-    border-radius: 10px;
-    tbody {
-      #lastapp {
-        #lastapp1 {
-          border-bottom-left-radius: $tableruntimeradius;
-          -webkit-border-bottom-left-radius: $tableruntimeradius;
-          -moz-border-bottom-left-radius: $tableruntimeradius;
-        }
-        #lastapp2 {
-          border-bottom-right-radius: $tableruntimeradius;
-          -webkit-border-bottom-right-radius: $tableruntimeradius;
-          -moz-border-bottom-right-radius: $tableruntimeradius;
-        }
-      }
-      .run {
-        td {
-          background-color: #26A65B;
-          border-color: #ecf0f1;
-          color: white;
-        }
-      }
-      .errorrunapp {
-        td {
-          background-color: #e74c3c !important;
-          border-color: #ecf0f1;
-          color: white;
-        }
-      }
-    }
-    thead {
-      text-align: inherit;
-      tr {
-        text-align: inherit;
-        th {
-          text-align: inherit;
-          background-color: #2c3e50;
-          border-color: #ecf0f1;
-          color: #ecf0f1;
-        }
-        #wa {
-          width: 10px;
-          border-top-left-radius: $tableruntimeradius;
-          -webkit-border-top-left-radius: $tableruntimeradius;
-          -moz-border-top-left-radius: $tableruntimeradius;
-        }
-        #run {
-          width: 50px;
-        }
-        #wa {
-          width: 150px;
-        }
-        #tub {
-          width: 50px;
-        }
-        #tub {
-          border-top-right-radius: $tableruntimeradius;
-          -webkit-border-top-right-radius: $tableruntimeradius;
-          -moz-border-top-right-radius: $tableruntimeradius;
-          width: 100px;
-        }
+  margin-left: 410px;
+  color: #141413 !important;
+  ul {
+    padding-left: 0 !important;
+    a li ul {
+      margin-left: 19.5% !important;
+      margin-right: auto !important;
+      li {
+        color: #141413 !important;
       }
     }
   }
