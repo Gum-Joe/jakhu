@@ -6,7 +6,7 @@ When contributing to issue, would you please include the following:
 * Any exceptions thrown by the program and their stack trace
 * An account of what you were trying to do when you encountered the issue (i.e. change a setting)
 * The page you were on if the issue concerns the UI
-* A screenshot of the issue (the page you are on/the console window/applictaion)
+* A screenshot of the issue (the page you are on/the console window/application)
 * A JSFiddle/Code pen for us to see the code
 
 Please do not post issues regarding your own code or any code that you have edited, unless there is a compatibility problem.
