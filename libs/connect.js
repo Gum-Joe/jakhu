@@ -91,7 +91,7 @@ exports.connect = function (x, call) {
 		if (x === "test") {
 			connect("test", "localhost:27017");
 		} else {
-			connect("localhost:27017");
+			connect("e", "localhost:27017");
 		}
 	}
 }

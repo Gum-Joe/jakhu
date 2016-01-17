@@ -121,6 +121,7 @@ module.exports = function(grunt) {
           'views/css/oobe.css': 'views/src/oobe.scss',       // 'destination': 'source'
           'views/css/float.css': 'views/src/float.scss',
           'views/css/dashboard-main.css': 'views/src/dashboard-main.scss',
+          'views/css/login.css': 'views/src/login.scss',
         }
       },
     },

@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expressSession = require('express-session');
+var expresssession = require('express-session');
 var clicolour = require('cli-color');
 var fs = require("fs");
 var morgan = require("morgan");
@@ -13,7 +13,7 @@ var dashboard = require("./routes/dashboard.js");
 var mkdirp = require('mkdirp');
 
 var passport = require('passport');
-var passportlocal = require('passport-local');
+var LocalStrategy = require('passport-local');
 var passporthttp = require('passport-http');
 
 var mongoose = require('mongoose');
@@ -22,12 +22,12 @@ var assert = require('assert');
 var ObjectId = require('mongodb').ObjectID;
 
 var connect = require("./libs/connect.js");
-var passportconfig = require("./libs/passport.js");
 var wlogger = require("./libs/logger.js");
 var kernal = require('./boot/boot.js');
 var mid = require('./libs/middleware.js')
 var stream = require('./libs/stream.js');
 var yml = require('./libs/yml.js');
+var schema = require('./libs/database');
 
 var routes = require('./routes/index');
 var api = require('./routes/api/api');
@@ -41,6 +41,8 @@ var app = express();
 
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
+
+var plocal = require('./libs/plocal');
 
 start = function start(x, y, portt){
 var port = process.env.PORT || portt || 8080;
@@ -69,7 +71,7 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'test')));
-app.use(mid.count)
+app.use(mid.count);
 if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');
 }
@@ -80,6 +82,7 @@ app.use('/users', users);
 app.use('/dashboard', dashboard);
 app.use('/api', api);
 // listen
+// Se
 if(y === true || x === 'basic' || x === 'ci'){
   server.listen(port);
 } else {
@@ -94,6 +97,7 @@ io.sockets.on('connection', function(socket){
   console.log('New socket created.');
   // parse yml for req
   console.log();
+  var yml = require("yamljs")
   io.emit('request', yml.parse('etc/requests.yml').req);
   function f() {
     var d = fs.readFileSync('etc/date.txt').toString();
@@ -131,7 +135,6 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
-
 // end of start function
 };
 module.exports = {start: start};
