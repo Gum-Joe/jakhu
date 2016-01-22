@@ -1,0 +1,5 @@
+# Apps list
+apps:
+  - name: sample
+    author: sample
+    dir: sample
