@@ -9,7 +9,7 @@ What needs to be done (in order):
 * Build up the runner by allowing the adding of docker images and vagrant boxes
 * Give runner the ability to start web-apps
 * Implement a secure api (certs, authentication)
-* <b>Add a login to dashboard :lock:</b>
+* <b>Add a login to dashboard :lock: <a href="https://github.com/Gum-Joe/jakhu/issues/38"><b>#38</b></a></b>
 * Allow admin to make new users
 * Get 100% test coverage by adding more tests
 * Finish server logic

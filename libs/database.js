@@ -7,4 +7,15 @@ var UserSchema = new mongoose.Schema({
 });
 var user = mongoose.model('users', UserSchema);
 
-module.exports = {user: user, UserSchema: UserSchema};
+var OAuthSchema = new mongoose.Schema({
+  githubUser: String
+});
+var oauth = mongoose.model('oauthh', OAuthSchema);
+
+var TokenSchema = new mongoose.Schema({
+  userId: String,
+  token: String
+});
+var token = mongoose.model('rememberme', TokenSchema);
+
+module.exports = {user: user, UserSchema: UserSchema, oauth: oauth, OAuthSchema: OAuthSchema, token: token};

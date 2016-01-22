@@ -3,6 +3,7 @@ var error = require('../../libs/error/bsod.js');
 var clicolour = require("cli-color");
 var datea = "./recovery/rollback/backup";
 var exec = require('child_process').exec;
+var debug = require('debug')('rollback');
 
 //var PythonShell = require('python-shell');
 exports.createBackup = function createBackup(x){
@@ -25,20 +26,20 @@ exports.createBackup = function createBackup(x){
         error.throwError("RECOVERY_ROLLBACK_CREATE_BACKUP_DIR:"+err.code, err, err.code);
       }
       else {
-        console.log(clicolour.cyanBright("jakhu ")  + clicolour.yellowBright("recovery ")  + "Created Rollback DIR for today");
+        debug("Created Rollback DIR for today");
       };
     });
     // Create backup
     if(process.env.NODE_ENV !== "dev"){
     exec("cp -R ./ ~/.jakhu/recovery/rollback/backup", function(error, stdout, stderr){
-      console.log(clicolour.cyanBright("jakhu ")  + clicolour.yellowBright("recovery ")  + "Created rollback Backup");
+      debug("Created rollback Backup");
     });
     // rm .git
     exec("rm -rf ~/.jakhu/recovery/rollback/backup/.git ~/.jakhu/recovery/rollback/backup/node_modules", function(error, stdout, stderr){
-      console.log(clicolour.cyanBright("jakhu ")  + clicolour.yellowBright("recovery ")  + "Removed .git folder and node_modules");
+      debug("Removed .git folder and node_modules");
     });
   } else {
-    console.log(clicolour.redBright("rollback: ") + "Not backing up as dev env");
+    debug("Not backing up as dev env");
   }
   };
   };

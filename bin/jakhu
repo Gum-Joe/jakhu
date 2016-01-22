@@ -5,20 +5,27 @@ var kernal = require('../boot/boot.js');
 var exec = require('child_process').exec;
 var com = require('commander');
 var pack = require('../package.json');
+var debug = require('debug')('kernal');
 
 com
   .version(pack.version)
-  .option('-l, --local', 'Runs the server on your system instead of in a docker container')
-  .option('-v, --version', 'Outputs the version number')
-  .option('-d, --docker', 'Runs server in docker')
+  .option('-d, --debug', 'Debug mode')
   .parse(process.argv);
 
 // start
 // TODO: Create boot types (safemode, full, recovery)
+
 exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("");
   console.log("Jakhu");
   console.log(pack.version+" build "+ stdout);
+  debug('Starting kernal');
+  debug('Arguments:')
+  for (var i = 1; i < process.argv.length; i++) {
+    debug(process.argv[i])
+  }
+  debug('Jakhu version: %s', pack.version);
+  debug('Jakhu build: %s', stdout.slice(0,stdout.length-1));
   kernal.startboot("ok");
 });
 

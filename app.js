@@ -11,6 +11,7 @@ var morgan = require("morgan");
 var ooberoutes = require("./routes/oobe.js");
 var dashboard = require("./routes/dashboard.js");
 var mkdirp = require('mkdirp');
+var delayed = require('delayed');
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
@@ -33,7 +34,6 @@ var routes = require('./routes/index');
 var api = require('./routes/api/api');
 var users = require('./routes/users');
 
-var debug = require('debug')('Jakhu:server');
 var http = require('http');
 var https = require('https');
 
@@ -42,7 +42,10 @@ var app = express();
 var bcrypt = require('bcryptjs');
 var salt = bcrypt.genSaltSync(10);
 
-var plocal = require('./libs/plocal');
+// DEBUGING
+var debug = {};
+debug.http = require('debug')('server');
+
 
 start = function start(x, y, portt){
 var port = process.env.PORT || portt || 8080;
@@ -87,9 +90,19 @@ if(y === true || x === 'basic' || x === 'ci'){
   server.listen(port);
 } else {
   server.listen(port, function () {
-    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-    console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    debug.http('Starting server...');
+    if (!process.env.DEBUG) {
+      process.env.DEBUG = "none"
+    }
+    if (~process.env.DEBUG.indexOf('server')) {
+      debug.http("Running on port " + port);
+      debug.http("The date and time is:", Date());
+    } else {
+      console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+      console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    }
     connect.connect();
+    debug.http('Done starting server');
     kernal.startinput("ok");
   });
 }
@@ -100,6 +113,10 @@ io.sockets.on('connection', function(socket){
   var yml = require("yamljs")
   io.emit('request', yml.parse('etc/requests.yml').req);
   function f() {
+    if (!fs.statSync('etc/date.txt')) {
+      fs.openSync('etc/date.txt', 'w')
+      fs.appendSync('etc/date.txt', new Date().getHours().toString()+new Date().getMinutes().toString())
+    }
     var d = fs.readFileSync('etc/date.txt').toString();
     var fd = parseInt(d);
     var de = new Date().getHours().toString()+new Date().getMinutes().toString();

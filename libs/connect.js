@@ -14,6 +14,9 @@ var ObjectId = require('mongodb').ObjectID;
 var clicolour = require('cli-color');
 var spawn = require('child_process').spawn;
 var exec = require('child_process').exec;
+var execSync = require('child_process').execSync;
+var delayed = require('delayed');
+var debug = require('debug')('database');
 // awaiting solve
 // var bcrypt = require('bcrypt');
 
@@ -46,7 +49,7 @@ function startdbrun(argument) {
     	return;
   	}
 	});
-	connect("no", `${dockerip}:27018`);
+	delayed.delay(function () { connect("no", `${dockerip}:27018`); }, 1000)
 }
 
 function startdb() {
@@ -57,7 +60,8 @@ function startdb() {
 	if (process.env.JAKHU_RUN_TYPE == "docker" || process.env.JAKHU_RUN_TYPE == undefined) {
 		exec('docker stop jakhumongodb', (err, stdout, stderr) => {
 	  	if (err) {
-				//console.error("Error when stoping mongodb docker container!");
+				//console.error("Error when starting mongodb docker container!");
+	    	//console.error(err);
 	  	}
 		});
 		// start it.
@@ -68,7 +72,7 @@ function startdb() {
 	    	//console.error(err);
 				startdbrun();
 	  	} else {
-				connect("no", `${dockerip}:27018`);
+				delayed.delay(function () { connect("no", `${dockerip}:27018`); }, 1000)
 			}
 		});
 	}
@@ -80,12 +84,23 @@ exports.connect = function (x, call) {
 	if (process.env.JAKHU_RUN_TYPE === "docker" || typeof process.env.JAKHU_RUN_TYPE === 'undefined') {
                 var dockerhost = process.env.DOCKER_HOST;
 	        var dockerip = dockerhost.slice(6,dockerhost.length-5) || "0.0.0.0";
-		request("http://"+dockerip+":32771", function(error, response, body) {
+		request("http://"+dockerip+":27018", function(error, response, body) {
 	  	if (error) {
 				// start db
-				console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Starting MongoDB in a docker container...");
-				startdb()
-	  	}
+				if (~process.env.DEBUG.indexOf('database')) {
+					debug("Starting MongoDB in a docker container...");
+		    } else {
+		      console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Starting MongoDB in a docker container...");
+		    }
+				startdb();
+	  	} else {
+				if (~process.env.DEBUG.indexOf('database')) {
+					debug("Starting MongoDB in a docker container...");
+		    } else {
+		      console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Starting MongoDB in a docker container...");
+		    }
+				startdb();
+			}
 		});
 	} else {
 		if (x === "test") {
@@ -102,6 +117,10 @@ function connect(type, porttt) {
 db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
+	if (~process.env.DEBUG.indexOf('database')) {
+		debug("Yay! We succefully connected to the db");
+	} else {
 		console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Yay! We succefully connected to the db");
+	}
 });
 }

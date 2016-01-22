@@ -19,6 +19,10 @@ var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
 var User = require('../libs/database').user;
 var bcrypt = require('bcryptjs');
+var plocal = require('../libs/passport/local.js');
+var pgit = require('../libs/passport/github.js');
+var prem = require('../libs/passport/rember.js');
+var utils = require('util');
 
 // Passport session setup.
 //   To support persistent login sessions, Passport needs to be able to
@@ -34,28 +38,13 @@ passport.deserializeUser(function(id, done) {
       done(err, user)
     });
 });
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    // check if pwd matches
-    var hash = bcrypt.hashSync(password, 10);
-    User.findOne({ username: username}, function (err, user) {
-      console.log(user);
-      if (err !== null || undefined) return done(err);
-      if (!user) {
-        return done(null, false, { message: 'Unknown user' });
-      }
-      console.log(hash);
-      if (!bcrypt.compareSync(password, user.pwd)) {
-        return done(null, false, { message: 'Invalid password' });
-      }
-      return done(null, user);
-    });
-  }
-));
+passport.use(plocal);
+passport.use(prem);
 
 router.use(expresssession({ secret: 'jakhu', name: 'jakhu', saveUninitialized: false, resave: false }));
 router.use(passport.initialize());
 router.use(passport.session());
+router.use(passport.authenticate('remember-me'));
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -72,9 +61,36 @@ router.get('/', function(req, res) {
 // login
 router.post('/login',
   passport.authenticate('local', { failureRedirect: '/'}),
+  function(req, res, next) {
+    // issue a remember me cookie if the option was checked
+    if (!req.body.remember_me) { return next(); }
+
+    var tokenn = utils.generateToken(64);
+    Token.save({ userId: req.user.id, token: tokenn }, function(err) {
+      if (err) { return done(err); }
+      res.cookie('remember_me', token, { path: '/', httpOnly: true, maxAge: 604800000 }); // 7 days
+      return next();
+    });
+  },
   function(req, res) {
     res.redirect('/dashboard');
-});
+  }
+);
+// Logout
+router.get('/logout', function (req, res) {
+  req.logout();
+  res.redirect('/');
+})
+// Github OAuthSchema
+router.get('/auth/github',
+  passport.authenticate('github', { scope: [ 'user:email', 'repo', 'repo:status', 'notifications', 'write:org', 'write:repo_hook', 'repo_deployment' ] }));
+
+router.get('/auth/github/callback',
+  passport.authenticate('github', { failureRedirect: '/' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/dashboard');
+  });
 
   router.get('/signin', function(req, res) {
     // TODO: Insert boot checks

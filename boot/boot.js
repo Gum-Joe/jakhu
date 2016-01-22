@@ -18,28 +18,33 @@ var cert = require('./libs/certs.js');
 
 var io = require('socket.io')(express.listen);
 var delayed = require('delayed');
+var debug = require('debug')('boot');
 //boot.properties.git.getCommits;
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
 exports.startboot = function startboot(boottype) {
   // Load configure
+  debug('Booting server...');
     config.loadconfig();
+    debug('Checking if all files exist...')
     boot.checks.files.checkFiles("ok");
     /**delayed.delay(function () {
       boot.checks.instances.instances(config.getdata('name'));
     }, 300)*/
     //Start DB
-    boot.mongo.start(function (err) {
-      console.log(err);
-    });
+    debug('Checking if this server has already been set up...')
     oobe.first("ok");
+    debug('Creating a rollback backup..')
     boot.recovery.rollback.createBackup("ok");
     // load certs
+    debug('Loading certs...')
     delayed.delay(function () {
       cert.generate();
     }, 1000);
+    debug('Preparing tmp files in etc/ ')
     fs.writeFileSync('etc/date.txt', new Date().getHours(), 'utf8')
     fs.appendFileSync('etc/date.txt', new Date().getMinutes(), 'utf8')
+    debug("Starting jakhu server %s", config.getdata().name)
     app.start();
 
 }

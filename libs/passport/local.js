@@ -4,29 +4,26 @@
 
 var mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('./database').UserSchema;
+var User = require('../database').user;
+var bcrypt = require('bcryptjs');
 
 /**
  * Expose
  */
 
-module.exports = new LocalStrategy({
-    usernameField: 'user',
-    passwordField: 'pwd'
-  },
-  function(user, pwd, done) {
+module.exports = new LocalStrategy(
+  function(username, password, done) {
     // check if pwd matches
-    var hash = bcrypt.hash(pwd, 10);
-    User.findOne({ username: user, pwd: hash }, function (err, user) {
-      console.log("err");
-      if (err) return done(err);
+    var hash = bcrypt.hashSync(password, 10);
+    User.findOne({ username: username }, function (err, user) {
+      if (err !== null || undefined) return done(err);
       if (!user) {
         return done(null, false, { message: 'Unknown user' });
       }
-      if (!user.authenticate(password)) {
+      if (!bcrypt.compareSync(password, user.pwd)) {
         return done(null, false, { message: 'Invalid password' });
       }
       return done(null, user);
     });
   }
-);
+)
