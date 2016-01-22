@@ -122,6 +122,7 @@ module.exports = function(grunt) {
           'views/css/float.css': 'views/src/float.scss',
           'views/css/dashboard-main.css': 'views/src/dashboard-main.scss',
           'views/css/login.css': 'views/src/login.scss',
+          'views/css/error.css': 'views/src/error.scss',
         }
       },
     },

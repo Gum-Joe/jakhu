@@ -95,3 +95,7 @@
   -webkit-border-bottom-right-radius: $px;
   -moz-border-bottom-right-radius: $px;
 }
+@mixin setimagesize($imagepx) {
+  height: $imagepx;
+  width: $imagepx;
+}

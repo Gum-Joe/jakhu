@@ -17,6 +17,8 @@ var exec = require('child_process').exec;
 var execSync = require('child_process').execSync;
 var delayed = require('delayed');
 var debug = require('debug')('database');
+var stdouta = require('debug')('database:stdout');
+var stderra = require('debug')('database:error');
 // awaiting solve
 // var bcrypt = require('bcrypt');
 
@@ -43,6 +45,11 @@ function startdbrun(argument) {
 	var dockerip = dockermac.slice(6,dockermac.length-5) || "0.0.0.0";
 	// body...
 	exec('docker run --name jakhumongodb -p 27018:27017 -d mongo', (err, stdout, stderr) => {
+		debug('Running command "docker run --name jakhumongodb -p 27018:27017 -d mongo"');
+		debug('stdout:');
+		stdouta(stdout);
+		debug('stderr:');
+		stderra(stderr);
   	if (err) {
 			//console.error("Error when starting mongodb!");
     	//console.error(err);
@@ -59,6 +66,11 @@ function startdb() {
 	var dockerip = dockermac.slice(6,dockermac.length-5);
 	if (process.env.JAKHU_RUN_TYPE == "docker" || process.env.JAKHU_RUN_TYPE == undefined) {
 		exec('docker stop jakhumongodb', (err, stdout, stderr) => {
+			debug('Running command "docker stop jakhumongodb"');
+			debug('stdout:');
+			stdouta(stdout);
+			debug('stderr:');
+			stderra(stderr);
 	  	if (err) {
 				//console.error("Error when starting mongodb docker container!");
 	    	//console.error(err);
@@ -67,6 +79,11 @@ function startdb() {
 		// start it.
 		// hide errors
 		exec('docker start jakhumongodb', (err, stdout, stderr) => {
+			debug('Running command "docker start jakhumongodb"');
+			debug('stdout:');
+			stdouta(stdout);
+			debug('stderr:');
+			stderra(stderr);
 	  	if (err) {
 				//console.error("Error when starting mongodb docker container!");
 	    	//console.error(err);
