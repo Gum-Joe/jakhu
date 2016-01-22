@@ -3,3 +3,12 @@ apps:
   - name: sample
     author: sample
     dir: sample
+    tubs: 1
+  - name: sample2
+    author: sample
+    dir: sample
+    tubs: 2
+  - name: sample
+    author: sample2
+    dir: sample
+    tubs: 3

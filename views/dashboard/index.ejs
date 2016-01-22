@@ -137,21 +137,13 @@
           <div class="runnings apps">
             <h5>YOUR WEB APPS</h5>
             <ul>
-              <a href="#"><li><ul id="success">
-                <li data-toggle="tooltip" data-placement="bottom" title="Web-app">sample/sample</li>
-                <li data-toggle="tooltip" data-placement="bottom" title="Tubs">1</li>
-                <li id="daterun" data-toggle="tooltip" data-placement="bottom" title="Last run">01.02.03</li>
-              </ul></li></a>
-              <a href="#"><li><ul id="fail">
-                <li>sample/sample</li>
-                <li>1</li>
-                <li id="daterun">01.02.03</li>
-              </ul></li></a>
-              <a href="#"><li><ul id="error">
-                <li>sample/sample</li>
-                <li>1</li>
-                <li id="daterun">01.02.03</li>
-              </ul></li></a>
+              <% for(var i = 0; i < apps.apps.length; i++) {%>
+                <a href="/dashboard/apps/status?<%=apps.apps[i].author%>/<%=apps.apps[i].name%>"><li><ul id="success">
+                  <li data-toggle="tooltip" data-placement="bottom" title="Web-app"><%=apps.apps[i].author%>/<%=apps.apps[i].name%></li>
+                  <li data-toggle="tooltip" data-placement="bottom" title="Tubs"><%=apps.apps[i].tubs%></li>
+                  <li id="daterun" data-toggle="tooltip" data-placement="bottom" title="Last run">01.02.03</li>
+                </ul></li></a>
+              <%};%>
             </ul>
           </div>
 

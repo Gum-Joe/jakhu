@@ -28,9 +28,21 @@ router.get('/', function(req, res, next) {
         time: de-fd,
         well: true,
         sname: config.getdata().name,
-        requests: parsedreq.req
+        requests: parsedreq.req,
+        apps: YAML.load('config/apps.yml')
       });
     });
+  }
+});
+
+// GET app data
+router.get('/apps/status', function (req, res, next) {
+  // Check auth
+  if (!req.user) {
+    // No user, redirect to login
+    res.redirect('/');
+  } else {
+    // Find app
   }
 });
 
