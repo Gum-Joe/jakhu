@@ -50,7 +50,14 @@ router.use(passport.authenticate('remember-me'));
 router.get('/', function(req, res) {
   // TODO: Insert boot checks
   console.log("");
-  res.render('login.ejs');
+  // No user, redirect to login
+  // Or callback
+  console.log(req.query.callback);
+  if (!req.query.callback) {
+    res.render('login.ejs', {callback: null});
+  } else {
+    res.render('login.ejs', {callback: req.query.callback});
+  }
       /* exec("git rev-list HEAD --count", function (error, stdout) {
       *   res.render('boot.ejs', {
       *     build: stdout
@@ -73,7 +80,11 @@ router.post('/login',
     });
   },
   function(req, res) {
-    res.redirect('/dashboard');
+    if (!req.query.callback) {
+      res.redirect('/dashboard');
+    } else {
+      res.redirect(req.query.callback)
+    }
   }
 );
 // Logout

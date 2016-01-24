@@ -5,11 +5,12 @@ var delayed = require('delayed');
 var config = require('../boot/libs/configure.js');
 var fs = require('fs');
 var YAML = require('yamljs');
-
+var runner = require('../libs/runner/findapp.js');
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
     // No user, redirect to login
+    // Or callback
     res.redirect('/');
   } else {
     var d = fs.readFileSync('etc/date.txt').toString();
@@ -40,9 +41,20 @@ router.get('/apps/status', function (req, res, next) {
   // Check auth
   if (!req.user) {
     // No user, redirect to login
-    res.redirect('/');
+    res.redirect(`/?callback=/dashboard/apps/status?app=${req.query.author}/${req.query.app}`);
   } else {
     // Find app
+    // App
+    const appreq = req.query.app;
+    this.apps = runner.getApps(req.query.author, req.query.app).apps;
+    var appobj = {};
+    // Find correct app
+    for (var i = 0; i < this.apps.length; i++) {
+      if (`${this.apps[i].author}/${this.apps[i].name}` === appreq) {
+        appobj = {name: this.apps[i].name, author: this.apps[i].author};
+      }
+    }
+    res.send(appobj)
   }
 });
 

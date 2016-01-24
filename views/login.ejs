@@ -22,7 +22,11 @@
   <body>
     <div class="main">
       <h1>Hello! Please login.</h1>
+      <% if(callback === null) { %>
       <form class="" action="/login" method="post">
+      <% } else { %>
+      <form class="" action="/login?callback=<%=callback%>" method="post">
+      <% } %>
         <div class="form-group">
           <label for="exampleInputEmail1">Username</label>
           <input type="username" class="form-control" id="username" name="username" placeholder="Username">

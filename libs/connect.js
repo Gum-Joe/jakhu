@@ -46,9 +46,9 @@ function startdbrun(argument) {
 	// body...
 	exec('docker run --name jakhumongodb -p 27018:27017 -d mongo', (err, stdout, stderr) => {
 		debug('Running command "docker run --name jakhumongodb -p 27018:27017 -d mongo"');
-		debug('stdout:');
+		stdouta('stdout:');
 		stdouta(stdout);
-		debug('stderr:');
+		stderra('stderr:');
 		stderra(stderr);
   	if (err) {
 			//console.error("Error when starting mongodb!");
