@@ -65,6 +65,7 @@
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
+    "passport-remember-me": "0.0.1",
     "pem": "^1.8.1",
     "prompt": "^0.2.14",
     "python-shell": "^0.3.0",
