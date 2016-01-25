@@ -6,6 +6,8 @@ var config = require('../boot/libs/configure.js');
 var fs = require('fs');
 var YAML = require('yamljs');
 var runner = require('../libs/runner/findapp.js');
+const root = "dashboard"
+const templates = `${root}/templates`
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
@@ -41,7 +43,7 @@ router.get('/apps/status', function (req, res, next) {
   // Check auth
   if (!req.user) {
     // No user, redirect to login
-    res.redirect(`/?callback=/dashboard/apps/status?app=${req.query.author}/${req.query.app}`);
+    res.redirect(`/?callback=/dashboard/apps/status?app=${req.query.app}`);
   } else {
     // Find app
     // App
@@ -54,7 +56,14 @@ router.get('/apps/status', function (req, res, next) {
         appobj = {name: this.apps[i].name, author: this.apps[i].author};
       }
     }
-    res.send(appobj)
+    //onsole.log(`App: ${appobj}`);
+    res.render(`${templates}/apps/status.ejs`, {
+      app: appobj,
+      apps: this.apps,
+      user: req.user.username || req.user,
+      imgprofile: '/css/img/profile.jpg',
+    })
+    //res.send(appobj)
   }
 });
 

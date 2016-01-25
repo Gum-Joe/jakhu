@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha test/**/*.js",
-    "start": "nodemon bin/jakhu",
+    "start": "node bin/jakhu server",
     "docker-start": "git pull && node bin/jakhu",
     "coveralls": "istanbul cover test.js",
     "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",

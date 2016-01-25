@@ -6,28 +6,38 @@ var exec = require('child_process').exec;
 var com = require('commander');
 var pack = require('../package.json');
 var debug = require('debug')('kernal');
-
-com
-  .version(pack.version)
-  .option('-d, --debug', 'Debug mode')
-  .parse(process.argv);
-
-// start
-// TODO: Create boot types (safemode, full, recovery)
+var delayed = require('delayed');
+var gc;
 
 exec("git rev-list HEAD --count", function (error, stdout, stderr) {
   console.log("");
   console.log("Jakhu");
   console.log(pack.version+" build "+ stdout);
   debug('Starting kernal');
-  debug('Arguments:')
+  debug('Arguments:');
+  debug("[");
   for (var i = 1; i < process.argv.length; i++) {
-    debug(process.argv[i])
+    debug("   %s,", process.argv[i]);
   }
+  debug(']');
   debug('Jakhu version: %s', pack.version);
   debug('Jakhu build: %s', stdout.slice(0,stdout.length-1));
-  kernal.startboot("ok");
+  delayed.delay(function () {
+    debug('Parsing options...');
+  }, 500)
+  debug("Running command 'git rev-list HEAD --count'")
+  debug("STDOUT: %s", stdout.slice(0,stdout.length-1));
+  debug("STDERR: %s", stderr.slice(0,stderr.length-1));
 });
+
+com
+  .version(pack.version)
+  .option('-d, --debug', 'Debug mode')
+  .command('server', "Starts the server on port 8080")
+  .parse(process.argv);
+
+// start
+// TODO: Create boot types (safemode, full, recovery)
 
 /* process.on( 'SIGINT', function() {
   console.log( "\n[info] Stopping Jakhu..." );

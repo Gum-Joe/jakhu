@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # debug
-DEBUG_TARGETS=http,database,boot,kernal,starter,database:stdout,database:stderr
+DEBUG_TARGETS=http,database,boot,kernal,starter,database:stdout,database:stderr,boot:recovery,server
 DEBUG=$DEBUG_TARGETS node bin/jakhu server

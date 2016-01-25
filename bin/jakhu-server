@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+// Starts the server
+var express = require('express');
+var kernal = require('../boot/boot.js');
+//var git = require('nodegit');
+var exec = require('child_process').exec;
+var com = require('commander');
+var pack = require('../package.json');
+var debug = require('debug')('kernal');
+com
+  .version(pack.version)
+  .option('-d, --debug', 'Debug mode')
+  .parse(process.argv);
+
+debug("Server command interpreter launched.");
+console.log("");
+kernal.startboot("ok");

@@ -1,0 +1,47 @@
+@import "../fonts";
+@import "../resources/default";
+
+body {
+  font-family: Open-Sans !important;
+  background-color: #ecf0f1;
+}
+
+.navbar-nb {
+  border: none !important;
+  .navbar-nb-left {
+    float: left;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #34495e;
+    border: none;
+  }
+  .nright {
+    float: right !important;
+  }
+  li {
+    float: left;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    img {
+      width: 25px;
+      height: 25px;
+      border-radius: 100px;
+      margin-right: 5px;
+      margin-top: 1px;
+    }
+  }
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #2c3e50;
+  }
+}

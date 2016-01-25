@@ -123,6 +123,8 @@ module.exports = function(grunt) {
           'views/css/dashboard-main.css': 'views/src/dashboard-main.scss',
           'views/css/login.css': 'views/src/login.scss',
           'views/css/error.css': 'views/src/error.scss',
+          'views/css/app-status-ejs-template.css': 'views/src/ejs-templates/app-status.scss',
+          'views/css/default-sheet.css': 'views/src/resources/default.scss',
         }
       },
     },
@@ -139,7 +141,7 @@ module.exports = function(grunt) {
     },
     watch: {
       sass: {
-        files: ['views/src/*.scss', 'Gruntfile.js'],
+        files: ['views/src/*.scss', 'views/src/**/*.scss', 'Gruntfile.js'],
         tasks: ['compile:sass'],
         options: {
           interrupt: true,

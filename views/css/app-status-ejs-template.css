@@ -1,0 +1,91 @@
+@font-face {
+  font-family: Open-Sans;
+  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+body {
+  font-family: Open-Sans;
+  background-color: #ecf0f1;
+}
+
+body {
+  font-family: Open-Sans !important;
+  background-color: #ecf0f1;
+}
+
+.navbar-nb {
+  border: none !important;
+  /* Change the link color to #111 (black) on hover */
+}
+.navbar-nb .navbar-nb-left {
+  float: left;
+}
+.navbar-nb ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #34495e;
+  border: none;
+}
+.navbar-nb .nright {
+  float: right !important;
+}
+.navbar-nb li {
+  float: left;
+}
+.navbar-nb li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 18px;
+}
+.navbar-nb li a img {
+  width: 25px;
+  height: 25px;
+  border-radius: 100px;
+  margin-right: 5px;
+  margin-top: 1px;
+}
+.navbar-nb li a:hover {
+  background-color: #2c3e50;
+}
+
+/*# sourceMappingURL=app-status-ejs-template.css.map */
