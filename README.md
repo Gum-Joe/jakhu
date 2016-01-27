@@ -13,7 +13,7 @@ The status of this is available in CHANGELOG.md and ROADMAP.md
 
 # Building
 ## Unix (Debian, Ubuntu, CentOS) and Mac OSX
-Simple install comeing soon!
+Simple install coming soon!
 Prerequisites:
 * gcc and g++ 4.8 or newer, or
 * clang and clang++ 3.4 or newer (for node-gyp)
@@ -53,8 +53,8 @@ Prerequisites:
 
 <h5>Building:</h5>
 ```
-$ [sudo] npm install -g coffee-script grunt-cli node-gyp
-$ [sudo] gem install bundle
+$ npm install -g coffee-script grunt-cli node-gyp
+$ gem install bundle
 $ npm install
 $ bundle install
 $ grunt sass:dist
