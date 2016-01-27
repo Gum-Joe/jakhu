@@ -65,17 +65,17 @@ function startdb() {
 	var dockermac = process.env.DOCKER_HOST;
 	var dockerip = dockermac.slice(6,dockermac.length-5);
 	if (process.env.JAKHU_RUN_TYPE == "docker" || process.env.JAKHU_RUN_TYPE == undefined) {
-		exec('docker stop jakhumongodb', (err, stdout, stderr) => {
-			debug('Running command "docker stop jakhumongodb"');
-			debug('stdout:');
-			stdouta(stdout);
-			debug('stderr:');
-			stderra(stderr);
-	  	if (err) {
-				//console.error("Error when starting mongodb docker container!");
-	    	//console.error(err);
-	  	}
-		});
+		//exec('docker stop jakhumongodb', (err, stdout, stderr) => {
+		//	debug('Running command "docker stop jakhumongodb"');
+		//	debug('stdout:');
+		//	stdouta(stdout);
+		//	debug('stderr:');
+		//	stderra(stderr);
+	  //	if (err) {
+		//		//console.error("Error when starting mongodb docker container!");
+	  //  	//console.error(err);
+	  //	}
+		//});
 		// start it.
 		// hide errors
 		exec('docker start jakhumongodb', (err, stdout, stderr) => {
