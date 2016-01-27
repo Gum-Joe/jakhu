@@ -48,44 +48,42 @@ body {
   background-color: #ecf0f1;
 }
 
-.navbar-nb {
+.jakhunav {
   border: none !important;
-  /* Change the link color to #111 (black) on hover */
+  background-color: #34495e !important;
+  color: #ecf0f1 !important;
+  border-radius: 0 !important;
 }
-.navbar-nb .navbar-nb-left {
-  float: left;
+.jakhunav div .navbar-collapse ul .active a {
+  background-color: #2c3e50 !important;
+  color: #ecf0f1 !important;
 }
-.navbar-nb ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #34495e;
-  border: none;
+.jakhunav div .navbar-collapse ul li a {
+  background-color: #34495e !important;
+  color: #ecf0f1 !important;
 }
-.navbar-nb .nright {
-  float: right !important;
-}
-.navbar-nb li {
-  float: left;
-}
-.navbar-nb li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 18px;
-}
-.navbar-nb li a img {
-  width: 25px;
-  height: 25px;
+.jakhunav div .navbar-collapse ul li a img {
+  width: 20px;
+  height: 20px;
   border-radius: 100px;
-  margin-right: 5px;
+  margin-right: 10px;
   margin-top: 1px;
 }
-.navbar-nb li a:hover {
-  background-color: #2c3e50;
+.jakhunav div .navbar-collapse ul li a:hover {
+  background-color: #2c3e50 !important;
+}
+.jakhunav div .navbar-collapse ul li ul {
+  background-color: #34495e !important;
+  color: #ecf0f1 !important;
+}
+.jakhunav div .navbar-collapse ul li ul .divider {
+  margin-bottom: 5px !important;
+}
+.jakhunav div .navbar-collapse ul li ul a {
+  word-spacing: 4px;
+}
+.jakhunav div .navbar-header a {
+  color: #ecf0f1 !important;
 }
 
 /*# sourceMappingURL=app-status-ejs-template.css.map */

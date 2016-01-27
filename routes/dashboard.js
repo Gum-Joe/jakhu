@@ -41,6 +41,7 @@ router.get('/', function(req, res, next) {
 // GET app data
 router.get('/apps/status', function (req, res, next) {
   // Check auth
+  console.log("\n");
   if (!req.user) {
     // No user, redirect to login
     res.redirect(`/?callback=/dashboard/apps/status?app=${req.query.app}`);

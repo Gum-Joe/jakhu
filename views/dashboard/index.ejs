@@ -138,7 +138,7 @@
             <h5>YOUR WEB APPS</h5>
             <ul>
               <% for(var i = 0; i < apps.apps.length; i++) {%>
-                <a href="/dashboard/apps/status?author=<%=apps.apps[i].author%>&app=<%=apps.apps[i].name%>"><li><ul id="success">
+                <a href="/dashboard/apps/status?app=<%=apps.apps[i].author%>/<%=apps.apps[i].name%>"><li><ul id="success">
                   <li data-toggle="tooltip" data-placement="bottom" title="Web-app"><%=apps.apps[i].author%>/<%=apps.apps[i].name%></li>
                   <li data-toggle="tooltip" data-placement="bottom" title="Tubs"><%=apps.apps[i].tubs%></li>
                   <li id="daterun" data-toggle="tooltip" data-placement="bottom" title="Last run">01.02.03</li>

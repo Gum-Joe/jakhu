@@ -6,42 +6,50 @@ body {
   background-color: #ecf0f1;
 }
 
-.navbar-nb {
+.jakhunav {
   border: none !important;
-  .navbar-nb-left {
-    float: left;
-  }
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #34495e;
-    border: none;
-  }
-  .nright {
-    float: right !important;
-  }
-  li {
-    float: left;
-  }
-  li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 18px;
-    img {
-      width: 25px;
-      height: 25px;
-      border-radius: 100px;
-      margin-right: 5px;
-      margin-top: 1px;
+  background-color: #34495e !important;
+  color: #ecf0f1 !important;
+  border-radius: 0 !important;
+  div {
+    .navbar-collapse {
+      ul {
+        .active {
+          a {
+            background-color: #2c3e50 !important;
+            color: #ecf0f1 !important;
+          }
+        }
+        li a {
+          background-color: #34495e !important;
+          color: #ecf0f1 !important;
+          img {
+            width: 20px;
+            height: 20px;
+            border-radius: 100px;
+            margin-right: 10px;
+            margin-top: 1px;
+          }
+        }
+        li a:hover {
+          background-color: #2c3e50 !important;
+        }
+        li ul {
+          background-color: #34495e !important;
+          color: #ecf0f1 !important;
+          .divider {
+            margin-bottom: 5px !important;
+          }
+          a {
+            word-spacing: 4px;
+          }
+        }
+      }
     }
-  }
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
-    background-color: #2c3e50;
+    .navbar-header {
+      a {
+        color: #ecf0f1 !important;
+      }
+    }
   }
 }
