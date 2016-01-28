@@ -19,6 +19,7 @@ var delayed = require('delayed');
 var debug = require('debug')('database');
 var stdouta = require('debug')('database:stdout');
 var stderra = require('debug')('database:error');
+var dburl = process.env.JAKHU_DB_URL || "localhost:27017"
 // awaiting solve
 // var bcrypt = require('bcrypt');
 
@@ -121,9 +122,9 @@ exports.connect = function (x, call) {
 		});
 	} else {
 		if (x === "test") {
-			connect("test", "localhost:27017");
+			connect("test", dburl);
 		} else {
-			connect("e", "localhost:27017");
+			connect("e", dburl);
 		}
 	}
 }
