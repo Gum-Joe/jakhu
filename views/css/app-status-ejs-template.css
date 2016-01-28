@@ -50,17 +50,18 @@ body {
 
 .jakhunav {
   border: none !important;
-  background-color: #34495e !important;
-  color: #ecf0f1 !important;
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
   border-radius: 0 !important;
+  font-family: OpenSans-Regular !important;
 }
 .jakhunav div .navbar-collapse ul .active a {
-  background-color: #2c3e50 !important;
-  color: #ecf0f1 !important;
+  background-color: #d2dcdf !important;
+  color: #2980b9 !important;
 }
 .jakhunav div .navbar-collapse ul li a {
-  background-color: #34495e !important;
-  color: #ecf0f1 !important;
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
 }
 .jakhunav div .navbar-collapse ul li a img {
   width: 20px;
@@ -70,11 +71,11 @@ body {
   margin-top: 1px;
 }
 .jakhunav div .navbar-collapse ul li a:hover {
-  background-color: #2c3e50 !important;
+  background-color: #d2dcdf !important;
 }
 .jakhunav div .navbar-collapse ul li ul {
-  background-color: #34495e !important;
-  color: #ecf0f1 !important;
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
 }
 .jakhunav div .navbar-collapse ul li ul .divider {
   margin-bottom: 5px !important;
@@ -83,7 +84,14 @@ body {
   word-spacing: 4px;
 }
 .jakhunav div .navbar-header a {
-  color: #ecf0f1 !important;
+  color: #34495e !important;
+}
+
+.header {
+  margin-top: 70px;
+  margin-left: 50px;
+  font-family: OpenSans-Regular;
+  color: #2b383b;
 }
 
 /*# sourceMappingURL=app-status-ejs-template.css.map */
