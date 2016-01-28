@@ -59,4 +59,38 @@ $color : #34495e;
   margin-left: 50px;
   font-family: OpenSans-Regular;
   color: #2b383b;
+  .label {
+    font-size: 13px !important;
+    font-weight: lighter !important;
+  }
+  .buttons {
+    float: right !important;
+    margin-right: 20px;
+    margin-top: -30px;
+    background: none !important;
+    .btn-success {
+      color: #5cb85c !important;
+      background: none !important;
+      i {
+        font-size: 15px;
+        margin-top: 0.1217px;
+      }
+    }
+    .btn-success:hover {
+      color: #449d44 !important;
+      background: none !important;
+    }
+    .btn-success {
+      color: #5cb85c !important;
+      background: none !important;
+      i {
+        font-size: 15px;
+        margin-top: 0.1217px;
+      }
+    }
+    .btn-success:hover {
+      color: #449d44 !important;
+      background: none !important;
+    }
+  }
 }
