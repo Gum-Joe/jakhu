@@ -137,5 +137,13 @@ $color : #34495e;
     background-color: #1a1a1a !important;
     width: 100% !important;
     height: 50px !important;
+    .btn {
+      background: none !important;
+      border-color: #7f8c8d;
+      color: #ecf0f1 !important;
+      margin-top: 7.5px;
+      float: right;
+      margin-right: 10px;
+    }
   }
 }

@@ -71,7 +71,10 @@
   </button>
   <div class="collapse logs" id="logs<%=info.tubs[i]%>">
     <div class="well">
-      <div class="headwell"></div>
+      <div class="headwell">
+        <!-- TODO: Add run id as well -->
+        <a href="/dashboard/apps/logs/download?app=<%=app.author%>/<%=app.name%>&tub=<%=info.tubs[i]%>"><button type="button" class="btn btn-primary" id="startapp"><i class="fa fa-arrow-circle-down"></i> Download log</button></a>
+      </div>
       <div class="textwell">
         <ul>
           <li><span>1</span> $ <%=info.tubs[i]%></li>

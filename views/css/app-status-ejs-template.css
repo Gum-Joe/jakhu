@@ -179,5 +179,13 @@ body {
   width: 100% !important;
   height: 50px !important;
 }
+.logs .well .headwell .btn {
+  background: none !important;
+  border-color: #7f8c8d;
+  color: #ecf0f1 !important;
+  margin-top: 7.5px;
+  float: right;
+  margin-right: 10px;
+}
 
 /*# sourceMappingURL=app-status-ejs-template.css.map */
