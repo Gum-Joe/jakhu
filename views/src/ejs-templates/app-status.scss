@@ -124,6 +124,14 @@ $color : #34495e;
   padding: 0 !important;
   .textwell {
     padding: 19px !important;
+    ul {
+      list-style-type: none !important;
+      padding: 0;
+      li span {
+        color: #7f8c8d;
+        padding-right: 5px;
+      }
+    }
   }
   .headwell {
     background-color: #1a1a1a !important;

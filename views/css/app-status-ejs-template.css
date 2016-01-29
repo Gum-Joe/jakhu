@@ -166,6 +166,14 @@ body {
 .logs .well .textwell {
   padding: 19px !important;
 }
+.logs .well .textwell ul {
+  list-style-type: none !important;
+  padding: 0;
+}
+.logs .well .textwell ul li span {
+  color: #7f8c8d;
+  padding-right: 5px;
+}
 .logs .well .headwell {
   background-color: #1a1a1a !important;
   width: 100% !important;
