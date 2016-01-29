@@ -1,29 +1,36 @@
 language: node_js
 node_js:
-  - 'stable'
-  - '5.4.1'
-  - '5.4.0'
-  - '5.3.0'
-  - '4.2.6'
+- stable
+- 5.4.1
+- 5.4.0
+- 5.3.0
+- 4.2.6
 group: edge
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
-      - g++-4.9
+    - g++-4.8
+    - g++-4.9
 os:
-  - linux
+- linux
 services:
-  - mongodb
+- mongodb
 env:
   global:
-    - CXX=g++-4.8
-    - JAKHU_RUN_TYPE=local
-    - JAKHU_TEST=true
+  - CXX=g++-4.8
+  - JAKHU_RUN_TYPE=local
+  - JAKHU_TEST=true
 install:
-  - npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
-  - npm install
-  - bundle install
+- npm install -g bower mocha nyc codeclimate-test-reporter coffee-script
+- npm install
+- bundle install
 script: make ci
+notifications:
+  webhooks:
+    urls:
+    - secure: tU4PXiME/huOULVnswyMYyPrj1E0UAi22pK0MDoZam6AXpVCDOboQarZNzScsDQqW5Eoqm86Fsnqop1SRelq9hx+KCHW5BppRoR9nTVb0DRub16p+VgLWDmnJiX6seTpAxdtn1Na+V2RIKDC0ugW7iL04JXh9m0Yf4QV9TdW/qP16faqdy+ex/sbkvSbhRLrKfZaDFHBv+q0CKnvZ7wuyYTZsSh2hH6sVyJ9rAOvCD/wmX39Ut77sLBmnHjQ1lC1KWEgMhcS++q49CgeKQs7jQ2PRMqk/CzNPP+YY0afK0yjhcNU4bLDUnPsNvQnA1BVCpxzlBCfLENdElVpK3dZyzXCCY8fd3Enndnk4dswDPpCt815HDagh4eO2CPY/s+YdLEtpk5jpR8NBBoMazePY4d3ogNa45SBG5yu63bmTuTyinIgYYnjOKx4BDvl8whC7RjrWFfFwdOG94gGttZHZrPV5aLQSA/HTX4qhM1fdhTmB27jQT+OXtsiVZZ1YV2SDCdK/+IKclOdEZGoAap5Nme/kXflRLM7k1GyO7M7HJxBYeKKoRrilkQaqmWgzT6eULfoVYNZmMGXOjzHoJV6Ql2cqOM7MqRBUnZl3bokMu/63+nkYyoriuXWYxxz9BwY8tf8Nz9RMsek6l3K8tWJhwTKL7DlAYECl2fJycpM6wo=
+    on_success: change
+    on_failure: always
+    on_start: never
