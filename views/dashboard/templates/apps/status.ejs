@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>App <%=app.author%>/<%=app.name%> | Jakhu</title>
     <link rel="stylesheet" href="/css/app-status-ejs-template.css" media="screen" title="no title" charset="utf-8">
-
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -61,13 +60,38 @@
   <h1><%=app.author%>/<%=app.name%></h1>
   <span class="label label-success"><i class="fa fa-circle"></i> State here</span>
   <div class="buttons">
-    <button type="button" class="btn btn-success"><i class="fa fa-play-circle-o"></i> Start app</button>
-    <button type="button" class="btn btn-danger"><i class="fa fa-play-circle-o"></i> Start app</button>
+    <button type="button" class="btn btn-success" id="startapp"><i class="fa fa-play-circle-o"></i> Start app</button>
+    <button type="button" class="btn btn-danger" id="stopapp"><i class="fa fa-stop-circle-o"></i> Stop app</button>
   </div>
+</div>
+<div class="container-fluid tubs">
+  <% for(var i = 0; i < info.tubs.length; i++) { %>
+  <button class="btn btn-primary tubsb" type="button" data-toggle="collapse" data-target="#logs<%=info.tubs[i]%>" aria-expanded="false" aria-controls="logs<%=info.tubs[i]%>">
+    <%=info.tubs[i]%>
+  </button>
+  <div class="collapse logs" id="logs<%=info.tubs[i]%>">
+    <div class="well">
+      <div class="headwell"></div>
+      <div class="textwell">
+        <%=info.tubs[i]%>
+        Logs here
+      </div>
+    </div>
+  </div>
+  <% } %>
 </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    console.log(window.innerWidth);
+      if (window.innerWidth <= 527) {
+        document.getElementById("startapp").innerHTML = '<i class="fa fa-play-circle-o"></i>';
+        document.getElementById("stopapp").innerHTML = '<i class="fa fa-stop-circle-o"></i>';
+        $("#startapp").css("marginRight", "0px");
+        $("#startapp").css("marginLeft", "50px");
+      }
+    </script>
   </body>
 </html>

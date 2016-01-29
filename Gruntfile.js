@@ -124,6 +124,7 @@ module.exports = function(grunt) {
           'views/css/login.css': 'views/src/login.scss',
           'views/css/error.css': 'views/src/error.scss',
           'views/css/app-status-ejs-template.css': 'views/src/ejs-templates/app-status.scss',
+          'views/css/app-status-ejs-template-mobile.css': 'views/src/ejs-templates/app-status-mobile.scss',
           'views/css/default-sheet.css': 'views/src/resources/default.scss',
         }
       },

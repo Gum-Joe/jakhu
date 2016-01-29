@@ -99,9 +99,22 @@ body {
 }
 .header .buttons {
   float: right !important;
-  margin-right: 20px;
-  margin-top: -30px;
   background: none !important;
+}
+@media only screen and (min-width: 545px) {
+  .header .buttons {
+    margin-right: 20px;
+    margin-top: -30px;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .header .buttons {
+    margin-right: 180px;
+    margin-top: -5px;
+  }
+}
+.header .buttons .btn {
+  padding: 3px 13px !important;
 }
 .header .buttons .btn-success {
   color: #5cb85c !important;
@@ -114,6 +127,49 @@ body {
 .header .buttons .btn-success:hover {
   color: #449d44 !important;
   background: none !important;
+}
+.header .buttons .btn-danger {
+  color: #d43f3a !important;
+  background: none !important;
+}
+.header .buttons .btn-danger i {
+  font-size: 15px;
+  margin-top: 0.1217px;
+}
+.header .buttons .btn-danger:hover {
+  color: #ac2925 !important;
+  background: none !important;
+}
+
+.tubs {
+  margin-top: 10px;
+}
+
+.tubsb {
+  width: 100% !important;
+  background: #d4dbde !important;
+  color: #1a1a1a !important;
+  border-radius: 0 !important;
+  border: none !important;
+  margin-top: 10px;
+}
+
+.tubsb:hover {
+  background: #b7c3c8 !important;
+}
+
+.logs .well {
+  color: #ecf0f1 !important;
+  background-color: #2a2a2a !important;
+  padding: 0 !important;
+}
+.logs .well .textwell {
+  padding: 19px !important;
+}
+.logs .well .headwell {
+  background-color: #1a1a1a !important;
+  width: 100% !important;
+  height: 50px !important;
 }
 
 /*# sourceMappingURL=app-status-ejs-template.css.map */

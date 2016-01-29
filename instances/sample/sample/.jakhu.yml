@@ -1,0 +1,53 @@
+# Configures Web-app
+# Language
+language: nodejs
+nodejs:
+  - stable
+require:
+  - ruby
+name: sample
+# Command to start
+start: node bin/start
+# Author
+# services
+author: sample
+services:
+  - mongo
+
+port: 8080
+# Public port that is revaeled by docker (port by default)
+public: 3000
+# Install - npm install for nodejs
+# Tubs
+tubs:
+  - default
+  - def
+global:
+  npm:
+    - bower
+    - grunt-cli
+    - nodemon
+  gem:
+    - sass
+
+env:
+  - NODE_ENV=dev
+
+build:
+  install:
+    - npm install
+  script:
+    - grunt compile
+
+# ENV
+# BOSS_LANG_VERSION
+# BOSS_OS
+# BOSS_RUNNER_VERSION
+# BOSS_NODEJS_VERSION
+# BOSS_RUBY_VERSION
+# BOSS_PYTHON_VERSION
+# BOSS_BOX_VERSION
+# BOSS_RUN_ID
+# BOSS_TUB_ID
+# BOSS_APP_NAME
+# BOSS_TUB_NAME

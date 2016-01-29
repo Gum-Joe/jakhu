@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Open-Sans;
+  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+body {
+  font-family: Open-Sans;
+  background-color: #ecf0f1;
+}
+
+.header .buttons {
+  margin-right: 180px;
+  margin-top: -5px;
+}
+
+/*# sourceMappingURL=app-status-ejs-template-mobile.css.map */

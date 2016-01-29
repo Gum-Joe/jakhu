@@ -57,12 +57,16 @@ router.get('/apps/status', function (req, res, next) {
         appobj = {name: this.apps[i].name, author: this.apps[i].author};
       }
     }
+    // Get app info
+    const instances = "instances";
+    const appinfo = YAML.load(`${instances}/${appobj.author}/${appobj.name}/.jakhu.yml`);
     //onsole.log(`App: ${appobj}`);
     res.render(`${templates}/apps/status.ejs`, {
       app: appobj,
       apps: this.apps,
       user: req.user.username || req.user,
       imgprofile: '/css/img/profile.jpg',
+      info: appinfo
     })
     //res.send(appobj)
   }
