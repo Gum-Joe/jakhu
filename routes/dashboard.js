@@ -8,6 +8,7 @@ var YAML = require('yamljs');
 var runner = require('../libs/runner/findapp.js');
 const root = "dashboard"
 const templates = `${root}/templates`
+var starter = require("jakhu-container");
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
@@ -49,6 +50,7 @@ router.get('/apps/status', function (req, res, next) {
     // Find app
     // App
     const appreq = req.query.app;
+    // Load YAML
     this.apps = runner.getApps(req.query.author, req.query.app).apps;
     var appobj = {};
     // Find correct app
@@ -59,7 +61,14 @@ router.get('/apps/status', function (req, res, next) {
     }
     // Get app info
     const instances = "instances";
-    const appinfo = YAML.load(`${instances}/${appobj.author}/${appobj.name}/.jakhu.yml`);
+    try {
+      const appinfo = YAML.load(`${instances}/${appobj.author}/${appobj.name}/.jakhu.yml`);
+    }
+    catch (err){
+      //do whatever with error
+      err.message = `Could not find app ${appobj.author}/${appobj.name} - does it exist?`;
+      next(err)
+    }
     //onsole.log(`App: ${appobj}`);
     res.render(`${templates}/apps/status.ejs`, {
       app: appobj,
@@ -71,5 +80,22 @@ router.get('/apps/status', function (req, res, next) {
     //res.send(appobj)
   }
 });
+
+router.param(['author', 'name'], function (req, res, next, value) {
+  res.send(value);
+  next();
+});
+
+router.get('/apps/start', function (req, res, next) {
+  if (!req.user) {
+    res.redirect('/');
+  } else {
+    var neapp = new starter.App(req.query.author, req.query.app);
+    console.log(neapp)
+    //neapp.final()
+    res.redirect(req.query.callback);
+  }
+  //res.send(req.author);
+})
 
 module.exports = router;

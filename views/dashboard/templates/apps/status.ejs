@@ -60,8 +60,8 @@
   <h1><%=app.author%>/<%=app.name%></h1>
   <span class="label label-success"><i class="fa fa-circle"></i> State here</span>
   <div class="buttons">
-    <button type="button" class="btn btn-success" id="startapp"><i class="fa fa-play-circle-o"></i> Start app</button>
-    <button type="button" class="btn btn-danger" id="stopapp"><i class="fa fa-stop-circle-o"></i> Stop app</button>
+    <a href="/dashboard/apps/start?author=<%=app.author%>&app=<%=app.name%>&callback=/dashboard/apps/status?app=<%=app.author%>/<%=app.name%>"><button type="button" class="btn btn-success" id="startapp"><i class="fa fa-play-circle-o"></i> Start app</button></a>
+    <a><button type="button" class="btn btn-danger" id="stopapp"><i class="fa fa-stop-circle-o"></i> Stop app</button></a>
   </div>
 </div>
 <div class="container-fluid tubs">
