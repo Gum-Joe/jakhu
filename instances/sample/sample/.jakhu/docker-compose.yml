@@ -1,0 +1,15 @@
+default:
+    build: default
+    ports:
+        - '3000:8080'
+    container_name: sample-tub-default
+def:
+    build: def
+    ports:
+        - '3001:8080'
+    container_name: sample-tub-def
+    volumes:
+      - ../:/app
+mongo:
+    image: mongo
+    container_name: sample-service-mongo

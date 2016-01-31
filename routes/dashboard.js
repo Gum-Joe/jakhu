@@ -8,7 +8,7 @@ var YAML = require('yamljs');
 var runner = require('../libs/runner/findapp.js');
 const root = "dashboard"
 const templates = `${root}/templates`
-var starter = require("jakhu-container");
+var App = require("jakhu-container").App;
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
@@ -90,8 +90,8 @@ router.get('/apps/start', function (req, res, next) {
   if (!req.user) {
     res.redirect('/');
   } else {
-    var neapp = new starter.App(req.query.author, req.query.app);
-    console.log(neapp)
+    var neapp = new App(req.query.author, req.query.app);
+    neapp.autoTubs()
     //neapp.final()
     res.redirect(req.query.callback);
   }
