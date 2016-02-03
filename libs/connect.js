@@ -17,6 +17,7 @@ var exec = require('child_process').exec;
 var execSync = require('child_process').execSync;
 var delayed = require('delayed');
 var debug = require('debug')('database');
+var errord = require('debug')('database:error');
 var stdouta = require('debug')('database:stdout');
 var stderra = require('debug')('database:error');
 var dburl = process.env.JAKHU_DB_URL || "localhost:27017"
@@ -133,7 +134,25 @@ function connect(type, porttt) {
 	mongoose.connect(`mongodb://${porttt}/jakhu`);
 
 db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+retry = 0
+db.on('error', function (err) {
+	retry = retry + 1;
+	if (retry <= 3) {
+		if (~process.env.DEBUG.indexOf('database')) {
+			debug("Connection to db failed. Retrying...");
+		} else {
+			console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Connection to db failed. Retrying...")
+		}
+		mongoose.connect(`mongodb://${porttt}/jakhu`);
+	} else {
+		if (~process.env.DEBUG.indexOf('database')) {
+			errord("Maximum amount of retries exceeded!");
+		} else {
+			console.log(clicolour.cyanBright("jakhu ") + clicolour.magentaBright("database ") + "Maximum amount of retries exceeded!");
+		}
+		throw err;
+	}
+});
 db.once('open', function (callback) {
 	if (~process.env.DEBUG.indexOf('database')) {
 		debug("Yay! We succefully connected to the db");
