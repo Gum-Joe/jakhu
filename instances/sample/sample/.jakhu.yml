@@ -1,8 +1,7 @@
 # Configures Web-app
 # Language
 language: nodejs
-nodejs:
-  - stable
+nodejs: stable
 require:
   - ruby
 name: sample

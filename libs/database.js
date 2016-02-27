@@ -18,4 +18,22 @@ var TokenSchema = new mongoose.Schema({
 });
 var token = mongoose.model('rememberme', TokenSchema);
 
-module.exports = {user: user, UserSchema: UserSchema, oauth: oauth, OAuthSchema: OAuthSchema, token: token};
+var NotifSchema = new mongoose.Schema({
+  app: String,
+  text: String,
+  iconPath: String,
+  link: String
+});
+var notification = mongoose.model('notifications', NotifSchema);
+
+var AppSchema = new mongoose.Schema({
+  name: String,
+  path: String,
+  author: String,
+  iconPath: String,
+  installDate: Date,
+  version: String,
+});
+var Apps = mongoose.model('apps', AppSchema);
+
+module.exports = {Apps: Apps, user: user, UserSchema: UserSchema, oauth: oauth, OAuthSchema: OAuthSchema, token: token, notification: notification};

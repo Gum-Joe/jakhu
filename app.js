@@ -29,6 +29,7 @@ var mid = require('./libs/middleware.js')
 var stream = require('./libs/stream.js');
 var yml = require('./libs/yml.js');
 var schema = require('./libs/database');
+var apis = require('./libs/api.js');
 
 var routes = require('./routes/index');
 var api = require('./routes/api/api');
@@ -45,6 +46,14 @@ var salt = bcrypt.genSaltSync(10);
 // DEBUGING
 var debug = {};
 debug.http = require('debug')('server');
+
+function use(param1, param2) {
+  if (typeof param2 !== 'undefined') {
+    app.use(param1, param2)
+  } else {
+    app.use(param1)
+  }
+}
 
 
 start = function start(x, y, portt){
@@ -102,6 +111,7 @@ if(y === true || x === 'basic' || x === 'ci'){
       console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
     }
     connect.connect();
+    apis.init(app, {use: use});
     debug.http('Done starting server');
     kernal.startinput("ok");
   });

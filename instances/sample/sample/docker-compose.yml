@@ -1,10 +1,12 @@
 default:
-    dockerfile: default/Dockerfile
+    dockerfile: .jakhu/default/Dockerfile
+    build: .
     ports:
         - '3000:8080'
     container_name: sample-tub-default
 def:
-    dockerfile: def/Dockerfile
+    dockerfile: .jakhu/def/Dockerfile
+    build: .
     ports:
         - '3000:8080'
     container_name: sample-tub-def

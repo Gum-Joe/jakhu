@@ -1,0 +1,15 @@
+{
+  "name": "sample",
+  "author": "sample",
+  "icon": "icons/icon.png",
+  "version": "1.0.0",
+  "main": "app.js",
+  "github": "Gum-Joe/jakhu-sample",
+  "issues": "https://github.com/Gum-Joe/jakhu-sample/issues",
+  "readme": "https://github.com/Gum-Joe/jakhu-sample/blob/master/README.md",
+  "branch": "master",
+  "license": "MIT",
+  "dependencies": {
+    "dep": "~3.3.6"
+  }
+}
