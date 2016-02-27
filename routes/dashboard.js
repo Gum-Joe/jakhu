@@ -22,6 +22,7 @@ router.get('/', function(req, res, next) {
     let uptime;
     let requestarray;
     let downtime;
+    const start = Date.now();
     fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
       if (err) {
         throw err;
