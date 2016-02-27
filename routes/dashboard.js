@@ -20,6 +20,28 @@ router.get('/', function(req, res, next) {
   } else {
     let rwas;
     let uptime;
+    let requestarray;
+    let downtime;
+    fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
+      if (err) {
+        throw err;
+      } else {
+        let runtime = parseInt(start) - parseInt(data);
+        fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+          if (err) {
+            throw err;
+          } else {
+            let frun = runtime - parseInt(data);
+            if (frun > 10000) {
+              const x = Math.round(frun / 100);
+              downtime = x.toString();
+            } else {
+              downtime = frun.toString();
+            }
+          }
+        })
+      }
+    });
     fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
       if (err) {
         throw err;
@@ -38,6 +60,13 @@ router.get('/', function(req, res, next) {
         throw err;
       }
       rwas = count.length;
+    })
+    // Request data
+    db.Requests.find({}, (err, data) => {
+      if (err) {
+        throw err;
+      }
+      requestarray = data;
     })
     var d = fs.readFileSync('etc/date.txt').toString();
     var fd = parseInt(d);
@@ -58,7 +87,9 @@ router.get('/', function(req, res, next) {
         requests: parsedreq.req,
         apps: YAML.load('config/apps.yml'),
         rwas: rwas,
-        uptime: uptime
+        uptime: uptime,
+        requestdata: requestarray,
+        downtime: downtime
       });
     });
   }

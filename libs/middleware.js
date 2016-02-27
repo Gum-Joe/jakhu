@@ -22,12 +22,18 @@ mid.timer = (req, res, next) => {
     const starttime = new Date();
     res.on('finish', function() {
         var duration = Date.now() - start;
-        const store = new db.Requests({method: req.method, route: req.route.path, starttime: starttime, endtime: new Date(), time: duration});
-        store.save((err) => {
-          if (err) {
-            throw err;
+        try {
+            const store = new db.Requests({method: req.method, route: req.route.path, starttime: starttime, endtime: new Date(), time: duration});
+            store.save((err) => {
+              if (err) {
+                throw err;
+              }
+            })
+        } catch (e) {
+          if (e.message !== "Cannot read property 'path' of undefined") {
+            throw e;
           }
-        })
+        }
         // Log to file
         if (fs.existsSync('etc/requesttotal.txt') !== true) {
           fs.openSync('etc/requesttotal.txt', 'w+');

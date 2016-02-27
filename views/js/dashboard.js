@@ -5,6 +5,8 @@ var socket = io.connect();
 // and set html of #req
 
 socket.on('uptime', function (uptime) {
-  console.log("hi");
   document.getElementById("uptime").innerHTML = uptime.toString('utf8')
+})
+socket.on('downtime', function (downtime) {
+  document.getElementById("downtime").innerHTML = downtime.toString('utf8')
 })

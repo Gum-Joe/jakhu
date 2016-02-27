@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -56,10 +57,17 @@ function use(param1, param2) {
 }
 
 
-start = function start(x, y, portt){
+exports.start = function start(x, y, portt){
 var port = process.env.PORT || portt || 8080;
 var server = http.createServer(app);
 var io = require('socket.io').listen(server);
+// Record start time:
+if (fs.existsSync('etc/starttime.txt') !== true) {
+  fs.openSync('etc/starttime.txt', 'w+');
+  fs.writeFileSync('etc/starttime.txt', Date.now());
+} else {
+  fs.writeFileSync('etc/starttime.txt', Date.now())
+}
 // create file
 mkdirp('logs');
 if(y !== true){wlogger.createlog("ok");};
@@ -127,6 +135,32 @@ io.sockets.on('connection', function(socket){
     io.emit('uptime', fs.readFileSync('etc/requesttotal.txt'))
     console.log("ok");
   });
+  function downtime() {
+    const start = Date.now();
+    let runtime;
+    let frun;
+    fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
+      if (err) {
+        throw err;
+      } else {
+        runtime = parseInt(start) - parseInt(data);
+        fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+          if (err) {
+            throw err;
+          } else {
+            frun = runtime - parseInt(data);
+            if (frun > 10000) {
+              const x = Math.round(frun / 100);
+              io.emit('downtime', x.toString()+" s")
+            } else {
+              io.emit('downtime', frun.toString()+" ms")
+            }
+          }
+        })
+      }
+    });
+  }
+  setInterval(downtime, 100000);
   io.emit('request', yml.parse('etc/requests.yml').req);
   function f() {
     if (!fs.statSync('etc/date.txt')) {
@@ -145,7 +179,6 @@ fs.watchFile('etc/requesttotal.txt', {persistent:true,interval:1}, (curr, prev) 
     if (err) {
       throw err
     } else {
-      console.log(data);
       if (parseInt(data) > 10000) {
         const nda = parseInt(data) / 100
         const nnda = Math.round(nda)
@@ -186,4 +219,3 @@ app.use(function(err, req, res, next) {
 });
 // end of start function
 };
-module.exports = {start: start};
