@@ -1,14 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var exec = require('child_process').exec;
-var delayed = require('delayed');
-var config = require('../boot/libs/configure.js');
-var fs = require('fs');
-var YAML = require('yamljs');
-var runner = require('../libs/runner/findapp.js');
+'use strict';
+const express = require('express');
+let router = express.Router();
+const exec = require('child_process').exec;
+const delayed = require('delayed');
+const config = require('../boot/libs/configure.js');
+const fs = require('fs');
+const YAML = require('yamljs');
+const runner = require('../libs/runner/findapp.js');
 const root = "dashboard"
 const templates = `${root}/templates`
-var App = require("jakhu-container").App;
+const App = require("jakhu-container").App;
+const db = require('../libs/database.js');
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
@@ -16,6 +18,27 @@ router.get('/', function(req, res, next) {
     // Or callback
     res.redirect('/');
   } else {
+    let rwas;
+    let uptime;
+    fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+      if (err) {
+        throw err;
+      } else {
+        if (parseInt(data) > 10000) {
+          const ndata = parseInt(data) / 100;
+          const nndata = Math.round(ndata);
+          uptime = nndata.toString()+" s";
+        } else {
+          uptime = data+" ms";
+        }
+      }
+    })
+    db.tubs.find({}, (err, count) => {
+      if (err) {
+        throw err;
+      }
+      rwas = count.length;
+    })
     var d = fs.readFileSync('etc/date.txt').toString();
     var fd = parseInt(d);
     var de = new Date().getHours().toString()+new Date().getMinutes().toString();
@@ -33,7 +56,9 @@ router.get('/', function(req, res, next) {
         well: true,
         sname: config.getdata().name,
         requests: parsedreq.req,
-        apps: YAML.load('config/apps.yml')
+        apps: YAML.load('config/apps.yml'),
+        rwas: rwas,
+        uptime: uptime
       });
     });
   }

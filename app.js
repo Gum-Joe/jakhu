@@ -84,6 +84,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'test')));
 app.use(mid.count);
+app.use(mid.timer);
 if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');
 }
@@ -121,6 +122,11 @@ io.sockets.on('connection', function(socket){
   // parse yml for req
   console.log();
   var yml = require("yamljs")
+  // Watch file
+  fs.watchFile('etc/requesttotal.txt', (curr, prev) => {
+    io.emit('uptime', fs.readFileSync('etc/requesttotal.txt'))
+    console.log("ok");
+  });
   io.emit('request', yml.parse('etc/requests.yml').req);
   function f() {
     if (!fs.statSync('etc/date.txt')) {
@@ -133,6 +139,22 @@ io.sockets.on('connection', function(socket){
     io.emit('runtime', de-fd);
   }
   setInterval(f, 60 * 1000);
+});
+fs.watchFile('etc/requesttotal.txt', {persistent:true,interval:1}, (curr, prev) => {
+  fs.readFile('etc/requesttotal.txt', 'utf8', function (err, data) {
+    if (err) {
+      throw err
+    } else {
+      console.log(data);
+      if (parseInt(data) > 10000) {
+        const nda = parseInt(data) / 100
+        const nnda = Math.round(nda)
+        io.emit('uptime', nnda.toString()+ " s")
+      } else {
+        io.emit('uptime', data+ " ms")
+      }
+    }
+  });
 });
 
 // catch 404 and forward to error handler
