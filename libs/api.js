@@ -14,7 +14,9 @@ function done(err, callback) {
 var api = {};
 
 function removeFirst(string) {
-  return string.substring(1)
+  if (typeof string !== undefined) {
+    return string.substring(1)
+  }
 }
 
 function initR(express, app) {

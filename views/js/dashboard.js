@@ -10,3 +10,17 @@ socket.on('uptime', function (uptime) {
 socket.on('downtime', function (downtime) {
   document.getElementById("downtime").innerHTML = downtime.toString('utf8')
 })
+socket.on('notification', function (n) {
+  $("#notifications").prepend(`<li>
+      <a href="#">
+          <div>
+              ${n}
+              <span class="pull-right text-muted small">${new Date().getHours()}:${new Date().getMinutes()}</span>
+          </div>
+      </a>
+  </li>`);
+})
+$(document).ready(function(){
+  $('#appstable').DataTable();
+    $('#requeststable').DataTable();
+});

@@ -22,6 +22,7 @@ router.get('/', function(req, res, next) {
     let uptime;
     let requestarray;
     let downtime;
+    let apps;
     const start = Date.now();
     fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
       if (err) {
@@ -69,6 +70,13 @@ router.get('/', function(req, res, next) {
       }
       requestarray = data;
     })
+    // Apps data
+    db.Apps.find({}, (err, data) => {
+      if (err) {
+        throw err;
+      }
+      apps = data;
+    })
     var d = fs.readFileSync('etc/date.txt').toString();
     var fd = parseInt(d);
     var de = new Date().getHours().toString()+new Date().getMinutes().toString();
@@ -76,21 +84,17 @@ router.get('/', function(req, res, next) {
       var parsedreq = YAML.parse(fs.readFileSync('./etc/requests.yml','utf8'));
       res.render('dashboard/index.ejs', {
         user: req.user.username || req.user,
-        build: stdout,
         imgprofile: '/css/img/profile.jpg',
         instances: config.getdata().instances,
         port: config.getdata().port,
         config: config.getdata(),
         showcase: '/css/img/showcase.jpg',
         time: de-fd,
-        well: true,
-        sname: config.getdata().name,
-        requests: parsedreq.req,
-        apps: YAML.load('config/apps.yml'),
         rwas: rwas,
         uptime: uptime,
         requestdata: requestarray,
-        downtime: downtime
+        downtime: downtime,
+        webapps: apps
       });
     });
   }

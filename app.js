@@ -1,48 +1,49 @@
 'use strict';
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var expresssession = require('express-session');
-var clicolour = require('cli-color');
-var fs = require("fs");
-var morgan = require("morgan");
-var ooberoutes = require("./routes/oobe.js");
-var dashboard = require("./routes/dashboard.js");
-var mkdirp = require('mkdirp');
-var delayed = require('delayed');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expresssession = require('express-session');
+const clicolour = require('cli-color');
+const fs = require("fs");
+const morgan = require("morgan");
+const ooberoutes = require("./routes/oobe.js");
+const dashboard = require("./routes/dashboard.js");
+const mkdirp = require('mkdirp');
+const delayed = require('delayed');
 
-var passport = require('passport');
-var LocalStrategy = require('passport-local');
-var passporthttp = require('passport-http');
+const passport = require('passport');
+const LocalStrategy = require('passport-local');
+const passporthttp = require('passport-http');
 
-var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
+const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
+const ObjectId = require('mongodb').ObjectID;
 
-var connect = require("./libs/connect.js");
-var wlogger = require("./libs/logger.js");
-var kernal = require('./boot/boot.js');
-var mid = require('./libs/middleware.js')
-var stream = require('./libs/stream.js');
-var yml = require('./libs/yml.js');
-var schema = require('./libs/database');
-var apis = require('./libs/api.js');
+const connect = require("./libs/connect.js");
+const wlogger = require("./libs/logger.js");
+const kernal = require('./boot/boot.js');
+const mid = require('./libs/middleware.js')
+const stream = require('./libs/stream.js');
+const yml = require('./libs/yml.js');
+const schema = require('./libs/database');
+const apis = require('./libs/api.js');
+const notifications = require('./libs/api/notifications');
 
-var routes = require('./routes/index');
-var api = require('./routes/api/api');
-var users = require('./routes/users');
+const routes = require('./routes/index');
+const api = require('./routes/api/api');
+const users = require('./routes/users');
 
-var http = require('http');
-var https = require('https');
+const http = require('http');
+const https = require('https');
 
-var app = express();
+let app = express();
 
-var bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10);
+const bcrypt = require('bcryptjs');
+const salt = bcrypt.genSaltSync(10);
 
 // DEBUGING
 var debug = {};
@@ -60,13 +61,17 @@ function use(param1, param2) {
 exports.start = function start(x, y, portt){
 var port = process.env.PORT || portt || 8080;
 var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+var io = require('./libs/socket.io');
 // Record start time:
 if (fs.existsSync('etc/starttime.txt') !== true) {
   fs.openSync('etc/starttime.txt', 'w+');
   fs.writeFileSync('etc/starttime.txt', Date.now());
 } else {
   fs.writeFileSync('etc/starttime.txt', Date.now())
+}
+// Delete previous up
+if (fs.existsSync('etc/requesttotal.txt')) {
+  fs.writeFileSync('etc/requesttotal.txt', "0");
 }
 // create file
 mkdirp('logs');
@@ -120,75 +125,12 @@ if(y === true || x === 'basic' || x === 'ci'){
       console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
     }
     connect.connect();
-    apis.init(app, {use: use});
     debug.http('Done starting server');
     kernal.startinput("ok");
   });
 }
-io.sockets.on('connection', function(socket){
-  console.log('New socket created.');
-  // parse yml for req
-  console.log();
-  var yml = require("yamljs")
-  // Watch file
-  fs.watchFile('etc/requesttotal.txt', (curr, prev) => {
-    io.emit('uptime', fs.readFileSync('etc/requesttotal.txt'))
-    console.log("ok");
-  });
-  function downtime() {
-    const start = Date.now();
-    let runtime;
-    let frun;
-    fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
-      if (err) {
-        throw err;
-      } else {
-        runtime = parseInt(start) - parseInt(data);
-        fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
-          if (err) {
-            throw err;
-          } else {
-            frun = runtime - parseInt(data);
-            if (frun > 10000) {
-              const x = Math.round(frun / 100);
-              io.emit('downtime', x.toString()+" s")
-            } else {
-              io.emit('downtime', frun.toString()+" ms")
-            }
-          }
-        })
-      }
-    });
-  }
-  setInterval(downtime, 100000);
-  io.emit('request', yml.parse('etc/requests.yml').req);
-  function f() {
-    if (!fs.statSync('etc/date.txt')) {
-      fs.openSync('etc/date.txt', 'w')
-      fs.appendSync('etc/date.txt', new Date().getHours().toString()+new Date().getMinutes().toString())
-    }
-    var d = fs.readFileSync('etc/date.txt').toString();
-    var fd = parseInt(d);
-    var de = new Date().getHours().toString()+new Date().getMinutes().toString();
-    io.emit('runtime', de-fd);
-  }
-  setInterval(f, 60 * 1000);
-});
-fs.watchFile('etc/requesttotal.txt', {persistent:true,interval:1}, (curr, prev) => {
-  fs.readFile('etc/requesttotal.txt', 'utf8', function (err, data) {
-    if (err) {
-      throw err
-    } else {
-      if (parseInt(data) > 10000) {
-        const nda = parseInt(data) / 100
-        const nnda = Math.round(nda)
-        io.emit('uptime', nnda.toString()+ " s")
-      } else {
-        io.emit('uptime', data+ " ms")
-      }
-    }
-  });
-});
+// Start socket.io
+io.start(server)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
