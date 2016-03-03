@@ -20,11 +20,11 @@ const notifications = require('./libs/api/notifications');
 const wlogger = require('./libs/logger');
 const kernal = require('./app/boot/boot');
 
-const routes = require('./routes/index');
-const api = require('./routes/api/api');
-const users = require('./routes/users');
-const ooberoutes = require("./routes/oobe.js");
-const dashboard = require("./routes/dashboard.js");
+const routes = require('./app/routes/index');
+const api = require('./app/routes/api/api');
+const users = require('./app/routes/users');
+const ooberoutes = require("./app/routes/oobe.js");
+const dashboard = require("./app/routes/dashboard.js");
 
 const http = require('http');
 

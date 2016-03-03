@@ -3,14 +3,14 @@ const express = require('express');
 let router = express.Router();
 const exec = require('child_process').exec;
 const delayed = require('delayed');
-const config = require('../app/boot/libs/configure.js');
+const config = require('../boot/libs/configure.js');
 const fs = require('fs');
 const YAML = require('yamljs');
-const runner = require('../libs/runner/findapp.js');
+const runner = require('../../libs/runner/findapp.js');
 const root = "dashboard"
 const templates = `${root}/templates`
 const App = require("jakhu-container").App;
-const db = require('../libs/database.js');
+const db = require('../../libs/database.js');
 /* GET dashborad home. */
 router.get('/', function(req, res, next) {
   if (!req.user) {
