@@ -163,7 +163,7 @@ module.exports = function(grunt) {
         }
       },
       main: {
-        files: ['views/**/*.scss', '*.js', 'libs/**/*.js', 'boot/**/*.js'],
+        files: ['views/**/*.scss', '*.js', 'libs/**/*.js', 'app/boot/**/*.js'],
         tasks: ['compile', 'test'],
         options: {
           interrupt: true,

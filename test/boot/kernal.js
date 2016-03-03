@@ -1,7 +1,7 @@
 // kernal tests
 var fs = require('fs');
 var assert = require('assert');
-var ken = require('../../boot/kernal/index.js')
+var ken = require('../../app/boot/kernal/index.js')
 var delayed = require('delayed');
 
 describe('Kernal tests', function () {

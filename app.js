@@ -18,7 +18,7 @@ const schema = require('./libs/database');
 const apis = require('./libs/api.js');
 const notifications = require('./libs/api/notifications');
 const wlogger = require('./libs/logger');
-const kernal = require('./boot/boot');
+const kernal = require('./app/boot/boot');
 
 const routes = require('./routes/index');
 const api = require('./routes/api/api');

@@ -1,13 +1,13 @@
 var express = require('express');
 var ooberouter = express.Router();
-//var kernal = require('../boot/boot.js');
+//var kernal = require('../app/boot/boot.js');
 var exec = require('child_process').exec;
 // redefine when needed
 //var xml2js = require('xml2js');
 
 var oobe = require('../libs/setup/setup.js');
 var os = require('os');
-//var kernal = require('../boot/boot.js');
+//var kernal = require('../app/boot/boot.js');
 var fs = require('fs');
 var db = require('../libs/database');
 
