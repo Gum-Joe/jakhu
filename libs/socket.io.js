@@ -10,19 +10,19 @@ ioe.start = (app) => {
     console.log();
     var yml = require("yamljs")
     // Watch file
-    fs.watchFile('etc/requesttotal.txt', (curr, prev) => {
-      io.emit('uptime', fs.readFileSync('etc/requesttotal.txt'))
+    fs.watchFile('app/etc/requesttotal.txt', (curr, prev) => {
+      io.emit('uptime', fs.readFileSync('app/etc/requesttotal.txt'))
     });
     function downtime() {
       const start = Date.now();
       let runtime;
       let frun;
-      fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
+      fs.readFile('app/etc/starttime.txt', 'utf8', (err, data) => {
         if (err) {
           throw err;
         } else {
           runtime = parseInt(start) - parseInt(data);
-          fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+          fs.readFile('app/etc/requesttotal.txt', 'utf8', (err, data) => {
             if (err) {
               throw err;
             } else {
@@ -39,20 +39,20 @@ ioe.start = (app) => {
       });
     }
     setInterval(downtime, 1000);
-    io.emit('request', yml.parse('etc/requests.yml').req);
+    io.emit('request', yml.parse('app/etc/requests.yml').req);
     function f() {
-      if (!fs.statSync('etc/date.txt')) {
-        fs.openSync('etc/date.txt', 'w')
-        fs.appendSync('etc/date.txt', new Date().getHours().toString()+new Date().getMinutes().toString())
+      if (!fs.statSync('app/etc/date.txt')) {
+        fs.openSync('app/etc/date.txt', 'w')
+        fs.appendSync('app/etc/date.txt', new Date().getHours().toString()+new Date().getMinutes().toString())
       }
-      var d = fs.readFileSync('etc/date.txt').toString();
+      var d = fs.readFileSync('app/etc/date.txt').toString();
       var fd = parseInt(d);
       var de = new Date().getHours().toString()+new Date().getMinutes().toString();
       io.emit('runtime', de-fd);
     }
     setInterval(f, 60 * 1000);
-    fs.watchFile('etc/requesttotal.txt', {persistent:true,interval:1}, (curr, prev) => {
-      fs.readFile('etc/requesttotal.txt', 'utf8', function (err, data) {
+    fs.watchFile('app/etc/requesttotal.txt', {persistent:true,interval:1}, (curr, prev) => {
+      fs.readFile('app/etc/requesttotal.txt', 'utf8', function (err, data) {
         if (err) {
           throw err
         } else {

@@ -13,18 +13,18 @@ var generate = function generate(x) {
   if(fs.existsSync("etc") !== true){
     fs.mkdirSync('etc');
   }
-  if(fs.existsSync("etc/certs") !== true){
-    fs.mkdirSync('etc/certs');
+  if(fs.existsSync("app/etc/certs") !== true){
+    fs.mkdirSync('app/etc/certs');
   }
   var key = new NodeRSA({b: 2048});
-  if(fs.existsSync("etc/certs/"+config.name+"-private.pem") !== true){
-    fs.openSync("etc/certs/"+config.name+"-private.pem", 'w');
-    fs.appendFileSync("etc/certs/"+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'), 'utf8');
+  if(fs.existsSync("app/etc/certs/"+config.name+"-private.pem") !== true){
+    fs.openSync("app/etc/certs/"+config.name+"-private.pem", 'w');
+    fs.appendFileSync("app/etc/certs/"+config.name+"-private.pem", key.exportKey('pkcs1-private-pem'), 'utf8');
   };
-  if(fs.existsSync("etc/certs/"+config.name+"-public.pem") !== true){
-    mkdirp('etc/certs');
-    fs.openSync("etc/certs/"+config.name+"-public.pem", 'w');
-    fs.appendFileSync("etc/certs/"+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'), 'utf8');
+  if(fs.existsSync("app/etc/certs/"+config.name+"-public.pem") !== true){
+    mkdirp('app/etc/certs');
+    fs.openSync("app/etc/certs/"+config.name+"-public.pem", 'w');
+    fs.appendFileSync("app/etc/certs/"+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'), 'utf8');
   };
   if(stat(home+'.jakhu/certs/'+config.name+"-public.pem") === false){
     api.write(home+'.jakhu/certs/'+config.name+"-public.pem", key.exportKey('pkcs1-public-pem'))

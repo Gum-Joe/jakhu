@@ -41,19 +41,19 @@ exports.startboot = function startboot(boottype) {
     delayed.delay(function () {
       cert.generate();
     }, 1000);
-    debug('Preparing tmp files in etc/ ')
-    fs.writeFileSync('etc/date.txt', new Date().getHours(), 'utf8')
-    fs.appendFileSync('etc/date.txt', new Date().getMinutes(), 'utf8')
+    debug('Preparing tmp files in app/etc/ ')
+    fs.writeFileSync('app/etc/date.txt', new Date().getHours(), 'utf8')
+    fs.appendFileSync('app/etc/date.txt', new Date().getMinutes(), 'utf8')
     // Record start time:
-    if (fs.existsSync('etc/starttime.txt') !== true) {
-      fs.openSync('etc/starttime.txt', 'w+');
-      fs.writeFileSync('etc/starttime.txt', Date.now());
+    if (fs.existsSync('app/etc/starttime.txt') !== true) {
+      fs.openSync('app/etc/starttime.txt', 'w+');
+      fs.writeFileSync('app/etc/starttime.txt', Date.now());
     } else {
-      fs.writeFileSync('etc/starttime.txt', Date.now())
+      fs.writeFileSync('app/etc/starttime.txt', Date.now())
     }
     // Delete previous up
-    if (fs.existsSync('etc/requesttotal.txt')) {
-      fs.writeFileSync('etc/requesttotal.txt', "0");
+    if (fs.existsSync('app/etc/requesttotal.txt')) {
+      fs.writeFileSync('app/etc/requesttotal.txt', "0");
     }
     debug("Starting jakhu server %s", config.getdata().name)
     app.start();

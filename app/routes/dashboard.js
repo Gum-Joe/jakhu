@@ -24,12 +24,12 @@ router.get('/', function(req, res, next) {
     let downtime;
     let apps;
     const start = Date.now();
-    fs.readFile('etc/starttime.txt', 'utf8', (err, data) => {
+    fs.readFile('app/etc/starttime.txt', 'utf8', (err, data) => {
       if (err) {
         throw err;
       } else {
         let runtime = parseInt(start) - parseInt(data);
-        fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+        fs.readFile('app/etc/requesttotal.txt', 'utf8', (err, data) => {
           if (err) {
             throw err;
           } else {
@@ -44,7 +44,7 @@ router.get('/', function(req, res, next) {
         })
       }
     });
-    fs.readFile('etc/requesttotal.txt', 'utf8', (err, data) => {
+    fs.readFile('app/etc/requesttotal.txt', 'utf8', (err, data) => {
       if (err) {
         throw err;
       } else {
@@ -77,11 +77,11 @@ router.get('/', function(req, res, next) {
       }
       apps = data;
     })
-    var d = fs.readFileSync('etc/date.txt').toString();
+    var d = fs.readFileSync('app/etc/date.txt').toString();
     var fd = parseInt(d);
     var de = new Date().getHours().toString()+new Date().getMinutes().toString();
     exec("git rev-list HEAD --count", function (error, stdout) {
-      var parsedreq = YAML.parse(fs.readFileSync('./etc/requests.yml','utf8'));
+      var parsedreq = YAML.parse(fs.readFileSync('./app/etc/requests.yml','utf8'));
       res.render('dashboard/index.ejs', {
         user: req.user.username || req.user,
         imgprofile: '/css/img/profile.jpg',

@@ -3,8 +3,8 @@ logs
 *.log
 
 # etc
-etc/*.txt
-etc/*.yml
+app/etc/*.txt
+app/etc/*.yml
 
 # Runtime data
 pids
