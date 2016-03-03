@@ -50,18 +50,18 @@ install:
 test-coveralls:
 	@NODE_ENV=test Jakhu_COVERAGE=1 ./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
-		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
+		cat ./misc/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
 ci:
 	mkdir -p testing tmp/test; \
-	echo testing > testing/test.txt; \
+	echo testing > misc/testing/test.txt; \
 	grunt ci --verbose; \
 	mkdir -p testing tmp/test; \
-	echo testing > testing/test.txt; \
+	echo testing > misc/testing/test.txt; \
 	$(MAKE) coverage;
 
 coverage:
-	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls;
+	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat misc/coverage/lcov.info | node_modules/.bin/coveralls;
 
 a: coverage;
 #.PHONY test

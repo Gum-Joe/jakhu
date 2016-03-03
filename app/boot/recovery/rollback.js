@@ -17,7 +17,7 @@ exports.createBackup = function createBackup(x){
       };
     });
     // Copy test stuff
-    exec("cp -R ./testing/* ./tmp/", function(){
+    exec("cp -R ./misc/testing/* ./tmp/", function(){
       //console.log(clicolour.cyanBright("Jakhu ")  + clicolour.yellowBright("recovery ")  + "Created rollback Backup");
     });
   } else {
