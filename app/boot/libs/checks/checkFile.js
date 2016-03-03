@@ -1,7 +1,7 @@
 var fs = require('fs')
 var path = require('path')
 var clicolour = require('cli-color')
-var error = require('../../../libs/error/bsod.js')
+var error = require('../../../../libs/error/bsod.js')
 
 var files = ["app.js", "node_modules", "libs"];
 

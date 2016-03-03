@@ -1,5 +1,5 @@
 var mkdirp = require('mkdirp');
-var error = require('../../libs/error/bsod.js');
+var error = require('../../../libs/error/bsod.js');
 var clicolour = require("cli-color");
 var datea = "./recovery/rollback/backup";
 var exec = require('child_process').exec;

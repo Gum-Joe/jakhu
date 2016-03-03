@@ -1,3 +1,3 @@
-var config = require('../../app/app/boot/libs/configure.js');
+var config = require('../../app/boot/libs/configure.js');
 
 config.loadconfig();

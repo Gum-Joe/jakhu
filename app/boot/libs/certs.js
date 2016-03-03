@@ -5,8 +5,8 @@ var mkdirp = require('mkdirp');
 var configh = require('jakhu-config');
 var config = configh.getdata('./config/main.yml');
 var home = process.env.HOME || process.env.SystemDrive+process.env.HOMEPATH;
-var api = require('../../build/Release/write');
-var stat = require('../../build/Release/stat').stat;
+var api = require('../../../build/Release/write');
+var stat = require('../../../build/Release/stat').stat;
 var generate = function generate(x) {
   // body...
   // Create key
