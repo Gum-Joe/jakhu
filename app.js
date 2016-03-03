@@ -9,41 +9,26 @@ const expresssession = require('express-session');
 const clicolour = require('cli-color');
 const fs = require("fs");
 const morgan = require("morgan");
-const ooberoutes = require("./routes/oobe.js");
-const dashboard = require("./routes/dashboard.js");
 const mkdirp = require('mkdirp');
 const delayed = require('delayed');
 
-const passport = require('passport');
-const LocalStrategy = require('passport-local');
-const passporthttp = require('passport-http');
-
-const mongoose = require('mongoose');
-const MongoClient = require('mongodb').MongoClient;
-const assert = require('assert');
-const ObjectId = require('mongodb').ObjectID;
-
 const connect = require("./libs/connect.js");
-const wlogger = require("./libs/logger.js");
-const kernal = require('./boot/boot.js');
 const mid = require('./libs/middleware.js')
-const stream = require('./libs/stream.js');
-const yml = require('./libs/yml.js');
 const schema = require('./libs/database');
 const apis = require('./libs/api.js');
 const notifications = require('./libs/api/notifications');
+const wlogger = require('./libs/logger');
+const kernal = require('./boot/boot');
 
 const routes = require('./routes/index');
 const api = require('./routes/api/api');
 const users = require('./routes/users');
+const ooberoutes = require("./routes/oobe.js");
+const dashboard = require("./routes/dashboard.js");
 
 const http = require('http');
-const https = require('https');
 
 let app = express();
-
-const bcrypt = require('bcryptjs');
-const salt = bcrypt.genSaltSync(10);
 
 // DEBUGING
 var debug = {};
@@ -62,17 +47,6 @@ exports.start = function start(x, y, portt){
 var port = process.env.PORT || portt || 8080;
 var server = http.createServer(app);
 var io = require('./libs/socket.io');
-// Record start time:
-if (fs.existsSync('etc/starttime.txt') !== true) {
-  fs.openSync('etc/starttime.txt', 'w+');
-  fs.writeFileSync('etc/starttime.txt', Date.now());
-} else {
-  fs.writeFileSync('etc/starttime.txt', Date.now())
-}
-// Delete previous up
-if (fs.existsSync('etc/requesttotal.txt')) {
-  fs.writeFileSync('etc/requesttotal.txt', "0");
-}
 // create file
 mkdirp('logs');
 if(y !== true){wlogger.createlog("ok");};

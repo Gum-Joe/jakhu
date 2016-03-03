@@ -44,6 +44,17 @@ exports.startboot = function startboot(boottype) {
     debug('Preparing tmp files in etc/ ')
     fs.writeFileSync('etc/date.txt', new Date().getHours(), 'utf8')
     fs.appendFileSync('etc/date.txt', new Date().getMinutes(), 'utf8')
+    // Record start time:
+    if (fs.existsSync('etc/starttime.txt') !== true) {
+      fs.openSync('etc/starttime.txt', 'w+');
+      fs.writeFileSync('etc/starttime.txt', Date.now());
+    } else {
+      fs.writeFileSync('etc/starttime.txt', Date.now())
+    }
+    // Delete previous up
+    if (fs.existsSync('etc/requesttotal.txt')) {
+      fs.writeFileSync('etc/requesttotal.txt', "0");
+    }
     debug("Starting jakhu server %s", config.getdata().name)
     app.start();
 
@@ -56,12 +67,15 @@ exports.startinput = function startinput(x){
 process.stdin.setEncoding('utf8');
 var util = require('util');
 process.stdin.on('data', function (text) {
-  console.log('received data:', util.inspect(text));
+  debug('received data: %o', util.inspect(text));
   if (text === 'stop\n') {
     boot.stop();
   }
   if(text === 'rs\n'){
     boot.monstop();
+  }
+  if (text === 'restart\n') {
+    process.emit('restart', true);
   }
 });
 }
