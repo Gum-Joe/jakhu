@@ -21,3 +21,6 @@ OUTPUT ?= $(VIEWS_DIR)/css
 %.min.css: $(SASS_SRC)/%.scss
 	@echo "  SCSS(TARGET) "$(OUTPUT)"/"$@
 	@$(SCSS) $< $(OUTPUT)/$@ --style=minimal
+
+sass:
+	$(SCSS) --update $(SASS_SRC):$(OUTPUT);

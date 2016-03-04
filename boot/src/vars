@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-echo Setting enviroment varibles...
-export WEB_HOME="C:/Users/Kishan Sambhi/Documents/Projects/Jakhu/boot/src"
-export WEB_USER_HOME="C:\Users\Kishan Sambhi/.web"
-export WEB_USR_DIR="C:/Users/Kishan Sambhi/Documents/Projects/Jakhu/boot/src/usr"
-export WEB_ETC_DIR="C:/Users/Kishan Sambhi/Documents/Projects/Jakhu/boot/src/etc"
-export WEB_INSTANCES_DIR="C:/Users/Kishan Sambhi/Documents/Projects/Jakhu/boot/src/etc"
-export WEB_PROVIDER="vagrant"

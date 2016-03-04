@@ -1,3 +1,0 @@
-#!/usr/bin/bash
-echo Setting enviroment varibles...
-export WEB_HOME=/c/Users/Kishan Sambhi/Documents/Projects/Jakhu/boot/kernal

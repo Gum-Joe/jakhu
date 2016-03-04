@@ -18,13 +18,13 @@ const schema = require('./libs/database');
 const apis = require('./libs/api.js');
 const notifications = require('./libs/api/notifications');
 const wlogger = require('./libs/logger');
-const kernal = require('./boot/boot');
+const kernal = require('./app/boot/boot');
 
-const routes = require('./routes/index');
-const api = require('./routes/api/api');
-const users = require('./routes/users');
-const ooberoutes = require("./routes/oobe.js");
-const dashboard = require("./routes/dashboard.js");
+const routes = require('./app/routes/index');
+const api = require('./app/routes/api/api');
+const users = require('./app/routes/users');
+const ooberoutes = require("./app/routes/oobe.js");
+const dashboard = require("./app/routes/dashboard.js");
 
 const http = require('http');
 
@@ -59,13 +59,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-app.use(favicon(path.join(__dirname, 'public', 'icon.png')));
+// uncomment after placing your favicon in /views/public
+app.use(favicon(path.join(__dirname, 'views/public', 'icon.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views/public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));

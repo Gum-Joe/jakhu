@@ -1,0 +1,45 @@
+/*
+Error: Invalid CSS after "$colDefault     : ": expected expression (e.g. 1px, bold), was ";"
+        on line 3 of views/src/bnav.scss
+
+1: $bgDefault      : blue;
+2: $bgHighlight    : #c0392b;
+3: $colDefault     : ;
+4: $colHighlight       : #ffbbbc;
+5: .navbar-default {
+6:   background-color: $bgDefault;
+7:   border-color: $bgHighlight;
+8:   .navbar-brand {
+
+Backtrace:
+views/src/bnav.scss:3
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1162:in `expected'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/lexer.rb:221:in `expected!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/parser.rb:571:in `assert_expr'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/script/parser.rb:62:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:1024:in `sass_script'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:604:in `variable'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:657:in `block_child'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:650:in `block_contents'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:117:in `stylesheet'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/scss/parser.rb:42:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:403:in `_to_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/plugin.rb:82:in `update_stylesheets'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:364:in `watch_or_update'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:51:in `process_result'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+C:/Ruby21/bin/sass:23:in `load'
+C:/Ruby21/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"$colDefault     : \": expected expression (e.g. 1px, bold), was \";\"\A         on line 3 of views/src/bnav.scss\A \A 1: $bgDefault      : blue;\A 2: $bgHighlight    : #c0392b;\A 3: $colDefault     : ;\A 4: $colHighlight       : #ffbbbc;\A 5: .navbar-default {\A 6:   background-color: $bgDefault;\A 7:   border-color: $bgHighlight;\A 8:   .navbar-brand {"; }

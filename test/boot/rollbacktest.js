@@ -1,4 +1,4 @@
-var rollback = require('../../boot/recovery/rollback.js');
+var rollback = require('../../app/boot/recovery/rollback.js');
 var fs = require('fs');
 var should = require('chai').should;
 var assert = require('assert');

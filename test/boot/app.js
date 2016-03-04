@@ -15,7 +15,7 @@ describe('app.js tests', function () {
     // Create config.yml in ./tmp
     // See #30
     var execSync = require('child_process').execSync;
-    execSync('node ./usr/bin/check.config.js');
+    execSync('node ./app/usr/bin/check.config.js');
     // Set NODE_ENV for development
     // start app
     app.start('basic', true, 3030);
@@ -30,7 +30,7 @@ describe('app.js tests', function () {
     var oa = 'jakhu database Sorry, you will need to start your own MongoDB\nrollback: Not backing up as dev env\njakhu startup Running on port 8080\n';
     var ob = 'jakhu startup The date and time is: Mon Nov 30 2015 19:47:37 GMT+0000 (GMT Standard Time)\njakhu startup undefined\njakhu recovery Created Rollback DIR for today\nNew socket created.\n';
     var oc = "\nconnection error: { [MongoError: connect ECONNREFUSED 127.0.0.1:27017]\n  name: 'MongoError',\n  message: 'connect ECONNREFUSED 127.0.0.1:27017' }\n";
-    var out = exec.exec('node usr/test/test.js', function (error, stdout, stderr) {
+    var out = exec.exec('node app/usr/test/test.js', function (error, stdout, stderr) {
       console.log(stdout);
       if(stdout !== o+oa+ob+oc){
         assert.fail(stdout, o+oa+ob+oc, 'App output was not correct');
