@@ -21,28 +21,41 @@ $nav2 : #000080;*/
   src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
 }
 #navbar-topper-a {
-  background-color: #1d1d1d;
-  color: #ecf0f1;
-}
-#navbar-topper-a div a {
-  color: #ecf0f1;
+  font-family: open-sans;
+  text-decoration: none;
 }
 #navbar-topper-a ul li a {
-  color: #ecf0f1;
+  font-family: open-sans;
   text-decoration: none;
-  background-color: #1d1d1d;
-}
-#navbar-topper-a ul li .open {
-  background-color: #131313 !important;
+  color: #9d9d9d;
+  background-color: #222 !important;
 }
 #navbar-topper-a ul li a:hover {
-  color: #ecf0f1;
   text-decoration: none;
-  background-color: #131313;
+  color: #9d9d9d;
+  background-color: #1a1a1a !important;
 }
-#navbar-topper-a ul li .dropdown-menu {
-  background-color: #1d1d1d;
-  margin: 0;
+#navbar-topper-a .dropdown-tasks li a {
+  padding-top: 10px;
+}
+#navbar-topper-a ul li ul {
+  font-family: open-sans;
+  background-color: #222;
+  color: #9d9d9d;
+}
+#navbar-topper-a ul li ul .divider {
+  background-color: #2d2d2d !important;
+  margin: 5.3px 0 !important;
+}
+#navbar-topper-a ul li ul li {
+  background-color: #222 !important;
+}
+#navbar-topper-a ul li ul li a {
+  background-color: #222 !important;
+}
+#navbar-topper-a ul .open a {
+  font-family: open-sans;
+  background-color: #1a1a1a;
 }
 
 /*# sourceMappingURL=dashboard.css.map */
