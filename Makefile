@@ -61,7 +61,7 @@ ci:
 	$(MAKE) coverage;
 
 coverage:
-	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat misc/coverage/lcov.info | node_modules/.bin/coveralls;
-
+	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls; \
+	rm -rf coverage;
 a: coverage;
 #.PHONY test

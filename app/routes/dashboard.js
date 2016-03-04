@@ -121,7 +121,7 @@ router.get('/apps/status', function (req, res, next) {
       }
     }
     // Get app info
-    const instances = "instances";
+    const instances = "app/instances";
     try {
       const appinfo = YAML.load(`${instances}/${appobj.author}/${appobj.name}/.jakhu.yml`);
     }
