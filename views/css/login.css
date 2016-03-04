@@ -1,51 +1,99 @@
-/*
-Error: File to import not found or unreadable: fonts.
-        on line 1 of views/src/login.scss
+@font-face {
+  font-family: Open-Sans;
+  src: url(/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+/*$nav : #9999FF;
+$nav2 : #000080;*/
+body {
+  background-color: #2c3e50 !important;
+  font-family: Open-Sans !important;
+}
 
-1: @import "fonts";
-2: @import "mixins";
-3: 
-4: body {
-5:   background-color: #2c3e50 !important;
-6:   font-family: Open-Sans !important;
+.main {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  height: 100px;
+}
+.main h1 {
+  color: #ecf0f1;
+  text-align: center;
+  margin-top: 7%;
+}
+.main form {
+  padding-left: 20%;
+  padding-right: 50%;
+}
+.main form div label {
+  color: #ecf0f1;
+}
+.main form div input {
+  color: #34495e;
+  font-size: 15px;
+}
+.main form button {
+  background: #2fd074 !important;
+  color: #ecf0f1 !important;
+  font-weight: lighter;
+  width: 60px;
+  height: 30px;
+  border-radius: 5px;
+  border-color: #ecf0f1;
+}
+.main form button:hover {
+  background: #27ae60 !important;
+}
+.main .lgit {
+  height: 50px;
+  width: 240px;
+  background-color: #ecf0f1;
+  margin-left: 53%;
+  margin-top: -189.59999px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 3.399989px;
+}
+.main .lgit i {
+  position: absolute;
+}
+.main .lgit h4 {
+  padding-left: 3em;
+  padding-top: 1.5px;
+}
+.main .lbit {
+  height: 50px;
+  width: 240px;
+  background-color: #2980b9;
+  margin-left: 53%;
+  margin-top: 22px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-top: 3.399989px;
+  color: #ecf0f1;
+}
+.main .lbit i {
+  position: absolute;
+}
+.main .lbit h4 {
+  padding-left: 44.9px;
+  padding-top: 1.5px;
+}
 
-Backtrace:
-views/src/login.scss:1
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
-C:/Ruby21/bin/sass:23:in `load'
-C:/Ruby21/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: fonts.\A         on line 1 of views/src/login.scss\A \A 1: @import \"fonts\";\A 2: @import \"mixins\";\A 3: \A 4: body {\A 5:   background-color: #2c3e50 !important;\A 6:   font-family: Open-Sans !important;"; }
+/*# sourceMappingURL=login.css.map */
