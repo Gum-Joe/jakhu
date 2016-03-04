@@ -10,6 +10,7 @@ body, html {
   background: -moz-linear-gradient(#f7f7f7, #f7f7f7);
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(#f7f7f7, #f7f7f7);
-  /* Standard syntax */ }
+  /* Standard syntax */
+}
 
 /*# sourceMappingURL=boot.theme.css.map */

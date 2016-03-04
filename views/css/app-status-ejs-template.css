@@ -1,191 +1,51 @@
-@font-face {
-  font-family: Open-Sans;
-  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
-}
-@font-face {
-  font-family: OpenSans-Regular;
-  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: OpenSans-Bold;
-  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
-}
-@font-face {
-  font-family: FiraSans-Light;
-  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
-}
-@font-face {
-  font-family: FiraSans-UltraLight;
-  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
-}
-@font-face {
-  font-family: Open-Sans;
-  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
-}
-@font-face {
-  font-family: OpenSans-Regular;
-  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: OpenSans-Bold;
-  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
-}
-@font-face {
-  font-family: FiraSans-Light;
-  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
-}
-@font-face {
-  font-family: FiraSans-UltraLight;
-  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
-}
-body {
-  font-family: Open-Sans;
-  background-color: #ecf0f1;
-}
+/*
+Error: File to import not found or unreadable: ../fonts.
+        on line 1 of views/src/ejs-templates/app-status.scss
 
-body {
-  font-family: Open-Sans !important;
-  background-color: #ecf0f1;
-}
+1: @import "../fonts";
+2: @import "../resources/default";
+3: 
+4: body {
+5:   font-family: Open-Sans !important;
+6:   background-color: #ecf0f1;
 
-.jakhunav {
-  border: none !important;
-  background-color: #ecf0f1 !important;
-  color: #34495e !important;
-  border-radius: 0 !important;
-  font-family: OpenSans-Regular !important;
-}
-.jakhunav div .navbar-collapse ul .active a {
-  background-color: #d2dcdf !important;
-  color: #2980b9 !important;
-}
-.jakhunav div .navbar-collapse ul li a {
-  background-color: #ecf0f1 !important;
-  color: #34495e !important;
-}
-.jakhunav div .navbar-collapse ul li a img {
-  width: 20px;
-  height: 20px;
-  border-radius: 100px;
-  margin-right: 10px;
-  margin-top: 1px;
-}
-.jakhunav div .navbar-collapse ul li a:hover {
-  background-color: #d2dcdf !important;
-}
-.jakhunav div .navbar-collapse ul li ul {
-  background-color: #ecf0f1 !important;
-  color: #34495e !important;
-}
-.jakhunav div .navbar-collapse ul li ul .divider {
-  margin-bottom: 5px !important;
-}
-.jakhunav div .navbar-collapse ul li ul a {
-  word-spacing: 4px;
-}
-.jakhunav div .navbar-header a {
-  color: #34495e !important;
-}
-
-.header {
-  margin-top: 70px;
-  margin-left: 50px;
-  font-family: OpenSans-Regular;
-  color: #2b383b;
-}
-.header .label {
-  font-size: 13px !important;
-  font-weight: lighter !important;
-}
-.header .buttons {
-  float: right !important;
-  background: none !important;
-}
-@media only screen and (min-width: 545px) {
-  .header .buttons {
-    margin-right: 20px;
-    margin-top: -30px;
-  }
-}
-@media only screen and (max-width: 545px) {
-  .header .buttons {
-    margin-right: 180px;
-    margin-top: -5px;
-  }
-}
-.header .buttons .btn {
-  padding: 3px 13px !important;
-}
-.header .buttons .btn-success {
-  color: #5cb85c !important;
-  background: none !important;
-}
-.header .buttons .btn-success i {
-  font-size: 15px;
-  margin-top: 0.1217px;
-}
-.header .buttons .btn-success:hover {
-  color: #449d44 !important;
-  background: none !important;
-}
-.header .buttons .btn-danger {
-  color: #d43f3a !important;
-  background: none !important;
-}
-.header .buttons .btn-danger i {
-  font-size: 15px;
-  margin-top: 0.1217px;
-}
-.header .buttons .btn-danger:hover {
-  color: #ac2925 !important;
-  background: none !important;
-}
-
-.tubs {
-  margin-top: 10px;
-}
-
-.tubsb {
-  width: 100% !important;
-  background: #d4dbde !important;
-  color: #1a1a1a !important;
-  border-radius: 0 !important;
-  border: none !important;
-  margin-top: 10px;
-}
-
-.tubsb:hover {
-  background: #b7c3c8 !important;
-}
-
-.logs .well {
-  color: #ecf0f1 !important;
-  background-color: #2a2a2a !important;
-  padding: 0 !important;
-}
-.logs .well .textwell {
-  padding: 19px !important;
-}
-.logs .well .textwell ul {
-  list-style-type: none !important;
-  padding: 0;
-}
-.logs .well .textwell ul li span {
-  color: #7f8c8d;
-  padding-right: 5px;
-}
-.logs .well .headwell {
-  background-color: #1a1a1a !important;
-  width: 100% !important;
-  height: 50px !important;
-}
-.logs .well .headwell .btn {
-  background: none !important;
-  border-color: #7f8c8d;
-  color: #ecf0f1 !important;
-  margin-top: 7.5px;
-  float: right;
-  margin-right: 10px;
-}
-
-/*# sourceMappingURL=app-status-ejs-template.css.map */
+Backtrace:
+views/src/ejs-templates/app-status.scss:1
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:45:in `import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+C:/Ruby21/bin/sass:23:in `load'
+C:/Ruby21/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../fonts.\A         on line 1 of views/src/ejs-templates/app-status.scss\A \A 1: @import \"../fonts\";\A 2: @import \"../resources/default\";\A 3: \A 4: body {\A 5:   font-family: Open-Sans !important;\A 6:   background-color: #ecf0f1;"; }

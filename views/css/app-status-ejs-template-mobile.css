@@ -1,51 +1,51 @@
-@font-face {
-  font-family: Open-Sans;
-  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
-}
-@font-face {
-  font-family: OpenSans-Regular;
-  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: OpenSans-Bold;
-  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
-}
-@font-face {
-  font-family: FiraSans-Light;
-  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
-}
-@font-face {
-  font-family: FiraSans-UltraLight;
-  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
-}
-@font-face {
-  font-family: Open-Sans;
-  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
-}
-@font-face {
-  font-family: OpenSans-Regular;
-  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
-}
-@font-face {
-  font-family: OpenSans-Bold;
-  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
-}
-@font-face {
-  font-family: FiraSans-Light;
-  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
-}
-@font-face {
-  font-family: FiraSans-UltraLight;
-  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
-}
-body {
-  font-family: Open-Sans;
-  background-color: #ecf0f1;
-}
+/*
+Error: File to import not found or unreadable: ../fonts.
+        on line 1 of views/src/ejs-templates/app-status-mobile.scss
 
-.header .buttons {
-  margin-right: 180px;
-  margin-top: -5px;
-}
+1: @import "../fonts";
+2: @import "../resources/default";
+3: 
+4: .header {
+5:   .buttons {
+6:     margin-right: 180px;
 
-/*# sourceMappingURL=app-status-ejs-template-mobile.css.map */
+Backtrace:
+views/src/ejs-templates/app-status-mobile.scss:1
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:45:in `import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:28:in `imported_file'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:37:in `css_import?'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:378:in `_render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/engine.rb:295:in `render_with_sourcemap'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:410:in `run'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/sass_scss.rb:63:in `process_result'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:52:in `parse'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/lib/sass/exec/base.rb:19:in `parse!'
+C:/Ruby21/lib/ruby/gems/2.1.0/gems/sass-3.4.18/bin/sass:13:in `<top (required)>'
+C:/Ruby21/bin/sass:23:in `load'
+C:/Ruby21/bin/sass:23:in `<main>'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: File to import not found or unreadable: ../fonts.\A         on line 1 of views/src/ejs-templates/app-status-mobile.scss\A \A 1: @import \"../fonts\";\A 2: @import \"../resources/default\";\A 3: \A 4: .header {\A 5:   .buttons {\A 6:     margin-right: 180px;"; }
