@@ -34,7 +34,7 @@ function init(app, func) {
     api[i] = func[i];
   }
   mapp.listen = undefined;
-  debug("Searching for modules in /usr/modules...")
+  debug("Searching for modules in /app/usr/modules...")
   debug("Reading module list in db...")
   Apps.find(function (err, apps) {
     // Check exist

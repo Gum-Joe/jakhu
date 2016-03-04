@@ -1,22 +1,22 @@
 @font-face {
   font-family: Open-Sans;
-  src: url(/css/fonts/open-sans/OpenSans-Light.ttf);
+  src: url(/fonts/open-sans/OpenSans-Light.ttf);
 }
 @font-face {
   font-family: OpenSans-Regular;
-  src: url(/css/fonts/open-sans/OpenSans-Regular.ttf);
+  src: url(/fonts/open-sans/OpenSans-Regular.ttf);
 }
 @font-face {
   font-family: OpenSans-Bold;
-  src: url(/css/fonts/open-sans/OpenSans-Bold.ttf);
+  src: url(/fonts/open-sans/OpenSans-Bold.ttf);
 }
 @font-face {
   font-family: FiraSans-Light;
-  src: url(/css/fonts/fira-sans/FiraSans-Light.otf);
+  src: url(/fonts/fira-sans/FiraSans-Light.otf);
 }
 @font-face {
   font-family: FiraSans-UltraLight;
-  src: url(/css/fonts/fira-sans/FiraSans-UltraLight.otf);
+  src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
 }
 /*$nav : #9999FF;
 $nav2 : #000080;*/

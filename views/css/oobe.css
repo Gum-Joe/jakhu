@@ -11,9 +11,9 @@ $nav2 : #000080;*/
 
 .Jakhu-back, html, body {
   /*For after-install:
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/img/nav-back-two.png");
   */
-  /*background-image: url("img/boot.jpg");*/
+  /*background-image: url("/img/boot.jpg");*/
   background: -webkit-linear-gradient(#f7f7f7, #f7f7f7);
   /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(#f7f7f7, #f7f7f7);
@@ -25,7 +25,7 @@ $nav2 : #000080;*/
 }
 
 .Jakhu-oobe-back {
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/img/nav-back-two.png");
 }
 
 body {
@@ -106,7 +106,7 @@ form {
 }
 
 .selection-box-box:hover {
-  background-image: url("img/accept-decline.jpg");
+  background-image: url("/img/accept-decline.jpg");
   width: 30cm;
 }
 
@@ -146,7 +146,7 @@ form {
   border-width: 2px;
   border-style: solid;
   border-color: white;
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/img/nav-back-two.png");
   font-size: 20px;
   border-radius: 3px;
   margin-left: auto;
@@ -158,7 +158,7 @@ form {
   border-width: 2px;
   border-style: solid;
   border-color: black;
-  background-image: url("img/accept-decline.jpg");
+  background-image: url("/img/accept-decline.jpg");
   font-size: 20px;
   border-radius: 3px;
   margin-left: auto;

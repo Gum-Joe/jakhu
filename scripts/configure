@@ -6,7 +6,7 @@ OSS=$OS
 # Main packages
 if [[ "$OSTYPE" =~ ^linux ]]; then
     echo "Installing packages for installation..."
-    ./etc/resource/linux/packages.sh
+    ./app/etc/resource/linux/packages.sh
 elif [[ "$OSTYPE" == "darwin"* ]]; then
       # Mac OSX
 elif [[ "$OSTYPE" == "cygwin" ]]; then

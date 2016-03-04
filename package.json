@@ -8,7 +8,7 @@
     "start": "node bin/jakhu server",
     "docker-start": "git pull && node bin/jakhu",
     "coveralls": "istanbul cover test.js",
-    "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "cover-ci": "cat ./misc/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "grunt": "grunt ci",
     "preinstall": "mkdir logs",
     "install": "node-gyp rebuild"

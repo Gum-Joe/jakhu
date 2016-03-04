@@ -37,7 +37,7 @@ $nav2 : #000080;*/
   width: 100%;
   height: 100px;
   background-size: 100% 100%;
-  background-image: url(img/footer.PNG);
+  background-image: url(/img/footer.PNG);
 }
 
 .pad-jum-top {
@@ -107,11 +107,11 @@ h3, h4, h5, h6, div, label {
 }
 
 .background {
-  background-image: url("img/internet-background.jpg");
+  background-image: url("/img/internet-background.jpg");
 }
 
 .backjumb {
-  background-image: url("img/jumbotron-back.jpg");
+  background-image: url("/img/jumbotron-back.jpg");
   background-color: transparent;
 }
 
@@ -213,7 +213,7 @@ html, body {
 }
 
 .nav-back {
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/img/nav-back-two.png");
   color: black;
 }
 
@@ -222,7 +222,7 @@ html, body {
 }
 
 .foot-back {
-  background-image: url(img/nav-back-two.png);
+  background-image: url(/img/nav-back-two.png);
 }
 
 #side {
@@ -234,7 +234,7 @@ body {
 }
 
 .Jakhu {
-  background-image: url("img/nav-back-two.png");
+  background-image: url("/img/nav-back-two.png");
 }
 
 #nav {
