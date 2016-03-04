@@ -4,11 +4,41 @@
 $navbar-background : #222;
 $navbar-text-colour : #9d9d9d;
 $navbar-background-hover : #1a1a1a;
+$sidebar-background-colour : #0e131b;
+$navbar-accesibilty-colour: #cccccc;
 
 body {
   //font-family: open-sans;
 }
 #navbar-topper-a {
+  div a .hamburger:focus {
+    outline:0 !important;
+    span span::before {
+      background-color: $navbar-accesibilty-colour;
+    }
+    span span {
+      background-color: $navbar-accesibilty-colour;
+    }
+    span span::after {
+      background-color: $navbar-accesibilty-colour;
+    }
+  }
+  div a .hamburger {
+    padding: 0 !important;
+    span span::before {
+      background-color: $navbar-text-colour;
+    }
+    span span {
+      background-color: $navbar-text-colour;
+    }
+    span span::after {
+      background-color: $navbar-text-colour;
+    }
+  }
+  div a:focus {
+    outline:0 !important;
+    color: $navbar-accesibilty-colour;
+  }
   font-family: open-sans;
   text-decoration: none;
   ul li a {
@@ -44,6 +74,18 @@ body {
     font-family: open-sans;
     background-color: $navbar-background-hover;
   }
+  .sidebar {
+    background-color: $sidebar-background-colour !important;
+    div ul li {
+      border-bottom-color: $sidebar-background-colour !important;
+    }
+    div ul li a {
+      background-color: $sidebar-background-colour !important;
+    }
+  }
+}
+#wrapper {
+  background-color: $sidebar-background-colour;
 }
 #navbar-side-one {
 
