@@ -6,7 +6,8 @@ $nav2 : #000080;*/
 /*$nav : #9999FF;
 $nav2 : #000080;*/
 .base-pad {
-  padding-left: 4.5cm; }
+  padding-left: 4.5cm;
+}
 
 .Jakhu-back, html, body {
   /*For after-install:
@@ -20,83 +21,102 @@ $nav2 : #000080;*/
   background: -moz-linear-gradient(#f7f7f7, #f7f7f7);
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(#f7f7f7, #f7f7f7);
-  /* Standard syntax */ }
+  /* Standard syntax */
+}
 
 .Jakhu-oobe-back {
-  background-image: url("/img/nav-back-two.png"); }
+  background-image: url("/img/nav-back-two.png");
+}
 
 body {
-  color: black; }
+  color: black;
+}
 
 .sub-title {
   /* TODO: Create Subtitle class for subtitles  */
   padding-left: 4.5cm;
-  font-size: 25px; }
+  font-size: 25px;
+}
 
 .boot-title-oobe {
   padding-top: 1cm;
   font-size: 60px;
-  text-align: center; }
+  text-align: center;
+}
 
 .oobe-next {
   text-align: center;
-  padding-left: 71.3%; }
+  padding-left: 71.3%;
+}
 
 form {
   font-family: Source-Sans-Pro-Light;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .fork {
-  color: blue; }
+  color: blue;
+}
 
 .system-info-build {
   /*padding-left: 100%*/
   text-align: right;
   padding-top: 10%;
-  padding-right: 0.5cm; }
+  padding-right: 0.5cm;
+}
 
 .option {
   width: 20cm;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  /*padding-right: 0.3cm;*/ }
+  /*padding-right: 0.3cm;*/
+}
 
 .center {
-  text-align: center; }
+  text-align: center;
+}
 
 .form {
   margin-left: 1cm;
-  margin-right: 1cm; }
+  margin-right: 1cm;
+}
 
 .tick-pad {
   text-align: center;
-  margin-left: 0%; }
+  margin-left: 0%;
+}
 
 .b-o-t-rec {
-  padding-right: 10cm; }
+  padding-right: 10cm;
+}
 
 .selection-box-box {
   width: 30cm;
   border-radius: 5px;
   padding: 0.5cm;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .selection-box {
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .selection-box-box:hover {
   background-image: url("/img/accept-decline.jpg");
-  width: 30cm; }
+  width: 30cm;
+}
 
 .selection-sub {
-  padding-left: 1cm; }
+  padding-left: 1cm;
+}
 
 .oobe-dep-options {
-  /*font-size: 30px;*/ }
+  /*font-size: 30px;*/
+}
 
 /*.par-l {
   padding-left: 13cm;
@@ -107,17 +127,20 @@ form {
   /*  width: 20cm;*/
   text-align: center;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+}
 
 .lt {
   color: black;
   text-align: center;
-  font-family: Source-Sans-Pro-Regular; }
+  font-family: Source-Sans-Pro-Regular;
+}
 
 .lth {
   color: black;
   text-align: center;
-  font-family: Source-Sans-Pro-Bold; }
+  font-family: Source-Sans-Pro-Bold;
+}
 
 .accept {
   border-width: 2px;
@@ -128,7 +151,8 @@ form {
   border-radius: 3px;
   margin-left: auto;
   width: auto;
-  width: auto; }
+  width: auto;
+}
 
 .accept:hover {
   border-width: 2px;
@@ -139,12 +163,14 @@ form {
   border-radius: 3px;
   margin-left: auto;
   width: auto;
-  width: auto; }
+  width: auto;
+}
 
 .accept-p {
   text-align: center;
   padding: 0.1cm;
   padding-top: 0.4cm;
-  width: auto; }
+  width: auto;
+}
 
 /*# sourceMappingURL=oobe.css.map */
