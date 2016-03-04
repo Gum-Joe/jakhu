@@ -8,7 +8,7 @@
     "start": "node bin/jakhu server",
     "docker-start": "git pull && node bin/jakhu",
     "coveralls": "istanbul cover test.js",
-    "cover-ci": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "cover-ci": "cat ./misc/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "grunt": "grunt ci",
     "preinstall": "mkdir logs",
     "install": "node-gyp rebuild"
@@ -83,6 +83,8 @@
     "yamljs": "^0.2.4"
   },
   "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0",
     "blanket": "^1.1.7",
     "chai": "^3.2.0",
     "codeclimate-test-reporter": "^0.1.1",

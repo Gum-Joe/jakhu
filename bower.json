@@ -28,6 +28,7 @@
     "bootstrap": "~3.3.6",
     "jquery": "~2.1.4",
     "less": "~2.5.1",
-    "notie": "*"
+    "notie": "*",
+    "startbootstrap-sb-admin-2": "~1.0.8"
   }
 }

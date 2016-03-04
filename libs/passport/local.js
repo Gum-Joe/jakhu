@@ -2,10 +2,10 @@
  * Module dependencies.
  */
 
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 var LocalStrategy = require('passport-local').Strategy;
-var User = require('../database').user;
-var bcrypt = require('bcryptjs');
+const User = require('../database').user;
+const bcrypt = require('bcryptjs');
 
 /**
  * Expose

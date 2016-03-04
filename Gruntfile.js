@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     coveralls: {
     options: {
       // LCOV coverage file relevant to every target
-      src: 'coverage/lcov.info',
+      src: 'misc/coverage/lcov.info',
 
       // When true, grunt-coveralls will only print a warning rather than
       // an error, to prevent CI builds from failing unnecessarily (e.g. if
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
     },
     report: {
       // Target-specific LCOV coverage file
-      src: 'coverage/locv2.info'
+      src: 'misc/coverage/locv2.info'
     },
   },
     // Configure a mochaTest task
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         options: {
           reporter: 'spec',
           require: 'should',
-          captureFile: 'coverage/cover.txt', // Optionally capture the reporter output to a file
+          captureFile: 'misc/coverage/cover.txt', // Optionally capture the reporter output to a file
           quiet: false, // Optionally suppress output to standard out (defaults to false)
           clearRequireCache: false // Optionally clear the require cache before running tests (defaults to false)
         },
@@ -135,7 +135,7 @@ module.exports = function(grunt) {
       dev: 'npm install --dev',
       test: 'npm test',
       logs: 'mkdir logs && touch logs/wos.log',
-      testtmp: 'mkdir testing && echo testing > testing/test.txt',
+      testtmp: 'mkdir testing && echo testing > misc/testing/test.txt',
       createtmp: 'mkdir tmp',
       testt: 'cd tmp && mkdir test',
       start: 'echo Y && node bin/start'
@@ -163,7 +163,7 @@ module.exports = function(grunt) {
         }
       },
       main: {
-        files: ['views/**/*.scss', '*.js', 'libs/**/*.js', 'boot/**/*.js'],
+        files: ['views/**/*.scss', '*.js', 'libs/**/*.js', 'app/boot/**/*.js'],
         tasks: ['compile', 'test'],
         options: {
           interrupt: true,

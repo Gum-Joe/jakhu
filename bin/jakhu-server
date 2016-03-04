@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Starts the server
 var express = require('express');
-var kernal = require('../boot/boot.js');
+var kernal = require('../app/boot/boot.js');
 //var git = require('nodegit');
 var exec = require('child_process').exec;
 var com = require('commander');

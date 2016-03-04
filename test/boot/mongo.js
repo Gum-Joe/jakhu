@@ -1,4 +1,4 @@
-var mon = require('../../boot/kernal/mongo.js');
+var mon = require('../../app/boot/kernal/mongo.js');
 var con = require('../../libs/connect.js');
 var assert = require('assert');
 

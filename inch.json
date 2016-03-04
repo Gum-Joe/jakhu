@@ -3,7 +3,7 @@
     "included": [
       "*.js",
       "libs/*",
-      "boot/*",
+      "app/boot/*",
       "*.coffee"
     ]
   }

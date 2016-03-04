@@ -1,5 +1,5 @@
 // test config
-var c = require('../../boot/libs/configure.js')
+var c = require('../../app/boot/libs/configure.js')
 
 describe('Config tests', function () {
   it('should configure Jakhu', function (done) {

@@ -1,32 +1,33 @@
 // Database script
 var mongoose = require('mongoose');
+var db = module.exports = {};
 // scheme
-var UserSchema = new mongoose.Schema({
+const UserSchema = new mongoose.Schema({
   username: { type: String }
 , pwd: String
 });
-var user = mongoose.model('users', UserSchema);
+db.user = mongoose.model('users', UserSchema);
 
-var OAuthSchema = new mongoose.Schema({
+const OAuthSchema = new mongoose.Schema({
   githubUser: String
 });
-var oauth = mongoose.model('oauthh', OAuthSchema);
+db.oauth = mongoose.model('oauthh', OAuthSchema);
 
-var TokenSchema = new mongoose.Schema({
+const TokenSchema = new mongoose.Schema({
   userId: String,
   token: String
 });
-var token = mongoose.model('rememberme', TokenSchema);
+db.token = mongoose.model('rememberme', TokenSchema);
 
-var NotifSchema = new mongoose.Schema({
+const NotifSchema = new mongoose.Schema({
   app: String,
   text: String,
   iconPath: String,
   link: String
 });
-var notification = mongoose.model('notifications', NotifSchema);
+db.notification = mongoose.model('notifications', NotifSchema);
 
-var AppSchema = new mongoose.Schema({
+const AppSchema = new mongoose.Schema({
   name: String,
   path: String,
   author: String,
@@ -34,6 +35,30 @@ var AppSchema = new mongoose.Schema({
   installDate: Date,
   version: String,
 });
-var Apps = mongoose.model('apps', AppSchema);
+//db.Apps = mongoose.model('apps', AppSchema);
 
-module.exports = {Apps: Apps, user: user, UserSchema: UserSchema, oauth: oauth, OAuthSchema: OAuthSchema, token: token, notification: notification};
+const TubsSchema = new mongoose.Schema({
+  name: String,
+  for: String,
+  running: Boolean,
+  containerid: String
+});
+db.tubs = mongoose.model('tubs', TubsSchema)
+
+const Requests = new mongoose.Schema({
+  method: String,
+  route: String,
+  starttime: Date,
+  endtime: Date,
+  time: Number
+});
+db.Requests = mongoose.model('requests', Requests)
+
+const AppsSch = new mongoose.Schema({
+  name: String,
+  author: String,
+  language: String,
+  tubs: Number,
+  running: Boolean
+})
+db.Apps = mongoose.model('apps', AppsSch);
