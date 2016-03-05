@@ -15,8 +15,19 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-coveralls');
   grunt.loadNpmTasks('grunt-html2jade');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-browserify');
 
   grunt.initConfig({
+    browserify: {
+      dist: {
+        files: {
+          'views/js/dashboard-react.js': 'views/__jsx/dashboard.js'
+        },
+        options: {
+          transform: ['babelify']
+        }
+      }
+    },
     clean: {
       all: ['tmp', 'views/jade', 'views/css/sass'],
       cleanup: ['tmp', 'testing']
@@ -148,6 +159,13 @@ module.exports = function(grunt) {
           interrupt: true,
         },
       },
+      react: {
+        files: ['views/__jsx/*.js', 'Gruntfile.js'],
+        tasks: ['compile:react'],
+        options: {
+          interrupt: true,
+        },
+      },
       start: {
         files: ['Gruntfile.js'],
         tasks: ['exec:start'],
@@ -185,7 +203,8 @@ module.exports = function(grunt) {
   grunt.registerTask('compile:coffee', ['js2coffee:bin']);
   grunt.registerTask('compile:coffee:sub', 'js2coffee:bin');
   grunt.registerTask('compile:jade', 'html2jade:most');
-  grunt.registerTask('compile', ['compile:sass', 'compile:jade']);
+  grunt.registerTask('compile:react', 'browserify');
+  grunt.registerTask('compile', ['compile:sass']);
 
   grunt.registerTask('install:bundle', 'exec:bundle');
   grunt.registerTask('install:npm', 'exec:install');
