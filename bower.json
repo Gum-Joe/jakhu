@@ -26,7 +26,6 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.6",
-    "css-hamburgers": "~0.2.0",
     "jquery": "~2.1.4",
     "less": "~2.5.1",
     "notie": "*",
