@@ -20,6 +20,10 @@ $nav2 : #000080;*/
   font-family: FiraSans-UltraLight;
   src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
 }
+.panel-badges-cus, .page-header {
+  font-family: Open-Sans;
+}
+
 #navbar-topper-a {
   position: fixed;
   width: 100%;
@@ -103,6 +107,34 @@ $nav2 : #000080;*/
 
 .page-header {
   margin-top: 70px;
+}
+
+.no-apps-panel-head {
+  text-align: center;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: #bdc3c7;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  background-color: #f1f2f3;
+  border-radius: 5px;
+  font-family: OpenSans-Regular;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.no-apps-panel-head h5 {
+  color: #7f8c8d;
+}
+.no-apps-panel-head a button {
+  border-color: #34495e !important;
+  color: #34495e !important;
+}
+.no-apps-panel-head a button:hover {
+  background-color: #34495e !important;
+  color: #ecf0f1 !important;
+}
+.no-apps-panel-head a {
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=dashboard.css.map */

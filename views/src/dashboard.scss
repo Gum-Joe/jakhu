@@ -7,8 +7,8 @@ $navbar-background-hover : #1a1a1a;
 $sidebar-background-colour : #0e131b;
 $navbar-accesibilty-colour: #cccccc;
 
-body {
-  //font-family: open-sans;
+.panel-badges-cus, .page-header {
+  font-family: Open-Sans;
 }
 #navbar-topper-a {
   position: fixed;
@@ -92,6 +92,30 @@ body {
 .page-header {
   margin-top: 70px;
 }
-#navbar-side-one {
-
+.no-apps-panel-head {
+  text-align: center;
+  border-style: dashed;
+  border-width: 3px;
+  border-color: #bdc3c7;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  background-color: #f1f2f3;
+  border-radius: 5px;
+  font-family: OpenSans-Regular;
+  padding-left: 50px;
+  padding-right: 50px;
+  h5 {
+    color: #7f8c8d;
+  }
+  a button {
+    border-color: #34495e !important;
+    color: #34495e !important;
+  }
+  a button:hover {
+    background-color: #34495e !important;
+    color: #ecf0f1 !important;
+  }
+  a {
+    text-decoration: none;
+  }
 }
