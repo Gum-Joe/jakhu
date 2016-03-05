@@ -298,7 +298,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Dashboard for <%=config.name%></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -394,17 +394,13 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-10">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             Web Apps
                         </div>
                         <!-- /.panel-heading -->
-                        <% if(!webapps) { %>
-                          <div class="panel-body no-apps-panel">
-                        <% } else { %>
-                          <div class="panel-body">
-                        <% } %>
+                        <div class="panel-body no-apps-panel">
                           <% if(!webapps) { %>
                             <div class="no-apps-panel-head">
                               <h2>No web apps found</h2>
@@ -421,7 +417,7 @@
                                             <th>Name</th>
                                             <th>Author</th>
                                             <th>Language</th>
-                                            <th>No. of Tubs</th>
+                                            <th>Tubs</th>
                                             <th>Running?</th>
                                             <th>View</th>
                                         </tr>
@@ -451,6 +447,16 @@
                     <!-- /.panel -->
                 </div>
                 <!-- /.col-lg-12 -->
+                <div class="col-lg-2">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+                          Quick actions
+                      </div>
+                      <div class="panel-body no-apps-panel">
+                        <h1>TODO</h1>
+                      </div>
+                    </div>
+                </div>
             </div>
             <!-- /.row -->
             <!-- /.row -->
