@@ -11,6 +11,8 @@ body {
   //font-family: open-sans;
 }
 #navbar-topper-a {
+  position: fixed;
+  width: 100%;
   div a .hamburger:focus {
     outline:0 !important;
     span span::before {
@@ -86,6 +88,9 @@ body {
 }
 #wrapper {
   background-color: $sidebar-background-colour;
+}
+.page-header {
+  margin-top: 70px;
 }
 #navbar-side-one {
 
