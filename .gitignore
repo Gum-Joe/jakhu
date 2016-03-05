@@ -6,6 +6,8 @@ logs
 app/etc/*.txt
 app/etc/*.yml
 
+# templates
+views/__templates/startbootstrap-sb-admin-2-1.0.8
 # Runtime data
 pids
 *.pid
