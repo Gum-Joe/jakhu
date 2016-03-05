@@ -89,26 +89,32 @@ $nav2 : #000080;*/
 }
 #navbar-topper-a ul .open a {
   font-family: open-sans;
-  background-color: #1a1a1a;
+  background: #1a1a1a;
 }
 #navbar-topper-a .sidebar {
-  background-color: #0e131b !important;
+  background: linear-gradient(to right, #121a21, #0e131b) !important;
 }
 #navbar-topper-a .sidebar div ul li {
-  border-bottom-color: #0e131b !important;
+  border-bottom-color: #17212b !important;
 }
 #navbar-topper-a .sidebar div ul li a {
-  background-color: #0e131b !important;
+  background: linear-gradient(to right, #121a21, #0e131b) !important;
 }
 
 #wrapper {
-  background-color: #0e131b;
+  background: linear-gradient(to right, #121a21, #0e131b);
 }
 
-.page-header {
-  margin-top: 70px;
+@media screen and (max-width: 769px) {
+  .page-header {
+    margin-top: 116px;
+  }
 }
-
+@media screen and (min-width: 769px) {
+  .page-header {
+    margin-top: 70px;
+  }
+}
 .no-apps-panel-head {
   text-align: center;
   border-style: dashed;

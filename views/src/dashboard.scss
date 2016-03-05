@@ -4,7 +4,10 @@
 $navbar-background : #222;
 $navbar-text-colour : #9d9d9d;
 $navbar-background-hover : #1a1a1a;
-$sidebar-background-colour : #0e131b;
+//$sidebar-background-colour : #0e131b;
+$sidebar-background-colour : linear-gradient(to right, #121a21, #0e131b);
+$sidebar-border-colour : #17212b;
+$sidebar-background-colour-grad : #121a21;
 $navbar-accesibilty-colour: #cccccc;
 
 .panel-badges-cus, .page-header {
@@ -74,23 +77,30 @@ $navbar-accesibilty-colour: #cccccc;
   }
   ul .open a {
     font-family: open-sans;
-    background-color: $navbar-background-hover;
+    background: $navbar-background-hover;
   }
   .sidebar {
-    background-color: $sidebar-background-colour !important;
+    background: $sidebar-background-colour !important;
     div ul li {
-      border-bottom-color: $sidebar-background-colour !important;
+      border-bottom-color: $sidebar-border-colour !important;
     }
     div ul li a {
-      background-color: $sidebar-background-colour !important;
+      background: $sidebar-background-colour !important;
     }
   }
 }
 #wrapper {
-  background-color: $sidebar-background-colour;
+  background: $sidebar-background-colour;
 }
-.page-header {
-  margin-top: 70px;
+@media screen and (max-width: 769px) {
+  .page-header {
+    margin-top: 116px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .page-header {
+    margin-top: 70px;
+  }
 }
 .no-apps-panel-head {
   text-align: center;
