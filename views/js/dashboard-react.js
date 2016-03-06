@@ -1,42 +1,52 @@
+ * React stuff
+ * Action should be from server
+*/
+var actions = [
+    {
+      "text": "New web app",
+      "url": "/dashboard/new/app"
+    },
+    {
+      "text": "Make a note",
+      "url": "/dashboard/note"
+    },
+    {
+      "text": "Stats",
+      "url": "/dashboard/stats"
+    },
+    {
+      "text": "Help...",
+      "url": "/help"
+    }
+  ]
+/**
+ * Quick action
+*/
+var QuickAction = React.createClass({displayName: "QuickAction",
   render: function () {
     return (
-      React.createElement("a", {href: this.props.url}, React.createElement("button", {type: "button", className: "btn btn-info open-sans-font"}, this.props.children))
+      React.createElement("a", {href: this.props.url}, React.createElement("button", {type: "button", className: "btn btn-primary open-sans-font"}, this.props.children))
     )
   }
 });
+/**
+ * Render all quick actions
+*/
 var QuickActions = React.createClass({displayName: "QuickActions",
-  getInitialState: function() {
-    return {data: []};
-  },
-  getActions: function () {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      cache: false,
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  componentDidMount: function() {
-    this.getActions();
-    setInterval(this.getActions, this.props.pollInterval);
-  },
   render: function () {
+    var actionNodes = actions.map(function (action) {
+      return (
+        React.createElement(QuickAction, {url: action.url}, action.text)
+      )
+    })
     return (
       React.createElement("div", null, 
-        React.createElement(QuickAction, {url: "/dashboard/new/app"}, "New web app"), 
-        React.createElement(QuickAction, {url: "/dashboard/new/note"}, "Make a note"), 
-        React.createElement(QuickAction, {url: "/dashboard/production/stats"}, "Stats"), 
-        React.createElement(QuickAction, {url: "/help"}, "Help...")
+        actionNodes
       )
     )
   }
 })
 ReactDOM.render(
-  React.createElement(QuickActions, {url: "/api/user/quickactions", pollInterval: 2000}),
+  React.createElement(QuickActions, null),
   document.getElementById('quickactions-react')
 )

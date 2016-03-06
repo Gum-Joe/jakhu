@@ -70,7 +70,7 @@ app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
 app.use(express.static(path.join(__dirname, 'test')));
-app.use(mid.count);
+//app.use(mid.count);
 app.use(mid.timer);
 if(process.env.NODE_ENV === "dev"){
   app.set('env', 'development');

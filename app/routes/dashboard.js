@@ -94,7 +94,8 @@ router.get('/', function(req, res, next) {
         uptime: uptime,
         requestdata: requestarray,
         downtime: downtime,
-        webapps: apps
+        webapps: apps,
+        quickactionjson: require('../../config/quickactions.json').actions
       });
     });
   }
