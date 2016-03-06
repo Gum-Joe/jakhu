@@ -18,12 +18,18 @@ mid.count = function count (req, res, next) {
    next();
 }
 mid.timer = (req, res, next) => {
+  // Date method
+  Date.prototype.formatMMDDYYYY = function(){
+    return (this.getMonth() + 1) +
+    "." +  this.getDate() +
+    "." +  this.getFullYear();
+  }
     var start = Date.now();
     const starttime = new Date();
     res.on('finish', function() {
         var duration = Date.now() - start;
         try {
-            const store = new db.Requests({method: req.method, route: req.route.path, starttime: starttime, endtime: new Date(), time: duration});
+            const store = new db.Requests({method: req.method, route: req.url, starttime: starttime, endtime: new Date().formatMMDDYYYY(), time: duration});
             store.save((err) => {
               if (err) {
                 throw err;

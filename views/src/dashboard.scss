@@ -9,6 +9,7 @@ $sidebar-background-colour : linear-gradient(to right, #121a21, #0e131b);
 $sidebar-border-colour : #17212b;
 $sidebar-background-colour-grad : #121a21;
 $navbar-accesibilty-colour: #cccccc;
+$white : #ecf0f1;
 
 .panel-badges-cus, .page-header {
   font-family: Open-Sans;
@@ -128,4 +129,34 @@ $navbar-accesibilty-colour: #cccccc;
   a {
     text-decoration: none;
   }
+}
+#quickactions {
+  $quick-actions-background : #2980b9;
+  border-color: $quick-actions-background;
+  .panel-heading {
+    background-color: $quick-actions-background;
+  }
+}
+#appstable tbody tr #viewbutton a {
+  color: #2c3e50 !important;
+}
+.alt-success-cus th {
+  background: #2c3e50 !important;
+  color: $white;
+}
+#quickactions-react {
+  padding-top: 21px;
+}
+#quickactions-react a button {
+  font-size: 17px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+#quickactions-react a {
+  text-decoration: none;
+}
+.open-sans-font {
+  font-family: open-sans;
 }

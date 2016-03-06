@@ -13,6 +13,10 @@ router.get('/', function (req, res) {
   },
 });
 })
+/* GET /user/quickactions and return json */
+router.get('/user/quickactions', function (req, res) {
+  res.json(require('../../../config/quickactions'));
+})
 
 /* POST api tubs/log */
 router.post('/tubs/log', function (req, res) {

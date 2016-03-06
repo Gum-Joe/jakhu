@@ -143,4 +143,40 @@ $nav2 : #000080;*/
   text-decoration: none;
 }
 
+#quickactions {
+  border-color: #2980b9;
+}
+#quickactions .panel-heading {
+  background-color: #2980b9;
+}
+
+#appstable tbody tr #viewbutton a {
+  color: #2c3e50 !important;
+}
+
+.alt-success-cus th {
+  background: #2c3e50 !important;
+  color: #ecf0f1;
+}
+
+#quickactions-react {
+  padding-top: 21px;
+}
+
+#quickactions-react a button {
+  font-size: 17px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#quickactions-react a {
+  text-decoration: none;
+}
+
+.open-sans-font {
+  font-family: open-sans;
+}
+
 /*# sourceMappingURL=dashboard.css.map */
