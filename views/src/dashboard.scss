@@ -10,6 +10,11 @@ $sidebar-border-colour : #17212b;
 $sidebar-background-colour-grad : #121a21;
 $navbar-accesibilty-colour: #cccccc;
 $white : #ecf0f1;
+$navbar-collapse-width : 768px;
+
+body {
+  font-family: OpenSans-Regular;
+}
 
 .panel-badges-cus, .page-header {
   font-family: Open-Sans;
@@ -93,12 +98,12 @@ $white : #ecf0f1;
 #wrapper {
   background: $sidebar-background-colour;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: $navbar-collapse-width) {
   .page-header {
     margin-top: 116px;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: $navbar-collapse-width) {
   .page-header {
     margin-top: 70px;
   }
@@ -159,4 +164,12 @@ $white : #ecf0f1;
 }
 .open-sans-font {
   font-family: open-sans;
+}
+.open-sans-normal {
+  font-family: OpenSans-Regular;
+}
+@media only screen and (min-width: 768px) {
+    #hamburger-bootstrap-cus {
+        display: none;
+    }
 }

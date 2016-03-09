@@ -66,6 +66,10 @@ ioe.start = (app) => {
         }
       });
     });
+    socket.on('taskserver', function (task) {
+      console.log(task);
+      io.emit('task', task)
+    })
   });
   // Return io
   return io;

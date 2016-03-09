@@ -137,6 +137,7 @@ module.exports = function(grunt) {
           'views/css/app-status-ejs-template.css': 'views/src/ejs-templates/app-status.scss',
           'views/css/app-status-ejs-template-mobile.css': 'views/src/ejs-templates/app-status-mobile.scss',
           'views/css/default-sheet.css': 'views/src/resources/default.scss',
+          'views/css/new-web-app.css': 'views/src/new-web-app.scss',
         }
       },
     },

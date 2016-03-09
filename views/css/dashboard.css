@@ -20,6 +20,10 @@ $nav2 : #000080;*/
   font-family: FiraSans-UltraLight;
   src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
 }
+body {
+  font-family: OpenSans-Regular;
+}
+
 .panel-badges-cus, .page-header {
   font-family: Open-Sans;
 }
@@ -105,12 +109,12 @@ $nav2 : #000080;*/
   background: linear-gradient(to right, #121a21, #0e131b);
 }
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
   .page-header {
     margin-top: 116px;
   }
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .page-header {
     margin-top: 70px;
   }
@@ -177,6 +181,16 @@ $nav2 : #000080;*/
 
 .open-sans-font {
   font-family: open-sans;
+}
+
+.open-sans-normal {
+  font-family: OpenSans-Regular;
+}
+
+@media only screen and (min-width: 768px) {
+  #hamburger-bootstrap-cus {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=dashboard.css.map */

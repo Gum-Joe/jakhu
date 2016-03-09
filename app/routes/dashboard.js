@@ -160,4 +160,14 @@ router.get('/apps/start', function (req, res, next) {
   //res.send(req.author);
 })
 
+// New app
+router.get('/new/app', function (req, res, next) {
+  console.log();
+  if (!req.user) {
+    res.redirect('/?callback=/dashboard/new/app');
+  } else {
+    res.render('dashboard/__pages/new/app.ejs')
+  }
+})
+
 module.exports = router;

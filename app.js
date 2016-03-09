@@ -105,6 +105,8 @@ if(y === true || x === 'basic' || x === 'ci'){
 }
 // Start socket.io
 io.start(server)
+// Invoke api
+apis.init(port)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
