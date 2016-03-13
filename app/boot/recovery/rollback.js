@@ -5,7 +5,6 @@ var datea = "./app/recovery/rollback/backup";
 var exec = require('child_process').exec;
 var debug = require('debug')('boot:recovery');
 
-//var PythonShell = require('python-shell');
 exports.createBackup = function createBackup(x){
   if(x === "test"){
     mkdirp("./tmp/test", function (err) {

@@ -7,7 +7,6 @@ var express = require('express');
 var exec = require('child_process').exec;
 var boot = require('./index.js');
 exports.boot = require('./index.js');
-var prompt = require('prompt');
 var app = require("../../app.js");
 exports.oobe = require("../../libs/setup/setup.js");
 var oobe = require("../../libs/setup/setup.js");
