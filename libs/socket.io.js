@@ -1,6 +1,8 @@
 'use strict';
-var socketio = require('socket.io');
-var ioe = module.exports = {};
+const socketio = require('socket.io');
+const spawn = require('child_process').spawn;
+const mkdirp = require('mkdirp');
+let ioe = module.exports = {};
 const fs = require('fs');
 ioe.start = (app) => {
   const io = socketio.listen(app);
@@ -69,6 +71,25 @@ ioe.start = (app) => {
     socket.on('taskserver', function (task) {
       console.log(task);
       io.emit('task', task)
+    })
+    // tasks
+    socket.on('clonerepo', function (cmd) {
+      // Start task
+      // Create dir
+      mkdirp('./app/instances/'+cmd.repo)
+      // Start clone
+      const tas = spawn('git', ['clone', `https://github.com/${cmd.repo}`, './app/instances/'+cmd.repo])
+      tas.stdout.on('data', (data) => {
+        io.emit('clonerepoupdate', {id: cmd.id, out: data.toString('utf8')});
+        console.log(data.toString('utf8'));
+      })
+      tas.stderr.on('data', (data) => {
+        io.emit('clonerepoupdate', {id: cmd.id, out: data.toString('utf8')});
+        console.log(data.toString('utf8'));
+      })
+      tas.on('exit', (code) => {
+        io.emit('clonerepoupdateexit', {id: cmd.id, out: `Cloning exited with ${code}.`});
+      })
     })
   });
   // Return io

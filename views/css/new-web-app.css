@@ -66,31 +66,37 @@ body {
   font-family: open-sans;
 }
 
+.header-logging {
+  text-align: center;
+  width: 80%;
+}
+
 .header {
   text-align: center;
+  width: 80%;
   margin-top: 10%;
 }
 .header h1 {
-  -webkit-animation: fadein 1s;
+  -webkit-animation: fadein 1.5s;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 1s;
+  -moz-animation: fadein 1.5s;
   /* Firefox < 16 */
-  -ms-animation: fadein 1s;
+  -ms-animation: fadein 1.5s;
   /* Internet Explorer */
-  -o-animation: fadein 1s;
+  -o-animation: fadein 1.5s;
   /* Opera < 12.1 */
-  animation: fadein 1s;
+  animation: fadein 1.5s;
 }
 .header h3 {
-  -webkit-animation: fadein 3s;
+  -webkit-animation: fadein 2s;
   /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s;
+  -moz-animation: fadein 2s;
   /* Firefox < 16 */
-  -ms-animation: fadein 3s;
+  -ms-animation: fadein 2s;
   /* Internet Explorer */
-  -o-animation: fadein 3s;
+  -o-animation: fadein 2s;
   /* Opera < 12.1 */
-  animation: fadein 3s;
+  animation: fadein 2s;
 }
 
 .button-choice {
@@ -98,11 +104,67 @@ body {
   width: 50%;
   margin: 0 auto;
   text-align: center;
+  -webkit-animation: fadein 2s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 2s;
+  /* Internet Explorer */
+  -o-animation: fadein 2s;
+  /* Opera < 12.1 */
+  animation: fadein 2s;
 }
-.button-choice button {
+.button-choice a button {
   margin-right: 30px;
   margin-bottom: 20px;
   margin-left: auto;
+}
+.button-choice a button:focus {
+  color: white;
+}
+.button-choice a .active {
+  color: white;
+}
+
+.options-field {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+.options-field form {
+  width: 100%;
+}
+.options-field form div {
+  width: 100%;
+}
+.options-field form div input[type="text"] {
+  width: 95.5%;
+}
+.options-field form div input {
+  height: 50px;
+  background-color: #f0f3f4;
+  font-size: 20px;
+}
+.options-field h2 a {
+  color: #2980b9;
+  font-family: OpenSans-Regular;
+}
+
+.logoutput {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  background-color: #141414;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000000;
+  color: white;
+  padding-top: 10px;
+  font-size: 20px;
+}
+.logoutput ul {
+  list-style-type: none;
 }
 
 /*# sourceMappingURL=new-web-app.css.map */

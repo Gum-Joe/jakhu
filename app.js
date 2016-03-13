@@ -11,6 +11,7 @@ const fs = require("fs");
 const morgan = require("morgan");
 const mkdirp = require('mkdirp');
 const delayed = require('delayed');
+const minify = require('express-minify');
 
 const connect = require("./libs/connect.js");
 const mid = require('./libs/middleware.js')
@@ -65,6 +66,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(minify({
+  js_match: /js/,
+  css_match: /css/,
+  sass_match: /scss/,
+  cache: __dirname + '/tmp/cache'
+}))
 app.use(express.static(path.join(__dirname, 'views/public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 app.use(express.static(path.join(__dirname, 'node_modules')));

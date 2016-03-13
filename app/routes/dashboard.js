@@ -169,5 +169,16 @@ router.get('/new/app', function (req, res, next) {
     res.render('dashboard/__pages/new/app.ejs')
   }
 })
+// New app - github
+router.post('/new/app/github-handler', function (req, res, next) {
+  console.log();
+  if (!req.user) {
+    res.redirect('/?callback=/dashboard/new/app/github-handler');
+  } else {
+    res.render('dashboard/__pages/new/app-github.ejs', {
+      repo: req.body.repo
+    })
+  }
+})
 
 module.exports = router;
