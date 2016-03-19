@@ -2,6 +2,8 @@
 const socketio = require('socket.io');
 const spawn = require('child_process').spawn;
 const mkdirp = require('mkdirp');
+const git = require('./git.js');
+
 let ioe = module.exports = {};
 const fs = require('fs');
 ioe.start = (app) => {
