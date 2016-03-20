@@ -2,7 +2,9 @@
 const socketio = require('socket.io');
 const spawn = require('child_process').spawn;
 const mkdirp = require('mkdirp');
-const git = require('./git.js');
+const Git = require('./git.js');
+const debug = require("debug")('socket.io');
+const GithubPrefix = 'https://github.com/';
 
 let ioe = module.exports = {};
 const fs = require('fs');
@@ -75,25 +77,36 @@ ioe.start = (app) => {
       io.emit('task', task)
     })
     // tasks
-    socket.on('clonerepo', function (cmd) {
+    socket.on('clonerepo', function (repositary) {
       // Start task
-      // Create dir
-      mkdirp('./app/instances/'+cmd.repo)
-      // Start clone
-      const tas = spawn('git', ['clone', `https://github.com/${cmd.repo}`, './app/instances/'+cmd.repo])
-      tas.stdout.on('data', (data) => {
-        io.emit('clonerepoupdate', {id: cmd.id, out: data.toString('utf8')});
-        console.log(data.toString('utf8'));
-      })
-      tas.stderr.on('data', (data) => {
-        io.emit('clonerepoupdate', {id: cmd.id, out: data.toString('utf8')});
-        console.log(data.toString('utf8'));
-      })
-      tas.on('exit', (code) => {
-        io.emit('clonerepoupdateexit', {id: cmd.id, out: `Cloning exited with ${code}.`});
-      })
-    })
+      // Create dir if non existent
+      mkdirp('./app/instances/'+repositary.repo)
+      // Clone using git tools
+      let repo = new Git.Repo(`${__dirname}/../app/instances/${repositary.repo}`)
+      if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git@') || repositary.repo.startsWith('git://')) {
+        // Clone
+        debug('Repo url specified. Using that.')
+        repo.clone(repositary.repo, (repo, err) => {
+          if (!err) {
+            io.emit('clonerepofinish', {id: repositary.id})
+          } else {
+            io.emit('clonerepofinish', {id: repositary.id, err: err})
+          }
+        });
+      } else {
+        debug('Repo not in url form. Appending github prefix.')
+        repo.clone(GithubPrefix+repositary.repo, (repo, err) => {
+          if (!err) {
+            io.emit('clonerepofinish', {id: repositary.id})
+            debug('Repo cloned.')
+          } else {
+            io.emit('clonerepofinish', {id: repositary.id, err: err})
+          }
+        })
+      }
+
   });
   // Return io
   return io;
-}
+});
+};

@@ -4,10 +4,11 @@
 /**
  * Modules dependencies
 */
-const Git = require('nodegit-build');
+const Git = require('nodegit');
 const path = require('path');
+const debug = require('debug')('git');
 // Use gitex as module.exports
-let gitex = module.export = {}
+let gitex = module.exports = {}
 // String methods
 /**
  * Repo class
@@ -16,37 +17,38 @@ let gitex = module.export = {}
 /**
  * Repo info class
 */
-function RepoInfo(dir) {
+function GetSHA(dir) {
   var commitSHA = this.commitSHA;
-  Git.Repository.open(dir).then((repo) => {
+  Git.Repository.open('./').then((repo) => {
     commitSHA = repo.getMasterCommit();
+    console.log(commitSHA);
   })
-  console.log(this.commitSHA);
+  return commitSHA;
 }
 /**
  * Clone method
  * @param url {String} Repo url
 */
 function Repo(dir) {
-  this.dir = path.resolve(path.normalize(dir));
+  this.dir = dir;
 }
-Repo.prototype = {};
 Repo.prototype.clone = function(url, callback) {
   if (url.startsWith('https://') || url.startsWith('http://') || url.startsWith('git@') || url.startsWith('git://')) {
-    // Do nothing
+    // Clone
+    debug('Repo format valid');
+    debug("url: %o", url)
+    debug("dir: %o", this.dir)
+    Git.Clone(url, this.dir).then(callback);
   } else {
+    debug('Repo format invalid');
     const errmessage = new Error("Invalid repo format - must start with 'https://', 'http://', 'git@' or 'git://'")
     if (callback) {
-      callback(errmessage)
+      callback(null, errmessage)
     } else {
       throw errmessage;
     }
   }
-  // Clone
-  Git.clone(url, this.dir)
   // Return class git.RepoInfo
-  return new RepoInfo(thgis.dir)
+  return 'Cloned'
 };
-// test
-let clone = new Repo('../app/repo')
-clone.clone('https://github.com/jakhu/leeba');
+gitex.Repo = Repo;

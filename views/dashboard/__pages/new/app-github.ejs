@@ -22,13 +22,10 @@
   </head>
   <body>
     <div class="container header-logging" id="header">
-      <h1>Cloning your repo into app/instances/<%=repo %>...</h1>
-      <h3>Output is show below.</h3>
+      <h1>Cloning your repo into app/instances...</h1>
+      <h3>Repo: <%=repo%></h3>
     </div>
-    <div class="container logoutput">
-      <ul class="clonelog">
-        <li>Cloning...</li>
-      </ul>
+    <div class="container status" id="status">
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -42,20 +39,41 @@
     <!-- Custom js -->
     <script src="/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/progressbar.js/dist/progressbar.min.js" charset="utf-8"></script>
     <script type="text/javascript">
       var cloneid = Math.round(Math.random() * 100)
+      // progressbar
+      var circle = new ProgressBar.Circle('#status', {
+        color: '#2980b9',
+        strokeWidth: 3,
+        trailWidth: 1,
+        duration: 1500,
+        text: {
+          value: '0'
+        },
+        step: function(state, bar) {
+          bar.path.setAttribute('stroke', state.color);
+          if (bar.value() === 1) {
+            bar.setText('<i class="fa fa-check done-status"></i>').toFixed(0);
+          } else {
+            bar.setText((bar.value() * 100).toFixed(0));
+          }
+        }
+      });
+
+      circle.animate(0.5, {
+        from: {color: '#2980b9'},
+        to: {color: '#2980b9'}
+      })
       // Socket.io
       var socket = io.connect();
       socket.emit('clonerepo', {repo: '<%=repo%>', id: cloneid})
-      socket.on('clonerepoupdate', function (data) {
-        if (data.id === cloneid) {
-          $('.clonelog').append(data.out);
-        }
-      })
-      socket.on('clonerepoupdateexit', function (data) {
-        if (data.id === cloneid) {
-          $('.clonelog').append(data.out);
-        }
+      socket.on('clonerepofinish', function (data) {
+        circle.animate(1, {
+          from: {color: '#2980b9'},
+          to: {color: '#27ae60'}
+        })
+        console.log("Done");
       })
     </script>
   </body>

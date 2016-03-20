@@ -24,7 +24,7 @@ console.log("We're finishing off installing jakhu...");
 console.log("Please wait whilest we configure jakhu & check if all external deps are met...\n");
 verbose('Checking if the logs directory exists...')
 fs.stat(path.join(PWD, 'logs'), function (err, stats) {
-  if (stats.isDirectory() !== true) {
+  if (err) {
     verbose('Creating logs directory...')
     mkdirp(path.join(PWD, 'logs'), function (err) {
       if (err) {

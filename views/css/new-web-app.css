@@ -167,4 +167,22 @@ body {
   list-style-type: none;
 }
 
+.status {
+  margin-top: 50px;
+  height: 150px;
+  width: 150px;
+}
+.status div {
+  top: 40% !important;
+  font-size: 40px !important;
+}
+
+.header-logging {
+  margin-top: 10%;
+}
+
+.done-status {
+  color: #27ae60 !important;
+}
+
 /*# sourceMappingURL=new-web-app.css.map */
