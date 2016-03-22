@@ -83,6 +83,12 @@ ioe.start = (app) => {
       mkdirp('./app/instances/'+repositary.repo)
       // Clone using git tools
       let repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`)
+      // Checks
+      repo.checks((err) => {
+        if (err) {
+          io.emit('clonerepoerr', {id: repositary.id, err: err.message})
+        }
+      })
       if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git://')) {
         // Clone
         debug('Repo url specified. Using that.')

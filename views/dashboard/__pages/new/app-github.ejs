@@ -25,8 +25,7 @@
       <h1>Cloning your repo into app/instances...</h1>
       <h3>Repo: <%=repo%></h3>
     </div>
-    <div class="container status" id="status">
-    </div>
+    <div class="container status" id="status"></div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -40,7 +39,7 @@
     <script src="/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/progressbar.js/dist/progressbar.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
+    <script type="text/babel">
       var cloneid = Math.round(Math.random() * 100)
       // progressbar
       var circle = new ProgressBar.Circle('#status', {
@@ -69,11 +68,18 @@
       var socket = io.connect();
       socket.emit('clonerepo', {repo: '<%=repo%>', id: cloneid})
       socket.on('clonerepofinish', function (data) {
-        circle.animate(1, {
-          from: {color: '#2980b9'},
-          to: {color: '#27ae60'}
-        })
+        if (data.id === cloneid) {
+          circle.animate(1, {
+            from: {color: '#2980b9'},
+            to: {color: '#27ae60'}
+          })
+        }
         console.log("Done");
+      })
+      socket.on('clonerepoerr', function (err) {
+        if (err.id === cloneid) {
+          console.log(err.err);
+        }
       })
     </script>
   </body>

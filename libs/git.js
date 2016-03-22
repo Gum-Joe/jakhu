@@ -7,6 +7,9 @@
 const Git = require('nodegit');
 const path = require('path');
 const debug = require('debug')('git');
+const fs = require('fs');
+const IDGenerator = require('id-generator')
+let idg = new IDGenerator()
 // Use gitex as module.exports
 let gitex = module.exports = {}
 /**
@@ -48,6 +51,8 @@ function GetSHA(dir) {
 */
 function Repo(dir) {
   this.dir = dir;
+  this.id = idg.newId()
+  idg.reset();
 }
 Repo.prototype.clone = function(url, callback) {
   if (url.startsWith('https://') || url.startsWith('http://') || url.startsWith('git://')) {
@@ -55,18 +60,34 @@ Repo.prototype.clone = function(url, callback) {
     debug('Repo format valid');
     debug("url: %o", url)
     debug("dir: %o", this.dir)
+    debug("id: %o", this.id)
     Git.Clone(url, this.dir).then(callback);
   } else {
     debug('Repo format invalid');
     const errmessage = new Error("Invalid repo format - must start with 'https://', 'http://' or 'git://'")
     if (callback) {
-      callback(null, errmessage)
+      return callback(null, errmessage)
     } else {
       throw errmessage;
     }
   }
   // Return class git.RepoInfo
   return 'Cloned'
+};
+/**
+ * Checks
+ * @param callback {Function} Callback
+*/
+Repo.prototype.checks = function (callback) {
+  debug('Running checks on created repo with id %o', this.id)
+  // Does the repo exist?
+  debug('Checking if repo exists...')
+  fs.stat(this.dir, (err, stat) => {
+    if (!err && stat.isDirectory()) {
+      debug('Repo exists!')
+      return callback(new Error("Repo already exists."))
+    }
+  })
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;

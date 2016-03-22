@@ -52,6 +52,7 @@
     "express-session": "^1.11.3",
     "git": "^0.1.5",
     "html": "0.0.10",
+    "id-generator": "^1.0.0",
     "jade": "^1.11.0",
     "jakhu-config": "git+https://github.com/Gum-Joe/jakhu-config.git",
     "jakhu-container": "github:gum-joe/jakhu-container",
