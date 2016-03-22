@@ -82,8 +82,8 @@ ioe.start = (app) => {
       // Create dir if non existent
       mkdirp('./app/instances/'+repositary.repo)
       // Clone using git tools
-      let repo = new Git.Repo(`${__dirname}/../app/instances/${repositary.repo}`)
-      if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git@') || repositary.repo.startsWith('git://')) {
+      let repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`)
+      if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git://')) {
         // Clone
         debug('Repo url specified. Using that.')
         repo.clone(repositary.repo, (repo, err) => {
