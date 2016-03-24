@@ -85,11 +85,22 @@ ioe.start = (app) => {
       let repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`)
       console.log(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`);
       // Checks
-      repo.checks((err) => {
-        if (err) {
-          io.emit('clonerepoerr', { id: repositary.id, err: { message: err.message } })
+      repo.checks(
+        (step, totalsteps, status) => {
+          const stepsdone = step - 1
+          const percent = 100 / totalsteps * stepsdone;
+          if (step > totalsteps) {
+            io.emit('clonerepoupdate', {group: 'preparing', message: '[code] done'})
+          } else {
+            io.emit('clonerepoupdate', {group: 'preparing', percent: percent, message: status})
+          }
+        },
+        (err) => {
+          if (err) {
+            io.emit('clonerepoerr', { id: repositary.id, err: { message: err.message } })
+          }
         }
-      })
+      )
       if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git://')) {
         // Clone
         debug('Repo url specified. Using that.')

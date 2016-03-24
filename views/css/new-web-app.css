@@ -178,7 +178,7 @@ body {
 }
 
 .header-logging {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .done-status {
@@ -229,6 +229,22 @@ body {
 }
 #err-modal .modal-dialog .modal-content .modal-body h3 {
   margin-top: 0 !important;
+}
+
+.stats-logging ul {
+  list-style: none;
+  width: 100%;
+  padding-left: 0;
+  text-align: center;
+}
+.stats-logging ul li {
+  display: inline;
+  font-size: 1.12em;
+  margin-right: 5%;
+}
+
+.stats-logging-active {
+  color: #2980b9;
 }
 
 /*# sourceMappingURL=new-web-app.css.map */

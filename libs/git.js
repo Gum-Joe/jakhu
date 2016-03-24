@@ -9,6 +9,7 @@ const path = require('path');
 const debug = require('debug')('git');
 const fs = require('fs');
 const IDGenerator = require('id-generator')
+const vbox = require("virtualbox");
 let idg = new IDGenerator()
 // Use gitex as module.exports
 let gitex = module.exports = {}
@@ -78,15 +79,34 @@ Repo.prototype.clone = function(url, callback) {
  * Checks
  * @param callback {Function} Callback
 */
-Repo.prototype.checks = function (callback) {
+Repo.prototype.checks = function (onEach, callback) {
+  const steps = 2
   debug('Running checks on created repo with id %o', this.id)
   // Does the repo exist?
   debug('Checking if repo exists...')
+  onEach(1, steps, "Checking if repo exists...")
   console.log(fs.existsSync(this.dir));
   if (fs.existsSync(this.dir)) {
     debug('Repo exists!')
-    return callback(new Error("Repo already exists!"))
+    return callback(new Error(`Repo already exists! (Preparing, step 1 of ${steps})`))
   }
+  // TODO: check for a boot2doker machine
+  const dockervm = process.env.JAKHU_DOCKER_MACHINE || 'default'
+  debug('Starting boot2docker machine %o...', dockervm)
+  onEach(2, steps, "Starting boot2docker vm...")
+  if (process.platform === 'darwin' || process.platform === 'win32') {
+    // Check for boot2docker
+    vbox.start(dockervm, function (err) {
+      if (err) {
+        return callback(new Error(`Could not start boot2docker vm. Full error from vbox:\n${err}\n (Preparing, step 2 of ${steps})`))
+      } else {
+        debug('Boot2docker now booting...')
+      }
+    })
+  } else {
+    debug('Linux. Not starting vm.')
+  }
+  onEach(steps + 1, steps, "[code] done")
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;

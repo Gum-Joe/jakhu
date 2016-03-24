@@ -103,7 +103,7 @@ body {
   }
 }
 .header-logging {
-  margin-top: 10%;
+  margin-top: 8%;
 }
 .done-status {
   color: #27ae60 !important;
@@ -152,4 +152,21 @@ body {
       }
     }
   }
+}
+
+.stats-logging {
+  ul {
+    list-style: none;
+    width: 100%;
+    padding-left: 0;
+    text-align: center;
+    li {
+      display: inline;
+      font-size: 1.12em;
+      margin-right: 5%;
+    }
+  }
+}
+.stats-logging-active {
+  color: #2980b9;
 }
