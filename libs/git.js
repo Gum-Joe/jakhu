@@ -82,12 +82,11 @@ Repo.prototype.checks = function (callback) {
   debug('Running checks on created repo with id %o', this.id)
   // Does the repo exist?
   debug('Checking if repo exists...')
-  fs.stat(this.dir, (err, stat) => {
-    if (!err && stat.isDirectory()) {
-      debug('Repo exists!')
-      return callback(new Error("Repo already exists."))
-    }
-  })
+  console.log(fs.existsSync(this.dir));
+  if (fs.existsSync(this.dir)) {
+    debug('Repo exists!')
+    return callback(new Error("Repo already exists!"))
+  }
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;

@@ -163,11 +163,11 @@ router.get('/apps/start', function (req, res, next) {
 // New app
 router.get('/new/app', function (req, res, next) {
   console.log();
-  if (!req.user) {
-    res.redirect('/?callback=/dashboard/new/app');
-  } else {
+  //if (!req.user) {
+    //res.redirect('/?callback=/dashboard/new/app');
+  //} else {
     res.render('dashboard/__pages/new/app.ejs')
-  }
+  //}
 })
 // New app - github
 router.post('/new/app/github-handler', function (req, res, next) {
