@@ -185,21 +185,21 @@ body {
   color: #27ae60 !important;
 }
 
-#err-modal-button {
-  margin-left: -200px;
+#err-modal-button, #config-modal-button {
+  margin-left: -1000px;
 }
 
-#err-modal {
+#err-modal, #config-modal {
   padding-right: 0 !important;
   padding-left: 0 !important;
 }
-#err-modal .modal-dialog {
+#err-modal .modal-dialog, #config-modal .modal-dialog {
   width: 100% !important;
   margin-top: 7.9% !important;
   height: 400px !important;
   vertical-align: middle !important;
 }
-#err-modal .modal-dialog .modal-content {
+#err-modal .modal-dialog .modal-content, #config-modal .modal-dialog .modal-content {
   vertical-align: middle !important;
   border-radius: 0 !important;
   border: 0 !important;
@@ -207,28 +207,42 @@ body {
   -moz-box-shadow: -40px 10px 0px -200px rgba(0, 0, 0, 0.75) !important;
   box-shadow: -40px 10px 0px -200px rgba(0, 0, 0, 0.75) !important;
 }
-#err-modal .modal-dialog .modal-content .modal-header, #err-modal .modal-dialog .modal-content .modal-footer {
+#err-modal .modal-dialog .modal-content .modal-header, #err-modal .modal-dialog .modal-content .modal-footer, #config-modal .modal-dialog .modal-content .modal-header, #config-modal .modal-dialog .modal-content .modal-footer {
   border: 0 !important;
 }
-#err-modal .modal-dialog .modal-content .modal-footer {
+#err-modal .modal-dialog .modal-content .modal-footer, #config-modal .modal-dialog .modal-content .modal-footer {
   text-align: center;
   padding-bottom: 30px;
 }
-#err-modal .modal-dialog .modal-content .modal-header {
+#err-modal .modal-dialog .modal-content .modal-header, #config-modal .modal-dialog .modal-content .modal-header {
   vertical-align: middle !important;
   text-align: center;
   font-family: OpenSans-Regular;
 }
-#err-modal .modal-dialog .modal-content .modal-header h1 {
+#err-modal .modal-dialog .modal-content .modal-header h1, #config-modal .modal-dialog .modal-content .modal-header h1 {
   margin-bottom: 0 !important;
 }
-#err-modal .modal-dialog .modal-content .modal-body {
+#err-modal .modal-dialog .modal-content .modal-body, #config-modal .modal-dialog .modal-content .modal-body {
   vertical-align: middle !important;
   text-align: center;
   color: #e74c3c;
 }
-#err-modal .modal-dialog .modal-content .modal-body h3 {
+#err-modal .modal-dialog .modal-content .modal-body h3, #config-modal .modal-dialog .modal-content .modal-body h3 {
   margin-top: 0 !important;
+}
+
+#config-modal .modal-dialog .modal-content {
+  padding-left: 10px;
+}
+#config-modal .modal-dialog .modal-content .modal-header {
+  text-align: left;
+}
+#config-modal .modal-dialog .modal-content .modal-footer {
+  text-align: left;
+}
+#config-modal .modal-dialog .modal-content .modal-body {
+  text-align: left;
+  color: black;
 }
 
 .stats-logging ul {
@@ -252,6 +266,18 @@ body {
   font-family: OpenSans-Regular;
   text-align: center;
   margin-bottom: 14.09px;
+}
+
+.config-app-form div {
+  font-size: 1.12em;
+  font-family: OpenSans-Regular;
+}
+.config-app-form div label {
+  font-weight: normal !important;
+  margin-left: 0.5px;
+}
+.config-app-form div input {
+  width: 25% !important;
 }
 
 /*# sourceMappingURL=new-web-app.css.map */

@@ -109,10 +109,10 @@ body {
   color: #27ae60 !important;
 }
 
-#err-modal-button {
-  margin-left: -200px;
+#err-modal-button, #config-modal-button {
+  margin-left: -1000px;
 }
-#err-modal {
+#err-modal, #config-modal {
   padding-right: 0 !important;
   padding-left: 0 !important;
   .modal-dialog {
@@ -154,6 +154,24 @@ body {
   }
 }
 
+#config-modal {
+  .modal-dialog {
+    .modal-content {
+      padding-left: 10px;
+      .modal-header {
+        text-align: left;
+      }
+      .modal-footer {
+        text-align: left;
+      }
+      .modal-body {
+        text-align: left;
+        color: black;
+      }
+    }
+  }
+}
+
 .stats-logging {
   ul {
     list-style: none;
@@ -176,4 +194,18 @@ body {
   font-family: OpenSans-Regular;
   text-align: center;
   margin-bottom: 14.09px;
+}
+
+.config-app-form {
+  div {
+    font-size: 1.12em;
+    font-family: OpenSans-Regular;
+    label {
+      font-weight: normal !important;
+      margin-left: 0.5px;
+    }
+    input {
+      width: 25% !important;
+    }
+  }
 }
