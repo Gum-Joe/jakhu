@@ -79,8 +79,6 @@ ioe.start = (app) => {
     // tasks
     socket.on('clonerepo', function (repositary) {
       // Start task
-      // Create dir if non existent
-      mkdirp('./app/instances/'+repositary.repo)
       // Clone using git tools
       let repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`)
       console.log(`${__dirname}/../app/instances/${Git.normalizeURL(repositary.repo)}`);
@@ -99,29 +97,33 @@ ioe.start = (app) => {
           if (err) {
             io.emit('clonerepoerr', { id: repositary.id, err: { message: err.message } })
           }
+        },
+        () => {
+          // Onfinsh
+          if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git://')) {
+            // Clone
+            debug('Repo url specified. Using that.')
+            io.emit('clonerepoupdate', {group: 'cloning', percent: 50, message: "Cloning repo..."})
+            repo.clone(repositary.repo, (repo, err) => {
+              if (!err) {
+                io.emit('clonerepoupdate', {group: 'cloning', message: '[code] done'})
+              } else {
+                io.emit('clonerepoerr', { id: repositary.id, err: { message: err.message } })
+              }
+            });
+          } else {
+            debug('Repo not in url form. Appending github prefix.')
+            io.emit('clonerepoupdate', {group: 'cloning', percent: 50, message: "Cloning repo..."})
+            repo.clone(GithubPrefix + repositary.repo, (repo, err) => {
+              if (!err) {
+                io.emit('clonerepoupdate', {group: 'cloning', message: '[code] done'})
+              } else {
+                io.emit('clonerepoerr', { id: repositary.id, err: { message: err.message } })
+              }
+            });
+          }
         }
       )
-      if (repositary.repo.startsWith('https://') || repositary.repo.startsWith('http://') || repositary.repo.startsWith('git://')) {
-        // Clone
-        debug('Repo url specified. Using that.')
-        repo.clone(repositary.repo, (repo, err) => {
-          if (!err) {
-            io.emit('clonerepofinish', {id: repositary.id})
-          } else {
-            io.emit('clonerepofinish', {id: repositary.id, err: err})
-          }
-        });
-      } else {
-        debug('Repo not in url form. Appending github prefix.')
-        repo.clone(GithubPrefix+repositary.repo, (repo, err) => {
-          if (!err) {
-            io.emit('clonerepofinish', {id: repositary.id})
-            debug('Repo cloned.')
-          } else {
-            io.emit('clonerepofinish', {id: repositary.id, err: err})
-          }
-        })
-      }
 
   });
   // Return io

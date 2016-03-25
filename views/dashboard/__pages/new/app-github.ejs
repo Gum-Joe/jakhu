@@ -26,6 +26,9 @@
       <h3>Repo: <%=repo%></h3>
     </div>
     <div class="container status" id="status"></div>
+    <div class="container stats-status">
+      <p id="stat-status-text">Preparing...</p>
+    </div>
     <div class="container stats-logging">
       <ul>
         <li id="stat-preparing">Preparing <span id="stat-preparing-percent">0%</span></li>
@@ -106,12 +109,14 @@
     var socket = io.connect();
     socket.emit('clonerepo', {repo: '<%=repo%>', id: cloneid})
     socket.on('clonerepoupdate', function (update) {
+      // Step 1 : update status
       console.log(update);
       if (update.group === 'preparing') {
         if (typeof update.percent === 'undefined') {
+          $('#stat-status-text').html("Finished preparing.")
           console.log("100%");
           $('#stat-preparing-percent').html("100%")
-          $('#stat-preparing').css({'color' : '#2980b9', 'fontFamily' : 'Open-Sans'})
+          $('#stat-preparing').css({'color' : '#2ecc71', 'fontFamily' : 'OpenSans-Regular'})
           circle.animate(100 / 4 / 100, {
             from: {color: '#2980b9'},
             to: {color: '#2980b9'}
@@ -119,7 +124,32 @@
         } else {
           $('#stat-preparing').css({'color' : '#2980b9', 'fontFamily' : 'OpenSans-Regular'})
           $('#stat-preparing-percent').html(parseInt(update.percent) + "%")
+          $('#stat-status-text').html(update.message)
           const perpercent = 100 / 4
+          const totalpercent = 100 / update.percent
+          const toAnimate = perpercent / totalpercent;
+          console.log(toAnimate);
+          circle.animate(toAnimate / 100, {
+            from: {color: '#2980b9'},
+            to: {color: '#2980b9'}
+          })
+        }
+      }
+      if (update.group === 'cloning') {
+        if (typeof update.percent === 'undefined') {
+          $('#stat-status-text').html("Finished cloning.")
+          console.log("100%");
+          $('#stat-cloning-percent').html("100%")
+          $('#stat-cloning').css({'color' : '#2ecc71', 'fontFamily' : 'OpenSans-Regular'})
+          circle.animate(100 / 4 / 100 * 2, {
+            from: {color: '#2980b9'},
+            to: {color: '#2980b9'}
+          })
+        } else {
+          $('#stat-cloning').css({'color' : '#2980b9', 'fontFamily' : 'OpenSans-Regular'})
+          $('#stat-cloning-percent').html(parseInt(update.percent) + "%")
+          $('#stat-status-text').html(update.message)
+          const perpercent = 100 / 2
           const totalpercent = 100 / update.percent
           const toAnimate = perpercent / totalpercent;
           console.log(toAnimate);

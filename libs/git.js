@@ -10,6 +10,7 @@ const debug = require('debug')('git');
 const fs = require('fs');
 const IDGenerator = require('id-generator')
 const vbox = require("virtualbox");
+const mkdirp = require("mkdirp");
 let idg = new IDGenerator()
 // Use gitex as module.exports
 let gitex = module.exports = {}
@@ -79,8 +80,8 @@ Repo.prototype.clone = function(url, callback) {
  * Checks
  * @param callback {Function} Callback
 */
-Repo.prototype.checks = function (onEach, callback) {
-  const steps = 2
+Repo.prototype.checks = function (onEach, callback, onFinish) {
+  const steps = 3
   debug('Running checks on created repo with id %o', this.id)
   // Does the repo exist?
   debug('Checking if repo exists...')
@@ -98,7 +99,7 @@ Repo.prototype.checks = function (onEach, callback) {
     // Check for boot2docker
     vbox.start(dockervm, function (err) {
       if (err) {
-        return callback(new Error(`Could not start boot2docker vm. Full error from vbox:\n${err}\n (Preparing, step 2 of ${steps})`))
+        return callback(new Error(`Could not start boot2docker vm. Full error from vbox: \n${err}\n (Preparing, step 2 of ${steps})`))
       } else {
         debug('Boot2docker now booting...')
       }
@@ -106,7 +107,17 @@ Repo.prototype.checks = function (onEach, callback) {
   } else {
     debug('Linux. Not starting vm.')
   }
+  debug('Creating dir for webapp...')
+  onEach(3, steps, 'Creating dir for webapp...')
+  mkdirp(this.dir, (err) => {
+    if (err) {
+      return callback(new Error(`Failed to create dir for web-app. Full error: ${err} (Preparing, step 3 of ${steps})`))
+    } else {
+
+    }
+  })
   onEach(steps + 1, steps, "[code] done")
+  onFinish();
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;

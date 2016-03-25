@@ -247,4 +247,11 @@ body {
   color: #2980b9;
 }
 
+.stats-status {
+  font-size: 1.12em;
+  font-family: OpenSans-Regular;
+  text-align: center;
+  margin-bottom: 14.09px;
+}
+
 /*# sourceMappingURL=new-web-app.css.map */
