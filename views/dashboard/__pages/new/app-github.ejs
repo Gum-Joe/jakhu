@@ -64,8 +64,24 @@
                 <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Branch to checkout">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Language</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Branch to checkout">
+                <label for="exampleInputEmail1">Programming language (i.e. nodejs)</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Programming language">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Before install command</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Before install command">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Install command</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Install command">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Before build command</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Before build command">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Build command</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Build command">
               </div>
             </form>
           </div>
@@ -137,6 +153,9 @@
     })
     // Socket.io
     var socket = io.connect();
+    // VARS
+    var runningFont = 'OpenSans-Bold'
+    var completeFont = 'OpenSans-Regular'
     socket.emit('clonerepo', {repo: '<%=repo%>', id: cloneid})
     socket.on('clonerepoupdate', function (update) {
       // Step 1 : update status
@@ -146,13 +165,13 @@
           $('#stat-status-text').html("Finished preparing.")
           console.log("100%");
           $('#stat-preparing-percent').html("100%")
-          $('#stat-preparing').css({'color' : '#2ecc71', 'fontFamily' : 'OpenSans-Regular'})
+          $('#stat-preparing').css({'color' : '#2ecc71', 'fontFamily' : completeFont})
           circle.animate(100 / 4 / 100, {
             from: {color: '#2980b9'},
             to: {color: '#2980b9'}
           })
         } else {
-          $('#stat-preparing').css({'color' : '#2980b9', 'fontFamily' : 'OpenSans-Regular'})
+          $('#stat-preparing').css({'color' : '#2980b9', 'fontFamily' : runningFont})
           $('#stat-preparing-percent').html(parseInt(update.percent) + "%")
           $('#stat-status-text').html(update.message)
           const perpercent = 100 / 4
@@ -170,14 +189,31 @@
           $('#stat-status-text').html("Finished cloning.")
           console.log("100%");
           $('#stat-cloning-percent').html("100%")
-          $('#stat-cloning').css({'color' : '#2ecc71', 'fontFamily' : 'OpenSans-Regular'})
+          $('#stat-cloning').css({'color' : '#2ecc71', 'fontFamily' : completeFont})
+          $('#stat-config-percent').html("0%")
+          $('#stat-config').css({'color' : '#2980b9', 'fontFamily' : runningFont})
           circle.animate(100 / 4 / 100 * 2, {
             from: {color: '#2980b9'},
             to: {color: '#2980b9'}
           })
-          $('#config-modal-button').trigger('click')
+          if (update.ManConfig) {
+            // Only trigger if no .jakhu.yml
+            $('#config-modal-button').trigger('click')
+            $('#stat-status-text').html("Configuring web app...")
+          } else {
+            // Set configure to 100%
+            $('#stat-config-percent').html("100%")
+            $('#stat-config').css({'color' : '#2ecc71', 'fontFamily' : completeFont})
+            // Animate circle
+            circle.animate(100 / 4 / 100 * 3, {
+              from: {color: '#2980b9'},
+              to: {color: '#2980b9'}
+            })
+            // Update status
+            $('#stat-status-text').html("Finished configuring & cloning, as a .jakhu.yml was found.")
+          }
         } else {
-          $('#stat-cloning').css({'color' : '#2980b9', 'fontFamily' : 'OpenSans-Regular'})
+          $('#stat-cloning').css({'color' : '#2980b9', 'fontFamily' : runningFont})
           $('#stat-cloning-percent').html(parseInt(update.percent) + "%")
           $('#stat-status-text').html(update.message)
           const perpercent = 100 / 2

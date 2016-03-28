@@ -5,6 +5,7 @@ const spawn = require('child_process').spawn;
 const mkdirp = require('mkdirp');
 const Git = require('./git.js');
 const debug = require("debug")('socket.io');
+const path = require("path");
 const GithubPrefix = 'https://github.com/';
 
 let ioe = module.exports = {};
@@ -130,12 +131,24 @@ ioe.start = (app) => {
                             percent: 50,
                             message: "Cloning repo..."
                         })
-                        repo.clone(repositary.repo, (repo, err) => {
+                        repo.clone(repositary.repo, (rrepo, err) => {
                             if (!err) {
+                              // Check if .jakhu.yml exists.
+                              if (fs.existsSync(path.join(repo.dir, '.jakhu.yml'))) {
+                                debug('Found a .jakhu.yml in the repo. No manual config required.')
                                 io.emit('clonerepoupdate', {
                                     group: 'cloning',
-                                    message: '[code] done'
+                                    message: '[code] done',
+                                    ManConfig: false
                                 })
+                              } else {
+                                debug('Could not find a .jakhu.yml in the repo. Manual config required.')
+                                io.emit('clonerepoupdate', {
+                                    group: 'cloning',
+                                    message: '[code] done',
+                                    ManConfig: true
+                                })
+                              }
                             } else {
                                 io.emit('clonerepoerr', {
                                     id: repositary.id,
@@ -152,12 +165,25 @@ ioe.start = (app) => {
                             percent: 50,
                             message: "Cloning repo..."
                         })
-                        repo.clone(GithubPrefix + repositary.repo, (repo, err) => {
+                        repo.clone(GithubPrefix + repositary.repo, (rrepo, err) => {
                             if (!err) {
+                              // Check if .jakhu.yml exists.
+                              if (fs.existsSync(path.join(repo.dir, '.jakhu.yml'))) {
+                                console.log("Cloned.");
+                                debug('Found a .jakhu.yml in the repo. No manual config required.')
                                 io.emit('clonerepoupdate', {
                                     group: 'cloning',
-                                    message: '[code] done'
+                                    message: '[code] done',
+                                    ManConfig: false
                                 })
+                              } else {
+                                debug('Could not find a .jakhu.yml in the repo. Manual config required.')
+                                io.emit('clonerepoupdate', {
+                                    group: 'cloning',
+                                    message: '[code] done',
+                                    ManConfig: true
+                                })
+                              }
                             } else {
                                 io.emit('clonerepoerr', {
                                     id: repositary.id,

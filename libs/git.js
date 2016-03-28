@@ -47,15 +47,20 @@ function GetSHA(dir) {
     })
     return commitSHA;
 }
+
+/**
+ * Repo class
+ * @param dir {String} Repo dir
+ */
+function Repo(dir) {
+     this.dir = dir;
+     this.id = idg.newId()
+     idg.reset();
+ }
 /**
  * Clone method
  * @param url {String} Repo url
  */
-function Repo(dir) {
-    this.dir = dir;
-    this.id = idg.newId()
-    idg.reset();
-}
 Repo.prototype.clone = function(url, callback) {
     if (url.startsWith('https://') || url.startsWith('http://') || url.startsWith('git://')) {
         // Clone
@@ -118,6 +123,12 @@ Repo.prototype.checks = function(onEach, callback, onFinish) {
     })
     onEach(steps + 1, steps, "[code] done")
     onFinish();
+};
+/**
+ * Get the repo name
+ */
+Repo.prototype.getDir = function () {
+  return this.dir;
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;
