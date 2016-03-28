@@ -105,6 +105,7 @@
     "grunt-markdown": "^0.7.0",
     "grunt-mocha": "^0.4.13",
     "grunt-mocha-test": "^0.12.7",
+    "grunt-nodemon": "^0.4.1",
     "grunt-shell": "^1.1.2",
     "istanbul": "^0.4.0",
     "js2coffee": "^2.1.0",

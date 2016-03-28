@@ -101,7 +101,7 @@ Repo.prototype.checks = function (onEach, callback, onFinish) {
       if (err) {
         return callback(new Error(`Could not start boot2docker vm. Full error from vbox: \n${err}\n (Preparing, step 2 of ${steps})`))
       } else {
-        debug('Boot2docker now booting...')
+        debug(`VBox says boot2docker machine ${dockervm} is now booting...`)
       }
     })
   } else {
