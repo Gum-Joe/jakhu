@@ -25,9 +25,8 @@ module.exports = function(grunt) {
                 script: 'bin/jakhu',
                 options: {
                     args: ['server'],
-                    watch: ['app/boot', 'app/routes', 'libs', 'app.js', 'config'],
+                    watch: ['app/boot', 'app/routes', 'libs', 'app.js', 'config', 'bin'],
                     ignore: ['node_modules/**', 'views/**'],
-                    ext: 'js,coffee,json',
                     env: {
                         PORT: '8080',
                         JAKHU_RUN_TYPE: 'local',

@@ -87,6 +87,11 @@ ioe.start = (app) => {
                 console.log(task);
                 io.emit('task', task)
             })
+        // config
+        socket.on('clonerepoconfig', (config) => {
+          debug('Received config for repo %o', config.repo)
+          debug('Config: %o', config)
+        })
             // tasks
         socket.on('clonerepo', function(repositary) {
             // Start task

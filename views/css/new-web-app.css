@@ -231,6 +231,9 @@ body {
   margin-top: 0 !important;
 }
 
+#config-modal .modal-dialog {
+  margin-top: 0.35% !important;
+}
 #config-modal .modal-dialog .modal-content {
   padding-left: 10px;
 }

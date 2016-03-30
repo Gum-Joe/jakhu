@@ -61,27 +61,30 @@
             <form class="config-app-form">
               <div class="form-group">
                 <label for="exampleInputEmail1">Branch to checkout (master by default)</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Branch to checkout">
+                <input type="email" class="form-control config-branch" id="exampleInputEmail1" placeholder="Branch to checkout">
               </div>
               <div class="form-group">
-                <label for="exampleInputEmail1">Programming language (i.e. nodejs)</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Programming language">
+                <label for="exampleInputEmail1"><a href="/docs/api/webapps/languages">Programming language (i.e. nodejs)</a></label>
+                <input type="email" class="form-control config-lang" id="exampleInputEmail1" placeholder="Programming language">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Before install command</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Before install command">
+                <input type="email" class="form-control config-beforeinstall" id="exampleInputEmail1" placeholder="> Before install command">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Install command</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Install command">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Before build command</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Before build command">
+                <input type="email" class="form-control config-install" id="exampleInputEmail1" placeholder="> Install command">
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Build command</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="> Build command">
+                <input type="email" class="form-control config-build" id="exampleInputEmail1" placeholder="> Build command">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Start command</label>
+                <input type="email" class="form-control config-start" id="exampleInputEmail1" placeholder="> Start command">
+              </div>
+              <div class="form-group">
+                <button type="button" class="btn btn-outline btn-primary" id="config-app-form-submit">Submit and Configure <i class="fa fa-arrow-right"></i></button>
               </div>
             </form>
           </div>
@@ -245,6 +248,29 @@
         )
         $('#err-modal-button').trigger('click')
       }
+    })
+    // Stuff about form
+    $('#config-app-form-submit').click(function () {
+      console.log("Submitting config...");
+      console.log("Data:");
+      console.log({id: cloneid, config: {
+        branch: $('.config-branch').val(),
+        language: $('.config-lang').val(),
+        beforeInstallCommand: $('.config-beforeinstall').val(),
+        installCommand: $('.config-install').val(),
+        buildCommand: $('.config-build').val(),
+        beforeStartCommand: $('.config-beforestart').val(),
+        startCommand: $('.config-start').val()
+      }});
+      socket.emit('clonerepoconfig', { repo: '<%=repo%>', id: cloneid, config: {
+        branch: $('.config-branch').val(),
+        language: $('.config-lang').val(),
+        beforeInstallCommand: $('.config-beforeinstall').val(),
+        installCommand: $('.config-install').val(),
+        buildCommand: $('.config-build').val(),
+        beforeStartCommand: $('.config-beforestart').val(),
+        startCommand: $('.config-start').val()
+      }})
     })
     </script>
   </body>

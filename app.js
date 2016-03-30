@@ -16,7 +16,7 @@ const minify = require('express-minify');
 const connect = require("./libs/connect.js");
 const mid = require('./libs/middleware.js')
 const schema = require('./libs/database');
-const apis = require('./libs/api.js');
+//const apis = require('./libs/api.js');
 const notifications = require('./libs/api/notifications');
 const wlogger = require('./libs/logger');
 const kernal = require('./app/boot/boot');
@@ -94,6 +94,8 @@ exports.start = function start(x, y, portt) {
     app.use('/users', users);
     app.use('/dashboard', dashboard);
     app.use('/api', api);
+    // Tmp stuff
+    app.use('/docs', require('./app/routes/docs'))
     // listen
     // Se
     if (y === true || x === 'basic' || x === 'ci') {
@@ -119,7 +121,7 @@ exports.start = function start(x, y, portt) {
     // Start socket.io
     io.start(server)
         // Invoke api
-    apis.init(port)
+    //apis.init(port)
 
     // catch 404 and forward to error handler
     app.use(function(req, res, next) {

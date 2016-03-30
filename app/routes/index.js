@@ -179,4 +179,9 @@ router.get('/admin', function(req, res) {
 
 });
 
+router.get('/info/alphawarn', function (req, res) {
+  console.log("");
+  res.render('__alpha/info.ejs')
+})
+
 module.exports = router;
