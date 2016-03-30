@@ -21,6 +21,11 @@ var debug = require('debug')('boot');
 //boot.properties.git.getCommits;
 //start boot
 // TODO: Create boot types (safemode, full, recovery)
+/**
+ * Start booting
+ * 
+ * @param boottype {string}
+ */
 exports.startboot = function startboot(boottype) {
     // Load configure
     debug('Booting server...');
@@ -61,6 +66,10 @@ exports.startboot = function startboot(boottype) {
 
 // TODO: Create boot types (safemode, full, recovery)
 
+/**
+ * Start input func
+ * @param x {any}
+ */
 exports.startinput = function startinput(x) {
     process.stdin.resume();
     process.stdin.setEncoding('utf8');
