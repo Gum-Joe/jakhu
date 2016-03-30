@@ -213,7 +213,7 @@
               to: {color: '#2980b9'}
             })
             // Update status
-            $('#stat-status-text').html("Finished configuring & cloning, as a .jakhu.yml was found.")
+            $('#stat-status-text').html("Finished configuring & cloning, as a .jakhu.yml or a package.json was found.")
           }
         } else {
           $('#stat-cloning').css({'color' : '#2980b9', 'fontFamily' : runningFont})
@@ -262,6 +262,9 @@
         beforeStartCommand: $('.config-beforestart').val(),
         startCommand: $('.config-start').val()
       }});
+      $(this).addClass('disabled')
+      $(this).css({color: 'white'})
+      $(this).html('Submitting...')
       socket.emit('clonerepoconfig', { repo: '<%=repo%>', id: cloneid, config: {
         branch: $('.config-branch').val(),
         language: $('.config-lang').val(),
@@ -271,6 +274,11 @@
         beforeStartCommand: $('.config-beforestart').val(),
         startCommand: $('.config-start').val()
       }})
+    })
+    socket.on('clonerepoconfigdone', function (data) {
+      if (data.id === cloneid) {
+        window.location.replace(window.location.href + "/build?repo=<%=repo%>");
+      }
     })
     </script>
   </body>

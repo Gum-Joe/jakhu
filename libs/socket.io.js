@@ -7,6 +7,7 @@ const Git = require('./git.js');
 const debug = require("debug")('socket.io');
 const path = require("path");
 const GithubPrefix = 'https://github.com/';
+const YAML = require('yamljs');
 
 let ioe = module.exports = {};
 const fs = require('fs');
@@ -91,6 +92,13 @@ ioe.start = (app) => {
         socket.on('clonerepoconfig', (config) => {
           debug('Received config for repo %o', config.repo)
           debug('Config: %o', config)
+          socket.emit('clonerepoconfigdone', { id: config.id })
+          // Applying to file...
+          debug('Applying to file...')
+          let repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(config.repo)}`)
+          repo.configure(config.config)
+          fs.openSync(`${__dirname}/../app/instances/${Git.normalizeURL(config.repo)}/.jakhu.yml`, 'w+')
+          fs.writeFileSync(`${__dirname}/../app/instances/${Git.normalizeURL(config.repo)}/.jakhu.yml`, YAML.stringify(config.config , 4));
         })
             // tasks
         socket.on('clonerepo', function(repositary) {
@@ -139,8 +147,8 @@ ioe.start = (app) => {
                         repo.clone(repositary.repo, (rrepo, err) => {
                             if (!err) {
                               // Check if .jakhu.yml exists.
-                              if (fs.existsSync(path.join(repo.dir, '.jakhu.yml'))) {
-                                debug('Found a .jakhu.yml in the repo. No manual config required.')
+                              if (fs.existsSync(path.join(repo.dir, '.jakhu.yml')) || fs.existsSync(path.join(repo.dir, 'package.json'))) {
+                                debug('Found a .jakhu.yml or a package.json in the repo. No manual config required.')
                                 io.emit('clonerepoupdate', {
                                     group: 'cloning',
                                     message: '[code] done',
@@ -203,6 +211,32 @@ ioe.start = (app) => {
             )
 
         });
+        socket.on('repobuild', (repoi) => {
+          debug('Building repo %o...', repoi.repo);
+          var repo = new Git.Repo(`${__dirname}/../app/instances/${Git.normalizeURL(repoi.repo)}`)
+          repo.build(
+            (step, totalsteps, status) => {
+              console.log(status);
+              const stepsdone = step - 1
+              const percent = 100 / totalsteps * stepsdone;
+              if (step > totalsteps) {
+                  io.emit('repobuildupdate', {
+                      repo: repoi.repo,
+                      message: '[code] done'
+                  })
+              } else {
+                  io.emit('repobuildupdate', {
+                      repo: repoi.repo,
+                      percent: percent,
+                      message: status
+                  })
+              }
+            },
+            (data) => {
+              io.emit('repobuildupdatelog', { repo: repo, log: data })
+            }
+          )
+        })
         // Return io
         return io;
     });

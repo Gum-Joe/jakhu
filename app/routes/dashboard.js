@@ -182,5 +182,14 @@ router.post('/new/app/github-handler', function(req, res, next) {
         })
         //}
 })
+router.get('/new/app/github-handler/build', function (req, res, next) {
+  //if (!req.user) {
+  //  res.redirect('/?callback=/dashboard/new/app/github-handler');
+  //} else {
+  res.render('dashboard/__pages/new/app-github-build.ejs', {
+          repo: req.query.repo
+  })
+      //}
+})
 
 module.exports = router;

@@ -68,7 +68,10 @@ Repo.prototype.clone = function(url, callback) {
         debug("url: %o", url)
         debug("dir: %o", this.dir)
         debug("id: %o", this.id)
-        Git.Clone(url, this.dir).then(callback);
+        Git.Clone(url, this.dir).then(callback).catch(
+          (err) => {
+            callback(null, err)
+          });
     } else {
         debug('Repo format invalid');
         const errmessage = new Error("Invalid repo format - must start with 'https://', 'http://' or 'git://'")
@@ -129,6 +132,26 @@ Repo.prototype.checks = function(onEach, callback, onFinish) {
  */
 Repo.prototype.getDir = function () {
   return this.dir;
+};
+
+/**
+ * Build a repo
+ * @param onEach {Function} Ran after each step
+ * @param onLog {Function} Ran on log
+ */
+Repo.prototype.build = function (onEach, onLog) {
+  const steps = 10
+  debug('Appplying basic .gitignore settings...')
+  onEach(1, steps, "Appplying basic .gitignore settings...")
+  fs.openSync(path.join(this.dir, '.gitignore'), 'a')
+  fs.appendFileSync(path.join(this.dir, '.gitignore'), '\n# Jakhu stuff\n.jakhu/*\nDockerfile.jakhu.*')
+  debug('Commiting changes...')
+  Git.Repository.open(this.dir).then((repo) => {
+
+  }).catch(
+    (err) => {
+      console.log(err);
+    })
 };
 gitex.Repo = Repo;
 gitex.normalizeURL = normalizeURL;
