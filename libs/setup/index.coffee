@@ -1,1 +1,0 @@
-exports.checks = require './checks.js'

@@ -1,4 +1,6 @@
 # here is the heroku makefile
+.PHONY: test build usr etc coverage bin
+include sass.mk
 run:
 	echo Installing bower modules; \
 	echo Installing bower; \
@@ -12,40 +14,54 @@ run:
 	echo Creating Log Files; \
 	DATE = ${date}; \
 	echo "---------Heroku Logs---------" >> logs/all-logs.log; \
-	echo "---------Heroku Logs for Web-OS---------" >> logs/wos.log; \
+	echo "---------Heroku Logs for Jakhu---------" >> logs/wos.log; \
 	echo Deploying....; \
 	node node_modules/mongodb/bin/mongod --dbpath ./api/data | node app.js;
 
 tests:
-	echo Runing tests; \
 	echo Installing modules; \
 	npm install; \
 	npm install --dev; \
-	npm install -g bower; \
+	npm install -g bower mocha nodemon codeclimate-test-reporter; \
 	bower install; \
-	echo Testing...; \
-	echo Installing nyc...; \
-	npm install -g nyc; \
-	echo Testing....
-	npm test; \
-	echo ; \
+	gem install bundle; \
+	bundle install; \
+	nyc npm test; \
 	echo Done; \
-	echo Now testing C#; \
-	cd app && make run; \
+
+fork:
+	echo Installing Modules and compileing; \
+	npm install; \
+	npm install -g bower nodemon coffee-script nodemon nyc codeclimate-test-reporter; \
+	gem install bundle; \
+	bundle install; \
+	sass views/css/dashboard.scss:views/css/dashboard.css; \
 	echo Done; \
 
 install:
-	echo Installing Modules; \
+	echo Installing Modules and compileing; \
 	npm install; \
-	npm install bower; \
-	node node_modules/bower/bin/bower install; \
-	echo Done;
+	npm install -g bower nodemon coffee-script nodemon nyc codeclimate-test-reporter; \
+	gem install bundle; \
+	bundle install; \
+	sass views/css/dashboard.scss:views/css/dashboard.css; \
+	echo Done; \
 
 test-coveralls:
-	@NODE_ENV=test Web-OS_COVERAGE=1 ./node_modules/.bin/istanbul cover \
+	@NODE_ENV=test Jakhu_COVERAGE=1 ./node_modules/.bin/istanbul cover \
 	./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && \
-		cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
+		cat ./misc/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js --verbose
 
-#.PHONY test
+ci:
+	mkdir -p testing tmp/test; \
+	echo testing > misc/testing/test.txt; \
+	grunt ci --verbose; \
+	mkdir -p testing tmp/test; \
+	echo testing > misc/testing/test.txt; \
+	$(MAKE) coverage;
 
+coverage:
+	istanbul cover _mocha test/**/*.js --reporter=lcovonly -- -R spec && cat coverage/lcov.info | node_modules/.bin/coveralls; \
+	rm -rf coverage;
+a: coverage;
 #.PHONY test

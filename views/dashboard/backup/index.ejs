@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dashboard | Jakhu</title>
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.css.map" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css.map" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="/css/dashboard-main.css" media="screen" title="no title" charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,greek' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body class="co">
+    <div class="sidebar">
+      <!-- Sidebar -->
+      <div class="welcome">
+        <img src="<%=imgprofile%>" alt="" id="wimg"/>
+        <div class="wtext">
+          <h5>Welcome Back,</h5>
+          <h4><%=user%></h4>
+        </div>
+      </div>
+      <ul id="sidebar1">
+        <a href="/dashboard"><li class="ctive sidebar-li"><div class="active-bar"></div><h5><span class="fa fa-dashboard"></span> Dashboard</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-th"></span> Apps</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-cloud"></span> Files</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-user"></span> Users</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-signal"></span> Servers</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-download"></span> Packages</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-terminal fa-lg"></span> Terminal</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-refresh"></span> Updates</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-cog"></span> Settings</h5></li></a>
+        <a id="sidebara" href="/logout"><li class="sidebar-li"><h5><span class="fa fa-sign-out"></span> Sign-Out</h5></li></a>
+        <a id="sidebara"><li class="sidebar-li"><h5><span class="fa fa-power-off"></span> Power</h5></li></a>
+      </ul>
+    </div>
+    <div class="page">
+      <div class="navbar-nb">
+        <ul>
+          <li class="hamburger1"><a>
+            <div class="ra"></div>
+            <div class="r1"></div>
+            <div class="r1"></div></a>
+          </li>
+          <li id="jumptonomobile" class="brand"><a href="#">Jump To:</a></li>
+          <li id="jumptonomobile2"><a href="#stats">Stats</a></li>
+          <li id="jumptonomobile3"><a href="news.asp">News</a></li>
+          <li id="jumptonomobile4"><a href="contact.asp">Contact</a></li>
+          <li id="jumptonomobile5"><a href="about.asp">About</a></li>
+          <li id="jumptonomobile6"><a href="help.asp">Help</a></li>
+          <li class="seli">
+            <a class="se">
+              <form action="/dashboard" method="get">
+                <input class="search" type="text" placeholder="Search..." required name="search">
+                <input class="button" type="submit" value="Search">
+              </form>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="project-head">
+        <h1><%=sname%></h1>
+        <div class="info" media="screen and (min-width: 463px)" id="info12">
+          <ul>
+            <li><h5 id="wruntime">Been running for <%=time%> mins</h5></li>
+            <li><h5 id="req">Got <%=time%> requests today</h5></li>
+            <li><h5 id="appsrun">x web-apps are running</h5></li>
+          </ul>
+        </div>
+        <div class="">
+          <ul id="projectheader" class="buttonsph">
+            <li>
+              <a href="#new-web-app">
+                <button type="button" class="btn btn-default" id="nwa"><span class="fa fa-plus"></span> New web-app</button>
+              </a>
+            </li>
+            <li>
+              <a href="#delete-web-apps">
+                <button type="button" class="btn btn-default" id="delwa"><span class="fa fa-remove"></span> Delete web-apps</button>
+              </a>
+            </li>
+            <li>
+              <a href="#sync-web-apps">
+                <button type="button" class="btn btn-default" id="syncwa"><span class="fa fa-refresh"></span> Sync web-apps</button>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="restofpage">
+        <!-- TODO: To implement -->
+        <div class="backer">
+          <div class="back3"></div>
+          <div class="back4"></div>
+          <div class="back1"></div>
+          <div class="back2"></div>
+          <div class="back5"></div>
+        </div>
+        <div class="container-fluid">
+          <!--<div class="block-stats">
+            <div class="runtime">
+
+            </div>
+          </div>-->
+          <div class="runnings">
+            <h5>THE STATE OF YOUR WEB APPS</h5>
+            <ul>
+              <a href="#"><li><ul id="success">
+                <li><span class="fa fa-check"></span></li>
+                <li>sample/sample</li>
+                <li>#1</li>
+                <li>default</li>
+                <li>01.02.03</li>
+              </ul></li></a>
+              <a href="#"><li><ul id="fail">
+                <li><span class="fa fa-times"></span></li>
+                <li>sample/sample</li>
+                <li>#1</li>
+                <li>default</li>
+                <li>01.02.03</li>
+              </ul></li></a>
+              <a href="#"><li><ul id="error">
+                <li><span class="fa fa-exclamation"></span></li>
+                <li>sample/sample</li>
+                <li>#1</li>
+                <li>default</li>
+                <li>01.02.03</li>
+              </ul></li></a>
+            </ul>
+          </div>
+
+          <div class="runnings apps">
+            <h5>YOUR WEB APPS</h5>
+            <ul>
+              <% for(var i = 0; i < apps.apps.length; i++) {%>
+                <a href="/dashboard/apps/status?app=<%=apps.apps[i].author%>/<%=apps.apps[i].name%>"><li><ul id="success">
+                  <li data-toggle="tooltip" data-placement="bottom" title="Web-app"><%=apps.apps[i].author%>/<%=apps.apps[i].name%></li>
+                  <li data-toggle="tooltip" data-placement="bottom" title="Tubs"><%=apps.apps[i].tubs%></li>
+                  <li id="daterun" data-toggle="tooltip" data-placement="bottom" title="Last run">01.02.03</li>
+                </ul></li></a>
+              <%};%>
+            </ul>
+          </div>
+
+          <div class="notifications runnings">
+            <h5>NOTIFICATIONS</h5>
+            <ul>
+              <a href="/api/notifications?nid=1"><li><ul>
+                <li><img src="/css/img/boot.jpg" alt="" /></li>
+                <li id="thetext">Updates avalible</li>
+              </ul></li></a>
+              <a href="/api/notifications?nid=2"><li><ul>
+                <li><img src="/css/img/boot.jpg" alt="" /></li>
+                <li id="thetext">Activate your account</li>
+              </ul></li></a>
+              <a href="/api/notifications?nid=2"><li><ul>
+                <li><img src="/css/img/boot.jpg" alt="" /></li>
+                <li id="thetext">Getting started</li>
+              </ul></li></a>
+            </ul>
+          </div>
+
+          <div class="qaction runnings">
+            <h5>QUICK ACTIONS</h5>
+            <ul>
+              <a href="/api/dashboard/actions/quick?nid=1"><li><ul>
+                <li id="thetext">New User</li>
+              </ul></li></a>
+              <a href="/api/dashboard/actions/quick?nid=2"><li><ul>
+                <li id="thetext">New app</li>
+              </ul></li></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- Hamburger menu script for hamburger -->
+    <script src="/js/hamburger.js"></script>
+    <script src="/notie/notie.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/dashboard.js" type="text/javascript"></script>
+  </body>
+</html>

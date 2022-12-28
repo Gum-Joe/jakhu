@@ -1,0 +1,191 @@
+@font-face {
+  font-family: Open-Sans;
+  src: url(/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+@font-face {
+  font-family: Open-Sans;
+  src: url(/fonts/open-sans/OpenSans-Light.ttf);
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  src: url(/fonts/open-sans/OpenSans-Regular.ttf);
+}
+@font-face {
+  font-family: OpenSans-Bold;
+  src: url(/fonts/open-sans/OpenSans-Bold.ttf);
+}
+@font-face {
+  font-family: FiraSans-Light;
+  src: url(/fonts/fira-sans/FiraSans-Light.otf);
+}
+@font-face {
+  font-family: FiraSans-UltraLight;
+  src: url(/fonts/fira-sans/FiraSans-UltraLight.otf);
+}
+body {
+  font-family: Open-Sans;
+  background-color: #ecf0f1;
+}
+
+body {
+  font-family: Open-Sans !important;
+  background-color: #ecf0f1;
+}
+
+.jakhunav {
+  border: none !important;
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
+  border-radius: 0 !important;
+  font-family: OpenSans-Regular !important;
+}
+.jakhunav div .navbar-collapse ul .active a {
+  background-color: #d2dcdf !important;
+  color: #2980b9 !important;
+}
+.jakhunav div .navbar-collapse ul li a {
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
+}
+.jakhunav div .navbar-collapse ul li a img {
+  width: 20px;
+  height: 20px;
+  border-radius: 100px;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+.jakhunav div .navbar-collapse ul li a:hover {
+  background-color: #d2dcdf !important;
+}
+.jakhunav div .navbar-collapse ul li ul {
+  background-color: #ecf0f1 !important;
+  color: #34495e !important;
+}
+.jakhunav div .navbar-collapse ul li ul .divider {
+  margin-bottom: 5px !important;
+}
+.jakhunav div .navbar-collapse ul li ul a {
+  word-spacing: 4px;
+}
+.jakhunav div .navbar-header a {
+  color: #34495e !important;
+}
+
+.header {
+  margin-top: 70px;
+  margin-left: 50px;
+  font-family: OpenSans-Regular;
+  color: #2b383b;
+}
+.header .label {
+  font-size: 13px !important;
+  font-weight: lighter !important;
+}
+.header .buttons {
+  float: right !important;
+  background: none !important;
+}
+@media only screen and (min-width: 545px) {
+  .header .buttons {
+    margin-right: 20px;
+    margin-top: -30px;
+  }
+}
+@media only screen and (max-width: 545px) {
+  .header .buttons {
+    margin-right: 180px;
+    margin-top: -5px;
+  }
+}
+.header .buttons .btn {
+  padding: 3px 13px !important;
+}
+.header .buttons .btn-success {
+  color: #5cb85c !important;
+  background: none !important;
+}
+.header .buttons .btn-success i {
+  font-size: 15px;
+  margin-top: 0.1217px;
+}
+.header .buttons .btn-success:hover {
+  color: #449d44 !important;
+  background: none !important;
+}
+.header .buttons .btn-danger {
+  color: #d43f3a !important;
+  background: none !important;
+}
+.header .buttons .btn-danger i {
+  font-size: 15px;
+  margin-top: 0.1217px;
+}
+.header .buttons .btn-danger:hover {
+  color: #ac2925 !important;
+  background: none !important;
+}
+
+.tubs {
+  margin-top: 10px;
+}
+
+.tubsb {
+  width: 100% !important;
+  background: #d4dbde !important;
+  color: #1a1a1a !important;
+  border-radius: 0 !important;
+  border: none !important;
+  margin-top: 10px;
+}
+
+.tubsb:hover {
+  background: #b7c3c8 !important;
+}
+
+.logs .well {
+  color: #ecf0f1 !important;
+  background-color: #2a2a2a !important;
+  padding: 0 !important;
+}
+.logs .well .textwell {
+  padding: 19px !important;
+}
+.logs .well .textwell ul {
+  list-style-type: none !important;
+  padding: 0;
+}
+.logs .well .textwell ul li span {
+  color: #7f8c8d;
+  padding-right: 5px;
+}
+.logs .well .headwell {
+  background-color: #1a1a1a !important;
+  width: 100% !important;
+  height: 50px !important;
+}
+.logs .well .headwell .btn {
+  background: none !important;
+  border-color: #7f8c8d;
+  color: #ecf0f1 !important;
+  margin-top: 7.5px;
+  float: right;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=app-status-ejs-template.css.map */

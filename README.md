@@ -1,20 +1,72 @@
-# Web-OS [![Dep Status](https://travis-ci.org/Gum-Joe/Web-OS.svg?branch=master)](https://travis-ci.org/Gum-Joe/Web-OS) [![app veyor Build status](https://ci.appveyor.com/api/projects/status/93bp43bnds9wl230?svg=true)](https://ci.appveyor.com/project/Gum-Joe/web-os) [![Dependency Status](https://david-dm.org/Gum-Joe/Web-OS.svg)](https://david-dm.org/Gum-Joe/Web-OS) [![devDependency Status](https://david-dm.org/Gum-Joe/Web-OS/dev-status.svg)](https://david-dm.org/Gum-Joe/Web-OS#info=devDependencies) [![Inline docs](http://inch-ci.org/github/Gum-Joe/Web-OS.svg?branch=master)](http://inch-ci.org/github/Gum-Joe/Web-OS)
-A brand new way to manage your web-apps: recovery, backup, managment and more.
+# jakhu [![Dep Status](https://travis-ci.org/Gum-Joe/jakhu.svg?branch=a1)](https://travis-ci.org/Gum-Joe/jakhu) [![Coverage Status](https://coveralls.io/repos/Gum-Joe/jakhu/badge.svg?branch=a1&service=github)](https://coveralls.io/github/Gum-Joe/jakhu?branch=a1) <a href="https://codeclimate.com/github/Gum-Joe/jakhu"><img src="https://codeclimate.com/github/Gum-Joe/jakhu/badges/gpa.svg" /></a> [![Dependency Status](https://david-dm.org/Gum-Joe/jakhu.svg)](https://david-dm.org/Gum-Joe/jakhu) [![devDependency Status](https://david-dm.org/Gum-Joe/jakhu/dev-status.svg)](https://david-dm.org/Gum-Joe/bos.jss#info=devDependencies)
 
-# What is Web-OS?
-Web-OS is a nodejs based system for managing your web-app(s). Features include:
-* Easy management for ports, scripts, web-app config, apps, login, databases, mobile apps and servers and more. You can do this all from the Web-OS in-app dashboard or the Web-OS online access portal (to be developed).
+Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.
 
-* Easy recovery tools. These include rollback (for those little errors you Web-app has), reset (In case you need to wipe your Web-app's data (databases, file .etc), or remove the current config), web-terminal (For running commands) and refresh (In case you accidentally remove a important file, replace it without using rollback.)
+One of my really early projects in JS when I was just starting.
 
-* Easy deployment. Simply select your hosting provider, provide an address and command to run and Web-OS will deploy your web-app if it runs successfully. In addition, add a Github Repo/Git repo/Service to host your open-source code (like we are doing, on GitHub).
+# Goals
+I need to:
+* Create a way to manage web-apps
+* Test the code (get ~90% test coverage for cli and browser tests)
+* The dashboard should be modern, attractive and informative
+The status of this is available in CHANGELOG.md and ROADMAP.md
 
-* Easy migration of existing web-apps (coming soon). Simply download the wizard to migrate your web-app in Web-OS.
+# Building
+## Unix (Debian, Ubuntu, CentOS) and Mac OSX
+Simple install coming soon!
+Prerequisites:
+* gcc and g++ 4.8 or newer, or
+* clang and clang++ 3.4 or newer (for node-gyp)
+* Nodejs v4.0.0 or newer (v5.3.0 reccommended) & npm
+* Python
+* Ruby
+* Docker
+* Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)
+* Virtual box (for vagrant)
+* Mongodb (if you don't want to use docker or vagrant)
 
-* Free online portal (coming soon). No need to log into your web-app via the web-app its self, use the secure Web-OS online portal for management.
+<h5>Building:</h5>
+```
+$ [sudo] npm install -g coffee-script grunt-cli node-gyp
+$ [sudo] gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+```
+<h5>Getting started:</h5>
+```
+$ export NODE_ENV=development
+$ ./bin/jakhu server
+```
 
-# How does our branching system work?
-First, a new branch, called a1 (alpha 1), is created off the master. This is the the first stage of development, which has the most bugs and is not ready for release. Secondly, we make a new branch called b1 (beta 1) . This is where all of the fixing and adding of extra features goes on in addition to community testing and contributing (you can also test and contribute to the alpha branch). To add to this, two new branches, alpha-master (for previous alpha branches merged into the beta branches) and beta-master (for previous beta branches merged into the master branch), are created.  When ready, the a1 branch is merged into alpha-master and b1.  Finally, when b1 is ready, it is merged into beta-master and master. So it is basically ax is merged into alpha-master, then bx is merged into beta-master and master when ready.
+## Windows
+Prerequisites:
+* Microsoft Visual Studio C++ 2013
+* Nodejs v4.0.0 or newer (v5.3.0 reccommended) & npm
+* Python
+* Ruby
+* Docker with `docker-machine`
+* Vagrant (if you want to run and test web-apps in vagrant boxes or run the database in vagrant)
+* Virtual box (for vagrant & docker)
+* Mongodb (if you don't want to use docker or vagrant)
+* A bash enviroment (git-bash, mingw, cygwin, msys) with `git`
 
-Here's an image of it:
-![branches](https://raw.githubusercontent.com/Gum-Joe/Web-OS/master/Web-OS-branches.jpg)
+<h5>Building:</h5>
+```
+$ npm install -g coffee-script grunt-cli node-gyp
+$ gem install bundle
+$ npm install
+$ bundle install
+$ grunt sass:dist
+```
+<h5>Getting started:</h5>
+```
+$ export NODE_ENV=development
+$ ./bin/jakhu server
+```
+
+To run in a Vagrant box (from host):
+`bin/jakhu vagrant`
+
+## Tests:
+`mocha test/**/*.js`

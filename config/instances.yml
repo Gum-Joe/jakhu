@@ -1,0 +1,7 @@
+# instances
+instances:
+  - test
+
+# Provider
+# Vagrant, docker or deploy
+provider: vagrant

@@ -1,4 +1,4 @@
-echo Web-OS compiler + installer v1.0
+echo Jakhu compiler + installer v1.0
 echo Copyright Gum-Joe
 echo This is for app veyor
 
