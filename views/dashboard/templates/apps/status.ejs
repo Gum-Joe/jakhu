@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>App <%=app.author%>/<%=app.name%> | Jakhu</title>
+    <link rel="stylesheet" href="/css/app-status-ejs-template.css" media="screen" title="no title" charset="utf-8">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <nav class="navbar navbar-default jakhunav navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/dashboard">Jakhu</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/dashboard"><%=app.author%>/<%=app.name%> <span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Notifications</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="<%=imgprofile%>" alt=""/>   <%=user.charAt(0).toUpperCase() + user.slice(1);%> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="/dashboard"><i class="fa fa-dashboard"></i>  Dashboard</a></li>
+            <li><a href="/logout"><i class="fa fa-sign-out"></i>  Sign out</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/dashboard/settings"><i class="fa fa-cog"></i>  Settings</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="header">
+  <h1><%=app.author%>/<%=app.name%></h1>
+  <span class="label label-success"><i class="fa fa-circle"></i> State here</span>
+  <div class="buttons">
+    <a href="/dashboard/apps/start?author=<%=app.author%>&app=<%=app.name%>&callback=/dashboard/apps/status?app=<%=app.author%>/<%=app.name%>"><button type="button" class="btn btn-success" id="startapp"><i class="fa fa-play-circle-o"></i> Start app</button></a>
+    <a><button type="button" class="btn btn-danger" id="stopapp"><i class="fa fa-stop-circle-o"></i> Stop app</button></a>
+  </div>
+</div>
+<div class="container-fluid tubs">
+  <% for(var i = 0; i < info.tubs.length; i++) { %>
+  <button class="btn btn-primary tubsb" type="button" data-toggle="collapse" data-target="#logs<%=info.tubs[i]%>" aria-expanded="false" aria-controls="logs<%=info.tubs[i]%>">
+    <%=info.tubs[i]%>
+  </button>
+  <div class="collapse logs" id="logs<%=info.tubs[i]%>">
+    <div class="well">
+      <div class="headwell">
+        <!-- TODO: Add run id as well -->
+        <a href="/dashboard/apps/logs/download?app=<%=app.author%>/<%=app.name%>&tub=<%=info.tubs[i]%>"><button type="button" class="btn btn-primary" id="startapp"><i class="fa fa-arrow-circle-down"></i> Download log</button></a>
+      </div>
+      <div class="textwell">
+        <ul>
+          <li><span>1</span> $ <%=info.tubs[i]%></li>
+          <li><span>2</span> Logs here</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% } %>
+</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    console.log(window.innerWidth);
+      if (window.innerWidth <= 527) {
+        document.getElementById("startapp").innerHTML = '<i class="fa fa-play-circle-o"></i>';
+        document.getElementById("stopapp").innerHTML = '<i class="fa fa-stop-circle-o"></i>';
+        $("#startapp").css("marginRight", "0px");
+        $("#startapp").css("marginLeft", "50px");
+      }
+    </script>
+  </body>
+</html>

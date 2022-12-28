@@ -1,0 +1,16 @@
+# YML for list
+
+# Set path to being relative to home
+relative: false
+home: true
+
+# List cookbooks
+libs:
+  - cookbooks
+
+# Properties
+cookbooks:
+  path: cookbooks
+  sub:
+    - mongodb
+  name: libchef

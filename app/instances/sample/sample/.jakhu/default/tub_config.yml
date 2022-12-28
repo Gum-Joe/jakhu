@@ -1,0 +1,4 @@
+name: default
+language: nodejs
+dir: /app
+app: sample

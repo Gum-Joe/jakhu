@@ -1,0 +1,244 @@
+#!/usr/env/node
+var exec = require('child_process').exec;
+var os = require('os');
+var com = require('commander');
+var fs = require('fs');
+var mkdirp = require('mkdirp');
+// This is the Jakhu install script
+
+console.log("Jakhu install script");
+console.log("                     ");
+console.log("May exit with an nodejs error if no os is defined");
+console.log("                     ");
+
+// Get arguments
+com
+  .version('0.0.1')
+  .option('-l, --local', 'Installs all the apps in /packages/ using msiexec and adds it to the path for the server on startup (Only avalible on Windows and Linux)')
+  .option('-v, --version', 'Outputs the version number')
+  .option('-s, --nosudo', 'Runs commands without sudo')
+  .option('-y, --yum', "Uses 'sudo yum' instead of 'sudo apt-get'")
+  .option('-r, --ruby', "Install ruby Development Tools (Includes rails)")
+  .option('-n, --node', "Install Nodejs")
+  .option('-e, --heroku', "Install Heroku toolbelt")
+  .option('-c, --connect', "Installs FTP, SSH and SFTP")
+  .option('-g, --git', "Install Git")
+  .option('-p, --python', "Install Python Develpment Tools")
+  .arguments('<os>')
+  .action(function (os) {
+    if(os === undefined){
+      console.log("Please specify the OS you are running. Valid arguments are 'Linux' 'Windows_NT' (That's normal Windows) and 'OSX'");
+      //process.exit(1);
+    }
+    console.log("Running: "+os);
+    osl = os;
+  })
+  .parse(process.argv);
+
+getArgs();
+space();
+
+if(typeof osl === undefined){
+  console.log("Please specify the OS you are running. Valid arguments are 'Linux' 'Windows_NT' (That's normal Windows) and 'OSX'");
+  console.log("Exiting with exit code 1");
+  process.exit(1);
+} else {
+  if(osl !== 'Linux' && osl !== 'Windows_NT' && osl !== 'OSX'){
+    console.log("Please specify a valid OS. Valid arguments are 'Linux' 'Windows_NT' (That's normal Windows) and 'OSX'");
+    console.log("Exiting with exit code 1");
+    process.exit(1);
+  } else {
+    install(osl);
+  }
+}
+
+fs.readdir("./", function(err, files){
+  if(files[0] !== '.git' && files[0] !== ".gitattributes" && files[0] !== "app.js"){
+    console.log(files);
+    space();
+    console.log("Please make sure this is ran in the root dir of Jakhu");
+    space();
+    console.log("Exiting with exit code 2");
+    process.exit(2);
+  }
+});
+
+function install(osa) {
+  // This is where the magic happens
+  if(com.local !== undefined){
+    console.log("Local install selected");
+    // Execute installLocal() to install locally
+    if(osa === "OSX"){
+      console.log("Sorry, Local install is not avalible on OSX");
+      console.log("However, you can add it by contributing to the install script scripts/install");
+      console.log("On https://github.com/Gum-Joe/Jakhu");
+      console.log("          ");
+      console.log("Exiting with exit code 1");
+      process.exit(1);
+    } else {
+      installLocal();
+    }
+  } else {
+    // TODO: Function goes here
+  }
+}
+
+function installLocal(argument) {
+  // Install locally
+  console.log("Installing locally in ./packages/");
+  // Mkdir packages
+  mkdirp("./packages", function (err) {
+    if(err){
+      console.log("ERROR!");
+      console.log("Could not make dir ./packages");
+    } else {
+      console.log("Created ./packages dir");
+    }
+  });
+  // Read packages to install & install
+  if(osl === 'Linux' && com.yum === undefined){
+    space();
+    console.log("Output appears after command has been run");
+    space();
+    console.log("Running 'apt-get update' for you");
+    console.log("+ apt-get update");
+    // Check if need to use sudo
+    if(com.nosudo){
+      execa("apt-get update -y");
+    } else {
+      execa("sudo apt-get update -y");
+    }
+    space();
+    console.log("Installing tar and unzip");
+    console.log("+ apt-get install -y tar unzip");
+    // Check if need to use sudo
+    if(com.nosudo){
+      execa("apt-get install -y tar unzip");
+    } else {
+      execa("sudo apt-get install -y tar unzip");
+    }
+  } else if (osl === 'Linux' && com.yum !== undefined) {
+    space();
+    console.log("Installing tar and unzip");
+    console.log("+ yum install -y tar unzip");
+    // Check if need to use sudo
+    if(com.nosudo){
+      execa("yum install -y tar unzip");
+    } else {
+      execa("sudo yum install -y tar unzip");
+    }
+  }
+}
+
+function space(argument) {
+  console.log("                     ");
+}
+
+function getArgs(argument) {
+  // Gets arguments
+  if(com.local !== undefined){
+    console.log("+ using: Local Install in ./packages");
+    if(osl === 'Windows_NT'){
+      console.log("+ using: msiexec /a *.msi TARGETDIR='./packages'");
+    } else if(osl === 'OSX') {
+      console.log("+ using: brew (requires ruby)");
+    } else if (osl === 'Linux') {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    } else {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    }
+  } else {
+    if(osl === 'Windows_NT'){
+      console.log("+ using: msiexec");
+    } else if(osl === 'OSX') {
+      console.log("+ using: brew (requires ruby)");
+    } else if (osl === 'Linux') {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    } else {
+      if(com.nosudo !== undefined){
+        if(com.yum){
+          console.log("+ using: yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      } else {
+        if(com.yum){
+          console.log("+ using: sudo");
+          console.log("+ using: sudo yum install");
+          console.log("+ using: unzip, tar");
+        } else {
+          console.log("+ using: sudo apt-get install");
+          console.log("+ using: unzip, tar");
+        }
+      }
+    }
+  }
+}
+
+function execa(command) {
+  // Runs a command
+  exec(command, function(error, stdout, stderr){
+    console.log(stdout);
+    console.log(stderr);
+    if(stderr){
+      space();
+      console.log("ERROR! Could not run "+command);
+      console.log("Full error:");
+      console.log(stderr);
+      console.log("Done!");
+    }
+  });
+}

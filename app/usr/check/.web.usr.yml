@@ -1,0 +1,4 @@
+language: generic
+name: checks
+bin:
+  - check.config.js

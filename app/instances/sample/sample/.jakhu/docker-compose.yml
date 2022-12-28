@@ -1,0 +1,13 @@
+default:
+    dockerfile: default/Dockerfile
+    ports:
+        - '3000:8080'
+    container_name: sample-tub-default
+def:
+    dockerfile: def/Dockerfile
+    ports:
+        - '3000:8080'
+    container_name: sample-tub-def
+mongo:
+    image: mongo
+    container_name: sample-service-mongo

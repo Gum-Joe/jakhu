@@ -1,172 +1,110 @@
-exports.start = function start(){
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var clicolour = require('cli-color');
-var fs = require("fs");
-var morgan = require("morgan");
+'use strict';
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const expresssession = require('express-session');
+const clicolour = require('cli-color');
+const fs = require("fs");
+const morgan = require("morgan");
+const mkdirp = require('mkdirp');
+const delayed = require('delayed');
 
-var passport = require('passport');
-var passportlocal = require('passport-local');
-var passporthttp = require('passport-http');
+const connect = require("./libs/connect.js");
+const mid = require('./libs/middleware.js')
+const schema = require('./libs/database');
+const apis = require('./libs/api.js');
+const notifications = require('./libs/api/notifications');
+const wlogger = require('./libs/logger');
+const kernal = require('./app/boot/boot');
 
-var mongoose = require('mongoose');
-var MongoClient = require('mongodb').MongoClient;
-var assert = require('assert');
-var ObjectId = require('mongodb').ObjectID;
+const routes = require('./app/routes/index');
+const api = require('./app/routes/api/api');
+const users = require('./app/routes/users');
+const ooberoutes = require("./app/routes/oobe.js");
+const dashboard = require("./app/routes/dashboard.js");
 
-var connect = require("./libs/connect.js");
-var passportconfig = require("./libs/passport.js");
-//var wlogger = require("./libs/wlogger.js");
-// var debuge = require("./libs/debug.js");
-var wlogger = require("./libs/logger");
-var kernal = require('./boot/boot.js');
+const http = require('http');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+let app = express();
 
-var debug = require('debug')('Web-OS:server');
-var http = require('http');
-var https = require('https');
+// DEBUGING
+var debug = {};
+debug.http = require('debug')('server');
 
-var app = express();
-
-var bcrypt = require('bcryptjs');
-var salt = bcrypt.genSaltSync(10);
-
-var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+function use(param1, param2) {
+  if (typeof param2 !== 'undefined') {
+    app.use(param1, param2)
+  } else {
+    app.use(param1)
+  }
+}
 
 
+exports.start = function start(x, y, portt){
+var port = process.env.PORT || portt || 8080;
+var server = http.createServer(app);
+var io = require('./libs/socket.io');
+// create file
+mkdirp('logs');
+if(y !== true){wlogger.createlog("ok");};
+// during baic startup for testing, will not create log
+if(y !== true){
+  var logFile = fs.createWriteStream('./logs/wos.log', {flags: 'a'});
+}
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.set('view engine', 'ejs');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// uncomment after placing your favicon in /views/public
+app.use(favicon(path.join(__dirname, 'views/public', 'icon.png')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'views/public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'views')));
-app.use(logger({stream: logFile}));
-app.use(logger('stream', wlogger.logger));
-//app.use(require('morgan')({ "stream": wlogger.stream }));
-wlogger.debug("Overriding 'Express' logger");
-app.use(require("morgan")("combined", { "stream": wlogger.stream }));
-
-var userSchema = new mongoose.Schema({
-  username: { type: String }
-, email: String
-, pwd: String
-});
-var exits = false;
-var suser = mongoose.model('usersc', userSchema);
+app.use(express.static(path.join(__dirname, 'test')));
+app.use(mid.count);
+app.use(mid.timer);
+if(process.env.NODE_ENV === "dev"){
+  app.set('env', 'development');
+}
 
 app.use('/', routes);
+app.use('/oobe', ooberoutes);
 app.use('/users', users);
-app.use('passportconfig', passportconfig);
-
-// Setup HTTPS
-// uncommitted after finding way to get certs
-/** options = {
-  key: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-PRIVATE.key'))
-  // This certificate should be a bundle containing your server certificate and any intermediates
-  // cat certs/cert.pem certs/chain.pem > certs/server-bundle.pem
-, cert: fs.readFileSync(path.join(__dirname, 'cert/Web-OS-SIGNED.crt'))
-  // ca only needs to be specified for peer-certificates
-//, ca: [ fs.readFileSync(path.join(caCertsPath, 'my-root-ca.crt.pem')) ]
-, requestCert: false
-, rejectUnauthorized: true
-}; */
-
-
-
-var port = process.env.PORT || 8080;
-
-app.listen(port, function () {
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "Running on port " + port);
-	console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
-  console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("startup ") + connect.connect("Connect"));
-  //kernal.boot("ok");
-  kernal.startinput("ok");
-} );
-// HTTPS
-//httpsserver = https.createServer(options);
-// Turn on HTTPS
-/** httpsserver.on('request', app);
-    httpsserver.listen(6060, function () {
-       console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "HTTPS Server Started " + port);
-        console.log(clicolour.cyanBright("webOS ") + clicolour.yellowBright("HTTPS ") + "The date and time is:", Date());
-	onListening()
-    }); */
-
-
-
-app.on('error', onError);
-app.on('listening', onListening);
-
-function normalizePort(val) {
-  var port = parseInt(val, 10);
-
-  if (isNaN(port)) {
-    // named pipe
-    return val;
-  }
-
-  if (port >= 0) {
-    // port number
-    return port;
-  }
-
-  return false;
+app.use('/dashboard', dashboard);
+app.use('/api', api);
+// listen
+// Se
+if(y === true || x === 'basic' || x === 'ci'){
+  server.listen(port);
+} else {
+  server.listen(port, function () {
+    debug.http('Starting server...');
+    if (!process.env.DEBUG) {
+      process.env.DEBUG = "none"
+    }
+    if (~process.env.DEBUG.indexOf('server')) {
+      debug.http("Running on port " + port);
+      debug.http("The date and time is:", Date());
+    } else {
+      console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "Running on port " + port);
+      console.log(clicolour.cyanBright("jakhu ") + clicolour.yellowBright("startup ") + "The date and time is:", Date());
+    }
+    connect.connect();
+    debug.http('Done starting server');
+    kernal.startinput("ok");
+  });
 }
-
-/**
- * Event listener for HTTP server "error" event.
- */
-
-function onError(error) {
-  if (error.syscall !== 'listen') {
-    throw error;
-  }
-
-  var bind = typeof port === 'string'
-    ? 'Pipe ' + port
-    : 'Port ' + port;
-
-  // handle specific listen errors with friendly messages
-  switch (error.code) {
-    case 'EACCES':
-      console.error(bind + ' requires elevated privileges');
-      process.exit(1);
-      break;
-    case 'EADDRINUSE':
-      console.error(bind + ' is already in use');
-      process.exit(1);
-      break;
-    default:
-      throw error;
-  }
-}
-
-/**
- * Event listener for HTTP server "listening" event.
- */
-
-function onListening() {
-  var addr = httpsserver.address();
-  var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  wlogger.debug('Listening on ' + bind);
-}
-
+// Start socket.io
+io.start(server)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -174,14 +112,7 @@ app.use(function(req, res, next) {
   err.status = 404;
   next(err);
 });
-
-app.post('/login', function(req, res) {
-   // passportlocal.authenticate('local');
-  res.redirect('/');
-});
-
 // error handlers
-
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
@@ -193,7 +124,6 @@ if (app.get('env') === 'development') {
     });
   });
 }
-
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -203,4 +133,5 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+// end of start function
 };

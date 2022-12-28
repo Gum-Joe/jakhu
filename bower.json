@@ -1,17 +1,17 @@
 {
-  "name": "Web-OS",
+  "name": "jakhu",
   "version": "1.0.0",
-  "homepage": "https://github.com/Gum-Joe/Web-OS",
+  "homepage": "https://github.com/Gum-Joe/Jakhu",
   "authors": [
     "Gum-Joe"
   ],
-  "description": "A web-OS",
+  "description": "A Jakhu",
   "main": "app.js",
   "moduleType": [
     "node"
   ],
   "keywords": [
-    "web-Os",
+    "Jakhu",
     "OS",
     "Connections",
     "Login"
@@ -25,7 +25,11 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "~3.3.5",
-    "jquery": "~2.1.4"
+    "bootstrap": "~3.3.6",
+    "css-hamburgers": "~0.2.0",
+    "jquery": "~2.1.4",
+    "less": "~2.5.1",
+    "notie": "*",
+    "startbootstrap-sb-admin-2": "~1.0.8"
   }
 }

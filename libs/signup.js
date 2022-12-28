@@ -11,8 +11,8 @@ var passport = require('passport');
 var passportlocal = require('passport-local');
 var passporthttp = require('passport-http');
 
-var routes = require('../routes/index');
-var users = require('../routes/users');
+var routes = require('../app/routes/index');
+var users = require('../app/routes/users');
 
 var mongoose = require('mongoose');
 var MongoClient = require('mongodb').MongoClient;
