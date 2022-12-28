@@ -2,7 +2,7 @@
 
 Jakhu is a simple, nodejs based, app for managing your web-app(s). It has a modern dashboard, lets you run, test and deploy apps to your favourite service provider (coming soon) and - most importantly - keeps a backup of your web-apps.
 
-At the moment, I need some some help as this is a large project. Any help is appreciated, but we really need Nodejs and ruby programmes.
+One of my really early projects in JS when I was just starting.
 
 # Goals
 I need to:
